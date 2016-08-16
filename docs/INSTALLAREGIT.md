@@ -4,8 +4,8 @@ Per poter contribuire al repository trascrivendo alcune lezioni è quasi
 essenziale avere git installato sul proprio computer.
 
 Riportiamo di seguito un paio di modi rapidi per poter iniziare subito a
-contribuire, ottenuti riassumendo quelli presenti in (questa
-pagina)[https://git-scm.com/book/it/v1/Per-Iniziare-Installare-Git].
+contribuire, ottenuti riassumendo quelli presenti in [questa
+pagina](https://git-scm.com/book/it/v1/Per-Iniziare-Installare-Git).
 
 ## Linux
 
@@ -27,8 +27,8 @@ sudo yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel g
 
 ### Primo Metodo: Installer Grafico
 
-Questo è probabilmente il metodo più semplice: basta scaricare (questo installer
-grafico)[http://sourceforge.net/projects/git-osx-installer/] da sourceforge.
+Questo è probabilmente il metodo più semplice: basta scaricare [questo installer
+grafico](http://sourceforge.net/projects/git-osx-installer/) da sourceforge.
 
 ### Secondo Metodo: MacPorts
 
@@ -50,7 +50,7 @@ brew install git
 
 Il progetto msysgit ha uno dei processi di installazione più
 semplici. Semplicemente basta scaricare l'eseguibile ed installarlo. Potete
-trovarlo a (questa pagina)[http://msysgit.github.io/]
+trovarlo a [questa pagina](http://msysgit.github.io/)
 
 # In caso di problemi
 
@@ -60,4 +60,4 @@ capire qual è il problema che vi sta assillando e le possibili soluzioni.
 # Dopo l'installazione
 
 Dopo essere riusciti ad installare git potete iniziare subito a
-(contribuire)[COMECONTRIBUIRE.md] a questo progetto.
+[contribuire](COMECONTRIBUIRE.md) a questo progetto.

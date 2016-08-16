@@ -15,4 +15,4 @@ Accettiamo contributi da chiunque. Contate che potete contribuire sia
 trascrivendo le lezioni, sia segnalando gli errori che vi trovate. Oltre che
 ovviamente utilizzando i nostri pdf, per farci sentire importanti.
 
-Per informazioni più precise (guardate qui)[docs/COMECONTRIBUIRE.md]
+Per informazioni più precise [guardate qui](docs/COMECONTRIBUIRE.md)

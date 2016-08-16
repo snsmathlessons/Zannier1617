@@ -21,5 +21,5 @@ Il modo in cui questo viene fatto è il seguente:
   occupare. Cerchiamo di portare a termine la trascrizione delle lezioni entro
   una decina di giorni dalla lezione stessa.
 
-Vi consiglio anche di vedere (le regole)[REGOLELATEX.md] per la stesura dei
+Vi consiglio anche di vedere [le regole](REGOLELATEX.md) per la stesura dei
 sorgenti LaTeX prima di iniziare.
