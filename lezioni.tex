@@ -155,7 +155,18 @@
     [\vspace*{0.5\baselineskip}]% after
 %%%% End additional code by Kevin Godby
 
-\newcommand{\marginnote}[1]{\vspace{-7\baselineskip}\footnotetext{#1}\vspace{7\baselineskip}}
+    \usepackage{amsthm}
+    
+    \newcounter{gencounter}
+    \newcounter{defcounter}
+    \newtheorem{teorema}[gencounter]{Teorema}
+    \newtheorem{lemma}[gencounter]{Lemma}
+    \newtheorem{corollario}[gencounter]{Corollario}
+    \newtheorem{definizione}[defcounter]{Definizione}
+    \newtheorem{osservazione}[defcounter]{Osservazione}
+    \newtheorem{remark}[defcounter]{Remark}
+    
+\newcommand{\notamargine}[1]{\vspace{-7\baselineskip}\footnotetext{#1}\vspace{7\baselineskip}}
 
 \begin{document}
 

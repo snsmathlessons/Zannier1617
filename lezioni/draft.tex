@@ -13,7 +13,7 @@ ogni lezione e, all'interno di questi divideremo il testo in vari paragrafi
 e/o varie sezioni come si può vedere da questo file.
 
 %% Le cose scritte dentro a \footnotetext appaiono come note al margine
-\marginnote{Le scritte dentro all'elemento marginnote appaiono al fianco
+\notamargine{Le scritte dentro all'elemento notamargine appaiono al fianco
   della pagina, come questa scritta. Le si può utilizzare per dare alcune
   spiegazioni su punti che sono poco chiari, o per mettere dei riferimenti
   ad alcuni libri che spiegano meglio l'argomento}
@@ -29,7 +29,7 @@ alcune formule $\forall x \in X \quad \varphi(x) = x^2$. Oppure anche su
 una linea a parte per le cose significative
     $$ \int_a^b \cos(x)\sin^2(x) dx $$
 
-\marginnote{Notate come per separare un $\forall$ dalla parte successiva
+\notamargine{Notate come per separare un $\forall$ dalla parte successiva
   è stato utilizzato un quad, per lasciare un po' di spazio.}
 
 \paragraph{Idea della Dimostrazione} Paragrafetti come questo si possono
@@ -59,7 +59,7 @@ bisogno di distinguere un po' di casi in maniera ordinata:
 \paragraph{Nota} Utilizzate gli elementi teorema, definizione, lemma tra i
 tag begin ed end in modo da avere un modo uniforme di scriverli. Sono presenti
 gli elementi seguenti: teorema, definizione, lemma, osservazione, remark,
-dimostrazione.
+proof, corollario.
 
 \begin{osservazione}
   Scriviamo qualche osservazione importante tipo $2 = 1 + 3$
@@ -73,9 +73,9 @@ dimostrazione.
 \begin{teorema}[del Gelato]
   $1 = 1$
 \end{teorema}
-\begin{dimostrazione}
+\begin{proof}
   Ovvia
-\end{dimostrazione}
+\end{proof}
 
 %% Le subsection sono, ovviamente, le sottosezioni. State attenti però che
 %% con il tipo di testo che stiamo usando le subsubsection non esistono
@@ -93,4 +93,4 @@ dimostrazione.
 Ormai non so più cosa scrivere, e dovreste aver imparato i principali comandi
 utili. Nel caso qualcosa non fosse chiaro non esitate a chiedere.
 
-\marginnote{E non esitate nemmeno a cercare su Google}
+\notamargine{E non esitate nemmeno a cercare su Google}
