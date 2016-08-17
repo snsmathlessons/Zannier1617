@@ -1,3 +1,5 @@
+![https://travis-ci.org/snsmathlessons/Zannier1617.svg](Build Status)
+
 # Corso di Zannier 2016/2017
 
 Questo repository cerca di raccogliere le lezioni del Corso tenuto dal

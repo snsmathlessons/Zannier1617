@@ -64,6 +64,8 @@ spesso e speriamo di renderle un po' più chiare in questo modo.
 | \mathbb{N} | \bbN |
 | \mathcal{D} | \cD |
 | \mathfrak{M} | \kM |
+| \rightarrow | \rar |
+| \Rightarrow | \implies |
 
 Altri simboli specifici, che noteremo essere ripetuti troppo spesso, verranno
 introdotti nel tempo. Controllate quindi questa pagina ogni tanto.

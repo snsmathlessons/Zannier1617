@@ -1,0 +1,87 @@
+#!/usr/bin/env ruby
+# coding: utf-8
+
+# Script che integra quello che c'è scritto in INDEX.md con i luoghi dei pdf più
+# significativi per un one-page site
+
+# Da includere dei css e mathjax nella head
+
+require 'kramdown'
+
+	sitetitle = "Zannier 2016-2017"
+	sitetagline = "Corso tenuto presso SNS"
+	sitebaseurl = "http://zannier1617.surge.sh"
+
+	entries = [];
+	directories = [];
+	mdcode = "";
+
+	headfile = <<-endoffile
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+      {{sitetitle}} &middot; {{sitetagline}}
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{sitebaseurl}}/public/css/poole.css">
+  <link rel="stylesheet" href="{{sitebaseurl}}/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="shortcut icon" href="{{sitebaseurl}}/public/favicon.ico">
+
+      <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$']]}
+      });
+      </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+endoffile
+
+	bodyfile = <<-endoffile
+<!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="{{sitebaseurl}}/" title="Home">{{sitetitle}}</a>
+            <small>{{sitetagline}}</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        {{content}}
+      </div>
+    </div>
+endoffile
+
+	head = headfile.gsub('{{sitetitle}}', "#{sitetitle}").gsub('{{sitetagline}}', "#{sitetagline}").gsub('{{sitebaseurl}}', "#{sitebaseurl}")	
+	body = bodyfile.gsub('{{sitetitle}}', "#{sitetitle}").gsub('{{sitetagline}}', "#{sitetagline}").gsub('{{sitebaseurl}}', "#{sitebaseurl}")
+
+	puts "[LOG] Creating index page"
+
+	mdcode += File.read("INDEX.md") + "\n\n---\n\n"
+	mdcode += "# File pdf del progetto\n\n"
+        Dir.entries(".").sort.each do |entry|
+          if entry =~ /^Zannier1617-.*\.pdf$/ then
+            mdcode += "* [`Zannier1617.pdf`](#{entry}) File pdf con le lezioni del corso\n\n"
+          end
+        end
+            
+	output = Kramdown::Document.new(mdcode).to_html
+	File.open("index.html", 'w') do |f|
+		f.puts "<html>" + head + "<body>"
+		f.puts body.gsub('{{content}}', output)
+		f.puts "</body></html>"
+	end
+
+        File.delete("INDEX.md")
