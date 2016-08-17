@@ -1,4 +1,4 @@
-![https://travis-ci.org/snsmathlessons/Zannier1617.svg](Build Status)
+[![Build Status](https://travis-ci.org/snsmathlessons/Zannier1617.svg?branch=master)](https://travis-ci.org/snsmathlessons/Zannier1617/)
 
 # Corso di Zannier 2016/2017
 
