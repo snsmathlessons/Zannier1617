@@ -43,6 +43,6 @@ su github (vedete [qui](ISSUEPULLREQUEST.md) per sapere come fare).
 ## Utilizzare il pdf
 
 Anche utilizzare i pdf prodotti da questo progetto (che ricordiamo si trovano
-[qui](zannier1617.surge.sh)) è un valido modo di aiutare. Almeno ci farete
+[qui](http://zannier1617.surge.sh)) è un valido modo di aiutare. Almeno ci farete
 sentire apprezzati. Ricordatevi di segnalare gli errori quando li trovate (e ce
 ne sono sicuramente).

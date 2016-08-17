@@ -76,7 +76,8 @@ endoffile
             mdcode += "* [`Zannier1617.pdf`](#{entry}) File pdf con le lezioni del corso\n\n"
           end
         end
-            
+        
+	puts "[LOG] Writing index.html"
 	output = Kramdown::Document.new(mdcode).to_html
 	File.open("index.html", 'w') do |f|
 		f.puts "<html>" + head + "<body>"
