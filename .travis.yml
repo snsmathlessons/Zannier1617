@@ -23,7 +23,7 @@ script:
 - cp INDEX.md ../compiled-pdfs/
 - cp -r .site/public ../compiled-pdfs/
 - cp .site/indexing ../compiled-pdfs/
-- ../compiled-pdfs/indexing
+- cd ../compiled-pdfs/ && ./indexing && rm indexing
 
 deploy:
   skip_cleanup: true

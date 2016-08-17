@@ -7,8 +7,8 @@ professor Umberto Zannier nell'anno 2016/2017.
 
 # Come ottenere i pdf
 
-Potete trovare i pdf compilati qui: [pdf compilati](zannier1617.surge.sh). Essi
-sono aggiornati all'ultima versione che compilava del branch master, oltre
+Potete trovare i pdf compilati qui: [pdf compilati](http://zannier1617.surge.sh).
+Essi sono aggiornati all'ultima versione che compilava del branch master, oltre
 all'ultima versione che compilava di ciascun singolo branch lezione.
 
 # Come Contribuire
