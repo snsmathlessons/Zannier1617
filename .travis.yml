@@ -18,7 +18,7 @@ script:
 # Creiamo la cartella dei pdf compilati
 - mkdir -p ../compiled-pdfs/
 # Compiliamo il pdf delle lezioni complete se siamo nel branch master
-- latexmk -pdf lezioni.tex && cp lezioni.pdf ../compiled-pdfs/Zannier1617-$( date +'%y%m%d%H%M%S' | tr -d '\n' ).pdf
+- pdflatex lezioni.tex && cp lezioni.pdf ../compiled-pdfs/Zannier1617-$( date +'%y%m%d%H%M%S' | tr -d '\n' ).pdf
 # Inoltre creiamo la pagina iniziale del "sito internet" del repository dall'INDEX.md
 - cp INDEX.md ../compiled-pdfs/
 - cp -r .site/public ../compiled-pdfs/
