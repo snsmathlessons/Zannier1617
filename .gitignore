@@ -2,3 +2,15 @@
 *#
 *~
 *.bak
+*.pdf
+*.log
+*.aux
+*.toc
+*.ind
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+
