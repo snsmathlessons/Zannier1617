@@ -10,7 +10,7 @@ before_install:
     - sudo apt-get -yq update
     - sudo apt-get -y install texlive-latex-base texlive-base texlive-lang-italian latexmk ruby-dev ruby
     - sudo apt-get -y install texlive-fonts-extra texlive-latex-recommended coreutils texlive-pictures
-    - sudo apt-get -y install texlive-latex-extra
+    - sudo apt-get -y install texlive-latex-extra texlive-fonts-recommended
 
 install: gem install kramdown
 
