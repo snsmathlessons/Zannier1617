@@ -6,12 +6,13 @@
 % \hypersetup{colorlinks}% uncomment this line if you prefer colored hyperlinks (e.g., for onscreen viewing)
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
+\usepackage{ccicons}
 
 % Book metadata
-\title{Corso di Zannier 2016-2017}
-\date{The edition number}
-\author[]{Classe del Terzo Anno}
-\publisher{Il nostro editore che non abbiamo}
+\title{Curve Ellittiche e Modulari}
+\date{Note di un corso del Prof. Umberto Zannier}
+\author[]{Classe del Terzo Anno SNS}
+\publisher{Versione del \dateitalian\today}
 
 % Just some sample text
 \usepackage{lipsum}
@@ -208,26 +209,34 @@
 % v.4 copyright page
 \newpage
 \begin{fullwidth}
+\begin{doublespace}
+  \thispagestyle{empty}
+  \setlength{\parindent}{0pt}
+  \setlength{\parskip}{\baselineskip}
+  \noindent\fontsize{18}{18}\selectfont\itshape
+  \par\nohyphenation Hanno collaborato: Nomi di tutti da aggiungere
+\end{doublespace}
+
 ~\vfill
 \thispagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{\baselineskip}
 Copyright \copyright\ \the\year\ \thanklessauthor
 
-\par\smallcaps{Pubblicato da \thanklesspublisher}
+%\par\smallcaps{Pubblicato da \thanklesspublisher}
 
-\par\smallcaps{tufte-latex.googlecode.com}
+\par\smallcaps{zannier1617.surge.sh}
 
-\par Licensed under the Apache License, Version 2.0 (the ``License''); you may not
-use this file except in compliance with the License. You may obtain a copy
-of the License at \url{http://www.apache.org/licenses/LICENSE-2.0}. Unless
-required by applicable law or agreed to in writing, software distributed
-under the License is distributed on an \smallcaps{``AS IS'' BASIS, WITHOUT
-WARRANTIES OR CONDITIONS OF ANY KIND}, either express or implied. See the
-License for the specific language governing permissions and limitations
-under the License.\index{license}
+\par\nohyphenation This text is licensed under a Creative Commons
+\smallcaps{``Attribution-ShareAlike 4.0 International''}
+license (the ``License''). You may not use this file
+except in compiance with the License. You may obtain a
+copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legalcode}.
 
-\par\textit{First printing, \monthyear}
+\includegraphics[width=5em]{by-sa.eps}
+\index{license}
+
+%\par\textit{First printing, \monthyear}
 \end{fullwidth}
 
 % r.5 contents
@@ -242,9 +251,10 @@ under the License.\index{license}
 %\begin{doublespace}
 %\noindent\fontsize{18}{22}\selectfont\itshape
 %\nohyphenation
-%Dedicated to those who appreciate \LaTeX{} 
-%and the work of \mbox{Edward R.~Tufte} 
-%and \mbox{Donald E.~Knuth}.
+%Scritto con la collaborazione di tutta la classe del
+%Terzo Anno di Matematica della SNS dell' anno 2016-2017
+%
+%Qui ci andranno i nomi di tutti quanti.
 %\end{doublespace}
 %\vfill
 %\vfill
@@ -255,7 +265,6 @@ under the License.\index{license}
 
 % Start the main matter (normal chapters)
 \mainmatter
-
 \include{lezioni/draft}
 
 
