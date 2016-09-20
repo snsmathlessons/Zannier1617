@@ -1,0 +1,95 @@
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{xifthen}
+%\usepackage{xparse}
+%\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+%\usepackage[linktoc=all]{hyperref} % Per i collegamenti ipertestuali. [linktoc=all] mette i link nell'indice
+
+% https://it.sharelatex.com/blog/2011/03/27/how-to-write-a-latex-class-file-and-design-your-own-cv.html
+
+\newcommand{\frdx}{ \framebox[\width]{ $\Rightarrow$ } }
+\newcommand{\frsx}{ \framebox[\width]{ $\Leftarrow$ } }
+\newcommand{\hrar}{\hookrightarrow}
+\newcommand{\opp}{\text{ oppure }}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+\newcommand{\crossmark}{$\times$}
+
+%mathbb mathcal mathfrak e mathbm per le lettere dell'alfabeto e anche mathbb per quelle greche
+\def\mydeflett#1{\expandafter\def\csname bb#1\endcsname{\mathbb{#1}}
+		\expandafter\def\csname c#1\endcsname{\mathcal{#1}}
+		\expandafter\def\csname k#1\endcsname{\mathfrak{#1}}
+		\expandafter\def\csname bl#1\endcsname{\mathbf{#1}}}
+\def\mydefalllett#1{\ifx#1\mydefalllett\else\mydeflett#1\expandafter\mydefalllett\fi}
+\mydefalllett ABCDEFGHIJKLMNOPQRSTUVWXYZ\mydefalllett
+
+\def\mydeffrakmath#1{\expandafter\def\csname k#1\endcsname{\mathfrak{#1}}}
+\def\mydefallfrak#1{\ifx#1\mydefallfrak\else\mydeffrakmath#1\expandafter\mydefallfrak\fi}
+\mydefallfrak abcdefghijklmnopqrstuvwxyz\mydefallfrak
+
+\def\mydefgreek#1{\expandafter\def\csname bl#1\endcsname{\text{\boldmath$\mathbf{\csname #1\endcsname}$}}}
+\def\mydefallgreek#1{\ifx\mydefallgreek#1\else\mydefgreek{#1}%
+   \lowercase{\mydefgreek{#1}}\expandafter\mydefallgreek\fi}
+\mydefallgreek {Gamma}{Delta}{Theta}{Lambda}{Xi}{Pi}{Sigma}{Upsilon}{Phi}{Varphi}{Psi}{Omega}{alpha}{beta}{gamma}{delta}{epsilon}{varepsilon}{zeta}{eta}{theta}{iota}{kappa}{lambda}{mu}{nu}{xi}{omicron}{pi}{rho}{sigma}{tau}{upsilon}{phi}{varphi}{chi}{psi}{omega}\mydefallgreek
+
+%\NewDocumentCommand{\de}{gg}{
+%\IfNoValueTF{#1}
+%		{\text{ d}}
+%		{\IfNoValueTF{#2}	{\text{ d}#1}
+%			{\frac{\text{d}#1}{\text{d}#2}}
+%	}
+%}
+
+%\NewDocumentCommand{\dpar}{gg}{
+%	\IfNoValueTF{#1}
+%		{\partial}
+%		{\IfNoValueTF{#2}	{\partial_{#1}}
+%			{\frac{\partial {#1}}{\partial {#2}}}
+%	}
+%}
+
+
+%nuovi comandi per svariate cose
+\newcommand{\sse}{\Leftrightarrow}
+\newcommand{\Rar}{\Rightarrow}
+\newcommand{\rar}{\rightarrow}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\ot}[1]{\widetilde{#1}}
+\newcommand{\oc}[1]{\widehat{#1}}
+\newcommand{\tc}{\mbox{ t.c. }}
+
+\newcommand{\norma}[1]{\mid\mid #1 \mid\mid}
+\newcommand{\abs}[1]{\mid #1 \mid}
+\newcommand{\scal}[2]{\langle #1 \mid #2 \rangle}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+
+\newcommand{\Ker}{\mbox{Ker } }
+\newcommand{\Deg}{\mbox{deg }}
+\newcommand{\Det}{\mbox{det }}
+\newcommand{\Dim}{\mbox{dim }}
+\newcommand{\End}{\mbox{End }}
+\newcommand{\Rad}{\mbox{Rad }}
+\newcommand{\Ann}{\mbox{Ann }}
+\newcommand{\Sp}{\mbox{Sp }}
+\newcommand{\Rk}{\mbox{rk }}
+\newcommand{\Tr}{\mbox{tr }}
+\newcommand{\GL}{\mbox{GL}}
+\newcommand{\Isom}{\mbox{Isom}}
+\newcommand{\Fix}{\mbox{Fix }}
+\newcommand{\Giac}{\mbox{Giac }}
+\newcommand{\Ort}{\mbox{O}}
+\newcommand{\Aff}{\mbox{Aff }}
+\newcommand{\Supp}{\mbox{Supp }}
+\newcommand{\Span}{\mbox{Span }}
+\newcommand{\Symm}{\mbox{Sym }}
+\newcommand{\Asymm}{\mbox{Asym }}
+\newcommand{\Img}{\mbox{Im }}
+\newcommand{\Id}{\mbox{id}}
+\newcommand{\PS}{\mbox{PS }}
+\newcommand{\Mtr}{\mathfrak{m}}
+\newcommand{\fucknullset}{\{0\}}
+
+\sloppy
+
