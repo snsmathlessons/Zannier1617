@@ -1,11 +1,10 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[italian]{babel}
 \usepackage{amsmath}
-\usepackage{amssymb}
 \usepackage{amsthm}
-
+\usepackage{amsfonts}
 \usepackage{xifthen}
-\usepackage{xparse}
+%\usepackage{xparse}
 \usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
 \usepackage[linktoc=all]{hyperref} % Per i collegamenti ipertestuali. [linktoc=all] mette i link nell'indice
 
@@ -13,6 +12,7 @@
 
 \newcommand{\frdx}{ \framebox[\width]{ $\Rightarrow$ } }
 \newcommand{\frsx}{ \framebox[\width]{ $\Leftarrow$ } }
+\newcommand{\hrar}{\hookrightarrow}
 \newcommand{\opp}{\text{ oppure }}
 \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
 \newcommand{\crossmark}{$\times$}
@@ -34,21 +34,21 @@
    \lowercase{\mydefgreek{#1}}\expandafter\mydefallgreek\fi}
 \mydefallgreek {Gamma}{Delta}{Theta}{Lambda}{Xi}{Pi}{Sigma}{Upsilon}{Phi}{Varphi}{Psi}{Omega}{alpha}{beta}{gamma}{delta}{epsilon}{varepsilon}{zeta}{eta}{theta}{iota}{kappa}{lambda}{mu}{nu}{xi}{omicron}{pi}{rho}{sigma}{tau}{upsilon}{phi}{varphi}{chi}{psi}{omega}\mydefallgreek
 
-\NewDocumentCommand{\de}{gg}{
-	\IfNoValueTF{#1}
-		{\text{ d}}
-		{\IfNoValueTF{#2}	{\text{ d}#1}
-			{\frac{\text{d}#1}{\text{d}#2}}
-	}
-}
+%\NewDocumentCommand{\de}{gg}{
+%\IfNoValueTF{#1}
+%		{\text{ d}}
+%		{\IfNoValueTF{#2}	{\text{ d}#1}
+%			{\frac{\text{d}#1}{\text{d}#2}}
+%	}
+%}
 
-\NewDocumentCommand{\dpar}{gg}{
-	\IfNoValueTF{#1}
-		{\partial}
-		{\IfNoValueTF{#2}	{\partial_{#1}}
-			{\frac{\partial {#1}}{\partial {#2}}}
-	}
-}
+%\NewDocumentCommand{\dpar}{gg}{
+%	\IfNoValueTF{#1}
+%		{\partial}
+%		{\IfNoValueTF{#2}	{\partial_{#1}}
+%			{\frac{\partial {#1}}{\partial {#2}}}
+%	}
+%}
 
 
 %nuovi comandi per svariate cose
