@@ -6,6 +6,13 @@
 % \hypersetup{colorlinks}% uncomment this line if you prefer colored hyperlinks (e.g., for onscreen viewing)
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
+\usepackage{ragged2e}
+
+% Manteniamo le note a piè di pagina nella stessa pagina
+\interfootnotelinepenalty=10000
+\makeatletter
+\renewcommand\@makefntext[1]{\nohyphenation\justify\@makefnmark#1}
+\makeatother
 
 % Book metadata
 \title{Curve Ellittiche e Modulari}
@@ -165,8 +172,12 @@
     \newtheorem{definizione}[defcounter]{Definizione}
     \newtheorem{osservazione}[defcounter]{Osservazione}
     \newtheorem{remark}[defcounter]{Remark}
-    
-\newcommand{\notamargine}[1]{\vspace{-7\baselineskip}\footnotetext{#1}\vspace{7\baselineskip}}
+
+    \newcommand{\notamargine}[1]{
+      \vspace{-7\baselineskip}
+      \let\thefootnote\relax\footnotetext{#1}
+      \vspace{7\baselineskip}
+    }
 
 \begin{document}
 
@@ -213,7 +224,7 @@
   \setlength{\parindent}{0pt}
   \setlength{\parskip}{\baselineskip}
   \noindent\fontsize{18}{18}\selectfont\itshape
-  \par\nohyphenation Hanno collaborato: Nomi di tutti da aggiungere
+  \par\nohyphenation Hanno collaborato alla stesura di questo testo: Nomi di tutti da aggiungere
 \end{doublespace}
 
 ~\vfill
@@ -259,12 +270,12 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
 %\vfill
 
 % r.9 introduction
-\cleardoublepage
+% \cleardoublepage
 %\include{lezioni/lezione-introduzione}
 
 % Start the main matter (normal chapters)
 \mainmatter
 \include{lezioni/draft}
 
-
 \end{document}
+
