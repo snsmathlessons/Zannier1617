@@ -3,9 +3,16 @@
 % Taken from https://www.overleaf.com/5902299yxkgzs#/19519356/
 \documentclass[nohyper]{tufte-book}
 \usepackage{nameref}
-% \hypersetup{colorlinks}% uncomment this line if you prefer colored hyperlinks (e.g., for onscreen viewing)
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
+\usepackage{ragged2e}
+\include{custom-commands}
+
+% Manteniamo le note a piè di pagina nella stessa pagina
+\interfootnotelinepenalty=10000
+\makeatletter
+\renewcommand\@makefntext[1]{\nohyphenation\justify\@makefnmark#1}
+\makeatother
 
 % Book metadata
 \title{Curve Ellittiche e Modulari}
@@ -165,8 +172,12 @@
     \newtheorem{definizione}[defcounter]{Definizione}
     \newtheorem{osservazione}[defcounter]{Osservazione}
     \newtheorem{remark}[defcounter]{Remark}
-    
-\newcommand{\notamargine}[1]{\vspace{-7\baselineskip}\footnotetext{#1}\vspace{7\baselineskip}}
+
+    \newcommand{\notamargine}[1]{
+      \vspace{-7\baselineskip}
+      \let\thefootnote\relax\footnotetext{#1}
+      \vspace{7\baselineskip}
+    }
 
 \begin{document}
 
@@ -207,20 +218,21 @@
 
 % v.4 copyright page
 \newpage
+\newcommand{\contributori}{Nomi di tutti da aggiungere}
 \begin{fullwidth}
 \begin{doublespace}
   \thispagestyle{empty}
   \setlength{\parindent}{0pt}
   \setlength{\parskip}{\baselineskip}
   \noindent\fontsize{18}{18}\selectfont\itshape
-  \par\nohyphenation Hanno collaborato: Nomi di tutti da aggiungere
+  \par\nohyphenation Hanno collaborato alla stesura di questo testo: \contributori
 \end{doublespace}
 
 ~\vfill
 \thispagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{\baselineskip}
-Copyright \copyright\ \the\year\ \thanklessauthor
+Copyright \copyright\ \the\year\ \contributori
 
 %\par\smallcaps{Pubblicato da \thanklesspublisher}
 
@@ -259,12 +271,17 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
 %\vfill
 
 % r.9 introduction
-\cleardoublepage
+% \cleardoublepage
 %\include{lezioni/lezione-introduzione}
 
 % Start the main matter (normal chapters)
 \mainmatter
+
+\renewcommand*{\familydefault}{\rmdefault}
+\renewcommand*{\rmdefault}{ppl}
+\renewcommand*{\sfdefault}{cmss}
+\renewcommand*{\ttdefault}{lmtt}
 \include{lezioni/draft}
 
-
 \end{document}
+
