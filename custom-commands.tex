@@ -91,5 +91,31 @@
 \newcommand{\Mtr}{\mathfrak{m}}
 \newcommand{\fucknullset}{\{0\}}
 
+% Comando per plottare una curva algebrica
+% Nell'ordine i parametri sono:
+% 1. Equazione della curva (in due variabili)
+% 2. xrange (in notazione [inizio:fine])
+% 3. yrange (come sopra)
+% DAMETTERE 4. opzioni (tipo se metterci la griglia o no)
+\newcommand{\curvegraph}[3]{
+    \begin{tikzpicture}
+    \draw[very thin,color=gray] (-1.9,-3.9) grid (3.9,3.9);
+    \draw[->] (-2,0) -- (4.2,0) node[right] {$x$};
+    \draw[->] (0,-4.2) -- (0,4.2) node[above] {$y$};
+    \draw plot[id=curve, raw gnuplot, smooth] function{
+    f(x,y) = #1;
+    set xrange #2;
+    set yrange #3;
+    set view 0,0;
+    set isosample 1000,1000;
+    set size square;
+    set cont base;
+    set cntrparam levels incre 0,0.1,0;
+    unset surface;
+    splot f(x,y);
+    };
+    \end{tikzpicture}
+}
+
 \sloppy
 

@@ -4,8 +4,6 @@
 %% Diamo un nome al capitolo. Idealmente mettiamo la data della lezione ed
 %% una sua breve descrizione / argomenti trattati
 \chapter{DD/MM/YY - Lezione di esempio}
-%% Giustifichiamo tutto in maniera barbara
-\justify
 
 %% Le parole dentro a \newthought vengono scritte in maiuscoletto. Usatele
 %% per sottolineare meglio alcune parole ad inizio paragrafo
@@ -98,8 +96,24 @@ Beh ovviamente $\kO_{Y}$ e poi anche $\cD \cap \cC$ ed inoltre non
 abbiamo nient'altro $\bbP_\bbC^3 (\cO)$. Inoltre si ha $f: X \rar Y$
 come se fosse $X \setminus Y = \cH \implies 4 = 7$.
 
+\subsection{Grafici}
+Inoltre potete aggiungere dei grafici di curve definite da equazioni
+algebriche (cosa che credo dovremo fare abbastanza spesso) con il
+pacchetto pgfplots. Come questa qui sotto:
+
+%\begin{tikzpicture}
+%  \scalebox{0.3}{
+%    \begin{pspicture*}[Dx=5, Dy=5](-3, -3)(3, 3)
+%      \psplotImp[algebraic,linecolor=black,linewidth=0.3pt,stepFactor=0.2](-1.5,-1.5)(1.5,1.5){y^2 - x^3 - 1.3*x^2}
+%    \end{pspicture*}
+%  }
+%\end{tikzpicture}
+
+\curvegraph{y**2 - x**3 - x**2}{[-4:4]}{[-4:4]}
+
 \section{Altro Argomento}
 Ormai non so più cosa scrivere, e dovreste aver imparato i principali comandi
 utili. Nel caso qualcosa non fosse chiaro non esitate a chiedere.
 
 \notamargine{E non esitate nemmeno a cercare su Google}
+
