@@ -1,14 +1,13 @@
 \chapter{19/09/16 - Introduzione}
-\justify
 
 In questo corso studieremo le funzioni meromorfe periodiche.
 Partiamo dalle funzioni con un solo periodo, che a meno di rinormalizzazioni posso considerare essere $1$.
-Lo spazio topologico quoziente $\mathbb{C}/\mathbb{Z}$ (ovvero $\mathbb{C}$ quozientato per la relazione di
-equivalenza $a\textit{R}b \sse a-b \in \mathbb{Z}$) è un cilindro, e non è compatto.
+Lo spazio topologico quoziente $\bbC / \bbZ$ (ovvero $\bbC$ quozientato per la relazione di
+equivalenza $a\textit{R}b \sse a-b \in \bbZ$) è un cilindro, e non è compatto.
 
 \begin{definizione}
 Si dice una superficie di Riemann una varietà complessa connessa di dimensione $1$.
-Si intende che ogni punto deve avere un intorno $U_\alpha$ omeomorfo al disco unitario aperto di $\mathbb{C}$
+Si intende che ogni punto deve avere un intorno $U_\alpha$ omeomorfo al disco unitario aperto di $\bbC$
 tramite l'omeomorfismo $\phi_\alpha$, e che per ogni $\alpha$ e $\beta$ valga che $g:=\phi_\beta \circ {\phi_\alpha}^{-1}$
 sia una funzione olomorfa.
 \end{definizione}
@@ -17,7 +16,7 @@ sia una funzione olomorfa.
 
 \begin{osservazione}
 Più periodi richiedo, più è difficile che la funzione sia anche solo continua. Ad esempio una funzione
-$f:\mathbb{R}\rightarrow\mathbb{R}$ con due periodi incommensurabili è necessariamente costante.
+$f: \bbR \rar \bbR$ con due periodi incommensurabili è necessariamente costante.
 \end{osservazione}
 
 \begin{lemma}
@@ -25,23 +24,23 @@ Le funzioni meromorfe con periodo $z_0$ sono tutte e sole quelle della forma $g\
 \end{lemma}
 
 \begin{osservazione}
-$\mathbb{C} / \mathbb{Z}$ è una superficie di Riemann, ma non è omeomorfa a $\mathbb{C}$, ad esempio perché $\mathbb{C}$ non è semplicemente connesso.
+$\bbC / \bbZ$ è una superficie di Riemann, ma non è omeomorfa a $\bbC$, ad esempio perché $\bbC$ non è semplicemente connesso.
 \end{osservazione}
 
 \begin{lemma}
-Sia $f: \mathbb{C}\rightarrow\mathbb{C}$ una funzione meromorfa. Allora l'insieme $L$ dei periodi di $f$
-forma un sottogruppo additivo di $\mathbb{C}$.
+Sia $f: \bbC \rar \bbC$ una funzione meromorfa. Allora l'insieme $L$ dei periodi di $f$
+forma un sottogruppo additivo di $\bbC$.
 \end{lemma}
 \begin{proof}
 Esercizio (facile).
 \end{proof}
 
 \section{Reticoli}
-Sia $f:\mathbb{C}\rightarrow\mathbb{C}$ una funzione meromorfa non costante.
+Sia $f: \bbC \rar \bbC$ una funzione meromorfa non costante.
 Sia $L_f$ il gruppo dei periodi di $f$. Allora:
 \begin{enumerate}
  \item $L_f$ è discreto
- \item $L_f$ può essere isomorfo solo al gruppo banale, a $\mathbb{Z}$ o a $\mathbb{Z}^2$ 
+ \item $L_f$ può essere isomorfo solo al gruppo banale, a $\bbZ$ o a $\bbZ^2$ 
 \end{enumerate}
 
 \begin{definizione}[Reticolo]
@@ -52,11 +51,11 @@ $L_f$ si chiama reticolo di $f$.
 Una funzione $f$ si dice ellittica se il suo reticolo ha rango $2$.
 \end{definizione}
 
-\notamargine{Tutti i reticoli di rango $2$ sono isomorfi come gruppi, ma la loroù
+\notamargine{Tutti i reticoli di rango $2$ sono isomorfi come gruppi, ma la loro
 struttura complessa vedremo che sarà completamente diversa.}
 
 \begin{osservazione}
-Se $L_f$ ha rango 2, $\mathbb{C}/L_f$ è omeomorfo ad un toro, e quindi è compatto.
+Se $L_f$ ha rango 2, $\bbC / L_f$ è omeomorfo ad un toro, e quindi è compatto.
 \end{osservazione}
 
 \paragraph{Finestra sul futuro}
@@ -69,12 +68,12 @@ polinomio $z^{deg\left(p\right)}\cdot p\left(x/z,y/z\right)$
 \end{definizione}
 
 \begin{osservazione}
-Ho ottenuto un polinomio omogeneo in tre variabili, con soluzioni in $\mathbb{P}^2 \left( \mathbb{C} \rigth)$, che è compatto.
+Ho ottenuto un polinomio omogeneo in tre variabili, con soluzioni in $\bbP^2 \left( \bbC \right)$, che è compatto.
 \end{osservazione}
 
 \section{Curve ellittiche}
 \begin{definizione}[Curva ellittica]
-Si dice curva ellittica un sottoinsieme di $\mathbb{C}^2$: $E= \left\{\left(x,y \right) \in \mathbb{C}^2 | y^2=p \left( x \right) \right\}$, dove $p$ è un polinomio a coefficienti complessi di terzo grado con radici distinte.
+Si dice curva ellittica un sottoinsieme di $\bbC^2$: $E= \left\{\left(x,y \right) \in \bbC^2 | y^2=p \left( x \right) \right\}$, dove $p$ è un polinomio a coefficienti complessi di terzo grado con radici distinte.
 \end{definizione}
 
 Le soluzioni di questa equazione coincidono con 
@@ -102,7 +101,7 @@ su un qualche luogo, dotato di una struttura di gruppo razionale.
 \end{definizione}
 
 \begin{definizione}
-$\mathbb{G}_a$ è la retta affine (???).
+$\bbG_a$ è la retta affine (???).
 \end{definizione}
 
 \begin{osservazione}
@@ -110,8 +109,8 @@ Sono gruppi algebrici non compatti di dimensione $1$.
 \end{osservazione}
 
 \begin{definizione}
-$\mathbb{G}_m$ è $\mathbb{G}_a$ meno un punto, e l'operazione è il prodotto (??? componente per componente?
-In $\mathbb{R}$ o in $\mathbb{C}$??).
+$\bbG_m$ è $\bbG_a$ meno un punto, e l'operazione è il prodotto (??? componente per componente?
+In $\bbR$ o in $\bbC$??).
 \end{definizione}
 
 
