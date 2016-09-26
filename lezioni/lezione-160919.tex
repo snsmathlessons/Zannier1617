@@ -1,23 +1,122 @@
-\chapter{19/09/16 - Breve Descrizione della lezione}
+\chapter{19/09/16 - Introduzione}
+\justify
 
-
-Funzioni con un periodo.
-Arriviamo a studiare le funzioni con periodo $\pi$
-Si può vedere topologicamente che è un cilindro. A meno di rinormalizzazioni potrò
-considerare $\mathbb{C}/\mathbb{Z}$
+In questo corso studieremo le funzioni meromorfe periodiche.
+Partiamo dalle funzioni con un solo periodo, che a meno di rinormalizzazioni posso considerare essere $1$.
+Lo spazio topologico quoziente $\mathbb{C}/\mathbb{Z}$ (ovvero $\mathbb{C}$ quozientato per la relazione di
+equivalenza $a\textit{R}b \sse a-b \in \mathbb{Z}$) è un cilindro, e non è compatto.
 
 \begin{definizione}
 Si dice una superficie di Riemann una varietà complessa connessa di dimensione $1$.
+Si intende che ogni punto deve avere un intorno $U_\alpha$ omeomorfo al disco unitario aperto di $\mathbb{C}$
+tramite l'omeomorfismo $\phi_\alpha$, e che per ogni $\alpha$ e $\beta$ valga che $g:=\phi_\beta \circ {\phi_\alpha}^{-1}$
+sia una funzione olomorfa.
 \end{definizione}
 
-\begin{proposizione}
+\notamargine{La regolarità nei complessi è molto più forte che non nei reali. Essere olomorfe è davvero tanta roba in più che non essere $C^{\infty}$.}
+
+\begin{osservazione}
+Più periodi richiedo, più è difficile che la funzione sia anche solo continua. Ad esempio una funzione
+$f:\mathbb{R}\rightarrow\mathbb{R}$ con due periodi incommensurabili è necessariamente costante.
+\end{osservazione}
+
+\begin{lemma}
 Le funzioni meromorfe con periodo $z_0$ sono tutte e sole quelle della forma $g\left(e^{2\pi i/z_0}\right)$
-\end{proposizione}
+\end{lemma}
 
+\begin{osservazione}
+$\mathbb{C} / \mathbb{Z}$ è una superficie di Riemann, ma non è omeomorfa a $\mathbb{C}$, ad esempio perché $\mathbb{C}$ non è semplicemente connesso.
+\end{osservazione}
 
-Proposizione:
-
+\begin{lemma}
 Sia $f: \mathbb{C}\rightarrow\mathbb{C}$ una funzione meromorfa. Allora l'insieme $L$ dei periodi di $f$
 forma un sottogruppo additivo di $\mathbb{C}$.
+\end{lemma}
+\begin{proof}
+Esercizio (facile).
+\end{proof}
 
-Dimostrazione: esercizio.
+\section{Reticoli}
+Sia $f:\mathbb{C}\rightarrow\mathbb{C}$ una funzione meromorfa non costante.
+Sia $L_f$ il gruppo dei periodi di $f$. Allora:
+\begin{enumerate}
+ \item $L_f$ è discreto
+ \item $L_f$ può essere isomorfo solo al gruppo banale, a $\mathbb{Z}$ o a $\mathbb{Z}^2$ 
+\end{enumerate}
+
+\begin{definizione}[Reticolo]
+$L_f$ si chiama reticolo di $f$.
+\end{definizione}
+
+\begin{definizione}[Funzione ellittica]
+Una funzione $f$ si dice ellittica se il suo reticolo ha rango $2$.
+\end{definizione}
+
+\notamargine{Tutti i reticoli di rango $2$ sono isomorfi come gruppi, ma la loroù
+struttura complessa vedremo che sarà completamente diversa.}
+
+\begin{osservazione}
+Se $L_f$ ha rango 2, $\mathbb{C}/L_f$ è omeomorfo ad un toro, e quindi è compatto.
+\end{osservazione}
+
+\paragraph{Finestra sul futuro}
+Le funzioni ellittiche "provengono" da equazioni (???)
+
+
+\begin{definizione}
+Dato un polinomio in due (o più) variabili $p\left(x,y\right)$, si dice polinomio omogenizzato il
+polinomio $z^{deg\left(p\right)}\cdot p\left(x/z,y/z\right)$
+\end{definizione}
+
+\begin{osservazione}
+Ho ottenuto un polinomio omogeneo in tre variabili, con soluzioni in $\mathbb{P}^2 \left( \mathbb{C} \rigth)$, che è compatto.
+\end{osservazione}
+
+\section{Curve ellittiche}
+\begin{definizione}[Curva ellittica]
+Si dice curva ellittica un sottoinsieme di $\mathbb{C}^2$: $E= \left\{\left(x,y \right) \in \mathbb{C}^2 | y^2=p \left( x \right) \right\}$, dove $p$ è un polinomio a coefficienti complessi di terzo grado con radici distinte.
+\end{definizione}
+
+Le soluzioni di questa equazione coincidono con 
+gli zeri della funzione $f \left( x,y \right) = y^2 - p \left( x \right)$.
+Per il Teorema del Dini, intorno ad ognuno di questi zeri la curva si riesce ad esprimere come un grafico in almeno una delle due variabili.
+(le ipotesi del Teorema sono soddisfatte grazie all'assenza di radici multiple di $p$ ).
+
+\notamargine{ Si chiamano curve ellittiche, perché sono collegate con la lunghezza di archi di ellisse.
+Data un'ellisse $y^2 = 1- \alpha x^2 $, per calcolare la lunghezza di un arco si giunge a:
+$\int \frac{1-b^2 x}{\sqrt{\left( 1-b^2 x\right)\left(1-a^2 x\right)}}$ }, che con un'opportuna sostituzione...
+
+\section{Le parametriche}
+Buco
+
+\section{Trasformazione razionale della curva in sé}
+Fissiamo un punto $P$ appartenente alla curva algebrica, sarà la nostra origine. Fissato un qualsiasi altro punto $Q$
+appartenente alla curva, consideriamo la retta che passa per $P$ e $Q$. Intersecherà la curva in esattamente un altro punto $R$.
+Abbiamo quindi associato al punto $Q$ il punto $R$. Tale trasformazione è chiaramente iniettiva, e si può dimostrare (esercizio)
+che è anche razionale (cioè le coordinate di $R$ sono una funzione razionale delle coordinate di $Q$).
+
+\section{Grupi algebrici}
+\begin{definizione}[Gruppo algebrico]
+Si dice gruppo algebrico un luogo definito da equazioni algebriche 
+su un qualche luogo, dotato di una struttura di gruppo razionale.
+\end{definizione}
+
+\begin{definizione}
+$\mathbb{G}_a$ è la retta affine (???).
+\end{definizione}
+
+\begin{osservazione}
+Sono gruppi algebrici non compatti di dimensione $1$.
+\end{osservazione}
+
+\begin{definizione}
+$\mathbb{G}_m$ è $\mathbb{G}_a$ meno un punto, e l'operazione è il prodotto (??? componente per componente?
+In $\mathbb{R}$ o in $\mathbb{C}$??).
+\end{definizione}
+
+
+\paraghaph{Finestra sul futuro}:
+Le curve ellittiche saranno tutti e soli i gruppi algebrici di dimensione $2$. Saranno compatti
+(moralmente, provengono da dei tori, che sono compatti).
+
+
