@@ -1,14 +1,27 @@
 % This is a modified version of the tufte-latex book example in which the title page and the contents page resemble Tufte's
 % VDQI book, using Kevin Godby's code from this thread at https://groups.google.com/forum/#!topic/tufte-latex/ujdzrktC1BQ.
 % Taken from https://www.overleaf.com/5902299yxkgzs#/19519356/
-\documentclass[nohyper]{tufte-book}
+\documentclass[nohyper,a4paper]{tufte-book}
 \usepackage{nameref}
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
 \usepackage{ragged2e}
 
 \usepackage{tikz}
-%\usepackage{gnuplottex}
+
+% Regoliamo ora i margini del documento e lo spazio che lasciamo alle
+% note a margine.
+\geometry{
+  a4paper,
+  left=11mm, % left margin
+  textwidth=142mm, % main text block
+  marginparsep=6mm, % gutter between main text block and margin notes
+  marginparwidth=40mm % width of margin notes
+}
+
+% Cambiamo l'impostazione di tufte-common e non mettiamo spazio sopra i
+% titoli di inizio capitolo
+\titlespacing*{\chapter}{0pt}{0pt}{0pt}
 
 \include{custom-commands}
 
@@ -19,7 +32,7 @@
 \makeatother
 
 % Book metadata
-\title{Curve Ellittiche e Modulari}
+\title{Funzioni Ellittiche e Modulari}
 \date{Note di un corso del Prof. Umberto Zannier}
 \author[]{Classe del Terzo Anno SNS}
 \publisher{Versione del \dateitalian\today}
@@ -242,7 +255,7 @@ Copyright \copyright\ \the\year\ \contributori
 
 \par\smallcaps{zannier1617.surge.sh}
 
-\par\nohyphenation This text is licensed under a Creative Commons
+\par\justify\nohyphenation This text is licensed under a Creative Commons
 \smallcaps{``Attribution-ShareAlike 4.0 International''}
 license (the ``License''). You may not use this file
 except in compiance with the License. You may obtain a
@@ -281,11 +294,6 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
 % Start the main matter (normal chapters)
 \mainmatter
 
-\renewcommand*{\familydefault}{\rmdefault}
-\renewcommand*{\rmdefault}{ppl}
-\renewcommand*{\sfdefault}{cmss}
-\renewcommand*{\ttdefault}{lmtt}
-\include{lezioni/draft}
 \include{lezioni/lezione-160919}
 
 \end{document}
