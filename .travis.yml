@@ -26,6 +26,9 @@ script:
 - cp .site/indexing ../compiled-pdfs/
 - cd ../compiled-pdfs/ && ./indexing && rm indexing
 
+after_failure:
+- cat lezioni.log
+
 deploy:
   skip_cleanup: true
   provider: surge
