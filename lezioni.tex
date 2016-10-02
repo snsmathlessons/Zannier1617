@@ -1,29 +1,48 @@
 % This is a modified version of the tufte-latex book example in which the title page and the contents page resemble Tufte's
 % VDQI book, using Kevin Godby's code from this thread at https://groups.google.com/forum/#!topic/tufte-latex/ujdzrktC1BQ.
 % Taken from https://www.overleaf.com/5902299yxkgzs#/19519356/
-\documentclass[nohyper,a4paper]{tufte-book}
+\documentclass[a4paper,oneside]{tufte-book}
 \usepackage{nameref}
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
 \usepackage{ragged2e}
 
 \usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
-% Regoliamo ora i margini del documento e lo spazio che lasciamo alle
-% note a margine.
 \geometry{
   a4paper,
-  left=11mm, % left margin
-  textwidth=142mm, % main text block
-  marginparsep=6mm, % gutter between main text block and margin notes
-  marginparwidth=40mm % width of margin notes
+  left=18mm,
+  textwidth=170mm, % main text block
+  marginparsep=0mm, % gutter between main text block and margin notes
+  marginparwidth=0mm, % width of margin notes
 }
 
 % Cambiamo l'impostazione di tufte-common e non mettiamo spazio sopra i
 % titoli di inizio capitolo
 \titlespacing*{\chapter}{0pt}{0pt}{0pt}
 
+\titleformat{\chapter}%
+[hang]%shape
+{\scshape\Huge\raggedright}%
+{\thesection}%
+{0.5em}%
+{}%
+[\vskip 1em]%
+
+% Cambiamo anche l'impostazione di come vengono visualizzati i titoli di
+% sezione, li vogliamo in maiuscoletto
+\titleformat{\section}%
+[hang]% shape
+{\scshape\LARGE\raggedright}% format to label + text
+{\thesection}% label
+{1em}% separation between label and title body
+{}% before the title body
+[]% after the title body
+
 \include{custom-commands}
+
 
 % Manteniamo le note a piè di pagina nella stessa pagina
 \interfootnotelinepenalty=10000
@@ -183,10 +202,25 @@
     
     \newcounter{gencounter}
     \newcounter{defcounter}
+
+    \linespread{1.2}
+    
+    \newtheoremstyle{importante}% <name>
+    {\baselineskip}% <Space above>
+    {\baselineskip}% <Space below>
+    {}% <Body font>
+    {}% <Indent amount>
+    {\textsc\bfseries}% <Theorem head font>
+    {:}% <Punctation after theorem head>
+    {1em}% <Space after theorem head>
+    {}% <Theorem head spec>
+    
+    \theoremstyle{importante}
     \newtheorem{teorema}[gencounter]{Teorema}
     \newtheorem{lemma}[gencounter]{Lemma}
-    \newtheorem{corollario}[gencounter]{Corollario}
     \newtheorem{definizione}[defcounter]{Definizione}
+
+    \newtheorem{corollario}[gencounter]{Corollario}
     \newtheorem{osservazione}[defcounter]{Osservazione}
     \newtheorem{remark}[defcounter]{Remark}
 
@@ -241,7 +275,7 @@
   \thispagestyle{empty}
   \setlength{\parindent}{0pt}
   \setlength{\parskip}{\baselineskip}
-  \noindent\fontsize{18}{18}\selectfont\itshape
+  \noindent\fontsize{16}{16}\selectfont\scshape
   \par\nohyphenation Hanno collaborato alla stesura di questo testo: \contributori
 \end{doublespace}
 
@@ -293,6 +327,21 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
 
 % Start the main matter (normal chapters)
 \mainmatter
+% Regoliamo ora i margini del documento e lo spazio che lasciamo alle
+% note a margine.
+\newgeometry{
+  left=12mm, % left margin
+  textwidth=150mm, % main text block
+  marginparsep=6mm, % gutter between main text block and margin notes
+  marginparwidth=35mm, % width of margin notes
+  headsep=8mm,
+  footskip=20pt,
+  top=2.5cm,
+  bottom=1.5cm,
+  showframe
+}
+
+
 \include{lezioni/lezione-160919}
 
 \end{document}
