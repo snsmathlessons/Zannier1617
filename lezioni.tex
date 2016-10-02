@@ -8,6 +8,7 @@
 \usepackage{ragged2e}
 
 \usepackage{tikz}
+\usepackage{epstopdf}
 \usepackage{amsmath}
 \usepackage{amssymb}
 
@@ -16,7 +17,7 @@
   left=18mm,
   textwidth=170mm, % main text block
   marginparsep=0mm, % gutter between main text block and margin notes
-  marginparwidth=0mm, % width of margin notes
+  marginparwidth=0mm % width of margin notes
 }
 
 % Cambiamo l'impostazione di tufte-common e non mettiamo spazio sopra i
@@ -230,7 +231,6 @@
       \vspace{7\baselineskip}
     }
 
-    \pdfminorversion=5
 \begin{document}
 
 % Front matter
@@ -296,7 +296,7 @@ license (the ``License''). You may not use this file
 except in compiance with the License. You may obtain a
 copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legalcode}.
 
-\includegraphics[width=5em]{by-sa.pdf}
+\includegraphics[width=5em]{by-sa.eps}
 \index{license}
 
 %\par\textit{First printing, \monthyear}
