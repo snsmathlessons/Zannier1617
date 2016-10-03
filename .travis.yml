@@ -32,7 +32,7 @@ script:
 # ributtiamo fuori il file compilato.
 - tar -cf - . | docker exec -i compile-latex bash -c "cat - > /temporary.tar"
 - docker exec compile-latex tar -xf /temporary.tar -C /srv/
-- docker exec compile-latex bash -c "cd /srv; latexmk -pdf lezioni.tex"
+- docker exec compile-latex bash -c "cd /srv; latexmk -pdf -f lezioni.tex"
 - docker exec compile-latex cat /srv/lezioni.pdf | cat - > lezioni.pdf
 
 # Ed iniziamo le istruzioni per la compilazione del sito
