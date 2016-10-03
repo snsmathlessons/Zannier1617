@@ -3,9 +3,9 @@
 %Balbo sappi che ti sto odiando per tutti quei comandi definiti un po' in modo libertino.
 
 \newthought{Eravamo rimasti} a questo enunciato:
-
 \begin{teorema}
- 	Sia $M$ una varietà, e sia $G$ un gruppo di omeomorfismi di $M$. Allora la proiezione al quoziente $p:M\rar \quoziente{M}{G}$ è un rivestimento se e solo se $G$ agisce in modo propriamente discontinuo.
+	Sia $M$ una varietà, e sia $G$ un gruppo di omeomorfismi di $M$.
+ 	Allora la proiezione al quoziente $p:M\rar \quoziente{M}{G}$ è un rivestimento se e solo se $G$ agisce in modo propriamente discontinuo.
 \end{teorema}
 \notamargine{$\Rar$ è ovvia e $\Lar$ sta sul Manetti}
 
@@ -18,7 +18,7 @@ Se ho qualche piccola ipotesi su X (essere varietà basta e avanza), questo è e
 A questo aggiungo un altro teorema:
 
 \begin{teorema} \label{rivuniv}
- 	Sia $p:E\rar X$ un rivestimento universale. Allora esiste $G$ gruppo di omeomorfismi di $E$ propriamente discontinuo tale che $X\simeq\quoziente{E}{G}$.
+ 	Sia $p:E\rar X$ un rivestimento universale. Allora esiste $G$ gruppo di omeomorfismi di $E$ propriamente discontinuo tale che $X\isom\quoziente{E}{G}$.
 \end{teorema}
 \notamargine{Ricordo che $p:E\rar X$ rivestimento si dice universale se $E$ è semplicemente connesso}
 \notamargine{Anche qui la dimostrazione sta sul Manetti, in posti a caso}
@@ -27,7 +27,7 @@ Adesso, sia $X$ una \sdR, e sia $\pi:X\rar\ot X$ il suo rivestimento universale 
 
 Infatti, prendendo un raffinamento $U_\alpha$ del ricoprimento su $X$ dato dalla definizione di \sdR, posso pensare che gli $U_\alpha$ sono aperti banalizzanti per $\pi$, ottenendo dunque un ricoprimento su $\ot X$ dato dagli insiemi $V_\alpha^r$, dove $\pi^{-1}(U_\alpha)=\sqcup_r V_\alpha^r$, in cui le carte locali sono le funzioni $\phi_\alpha^r=\phi_\alpha\circ\pi$. Il fatto che i cambi di carta siano olomorfi su $\ot X$ discende dal fatto che lo siano su $X$.
 
-Ora, per il teorema \ref{rivuniv}, esiste $G$ fatto nel modo giusto tale che $\quoziente{\ot X}{G}\simeq X$.
+Ora, per il teorema \ref{rivuniv}, esiste $G$ fatto nel modo giusto tale che $\quoziente{\ot X}{G}\isom X$.
 \begin{lemma}
  	%Balbo ti odio, perché non potevi mettere tra i similteoremi anche proposizione?
  	Sia $g\in G$. Allora $g$ è olomorfa come applicazione tra \sdR.
@@ -38,6 +38,14 @@ Ora, per il teorema \ref{rivuniv}, esiste $G$ fatto nel modo giusto tale che $\q
  	Sia ora $x\in \ot X$. Sia $V_\alpha^r$ uno degli aperti della condizione di \sdR\ tale che $x\in V_\alpha^r$, e sia $\phi_\alpha^r$ la sua carta locale. Si ha $g(x)\in V_\alpha^s$ per un qualche $s$, e dunque bisogna dimostrare $\phi_\alpha^s\circ g\circ (\phi_\alpha^r)^{-1}$ olomorfa in $\phi_\alpha^r(x)$. Ma questa funzione si può scrivere anche come $\phi_\alpha\circ\pi\circ g\circ \pi^{-1}\circ \phi_\alpha^{-1}$, che poiché $g$ è automorfismo di rivestimento è uguale a $\phi_\alpha\circ\pi\circ\pi^{-1}\circ\phi_\alpha^{-1}=id$. Poiché l'identità è olomorfa, abbiamo dimostrato che $g$ è olomorfa.
 \end{proof}
 \notamargine{$\pi^{-1}$ dovrebbe presentare un pedice che si riferisce al fatto che ha codominio $V_\alpha^r$, ma non l'ho ritenuto fondamentale}
+
+Ora, per classificare le \sdR\ posso dunque studiare tutti i quozienti opportuni di \sdR\ semplicemente connesse. Per il Teorema di Riemann, queste sono solo $\bbP_1(\bbC)=\oc \bbC, \bbC, \cD\isom\cH$, dove su quest'ultimo ho la struttura complessa data dall'inclusione.
+
+Dunque il prossimo passo è classificare i gruppi di isomorfismi propriamente discontinui e olomorfi delle tre \sdR\ semplicemente connesse.
+
+\newthougth{Ora iniziano} cose di cui non ho esattamente capito il senso, per ora.
+
+
 
 
 
