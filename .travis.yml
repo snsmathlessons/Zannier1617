@@ -1,33 +1,60 @@
+# FIle di configurazione di Travis CI
+
+# Diciamo che usiamo ruby che ci servirà per generare il sito del
+# repository
 language: ruby
 rvm:
 - 2.2
 
+# Utilizziamo il servizio docker per questo repository
+sudo: required
+services:
+  - docker
+
+# Compiliamo soltato le PR ed i commit per il branch master
 branches:
   only:
   - master
 
 before_install:
-    - sudo apt-get -yq update
-    - sudo apt-get -y install texlive-latex-base texlive-base texlive-lang-italian latexmk ruby-dev ruby
-    - sudo apt-get -y install texlive-fonts-extra texlive-latex-recommended coreutils texlive-pictures
-    - sudo apt-get -y install texlive-latex-extra texlive-fonts-recommended gnuplot
+# Scarichiamo l'immagine docker che ho creato
+- docker pull trenta3/latex:latest
 
+# Installiamo il necessario per generare il sito web
 install: gem install kramdown
 
 script:
-# Creiamo la cartella dei pdf compilati
+# Facciamo partire l'immagine del docker
+- docker run -d --name compile-latex trenta3/latex sleep infinity
+
+# Poi le mettiamo dentro la cartella corrente (che contiene la
+# versione da compilare del repository), compiliamo con latexmk e
+# ributtiamo fuori il file compilato.
+- tar -cf - . | docker exec -i compile-latex bash -c "cat - > /temporary.tar"
+- docker exec compile-latex tar -xf /temporary.tar -C /srv/
+- docker exec compile-latex bash -c "cd /srv; latexmk -pdf -f lezioni.tex; echo \"Tutto OK\""
+- docker exec compile-latex cat /srv/lezioni.pdf | cat - > lezioni.pdf
+
+# Ed iniziamo le istruzioni per la compilazione del sito
 - mkdir -p ../compiled-pdfs/
-# Compiliamo il pdf delle lezioni complete se siamo nel branch master
-- latexmk -pdf -f lezioni.tex || cp lezioni.pdf ../compiled-pdfs/Zannier1617-$( date +'%y%m%d%H%M%S' | tr -d '\n' ).pdf
-# - pdflatex lezioni.tex && cp lezioni.pdf ../compiled-pdfs/Zannier1617-$( date +'%y%m%d%H%M%S' | tr -d '\n' ).pdf
-# Inoltre creiamo la pagina iniziale del "sito internet" del repository dall'INDEX.md
+- cp lezioni.pdf ../compiled-pdfs/Zannier1617-$( date +'%y%m%d%H%M%S' | tr -d '\n' ).pdf
 - cp INDEX.md ../compiled-pdfs/
 - cp -r .site/public ../compiled-pdfs/
 - cp .site/indexing ../compiled-pdfs/
 - cd ../compiled-pdfs/ && ./indexing && rm indexing
+
+after_failure:
+- docker exec compile-latex cat /srv/lezioni.log
 
 deploy:
   skip_cleanup: true
   provider: surge
   project: ../compiled-pdfs/
   domain: zannier1617.surge.sh
+
+after_script:
+# Alla fine fermiamo il docker
+- docker stop compile-latex
+- docker rm compile-latex
+
+
