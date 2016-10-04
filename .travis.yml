@@ -48,14 +48,17 @@ script:
 after_failure:
 - docker exec compile-latex cat /srv/lezioni.log
 
+# Se va a buon fine aggiorniamo il file pdf
+after_success:
+- cd ../compiled-pdfs/; curl -F file=@$(ls -1 *.pdf | head -n 1 | tr -d '\n') --header "Content-Type: multipart/form-data" https://uz.sns.it/~trenta3/Zannier1617/upload.php?key=${BALBO_KEY}
+
 deploy:
   skip_cleanup: true
-  -  provider: surge
-     project: ../compiled-pdfs/
-     domain: zannier1617.surge.sh
-     on:
-       branch: master
-  - cd ../compiled-pdfs/; curl -F file=@$(ls -1 *.pdf | head -n 1 | tr -d '\n') --header "Content-Type: multipart/form-data" https://uz.sns.it/~trenta3/Zannier1617/upload.php?key=${BALBO_KEY}
+  provider: surge
+  project: ../compiled-pdfs/
+  domain: zannier1617.surge.sh
+  on:
+    branch: master
 
 after_script:
 # Alla fine fermiamo il docker
