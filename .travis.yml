@@ -11,11 +11,6 @@ sudo: required
 services:
   - docker
 
-# Compiliamo soltato le PR ed i commit per il branch master
-branches:
-  only:
-  - master
-
 before_install:
 # Installiamo curl che ci servirà dopo
 - sudo apt-get update -qy && sudo apt-get install -y curl bash
