@@ -1,7 +1,7 @@
 % This is a modified version of the tufte-latex book example in which the title page and the contents page resemble Tufte's
 % VDQI book, using Kevin Godby's code from this thread at https://groups.google.com/forum/#!topic/tufte-latex/ujdzrktC1BQ.
 % Taken from https://www.overleaf.com/5902299yxkgzs#/19519356/
-\documentclass[a4paper,oneside]{tufte-book}
+\documentclass[a4paper,oneside,nofonts]{tufte-book}
 \usepackage{nameref}
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
@@ -11,6 +11,21 @@
 \usepackage{epstopdf}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{etoolbox}
+
+% \DeclareSymbolFont{operators}   {OT1}{cmr} {m}{n}
+% \DeclareSymbolFont{letters}     {OML}{cmm} {m}{it}
+% \DeclareSymbolFont{symbols}     {OMS}{cmsy}{m}{n}
+% \DeclareSymbolFontAlphabet{\mathrm}    {operators}
+% \DeclareSymbolFontAlphabet{\mathnormal}{letters}
+% \DeclareSymbolFontAlphabet{\mathcal}   {symbols}
+% \DeclareSymbolFontAlphabet{\mathfrak}  {symbols}
+% \DeclareMathAlphabet      {\mathbf}{OT1}{cmr}{bx}{n}
+% \DeclareMathAlphabet      {\mathsf}{OT1}{cmss}{m}{n}
+% \DeclareMathAlphabet      {\mathit}{OT1}{cmr}{m}{it}
+% \DeclareMathAlphabet      {\mathtt}{OT1}{cmtt}{m}{n}
+% \DeclareMathAlphabet      {\mathbb}{OT1}{cmr}{m}{n}
+% \DeclareMathAlphabet      {\mathfrak}{OT1}{euler}{m}{n}
 
 \geometry{
   a4paper,
@@ -26,7 +41,7 @@
 
 \titleformat{\chapter}%
 [hang]%shape
-{\scshape\Huge\raggedright}%
+{\scshape\huge\raggedright}%
 {\thesection}%
 {0.5em}%
 {}%
@@ -41,6 +56,14 @@
 {1em}% separation between label and title body
 {}% before the title body
 []% after the title body
+
+\titleformat{\subsection}%
+[hang]%
+{\scshape\Large\raggedright}%
+{\thesection}%
+{1em}%
+{}%
+[]%
 
 \include{custom-commands}
 
@@ -58,7 +81,7 @@
 \publisher{Versione del \dateitalian\today}
 
 % Just some sample text
-\usepackage{lipsum}
+%\usepackage{lipsum}
 
 % For nicely typeset tabular material
 \usepackage{booktabs}
@@ -206,13 +229,13 @@
     \newcounter{escounter}
 
     \linespread{1.2}
-    
+
     \newtheoremstyle{importante}% <name>
     {\baselineskip}% <Space above>
     {\baselineskip}% <Space below>
     {}% <Body font>
     {}% <Indent amount>
-    {\textsc\bfseries}% <Theorem head font>
+    {\scshape}% <Theorem head font>
     {:}% <Punctation after theorem head>
     {1em}% <Space after theorem head>
     {}% <Theorem head spec>
