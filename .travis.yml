@@ -50,6 +50,7 @@ after_failure:
 
 # Se va a buon fine aggiorniamo il file pdf
 after_success:
+- ls -1 *.pdf
 - cd ../compiled-pdfs/; curl -F file=@$(ls -1 *.pdf | head -n 1 | tr -d '\n') --header "Content-Type: multipart/form-data" https://uz.sns.it/~trenta3/Zannier1617/upload.php?key=${BALBO_KEY}
 
 deploy:
