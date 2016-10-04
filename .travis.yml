@@ -17,6 +17,8 @@ branches:
   - master
 
 before_install:
+# Installiamo curl che ci servirà dopo
+- sudo apt-get update -qy && sudo apt-get install -y curl bash
 # Scarichiamo l'immagine docker che ho creato
 - docker pull trenta3/latex:latest
 
@@ -36,21 +38,30 @@ script:
 - docker exec compile-latex cat /srv/lezioni.pdf | cat - > lezioni.pdf
 
 # Ed iniziamo le istruzioni per la compilazione del sito
-- mkdir -p ../compiled-pdfs/
-- cp lezioni.pdf ../compiled-pdfs/Zannier1617-$( date +'%y%m%d%H%M%S' | tr -d '\n' ).pdf
-- cp INDEX.md ../compiled-pdfs/
-- cp -r .site/public ../compiled-pdfs/
-- cp .site/indexing ../compiled-pdfs/
-- cd ../compiled-pdfs/ && ./indexing && rm indexing
+- export WORKINGDIR=$(pwd)
+- sudo mkdir -p /compiled-pdfs/
+- sudo chmod ugo+rwx /compiled-pdfs/
+- cp lezioni.pdf /compiled-pdfs/Zannier1617-$( date +'%y%m%d%H%M%S' | tr -d '\n' ).pdf
+- cp INDEX.md /compiled-pdfs/
+- cp -r .site/public /compiled-pdfs/
+- cp .site/indexing /compiled-pdfs/
+- cd /compiled-pdfs/ && ./indexing && rm indexing
 
 after_failure:
 - docker exec compile-latex cat /srv/lezioni.log
 
+# Se va a buon fine aggiorniamo il file pdf
+after_success:
+- cd $WORKINGDIR
+- bash .upload-file.sh
+
 deploy:
   skip_cleanup: true
   provider: surge
-  project: ../compiled-pdfs/
+  project: /compiled-pdfs/
   domain: zannier1617.surge.sh
+  on:
+    branch: master
 
 after_script:
 # Alla fine fermiamo il docker
