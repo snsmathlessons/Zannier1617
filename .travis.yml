@@ -18,12 +18,12 @@ branches:
 
 before_install:
 # Installiamo curl che ci servirà dopo
-- sudo apt-get update -qy && sudo apt-get install -y curl
+- sudo apt-get update -qy && sudo apt-get install -y curl >&-
 # Scarichiamo l'immagine docker che ho creato
 - docker pull trenta3/latex:latest
 
 # Installiamo il necessario per generare il sito web
-install: gem install kramdown
+install: gem install kramdown >&-
 
 script:
 # Facciamo partire l'immagine del docker
@@ -51,7 +51,7 @@ after_failure:
 # Se va a buon fine aggiorniamo il file pdf
 after_success:
 - ls -1 *.pdf
-- cd ../compiled-pdfs/; curl -F file=@$(ls -1 *.pdf | head -n 1 | tr -d '\n') --header "Content-Type: multipart/form-data" https://uz.sns.it/~trenta3/Zannier1617/upload.php?key=${BALBO_KEY}
+- bash -c "cd ../compiled-pdfs/; curl -F file=@$(ls -1 *.pdf | head -n 1 | tr -d '\n') --header \"Content-Type: multipart/form-data\" https://uz.sns.it/~trenta3/Zannier1617/upload.php?key=${BALBO_KEY}"
 
 deploy:
   skip_cleanup: true
