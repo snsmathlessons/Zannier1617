@@ -9,5 +9,3 @@ else
     echo "Siamo in una PR, non aggiorno"
 fi
 
-cat /home/travis/build.sh;
-
