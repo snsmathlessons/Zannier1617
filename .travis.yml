@@ -39,13 +39,12 @@ script:
 
 # Ed iniziamo le istruzioni per la compilazione del sito
 - export WORKINGDIR=$(pwd)
-- sudo mkdir -p /compiled-pdfs/
-- sudo chmod ugo+rwx /compiled-pdfs/
-- cp lezioni.pdf /compiled-pdfs/Zannier1617-$( date +'%y%m%d%H%M%S' | tr -d '\n' ).pdf
-- cp INDEX.md /compiled-pdfs/
-- cp -r .site/public /compiled-pdfs/
-- cp .site/indexing /compiled-pdfs/
-- cd /compiled-pdfs/ && ./indexing && rm indexing
+- mkdir -p ../compiled-pdfs/
+- cp lezioni.pdf ../compiled-pdfs/Zannier1617-$( date +'%y%m%d%H%M%S' | tr -d '\n' ).pdf
+- cp INDEX.md ../compiled-pdfs/
+- cp -r .site/public ../compiled-pdfs/
+- cp .site/indexing ../compiled-pdfs/
+- cd ../compiled-pdfs/ && ./indexing && rm indexing
 
 after_failure:
 - docker exec compile-latex cat /srv/lezioni.log
@@ -58,7 +57,7 @@ after_success:
 deploy:
   skip_cleanup: true
   provider: surge
-  project: /compiled-pdfs/
+  project: ../compiled-pdfs/
   domain: zannier1617.surge.sh
   on:
     branch: master
