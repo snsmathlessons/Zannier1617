@@ -1,18 +1,22 @@
 % This is a modified version of the tufte-latex book example in which the title page and the contents page resemble Tufte's
 % VDQI book, using Kevin Godby's code from this thread at https://groups.google.com/forum/#!topic/tufte-latex/ujdzrktC1BQ.
 % Taken from https://www.overleaf.com/5902299yxkgzs#/19519356/
-\documentclass[a4paper,oneside,nofonts]{tufte-book}
+\documentclass[a4paper,oneside]{tufte-book}
 \usepackage{nameref}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[italian]{babel}
 \usepackage{ragged2e}
 
+
 \usepackage{xfrac}
+\usepackage{marginfix}
 \usepackage{tikz}
 \usepackage{epstopdf}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{etoolbox}
+\usepackage{afterpage}
 
 % \DeclareSymbolFont{operators}   {OT1}{cmr} {m}{n}
 % \DeclareSymbolFont{letters}     {OML}{cmm} {m}{it}
@@ -27,6 +31,13 @@
 % \DeclareMathAlphabet      {\mathtt}{OT1}{cmtt}{m}{n}
 % \DeclareMathAlphabet      {\mathbb}{OT1}{cmr}{m}{n}
 % \DeclareMathAlphabet      {\mathfrak}{OT1}{euler}{m}{n}
+
+\usepackage{enumitem}
+\setlist{nolistsep}
+\setitemize[0]{leftmargin=20pt, itemindent=0pt, labelsep=10pt,
+  listparindent=0pt}
+\setenumerate[0]{leftmargin=40pt, itemindent=0pt, labelsep=10pt,
+  listparindent=0pt}
 
 \geometry{
   a4paper,
@@ -72,7 +83,9 @@
 % Manteniamo le note a piè di pagina nella stessa pagina
 \interfootnotelinepenalty=10000
 \makeatletter
-\renewcommand\@makefntext[1]{\nohyphenation\justify\@makefnmark#1}
+% Eventualmente si può mettere un \nohyphenation prima di justify ma poi
+% le note a margine vengono in maniera terribile.
+\renewcommand\@makefntext[1]{\justify\@makefnmark#1}
 \makeatother
 
 % Book metadata
@@ -109,11 +122,11 @@
 \usepackage{xspace}
 
 % Prints the month name (e.g., January) and the year (e.g., 2008)
-\newcommand{\monthyear}{%
-  \ifcase\month\or January\or February\or March\or April\or May\or June\or
-  July\or August\or September\or October\or November\or
-  December\fi\space\number\year
-}
+% \newcommand{\monthyear}{%
+%   \ifcase\month\or January\or February\or March\or April\or May\or June\or
+%   July\or August\or September\or October\or November\or
+%   December\fi\space\number\year
+% }
 
 
 % Prints an epigraph and speaker in sans serif, all-caps type.
@@ -192,17 +205,56 @@
 %%%% Kevin Godny's code for title page and contents from https://groups.google.com/forum/#!topic/tufte-latex/ujdzrktC1BQ
 \makeatletter
 \renewcommand{\maketitlepage}{%
-\setlength{\parindent}{0pt}
-
-\fontsize{24}{24}\selectfont\textit{\@author}
-
-\vspace{1.75in}\fontsize{36}{54}\selectfont\@title
-
-\vspace{0.5in}\fontsize{14}{14}\selectfont\textsf{\smallcaps{\@date}}
-
-\vfill\fontsize{14}{14}\selectfont\textit{\@publisher}
-
-\thispagestyle{empty}
+  \setlength{\parindent}{0pt}
+  
+  \fontsize{24}{24}\selectfont\textit{\@author}
+  
+  \vspace{1.75in}\fontsize{36}{54}\selectfont\@title
+  
+  \vspace{0.5in}\fontsize{14}{14}\selectfont\textsf{\smallcaps{\@date}}
+  
+  \vfill\fontsize{14}{14}\selectfont\textit{\@publisher}
+  
+  \thispagestyle{empty}
+}
+\newcommand{\makefrontcover}{%
+% Cerchiamo di includere la copertina con la figura
+\afterpage{%
+  \newpage%
+  \thispagestyle{empty}%
+  \newgeometry{margin=0mm, top=0mm, bottom=0mm, left=0mm, right=0mm}
+  \begin{textblock*}{\paperwidth}(0pt,0pt)%
+    {%
+      \transparent{0.4}%
+      \begin{center}
+        \noindent\includegraphics*[height=\paperheight,width=\paperwidth]{cubicgrouplaw.eps}%
+      \end{center}%
+    }%
+  \end{textblock*}%
+  \begin{textblock*}{\paperwidth}(-20mm,59.5mm)%
+    {%
+      \transparent{0.90}%
+      \crule[white]{2\paperwidth}{50mm}
+      %\fbox{\crule[white]{\paperwidth}{50mm}}
+    }%
+  \end{textblock*}%
+  \begin{textblock*}{\paperwidth}(0mm,67mm)%
+    {
+      \makeatletter
+      \begin{center}
+        {\fontsize{32}{20}\selectfont\@title}
+      \end{center}
+      \vspace{0.4in}
+      \begin{center}
+        {\fontsize{14}{14}\selectfont\textsf{\smallcaps{\@date}}}
+      \end{center}
+      \makeatother
+    }
+  \end{textblock*}
+  \null%
+  \restoregeometry%
+  \newpage%
+}
 }
 \makeatother
 
@@ -241,6 +293,12 @@
     {1em}% <Space after theorem head>
     {}% <Theorem head spec>
     
+    \makeatletter
+    \def\th@importante{%
+      \thm@notefont{}%
+    }%
+    \makeatother
+    
     \theoremstyle{importante}
     \newtheorem{teorema}[gencounter]{Teorema}
     \newtheorem{lemma}[gencounter]{Lemma}
@@ -260,7 +318,13 @@
       \vspace{7\baselineskip}
     }
 
+    \newcommand\crule[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+
+    \usepackage{transparent}
+    \usepackage[absolute]{textpos}
+    
 \begin{document}
+\makefrontcover
 
 % Front matter
 \frontmatter
@@ -371,6 +435,31 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
   showframe
 }
 
+% Cambiamo il font per metterlo più piccolo
+\fontsize{11.5}{14}\selectfont
+
+% Mettiamo indentazione e skip tra i paragrafi
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{0pc}%
+  \setlength{\parskip}{0.3\baselineskip}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0.5pc}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0pc}%
+  \setlength{\parskip}{0.3\baselineskip}%
+}
+\makeatother
+
+\setlength{\parskip}{0cm}
+\setlength{\parindent}{0cm}
 
 \include{lezioni/lezione-160919}
 
