@@ -1,12 +1,11 @@
 \chapter{28/09/16 - Non ho ancora ben capito su cos'è questa lezione}
 \justify
 %Balbo sappi che ti sto odiando per tutti quei comandi definiti un po' in modo libertino.
-\newcommand{\minus}{\backslash}
 
 \newthought{Eravamo rimasti} a questo enunciato:
 \begin{teorema}
 	Sia $M$ una varietà, e sia $G$ un gruppo di omeomorfismi di $M$.
- 	Allora la proiezione al quoziente $p:M\rar \quoziente{M}{G}$ è un rivestimento se e solo se $G$ agisce in modo propriamente discontinuo.
+ 	Allora la proiezione al quoziente $p:M\rar \quotient{M}{G}$ è un rivestimento se e solo se $G$ agisce in modo propriamente discontinuo.
 \end{teorema}
 \notamargine{$\Rar$ è ovvia e $\Lar$ sta sul Manetti}
 
@@ -19,7 +18,7 @@ Se ho qualche piccola ipotesi su X (essere varietà basta e avanza), questo è e
 A questo aggiungo un altro teorema:
 
 \begin{teorema} \label{rivuniv}
- 	Sia $p:E\rar X$ un rivestimento universale. Allora esiste $G$ gruppo di omeomorfismi di $E$ propriamente discontinuo tale che $X\isom\quoziente{E}{G}$.
+ 	Sia $p:E\rar X$ un rivestimento universale. Allora esiste $G$ gruppo di omeomorfismi di $E$ propriamente discontinuo tale che $X\isom\quotient{E}{G}$.
 \end{teorema}
 \notamargine{Ricordo che $p:E\rar X$ rivestimento si dice universale se $E$ è semplicemente connesso}
 \notamargine{Anche qui la dimostrazione sta sul Manetti, in posti a caso}
@@ -28,13 +27,13 @@ Adesso, sia $X$ una \sdR, e sia $\pi:X\rar\ot X$ il suo rivestimento universale 
 
 Infatti, prendendo un raffinamento $U_\alpha$ del ricoprimento su $X$ dato dalla definizione di \sdR, posso pensare che gli $U_\alpha$ sono aperti banalizzanti per $\pi$, ottenendo dunque un ricoprimento su $\ot X$ dato dagli insiemi $V_\alpha^r$, dove $\pi^{-1}(U_\alpha)=\sqcup_r V_\alpha^r$, in cui le carte locali sono le funzioni $\phi_\alpha^r=\phi_\alpha\circ\pi$. Il fatto che i cambi di carta siano olomorfi su $\ot X$ discende dal fatto che lo siano su $X$.
 
-Ora, per il teorema \ref{rivuniv}, esiste $G$ fatto nel modo giusto tale che $\quoziente{\ot X}{G}\isom X$.
+Ora, per il teorema \ref{rivuniv}, esiste $G$ fatto nel modo giusto tale che $\quotient{\ot X}{G}\isom X$.
 \begin{lemma}
  	%Balbo ti odio, perché non potevi mettere tra i similteoremi anche proposizione?
  	Sia $g\in G$. Allora $g$ è olomorfa come applicazione tra \sdR.
 \end{lemma}
 \begin{proof}
- 	Osservo che ovviamente $g \in \mbox{Aut}\left(\quoziente{\ot X}{X}\right)$, cioè $g$ è un automorfismo di rivestimento (in inglese \emph{deck transformation}), cioè $g$ preserva le fibre. Questa condizione si può scrivere anche come $\pi\circ g=\pi$.
+ 	Osservo che ovviamente $g \in \mbox{Aut}\left(\quotient{\ot X}{X}\right)$, cioè $g$ è un automorfismo di rivestimento (in inglese \emph{deck transformation}), cioè $g$ preserva le fibre. Questa condizione si può scrivere anche come $\pi\circ g=\pi$.
  	
  	Sia ora $x\in \ot X$. Sia $V_\alpha^r$ uno degli aperti della condizione di \sdR\ tale che $x\in V_\alpha^r$, e sia $\phi_\alpha^r$ la sua carta locale. Si ha $g(x)\in V_\alpha^s$ per un qualche $s$, e dunque bisogna dimostrare $\phi_\alpha^s\circ g\circ (\phi_\alpha^r)^{-1}$ olomorfa in $\phi_\alpha^r(x)$. Ma questa funzione si può scrivere anche come $\phi_\alpha\circ\pi\circ g\circ \pi^{-1}\circ \phi_\alpha^{-1}$, che poiché $g$ è automorfismo di rivestimento è uguale a $\phi_\alpha\circ\pi\circ\pi^{-1}\circ\phi_\alpha^{-1}=id$. Poiché l'identità è olomorfa, abbiamo dimostrato che $g$ è olomorfa.
 \end{proof}
@@ -73,6 +72,15 @@ Sia dunque $\phi:\bbC\rar\bbC$ definita da $\phi(z)=z^3-3z$. Voglio capire se in
 Essendo un polinomio di grado $3$, l'eventuale rivestimento indotto avrà grado $3$, dunque devono essere scartati tutti i punti $\ol z$ tali che, se $\phi(z)=a$ ha soluzione doppia, $\ol z$ è una delle soluzioni di questa equazione, anche non doppia.
 \notamargine{Questo significa che devono essere scartati tutti i punti che stanno in una fibra di cardinalità minore di $3$, perché in un rivestimento la cardinalità delle fibre è costante}
 
-Questi punti si possono identificare tramite gli zeri della derivata, che è $3z^2-3$. In particolare, gli zeri della derivata sono $\pm1$, e gli $a$ corrispondenti sono $\mp2$. Gli $z$ soluzione di $z^3-3z\pm2=0$ sono $\pm1,\pm2$, dunque il rivestimento indotto da questa $\phi$ sarà $\phi:\bbC\minus\{\pm1,\pm2\}\rar\bbC\minus\{\pm2\}$
+Questi punti si possono identificare tramite gli zeri della derivata, che è $3z^2-3$. In particolare, gli zeri della derivata sono $\pm1$, e gli $a$ corrispondenti sono $\mp2$. Gli $z$ soluzione di $z^3-3z\pm2=0$ sono $\pm1,\pm2$, dunque il rivestimento indotto da questa $\phi$ sarà $\phi:\bbC\minus\{\pm1,\pm2\}\rar\bbC\minus\{\pm2\}$.
 
+%TODO: capire per bene quella cosa di Galois, intanto metto due parole
+
+Sembra che questa cosa sia collegata in qualche modo al fatto che, se considero il campo delle funzioni razionali $\bbC(x)$, e $y$ è radice di $y^3-3y-x$, allora l'estensione $\quotient{\bbC(x,y)}{\bbC(x)}$ non è di Galois.
+
+Ora supponiamo per assurdo che il rivestimento di $\phi$ abbia un automorfismo olomorfo non banale $f$. Allora posso estenderlo per continuità a tutto $\bbC$, perché è limitato in quanto $f$ soddisfa $f(z)^3-3f(z)=z^3-3z$, e questo porta a $f(z)$ limitato se $z$ limitato.
+
+Inoltre, per $\abs{z}$ abbastanza grande, si può scrivere $\dst 1=\frac{f(z)^3-3f(z)}{z^3-3z}$, e per $\abs{z}\rar+\infty$ devo avere $\abs{f(z)/z}\rar1$, per cui, essendo $f$ olomorfa, si ha $f(z)=az+b$. Chiedendo che $f(z)$ sia automorfismo di rivestimenti, si scopre che l'unica possibilità è $f(z)\equiv z$.
+
+Ora che ha finito di parlare di rivestimenti senza automorfismi, possiamo parlare di automorfismi di $\oc \bbC$.
 
