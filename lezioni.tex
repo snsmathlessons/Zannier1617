@@ -13,6 +13,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{etoolbox}
+\usepackage{afterpage}
 
 % \DeclareSymbolFont{operators}   {OT1}{cmr} {m}{n}
 % \DeclareSymbolFont{letters}     {OML}{cmm} {m}{it}
@@ -201,17 +202,56 @@
 %%%% Kevin Godny's code for title page and contents from https://groups.google.com/forum/#!topic/tufte-latex/ujdzrktC1BQ
 \makeatletter
 \renewcommand{\maketitlepage}{%
-\setlength{\parindent}{0pt}
-
-\fontsize{24}{24}\selectfont\textit{\@author}
-
-\vspace{1.75in}\fontsize{36}{54}\selectfont\@title
-
-\vspace{0.5in}\fontsize{14}{14}\selectfont\textsf{\smallcaps{\@date}}
-
-\vfill\fontsize{14}{14}\selectfont\textit{\@publisher}
-
-\thispagestyle{empty}
+  \setlength{\parindent}{0pt}
+  
+  \fontsize{24}{24}\selectfont\textit{\@author}
+  
+  \vspace{1.75in}\fontsize{36}{54}\selectfont\@title
+  
+  \vspace{0.5in}\fontsize{14}{14}\selectfont\textsf{\smallcaps{\@date}}
+  
+  \vfill\fontsize{14}{14}\selectfont\textit{\@publisher}
+  
+  \thispagestyle{empty}
+}
+\newcommand{\makefrontcover}{%
+% Cerchiamo di includere la copertina con la figura
+\afterpage{%
+  \newpage%
+  \thispagestyle{empty}%
+  \newgeometry{margin=0mm, top=0mm, bottom=0mm, left=0mm, right=0mm}
+  \begin{textblock*}{\paperwidth}(0pt,0pt)%
+    {%
+      \transparent{0.4}%
+      \begin{center}
+        \noindent\includegraphics*[height=\paperheight,width=\paperwidth]{cubicgrouplaw.eps}%
+      \end{center}%
+    }%
+  \end{textblock*}%
+  \begin{textblock*}{\paperwidth}(-20mm,63mm)%
+    {%
+      \transparent{0.90}%
+      \crule[white]{2\paperwidth}{50mm}
+      %\fbox{\crule[white]{\paperwidth}{50mm}}
+    }%
+  \end{textblock*}%
+  \begin{textblock*}{\paperwidth}(0mm,67mm)%
+    {
+      \makeatletter
+      \begin{center}
+        {\fontsize{32}{20}\selectfont\@title}
+      \end{center}
+      \vspace{0.5in}
+      \begin{center}
+        {\fontsize{14}{14}\selectfont\textsf{\smallcaps{\@date}}}
+      \end{center}
+      \makeatother
+    }
+  \end{textblock*}
+  \null%
+  \restoregeometry%
+  \newpage%
+}
 }
 \makeatother
 
@@ -267,7 +307,13 @@
       \vspace{7\baselineskip}
     }
 
+    \newcommand\crule[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+
+    \usepackage{transparent}
+    \usepackage[absolute]{textpos}
+    
 \begin{document}
+\makefrontcover
 
 % Front matter
 \frontmatter
@@ -388,7 +434,7 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
   \setlength{\RaggedRightParindent}{1.0pc}%
   \setlength{\JustifyingParindent}{1.0pc}%
   \setlength{\parindent}{0pc}%
-  \setlength{\parskip}{0.5\baselineskip}%
+  \setlength{\parskip}{0.3\baselineskip}%
 }
 \@tufte@reset@par
 
@@ -397,7 +443,7 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
   \setlength{\RaggedRightParindent}{0.5pc}%
   \setlength{\JustifyingParindent}{0.5pc}%
   \setlength{\parindent}{0pc}%
-  \setlength{\parskip}{0.5\baselineskip}%
+  \setlength{\parskip}{0.3\baselineskip}%
 }
 \makeatother
 
