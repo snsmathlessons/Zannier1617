@@ -1,12 +1,13 @@
 % This is a modified version of the tufte-latex book example in which the title page and the contents page resemble Tufte's
 % VDQI book, using Kevin Godby's code from this thread at https://groups.google.com/forum/#!topic/tufte-latex/ujdzrktC1BQ.
 % Taken from https://www.overleaf.com/5902299yxkgzs#/19519356/
-\documentclass[a4paper,oneside,nofonts]{tufte-book}
+\documentclass[a4paper,oneside]{tufte-book}
 \usepackage{nameref}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[italian]{babel}
 \usepackage{ragged2e}
-
+\usepackage{marginfix}
 \usepackage{tikz}
 \usepackage{epstopdf}
 \usepackage{amsmath}
@@ -26,6 +27,13 @@
 % \DeclareMathAlphabet      {\mathtt}{OT1}{cmtt}{m}{n}
 % \DeclareMathAlphabet      {\mathbb}{OT1}{cmr}{m}{n}
 % \DeclareMathAlphabet      {\mathfrak}{OT1}{euler}{m}{n}
+
+\usepackage{enumitem}
+\setlist{nolistsep}
+\setitemize[0]{leftmargin=20pt, itemindent=0pt, labelsep=10pt,
+  listparindent=0pt}
+\setenumerate[0]{leftmargin=40pt, itemindent=0pt, labelsep=10pt,
+  listparindent=0pt}
 
 \geometry{
   a4paper,
@@ -71,7 +79,9 @@
 % Manteniamo le note a piè di pagina nella stessa pagina
 \interfootnotelinepenalty=10000
 \makeatletter
-\renewcommand\@makefntext[1]{\nohyphenation\justify\@makefnmark#1}
+% Eventualmente si può mettere un \nohyphenation prima di justify ma poi
+% le note a margine vengono in maniera terribile.
+\renewcommand\@makefntext[1]{\justify\@makefnmark#1}
 \makeatother
 
 % Book metadata
@@ -368,6 +378,31 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
   showframe
 }
 
+% Cambiamo il font per metterlo più piccolo
+\fontsize{11}{14}\selectfont
+
+% Mettiamo indentazione e skip tra i paragrafi
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{0pc}%
+  \setlength{\parskip}{0.5\baselineskip}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0.5pc}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0pc}%
+  \setlength{\parskip}{0.5\baselineskip}%
+}
+\makeatother
+
+\setlength{\parskip}{0cm}
+\setlength{\parindent}{0cm}
 
 \include{lezioni/lezione-160919}
 
