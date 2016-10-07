@@ -78,9 +78,17 @@ Questi punti si possono identificare tramite gli zeri della derivata, che è $3z
 
 Sembra che questa cosa sia collegata in qualche modo al fatto che, se considero il campo delle funzioni razionali $\bbC(x)$, e $y$ è radice di $y^3-3y-x$, allora l'estensione $\quotient{\bbC(x,y)}{\bbC(x)}$ non è di Galois.
 
-Ora supponiamo per assurdo che il rivestimento di $\phi$ abbia un automorfismo olomorfo non banale $f$. Allora posso estenderlo per continuità a tutto $\bbC$, perché è limitato in quanto $f$ soddisfa $f(z)^3-3f(z)=z^3-3z$, e questo porta a $f(z)$ limitato se $z$ limitato.
+Ora supponiamo per assurdo che il rivestimento di $\phi$ abbia un automorfismo olomorfo non banale $f$. Allora posso estenderlo per continuità a tutto $\bbC$, perché è limitato jin quanto $f$ soddisfa $f(z)^3-3f(z)=z^3-3z$, e questo porta a $f(z)$ limitato se $z$ limitato.
 
 Inoltre, per $\abs{z}$ abbastanza grande, si può scrivere $\dst 1=\frac{f(z)^3-3f(z)}{z^3-3z}$, e per $\abs{z}\rar+\infty$ devo avere $\abs{f(z)/z}\rar1$, per cui, essendo $f$ olomorfa, si ha $f(z)=az+b$. Chiedendo che $f(z)$ sia automorfismo di rivestimenti, si scopre che l'unica possibilità è $f(z)\equiv z$.
 
 Ora che ha finito di parlare di rivestimenti senza automorfismi, possiamo parlare di automorfismi di $\oc \bbC$.
+
+Identifico $\oc\bbC\isom\bbP_1(\bbC)$ con $\bbC\cup\{\infty\}$, attraverso la seguente mappa: $[z:1]\mapsto a, [1:0]\mapsto\infty$.
+
+Considero $\phi\in\GL_2(\bbC)=\matrice abcd, ad\cdot bc \neq 0$. $\phi$ è un isomorfismo lineare, dunque manda rette in rette, e si ha $\phi(z_0,z_1)=(az_0+bz_1,cz_0+dz_1)$. Questo isomorfismo, poichè manda rette in rette, induce un isomorfismo $\ot \phi$ a livello di $\oc\bbC$ tale che $\ot\phi[z_0,z_1]=[az_0+bz_1,cz_0+dz_1]$.
+
+Sotto l'identificazione con $\bbC\cup\{\infty\}$, possiamo scrivere $\ot\phi(z)=\frac{az+b}{cz+d}$, dove si intende che $\ot\phi(\infty)=\frac{a}{c}$ e che $\frac{1}{0}=\infty$. Il gruppo degli isomorfismi di questa forma in $\oc \bbC$, con $ad\neq bc$, si chiama $\bbP\GL_2(\bbC)$, e si ha che $\bbP\GL_2(\bbC)\isom\quotient{\GL_2(\bbC)}{\{\lambda\Id\}}$.
+
+Questo è un sottogruppo di $\Aut(\bbC)$, e la prossima lezione vedremo che in effetti coincide con esso.
 
