@@ -1,8 +1,3 @@
-\RequirePackage[utf8]{inputenc}
-\RequirePackage[italian]{babel}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amsfonts}
 \usepackage{xifthen}
 %\usepackage{xparse}
 %\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
@@ -34,6 +29,8 @@
    \lowercase{\mydefgreek{#1}}\expandafter\mydefallgreek\fi}
 \mydefallgreek {Gamma}{Delta}{Theta}{Lambda}{Xi}{Pi}{Sigma}{Upsilon}{Phi}{Varphi}{Psi}{Omega}{alpha}{beta}{gamma}{delta}{epsilon}{varepsilon}{zeta}{eta}{theta}{iota}{kappa}{lambda}{mu}{nu}{xi}{omicron}{pi}{rho}{sigma}{tau}{upsilon}{phi}{varphi}{chi}{psi}{omega}\mydefallgreek
 
+\newcommand{\de}{\text{ d}}
+
 %\NewDocumentCommand{\de}{gg}{
 %\IfNoValueTF{#1}
 %		{\text{ d}}
@@ -58,6 +55,7 @@
 \newcommand{\ol}[1]{\overline{#1}}
 \newcommand{\ot}[1]{\widetilde{#1}}
 \newcommand{\oc}[1]{\widehat{#1}}
+\renewcommand{\hat}{\widehat}
 \newcommand{\tc}{\text{ t.c. }}
 \newcommand{\nowlog}{ Senza perdità di generalità }
 \newcommand{\wlogsupp}{ Senza perdità di generalità possiamo supporre }
@@ -69,6 +67,8 @@
 \newcommand{\scal}[2]{\langle #1 \mid #2 \rangle}
 \newcommand{\floor}[1]{\lfloor #1 \rfloor}
 
+\renewcommand{\Im}{\kI\km\,}
+\renewcommand{\Re}{\kR\ke\,}
 \newcommand{\Ker}{\text{Ker }}
 \newcommand{\Deg}{\text{deg }}
 \newcommand{\Det}{\text{det }}
@@ -76,12 +76,13 @@
 \newcommand{\End}{\text{End }}
 \newcommand{\Rk}{\mbox{rk }}
 \newcommand{\Tr}{\text{tr }}
+\newcommand{\Aut}{\text{Aut }}
 \newcommand{\GL}{\text{GL}}
 \newcommand{\Omeo}{\text{Omeo }}
 \newcommand{\Fix}{\text{Fix }}
+\newcommand{\Img}{\text{Im }}
 \newcommand{\Supp}{\text{Supp }}
 \newcommand{\Span}{\text{Span }}
-\newcommand{\Img}{\text{Im }}
 \newcommand{\Id}{\text{Id}}
 
 % Cusu-comandi
