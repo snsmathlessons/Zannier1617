@@ -22,4 +22,45 @@
 		
 		
 	\end{proof}
+	
+	Restringiamoci ora ai tori. Una mappa tra due tori $T_1 = \bbC/L_1$ e $T_2 = \bbC/L_2$ abbiamo visto che deve essere della forma $f(z)=\alpha z + \beta$.\notamargine{D'ora in poi faremo spesso confusione tra un numero complesso e la sua classe di equivalenza.}
+	
+	\begin{definizione}
+		Una legge di gruppo olomorfa su una superficie di Riemann $S$ è una legge di gruppo in cui la moltiplicazione e l'inverso sono mappe biolomorfe rispettivamente da $S \times S$ a $S$ e da $S$ a $S$ (per un'opportuna definizione di mappa biolomorfa da una varietà bidimensionale).
+	\end{definizione}
+	
+	Su un toro abbiamo un'ovvia legge di gruppo ereditata dalla somma su $\bbC$. Inoltre possiamo mettere una legge di gruppo isomorfa, in cui cambio l'origine. Questo si può fare in generale: data la moltiplicazione $\cdot$ su un gruppo $G$, posso definire l'operazione $g * h = g\cdot a^{-1}\cdot h$, con $a\in G$. Allora $(G,*)$ ha $a$ come origine, e ho l'ovvio isomorfismo tra $(G,\cdot)$ e $(G,*)$ dato da $g\mapsto g\cdot a$.
+	
+	\begin{proposizione}
+		A meno di cambi di origine, ho una sola legge di gruppo olomorfa sul toro $T$.
+	\end{proposizione}
+	
+	\begin{proof}
+		Sia $x \in T$, sia $*$ una legge di gruppo e sia senza perdita di generalità $0$ l'elemento neutro. Consideriamo la funzione $\phi_x: z \mapsto x * z - x$.
+
+		Questa è una mappa biolomorfa tra tori, e sappiamo che deve essere della forma $z \mapsto \alpha z + \beta$. Ma $\phi_x(0)=0$, quindi $\beta=0$. Sia quindi $c_x \in \bbC$ tale che $\phi_x(z)=c_xz$.
+		
+		Quindi abbiamo, riarrangiando i termini della definizione 
+		\[
+		 x*z = \phi_x(z) + x = c_xz + x
+		\]
+		(ricordiamo che si tratta di numeri complessi modulo il reticolo $L$).
+		
+		Fissiamo ora $z_0\ne 0$. $c_x$ è una funzione olomorfa in $x$, infatti, detta $f(\zeta) = \zeta * z_0$, vale
+		\[
+			f(\zeta) = \zeta + c_\zeta z_0 + \lambda, \lambda \in L
+		\]
+		stavolta pensata su $\bbC$. Quindi posso ricavare $c_\zeta$, e dato che $f$ è olomorfa per ipotesi, ottengo quello che volevo.
+		
+		D'altra parte, fissato un qualsiasi $\lambda \in L$, allora $c_x\lambda \in L \; \forall x$, quindi poichè $x \mapsto c_x \lambda$ è olomorfa a valori in un discreto, deve essere localmente costante e quindi costante. Sia quindi $c=c_x$.
+		
+		Ponendo $x=0$ ottengo che $\phi_0(z) = cz = z$, da cui $c=1$.
+
+
+	\end{proof}
+
+
+
+	
+	
 
