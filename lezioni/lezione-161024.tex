@@ -88,9 +88,9 @@ Ogni funzione intera ($\bbC\rightarrow\bbC$ olomorfa su tutto $\bbC$) non costan
 
 \begin{proof}
 Si usa che $\mathbb{P}^1(\mathbb{C})\minus\{ A, B, C\}$ con $A, B, C$ tre punti distinti è una superficie di Riemann iperbolica (Esercizio 7).\\
-Si suppone per assurdo che $f$ soddisfacente le ipotesi non assuma due valori, che a meno di comporre $f$ con un'affinità (automorfismo di $C$) suppongo essere $0,1$.
+Si suppone per assurdo che $f$ soddisfacente le ipotesi non assuma due valori, che a meno di comporre $f$ con un'affinità (automorfismo di $\bbC$) suppongo essere $0,1$.
 Allora $f$ induce una mappa olomorfa $f:\bbC->S$ (con $S$ come in Esercizio 7).
-Si ha che quindi $f$ si solleva a $\tilde{f}:\bbC\rightarrow D$, con $D$ il disco aperto. DISEGNARE DIAGRAMMA
+Si ha che quindi $f$ si solleva a $\tilde{f}:\bbC\rightarrow D$, con $D$ il disco aperto. DIAGRAMMA \\
 Ma allora la mappa olomorfa $\tilde{f}$ è costante per Liouville, quindi poiché il diagramma commuta anche $f$ è costante, assurdo.
 \end{proof}
 
@@ -108,11 +108,11 @@ D'ora in poi non ci si interessa più di superfici di Riemann iperboliche ma si 
 \notamargine{Attenzione, molti matematici usano nella definizione di reticolo il fatto che il reticolo abbia la stessa dimensione dello spazio vettoriale in cui è contenuto, nel nostro caso è contenuto in $\bbC$ che ha dimensione reale $2$.}
 
 \begin{osservazione}
-Se prendiamo reticoli omotetici, ovvero due reticoli $L$ e $\lambda L$, con $\lambda \in \bbC\minus\{ 0\}$, si ha che i tori ottenuti sono biolomorfi. (La mappa moltiplicazione per $\lambda \quad \bbC \rightarrow \quotient{\bbC}{\lambda L} \hquad z\ \mapsto [\lambda z]_{\lambda L} $ è ben definita e passa al quoziente $\quotient{\bbC}{L}\rightarrow \quotient{\bbC}{\lambda L}$, che è olomorfa e ha come inversa olomorfa la moltiplicazione per $\lambda^{(-1)}$.
+Se prendiamo reticoli omotetici, ovvero due reticoli $L$ e $\lambda L$, con $\lambda \in \bbC\minus\{ 0\}$, si ha che i tori ottenuti sono biolomorfi. (La mappa moltiplicazione per $\lambda \quad \bbC \rightarrow \quotient{\bbC}{\lambda L} \hquad z\ \mapsto [\lambda z]_{\lambda L} $ è ben definita e passa al quoziente $\quotient{\bbC}{L}\rightarrow \quotient{\bbC}{\lambda L}$, che è olomorfa e ha come inversa olomorfa la moltiplicazione per $\lambda^{(-1)}$).
 \end{osservazione}
 
-\begin{fatto}Sia $f:T_1\rightarrow T_2$ olomorfa tra tori, con $T_i=\quotient{\bbC}{L_i},\hquad i\in \{ 1,2\}$, allora $\exists\alpha \hquad \alpha L_1\subseteq L_2$.
-CON ALPHA UGUALE A $0$ FUNZIONA SEMPRE, PROBABILMENTE INTENDE CHE SE $f$ NON NULLA ALLORA $\exists \alpha \ne 0$ t.c..
+\begin{fatto}Sia $f:T_1\rightarrow T_2$ olomorfa tra tori, con $T_i=\quotient{\bbC}{L_i},\hquad i\in \{ 1,2\}$, allora $\exists\alpha \hquad \alpha L_1\subseteq L_2$.\\
+(CON ALPHA UGUALE A $0$ FUNZIONA SEMPRE, PROBABILMENTE INTENDE CHE SE $f$ NON NULLA ALLORA $\exists \alpha \ne 0 \hquad \alpha L_1\subseteq L_2$)
 \end{fatto}
 \begin{proof} Siano $\pi_i,\hquad i\in \{ 1,2\}$ le mappe di proiezione. DIAGRAMMA.
 Si ha che la mappa $f\circ\pi_1: \bbC\rightarrow T_2$, siccome $\bbC$ è semplicemente connesso, si solleva a $\tilde{f}$ olomorfa (non necessariamente unica).
@@ -135,7 +135,7 @@ Viceversa se si ha $\alpha$ che soddisfa $\alpha L_1 \subseteq L_2$  allora la m
 
 \begin{osservazione}
 \begin{itemize}
-\item Tolta la traslazione $\beta$ (è un automorfismo di $\bbC$ le mappe indotte sui tori sono omomorfismi di gruppi.
+\item Tolta la traslazione $\beta$ (è un automorfismo di $\bbC$) le mappe indotte sui tori sono omomorfismi di gruppi.
 \item A livello algebrico i tori hanno una realizzazione come gruppi con legge di gruppo razionale.
 La mappa che manda tori in curve algebriche sono funzioni trascendenti (esempio esponenziale). MAH
 \end{itemize}
@@ -185,7 +185,8 @@ Cioè abbiamo visto che le matrici di cambio di base, se conserviamo l'orientazi
 \item $SL_2(\bbZ)$ ha dei punti fissi, quindi il quoziente non è una superficie di Riemann con la mappa indotta da $\mathcal{H}$.
 \item per avere superfici di Riemann devo prendere gruppi che soddisfano le famose proprietà, per esempio $\Gamma (2)$.
 \item Le matrici di quel tipo sono numerabili, $\mathcal H$ ha la cardinalità del continuo, quindi il quoziente ha la cardinalità del continuo.
-\item Un dominio fondamentale (contiene un punto per ogni classe di biolomorfismo di tori) è dato da $\{ x+iy | -\frac{1}{2}<x<\frac{1}{2}, y>\sqrt{1-x^2}\}$ (Figura 1). Si noti che torna che la cardinalità sia quella del continuo, anche senza aver visto che è un quoziente. (Dimostrazione di queste cose???)
+\item Un dominio fondamentale (contiene un punto per ogni classe di biolomorfismo di tori) è dato da $\{ x+iy | -\frac{1}{2}<x<\frac{1}{2}, y>\sqrt{1-x^2}\}$. (Figura 1)
+Si noti che torna che la cardinalità sia quella del continuo, anche senza aver visto che è un quoziente. (Dimostrazione di queste cose???)
 \end{itemize}
 \end{osservazione}
 
