@@ -1,0 +1,158 @@
+\chapter{5 Ottobre 2016}
+\justify
+La scorsa lezione abbiamo determinato i gruppi di automorfismi complessi delle tre superfici di Riemann:
+$$
+\hat{\bbC},\qquad \bbC, \qquad \mathbb{D}.
+$$
+Ricordiamo poi il fondamentale
+\begin{teorema}[Riemann] Una superficie di Riemman semplicemente connessa è biolomorfa ad una tra:
+$\hat{\bbC},\ \bbC, \ \mathbb{D}. $
+\end{teorema}
+Sappiamo che dunque una generica superficie di Riemann $X$ avrà un rivestimento universale $\tilde{X}$, che dovrà essere uno dei tre precedenti e che $X$ puo' essere ricostruita quozientado $\sfrac{\tilde{X}}{G}$ dove $G<\Aut(\tilde{X})$ è un gruppo che agisce in maniera propriamente discontinua e senza punti fissi.\\
+L' idea ora è che sappiamo chi è $\tilde{X}$ e chi sono i suoi automorfismi, quindi se riusciamo a determinare i sottogruppi con le proprietà richieste determiniamo, a ritroso, tutte le possibili superfici di Riemann $X$.\\
+
+Richiamiamo quindi delle definizioni classiche.
+
+\begin{definizione}[Successione esatta corta.] In generale una catena di morfismi tra oggetti algebrici di questo tipo:
+$$
+A\xrightarrow{\alpha}B\xrightarrow{\beta}C\rightarrow 0
+$$
+si dice {\it esatta} se $\Im{\alpha}=\Ker{\beta}$.\\
+In particolare se abbiamo una sequenza del tipo
+$$
+0\rightarrow A\xrightarrow{\alpha}B\xrightarrow{\beta}C \rightarrow 0
+$$ 
+che è esatta in ogni punto allora siamo in presenza di una {\it successione esatta corta}.
+\end{definizione}
+E' opportuno osservare che le successioni esatte corte sono caratterizzate dalle proprietà:
+$$
+\Ker \alpha =0;\ \ \Im \alpha =\Ker \beta,\ \ \Im \beta =C.
+$$
+La definizione è generale ma a noi interesseranno essenzialmente morfismi di gruppi.
+Nella pratica le successioni esatte corte danno informazioni sul gruppo centrale se si conoscono quelli laterali: un esempio ci è dato dai prodotti semidiretti:
+\begin{fatto}
+Sia data una successione esatta corta di gruppi:
+$$
+0\rightarrow A\xrightarrow{j}B\xrightarrow{\pi}C \rightarrow 0
+$$
+E supponiamo esista $\sigma:C\rightarrow B$ morfismo tale che:
+$$
+\pi\circ \sigma=\Id_{\, C} 
+$$
+cioè esista  una {\it sezione} di $\pi$. Allora $B=A\rtimes_\psi C$ dove $\psi:C
+\rightarrow \Aut A$ è il coniugio.
+\end{fatto}
+\notamargine{Basta scrivere a mano un generico elemento di $B$ come prodotto di uno di $C$ tramite $\sigma$ e uno di $A$ tramite $j$ e evrificare l' unicità. L' operazione poi viene da sè.}
+La dimostrazione è lasciata come esercizio.
+
+Nel nostro contesto abbiamo questa interessante successione esatta corta:
+$$
+0\rightarrow\ (\bbC,+)\ \xrightarrow{j}\ (\Aut{\bbC},\circ)\ \xrightarrow{\pi}\ (\bbC^*,\cdot)\  \rightarrow\ 0
+$$
+che ha anche una sezione $\sigma$. Le mappe sono definite in maniera abbastanza costretta:
+$$
+j(w)=(z\mapsto z+w),\qquad \pi(z\mapsto az+b)=a,\qquad \sigma(a)=(z\mapsto az).
+$$
+\begin{esercizio}
+Un sottogruppo finito di $\Aut{\bbC}$ è ciclico.
+\end{esercizio}
+\notamargine{Non può contenere traslazioni...}
+Supponiamo ora di avere una superficie di Riemann $X$ con rivestimento universale $\tilde X$.\\ 
+Cerchiamo i sottogruppi $G$ di $\Aut{\tilde{X}}$ tali che:
+\begin{itemize}
+\item[(i)] l' azione di $G$ su $\tilde{X}$ sia propriamente discontinua;
+\item[(ii)] gli elementi di $G\setminus\{\Id\}$ agiscono senza punti fissi.
+\end{itemize}
+E' opportuno premettere dei lemmi generali, dopo aver osservato che in ognuno dei tre casi $\Aut{\tilde{X}}$ è un gruppo topologico metrico.
+\begin{lemma}Sia $\tilde G$ un gruppo topologico metrico e $G$ un suo sottogruppo; allora si equivalgono:
+\begin{itemize}
+\item[(a)] $G$ è discreto in $\tilde G$;
+\item[(b)] l' identità è isolata in $G$;
+\item[(c)] $G$ non ha punti di accumulazione in $\tilde G$.
+\end{itemize}
+\end{lemma}
+
+Passiamo ora alla classificazione.
+
+{\it Primo caso: $X$ sferica i.e. $\tilde {X}=\hat{\bbC}$.} Questo caso è triviale, infatti se $g\in\Aut{\hat{\bbC}}=PGL_2(\bbC)$ la condizione $(ii)$ è soddisfatta solo da $g=\Id$:
+$$
+g(z)=\frac{az+b}{cz+d}=z\ \Leftrightarrow\ cz^2+(d-a)z-b=0
+$$
+basta fare i casi e ricordarsi di considerare anche $z=\infty$ per accorgersi che questa equazione ha sempre soluzioni in $\hat{\bbC}$.
+
+{\it Secondo caso: $X$ euclidea i.e. $\tilde{X}=\bbC$.} Questo caso è più interessante. Ricordiamo prima di tutto che gli automorfismi di $\bbC$ sono tutte e sole le affinità:
+$$
+z\mapsto az+b,\ \ a\in\bbC^*,\ b\in \bbC.
+$$
+Questa rappresentazione ci permette di mettere una metrica su $\Aut{\bbC}$ identificando i suoi elementi con coppie di numeri complessi, con la seconda coordinata non nulla:
+$$
+z\mapsto az+b\ \ \leftrightarrow\  (a,b).
+$$
+Osserviamo che se vogliamo che valga la proprietà (ii) dobbiamo richiedere $a=1$. Questo forza $G$ ad essere un sottogruppo di traslazioni.\\
+Vediamo ora che necessariamente l' identità di $G$ è isolata: ragionando per assurdo troveremmo infiniti elementi distinti $\{ g_k=(1,b_k) \}\in G$ tali che:
+$$
+g_k=(1,b_k)\rightarrow (1,0)=\Id\ \ \ \mbox{ se } k \rightarrow \infty,
+$$  
+ma allora per ogni aperto non vuoto $U\subseteq \bbC$ si avrebbe definitivamente in $k$ che $g_k(U)\cap U\neq \emptyset$ per la definizione di limite.\\
+Per il Lemma 4 dunque si ha che $G$ è discreto.
+
+Consideriamo ora $V_G$ lo span su $\bbR$ di $G$ e separiamo i casi a secondo della sua dimensione reale. Se ha dimensione zero si tratta del gruppo banale, se ha dimensione 1 invece possiamo identificarlo, passando in coordinate, con un sottogruppo additivo discreto di $\bbR$. Con un principio variazionale vediamo che la struttura di tali gruppi è triviale. Consideriamo infatti $g_0$ il
+$$
+\inf\{g>0\ :\ g\in G\}
+$$
+di sicuro $g_0>0$ perchè l' identità è isolata. Vorremmo mostrare che $g_0\in G$, per farlo basta ragionare per assurdo e produrre una successione di elementi $\{g_n\}\subseteq G $ che tendono a $g_0$; allora si avrebbe che $g_m-g_n$ (che sta in $G$) si accumula su $0$, assurdo.\\
+Dividendo ora con resto un qualsiasi altro elemento di $g'\in G$ per $g_0$ otteniamo che:
+$$
+g'=k\cdot g+q,\ \ k\in \bbZ,\ \ 0\leq q <g
+$$ 
+ma allora per minimalità $q=0$ il che implica $G\subseteq \bbZ g_0$ e l' altra inclusione era ovvia.
+
+Rimane il caso in cui la dimensione reale di $V_G$ sia 2. In questo caso esistono $\omega_1,\omega_2$ numeri complessi linearmente indipendenti su $\bbR$ tali che:
+$$
+G=\bbZ\, \omega_1+\bbZ\, \omega_2.
+$$
+la dimostrazione è una immediata conseguenza del seguente teorema.
+
+\begin{teorema}Sia $G$ un sottogruppo discreto di $(\bbR^n,+)$. Allora esiste un naturale $d\leq n$ e $d$ vettori di $\bbR^n$, $g_1,\ldots,g_d$ linearmente indipendenti tali che:
+$$
+G=\bbZ\ g_1+\ldots+\bbZ\ g_d
+$$
+dove la somma, in effetti, è diretta.
+\end{teorema}
+\begin{proof}
+Procediamo per induzione sulla dimensione di $V_G$, osservando che i passi base $d=0,1$ sono stati fatti nella proposizione precedente. Supponiamo quindi $\Dim{V_G}>1$ e prendiamo $g_0$ il suo elemento nonidentico di minima norma; decomponiamo ora:
+$$
+V_G=\bbR g_0\ \oplus\  W\ \mbox{ e la rispettiva projezione}\ \pi:V_G\rightarrow W.
+$$
+\notamargine{Esiste perchè... rielaborare la dimostrazione precedente.}
+Osserviamo che su $\Gamma:=\pi(G)\subseteq W$ abbiamo canonicamente una struttura di gruppo.\\
+Dimostriamo che $\Gamma$ è discreto, mostrando che la sua identità (che è la stessa di prima) è isolata. Sia $\{\gamma_k=\pi(g_k)\}\subseteq W\setminus\{0\}$ successione tale che $\gamma_k\rightarrow 0$, allora possiamo decomporre ogni $g_k$ così:
+$$
+g_k=\gamma_k+\lambda_k\, g_0=\gamma_k+q(k)\cdot\, g_0+\delta_k\, g_0,
+$$
+$$
+q(k)\in\bbZ,\ \ 0\leq \delta_k<|g_0|
+$$
+dove nell' ultimo pasaggio abbiamo diviso con resto $\lambda_k$ per $|g_0|$. Dunque abbiamo una successione di elementi di $G$ limitata dentro $\bbR^n$:
+$$
+|g_k-q(k)\cdot g_0|\leq|\gamma_k|+|g_0|^2
+$$
+che per discretezza può essere composta solo a un numero finito di elementi, assurdo.
+\notamargine{Altrimenti ne estraggo di infiniti distinti, riestraggo per far convergere, considero le differenze che stanno in G e tendono a $0$. Assurdo ché 0 è isolato.}
+
+A questo punto uso l' ipotesi induttiva su $\Gamma$ e ne produco una base $\{\gamma_1=\pi(g_1),\ldots,\ldots \gamma_{d-1}=\pi(g_{d-1})\}$. A questo punto è ovvio che la famiglia
+$$
+\{g_0,g_1,\ldots,g_{d-1}\}
+$$ 
+genera $G$ su $\bbZ$.\\
+Mostriamo che è fatta di vettori linearmente indipendenti addirittura su $\bbR$:
+$$
+0=\mu_0\, g_0+\mu_1\, g_1+\ldots+\mu_{d-1}\, g_{d-1}
+$$
+projettando con $\pi$ su $W$ e usando l' ipotesi di lineare indipendenza sui $\{\gamma_i\}$ ottengo:
+$$
+\mu_1=\ldots=\mu_{d-1}=0\ \ \Rightarrow\  \mu_0=0.
+$$
+e questo conclude la dimostrazione.
+\end{proof}
+

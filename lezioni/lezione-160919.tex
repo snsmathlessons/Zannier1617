@@ -1,0 +1,133 @@
+\chapter{19 Settembre 2016 - Introduzione}
+\justify
+
+In questo corso studieremo le funzioni meromorfe periodiche.  Partiamo dalle funzioni con un solo periodo, che a meno di rinormalizzazioni posso considerare essere $1$.  Lo spazio topologico quoziente $\bbC / \bbZ$ (ovvero $\bbC$ quozientato per la relazione di equivalenza $a \cR b \sse a-b \in \bbZ$) è un cilindro (In particolare notiamo che non è compatto).
+
+\begin{definizione}[Superficie di Riemann]
+  Si dice una superficie di Riemann una varietà complessa connessa di dimensione $1$.  Si intende che ogni punto deve avere un intorno $U_\alpha$ omeomorfo al disco unitario aperto di $\bbC$ tramite l'omeomorfismo $\phi_\alpha$, e che per ogni $\alpha$ e $\beta$ valga che $g := \phi_\beta \circ \phi_\alpha^{-1}$ sia una funzione olomorfa.
+\end{definizione}
+
+\notamargine{La regolarità nei complessi è molto più forte che non nei reali. Essere olomorfe è davvero tanta roba in più che non essere $C^\infty$}
+
+\begin{osservazione}
+  Più periodi richiedo, più è difficile che la funzione sia anche solo continua. Ad esempio una funzione $f: \bbR \rar \bbR$ con due periodi incommensurabili (ovvero il cui rapporto sia irrazionale) è necessariamente costante.
+\end{osservazione}
+
+\begin{esercizio}
+  Le funzioni olomorfe con periodo $z_0$ sono tutte e sole quelle della
+  forma $z \mapsto g(e^{2\pi i z/z_0})$, con $g$ funzione olomorfa.
+\end{esercizio}
+
+\begin{osservazione}
+  $\bbC / \bbZ$ è una superficie di Riemann, ma non è omeomorfa a $\bbC$ (Ad esempio perché $\bbC$ è semplicemente connesso, mentre $\bbC / \bbZ$ non lo è).
+\end{osservazione}
+
+\begin{lemma}
+  Sia $f: \bbC \rar \bbC$ una funzione meromorfa (quindi ammettiamo anche i poli).  Allora l'insieme $L_f$ dei periodi di $f$ forma un sottogruppo additivo di $\bbC$.
+
+  \notamargine{Sapendo infatti che $\exists \alpha, \beta$ tali che $f(z + \alpha) = f(z)$ e che $f(z + \beta) = f(z)$ $\forall z$ si ha $f((z + \alpha) + \beta) = f(z + \alpha) = f(z)$}
+\end{lemma}
+
+\section{Reticoli}
+Sia $f: \bbC \rar \bbC$ una funzione meromorfa non costante. Sia $L_f$ il gruppo dei periodi di $f$. Allora:
+\begin{enumerate}
+\item $L_f$ è discreto \notamargine {Infatti, se $L_f$ non fosse discreto, arei molti punti in cui $f$ assume lo stesso valore che si accumulerebbero da qualche parte, quindi per il principio di continuazione analitica $f$ sarebbe costante}
+\item $L_f$ può essere isomorfo solo al gruppo banale, a $\bbZ$ o a $\bbZ^2$
+\end{enumerate}
+Inoltre, se $L_f \cong \bbZ^2$ allora si ha $L = \omega_1 \bbZ + \omega_2 \bbZ$ con $\Img \frac{\omega_1}{\omega_2} \neq 0$
+
+\begin{definizione}[Reticolo]
+  Un Reticolo è un insieme parzialmente ordinato in cui ogni coppia di elementi ha sia un estremo inferiore che un estremo superiore. Nel caso che ci interessa $L_f$ è un reticolo e verrà chiamato reticolo di $f$.
+\end{definizione}
+
+\begin{definizione}[Funzione ellittica]
+  Una funzione $f$ si dice ellittica se il suo reticolo dei periodi $L_f$ ha rango $2$.
+\end{definizione}
+
+\begin{osservazione}
+  Se $L_f$ ha rango 2, $\bbC / L_f$ è omeomorfo ad un toro, quindi le nostre funzioni ellittiche le possiamo anche pensare come funzioni olomorfe definite da un toro (come varietà olomorfa) a $\bbC$. Ricordiamo che il toro è compatto.
+\end{osservazione}
+
+\paragraph{Definizione della struttura olomorfa dei tori}
+Preso un parallelogramma fondamentale del reticolo, possiamo considerare come aperti gli aperti di $\bbC$ che non toccano due punti equivalenti e considerando la mappa di immersione degli stessi in $\bbC$ si ottiene la struttura di Superficie di Riemann del Toro.
+
+\notamargine{Tutti i reticoli di rango $2$ sono isomorfi come gruppi, ma la struttura olomorfa che inducono sui tori quoziente è molto diversa}
+
+\paragraph{Curiosità - Delirio}
+% DOUBT: Non sono davvero sicuro che alludesse a Chow, ma mi pare quello che ci sta di più
+È molto importante che i Tori siano compatti, poiché le superfici di Riemann compatte sono descritte da equazioni algebriche (Forse fa riferimento al teorema di Chow)
+
+\begin{definizione}
+  Dato un polinomio in due (o più) variabili $p(x,y)$, si dice polinomio omogenizzato il polinomio $z^{\Deg p} \cdot p(\frac{x}{z}, \frac{y}{z})$
+\end{definizione}
+
+\begin{osservazione}
+  Eseguendo il procedimento di omogeneizzazione si ottiene un polinomio omogeneo in tre variabili, il cui logo di zeri è da considerarsi in $\bbP^2 \bbC$, che è compatto. Essendo il luogo di zeri un chiuso in $\bbP^2 \bbC$, è anch'esso compatto.
+\end{osservazione}
+
+\section{Curve ellittiche}
+\begin{definizione}[Curva ellittica]
+  Si dice curva ellittica un sottoinsieme di $\bbC^2$ del seguente tipo: $E = \{ (x,y) \in \bbC^2 \mid y^2 = p(x) \}$, dove $p$ è un polinomio a coefficienti complessi di terzo grado con radici distinte.
+\end{definizione}
+
+\notamargine{Il norme curve ellittiche è dovuto al fatto che sono saltate fuori storicamente nel calcolo della lunghezza di archi di ellisse: data un'ellisse $y^2 = 1 - \alpha x^2$, per calcolare la lunghezza di un arco si giunge a:
+  $$ \int \frac{1-b^2 x}{\sqrt{(1-b^2 x) (1-a^2 x)}} \de x$$, che con un'opportuna sostituzione... }
+
+% TODO: togliere i puntini e mettere almeno la sostituzione ed una descrizione di cosa lo si può ricondurre
+% TODO: Mettere riferimento al libro Siegel: Topics in Complex Function Theory, vol I, verso l'inizio del libro
+
+Le soluzioni di questa equazione coincidono con gli zeri della funzione $f(x,y) = y^2 - p(x)$.  Per il Teorema del Dini (versione olomorfa), intorno ad ognuno di questi zeri la curva si riesce ad esprimere come un grafico in almeno una delle due variabili.  (le ipotesi del Teorema sono soddisfatte grazie all'assenza di radici multiple di $p$).
+
+\notamargine{Si può applicare il Teorema del Dini reale per costruire la funzione ``esplicita''. Quindi se ne può calcolare il differenziale e notare che è della forma giusta per garantire l'olomorfia della funzione}
+
+\section{Parametrizzazioni razionali e risolubilità degli integrali}
+Alcune curve algebriche si possono parametrizzare in maniera razionale, ovvero si può dare una funzione razionale di un parametro che mette ``in bigezione'' il parametro con dei punti della curva.
+
+Ad esempio, se sotto la radice avessimo avuto un polinomio di secondo grado, come $ \int \frac{\de x}{\sqrt{1 - x^2}} $, la curva algebrica
+associata sarebbe stata il cerchio $w^2 = 1 - x^2$. Possiamo razionalizzare il cerchio nel seguente modo:
+
+% TODO: Inserire immagine del cerchio razionalizzato
+Scegliendo il punto $(-1, 0)$ si può considerare la funzione di ``proiezione'' dei punti della circonferenza sull'asse $x=0$, ovvero il
+punto $(x_0, w_0)$ viene mandato in $(0, \frac{w_0}{x_0 + 1})$ (Infatti la retta tratteggiata ha equazione $w = \frac{w_0}{x_0 + 1} (x + 1)$
+mentre la retta su cui proiettare è $x=0$). Possiamo chiamare $t_0 = \frac{w_0}{x_0 + 1}$ il nostro parametro.
+
+Possiamo anche invertire questa uguaglianza ottenendo $w = \frac{2 t}{1 + t^2}$. Ciò ci permette di esprimere l'integrale originario in termini delle funzioni ``semplici''
+
+\notamargine{Ricordiamo infatti che se $R(t)$ è funzione razionale allora $\int R(t) \de t$ si può scrivere come funzione razionale più una combinazione di logaritmi traslati}
+
+\subsection{Il tentativo di Fagnano}
+Il primo a cercare di fare questi conti con l'integrale della Lemniscata fu Fagnano. Egli non riusci a razionalizzare, ma ottenne comunque dei risultati. In particolare, chiamata $S(r) = \int_0^r \frac{\de x}{\sqrt{1 - x^4}}$, trovò che quando $S(r') = 2 S(r)$ si aveva una relazione algebrica $A(r, r') = 0$ (ovvero ottenne delle formule di duplicazione)
+
+\notamargine{Ricordiamo che la Lemniscata è, fissati due punti, il luogo dei punti sul piano che hanno prodotto delle distanze fissato (dai due punti)}
+
+Eulero, a partire da Fagnano, trovò le formule di addizione, ovvero trovare $r'$ tale che $S(r') = S(r_1) + S(r_2)$ (che possiamo pensare analoghe alle formule di addizione di seno e coseno)
+
+\section{Endomorfismo razionale della cubica liscia}
+Fissiamo un punto $P$ appartenente alla curva ellittica. Allora, fissato un qualsiasi altro punto $Q$ appartenente alla curva, consideriamo la retta che passa per $P$ e $Q$: essa intersecherà la curva in esattamente un altro punto $R$.
+
+\notamargine{Questo perché restringendo l'equazione della curva ellittica alla retta per $P$ e $Q$ si ottiene un polinomio di terzo grado, che si annulla nei punti in cui passa per la cubica, e che sappiamo avere già due radici nel campo che stiamo considerando. Ha quindi anche la terza, ed in questa intersecherà un altro punto $R$}
+
+Abbiamo quindi associato al punto $Q$ il punto $R$. Tale trasformazione è chiaramente iniettiva, e si può dimostrare (esercizio) che è anche razionale (cioè le coordinate di $R$ sono una funzione razionale delle coordinate di $Q$).
+
+\paragraph{Extra}
+La cosa notevole è che, a partire da questa costruzione, si può ottenere sulla cubica una legge di gruppo (considerando anche il punto all'infinito), che sarà espressa da funzioni razionali delle coordinate. Inoltre il gruppo si scoprirà essere abeliano.
+
+\section{Gruppi algebrici}
+\begin{definizione}[Gruppo algebrico]
+  Si dice gruppo algebrico una varietà algebrica (ovvero un luogo di uno spazio affine o proiettivo definito da equazioni algebriche), dotata di una struttura di gruppo tale che l'operazione di gruppo sia un morfismo di varietà algebriche (equivalentemente, che sia espresso da funzioni razionali delle coordinate).
+\end{definizione}
+
+\paragraph{Esempi di gruppi algebrici}
+Facciamo ora alcuni esempi di gruppi algebrici (li pensiamo tutti su $\bbC$):
+\begin{itemize}
+\item $\bbG_a$ come gruppo additivo (Si intende la retta affine $\bbA^1$ come varietà e come legge di gruppo $x \star y := x + y$). Possiamo osservare che è un gruppo algebrico non compatto di dimensione $1$
+\item $\bbG_m$ come gruppo moltiplicativo (Si intende la retta affine tolto un punto $\bbA^1 \setminus \{ 0 \}$ come varietà [anche se in $\bbA^1$ non è un chiuso, lo è attraverso il morfismo con l'iperbole in $\bbA^2$], mentre la legge di gruppo è $x \star y := x y$). \\
+  Esso si può anche interpretare come l'iperbole $xy=1$ (in $\bbA^2$) con legge di gruppo $(u_1, u_2) \star (t_1, t_2) = (u_1 t_1, u_2 t_2)$
+\end{itemize}
+
+Si può dimostrare che questi sono tutti i gruppi algebrici non compatti di dimensione $1$, mentre quelli compatti (sempre di dimensione $1$) sono tutte e sole le curve ellittiche (Infatti ``vengono'' dai tori).
+
+\notamargine{Con dimensione intendiamo qui la dimensione come varietà olomorfa}
+
+\notamargine{In dimensione superiore invece ce ne sono tanti, anche non commutativi, come $\GL_2 \bbC$}
+

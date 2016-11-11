@@ -1,0 +1,94 @@
+\chapter{28/09/16 - Non ho ancora ben capito su cos'è questa lezione}
+\justify
+%Balbo sappi che ti sto odiando per tutti quei comandi definiti un po' in modo libertino.
+
+\newthought{Eravamo rimasti} a questo enunciato:
+\begin{teorema}
+	Sia $M$ una varietà, e sia $G$ un gruppo di omeomorfismi di $M$.
+ 	Allora la proiezione al quoziente $p:M\rar \quotient{M}{G}$ è un rivestimento se e solo se $G$ agisce in modo propriamente discontinuo.
+\end{teorema}
+\notamargine{$\Rar$ è ovvia e $\Lar$ sta sul Manetti}
+
+Qui, seguendo il Manetti, intendo che $G$ agisce in modo propriamente discontinuo se $\forall\ x\in X\ \exists\ U\subset X$ aperto tale che $\forall\ g\in G, g(U)\cap U=\emptyset$. 
+
+Se ho qualche piccola ipotesi su X (essere varietà basta e avanza), questo è equivalente a chiedere che $G$ sia libero, cioè che $\forall\ x \in X, \forall\ g\in G, g(x)\neq X$, e che $\forall\ K \subset X$ compatto, $g(K)\cap K \neq \emptyset$ solo per un numero finito di $g$.
+\notamargine{$\Lar$ sta sul Manetti, $\Rar$ ha una parte ovvia e una che usa compattezza per successioni}
+%Nota: Capire perché le note a margine sono impaginate schifo
+
+A questo aggiungo un altro teorema:
+
+\begin{teorema} \label{rivuniv}
+ 	Sia $p:E\rar X$ un rivestimento universale. Allora esiste $G$ gruppo di omeomorfismi di $E$ propriamente discontinuo tale che $X\isom\quotient{E}{G}$.
+\end{teorema}
+\notamargine{Ricordo che $p:E\rar X$ rivestimento si dice universale se $E$ è semplicemente connesso}
+\notamargine{Anche qui la dimostrazione sta sul Manetti, in posti a caso}
+
+Adesso, sia $X$ una \sdR, e sia $\pi:X\rar\ot X$ il suo rivestimento universale (che ricordo essere unico a meno di omeomorfismi). Attraverso $\pi$, $\ot X$ eredita una struttura di \sdR\ da quella di $X$.
+
+Infatti, prendendo un raffinamento $U_\alpha$ del ricoprimento su $X$ dato dalla definizione di \sdR, posso pensare che gli $U_\alpha$ sono aperti banalizzanti per $\pi$, ottenendo dunque un ricoprimento su $\ot X$ dato dagli insiemi $V_\alpha^r$, dove $\pi^{-1}(U_\alpha)=\sqcup_r V_\alpha^r$, in cui le carte locali sono le funzioni $\phi_\alpha^r=\phi_\alpha\circ\pi$. Il fatto che i cambi di carta siano olomorfi su $\ot X$ discende dal fatto che lo siano su $X$.
+
+Ora, per il teorema \ref{rivuniv}, esiste $G$ fatto nel modo giusto tale che $\quotient{\ot X}{G}\isom X$.
+\begin{lemma}
+ 	%Balbo ti odio, perché non potevi mettere tra i similteoremi anche proposizione?
+ 	Sia $g\in G$. Allora $g$ è olomorfa come applicazione tra \sdR.
+\end{lemma}
+\begin{proof}
+ 	Osservo che ovviamente $g \in \mbox{Aut}\left(\quotient{\ot X}{X}\right)$, cioè $g$ è un automorfismo di rivestimento (in inglese \emph{deck transformation}), cioè $g$ preserva le fibre. Questa condizione si può scrivere anche come $\pi\circ g=\pi$.
+ 	
+ 	Sia ora $x\in \ot X$. Sia $V_\alpha^r$ uno degli aperti della condizione di \sdR\ tale che $x\in V_\alpha^r$, e sia $\phi_\alpha^r$ la sua carta locale. Si ha $g(x)\in V_\alpha^s$ per un qualche $s$, e dunque bisogna dimostrare $\phi_\alpha^s\circ g\circ (\phi_\alpha^r)^{-1}$ olomorfa in $\phi_\alpha^r(x)$. Ma questa funzione si può scrivere anche come $\phi_\alpha\circ\pi\circ g\circ \pi^{-1}\circ \phi_\alpha^{-1}$, che poiché $g$ è automorfismo di rivestimento è uguale a $\phi_\alpha\circ\pi\circ\pi^{-1}\circ\phi_\alpha^{-1}=id$. Poiché l'identità è olomorfa, abbiamo dimostrato che $g$ è olomorfa.
+\end{proof}
+\notamargine{$\pi^{-1}$ dovrebbe presentare un pedice che si riferisce al fatto che ha codominio $V_\alpha^r$, ma non l'ho ritenuto fondamentale}
+
+Ora, per classificare le \sdR\ posso dunque studiare tutti i quozienti opportuni di \sdR\ semplicemente connesse. Per il Teorema di Riemann, queste sono solo $\bbP_1(\bbC)=\oc \bbC, \bbC, \cD\isom\cH$, dove su quest'ultimo ho la struttura complessa data dall'inclusione.
+
+Dunque il prossimo passo è classificare i gruppi di isomorfismi propriamente discontinui e olomorfi delle tre \sdR\ semplicemente connesse.
+
+\newthought{Ora iniziano} cose di cui non ho esattamente capito il senso, per ora.
+
+\begin{definizione}
+	Sia $A\subset\bbC$. Una funzione $f:A\rar\bbC$ si dice \emph{algebrica} se $\exists\ p\in\bbC[x,y], p\neq0 \tc p(x,f(x))=0\ \forall\ x\in A$.
+\end{definizione}
+%qui vorrei un ambiente esercizio
+\begin{lemma}
+ 	$f(x)=e^x$ non è una funzione algebrica.
+\end{lemma}
+\begin{proof}
+ 	Lasciata come esercizio
+\end{proof}
+
+Ora si sta parlando di rivestimenti indotti da funzioni algebriche.
+
+Per esempio, consideriamo la funzione $p(t)=t^2, p:\bbC\rar\bbC$. Questa funzione non è bigettiva, dunque non ha un'inversa globale, ma comunque localmente ha un'inversa. Devo però effettuare una scelta per ottenere questa inversa locale, in paricolare la scelta del segno. Inoltre vorrei che quest'inversa locale sia quantomeno continua. Si dimostra però che in ogni intorno di $0$ non esiste nessuna funzione continua tale che $f(x)^2=x$ per ogni $x$.
+
+Questo si può vedere tramite i rivestimenti. Infatti la funzione $p(t)$ non è un rivestimento di $\bbC$ su sè stesso, proprio perché l'immagine inversa di ogni intorno di $0$ non è mai omeomorfa all'intorno tramite la mappa $p$.
+
+Se però considero $p:\bbC^*\rar\bbC^*$, ho che questo è un rivestimento di grado $2$, e pertanto, poiché $\bbC^*$ è connesso, non può avere sezioni globali, ma solamente sezioni locali.
+\notamargine{Se $p:E\rar X$ è rivestimento, una sua sezione $\phi$ è una mappa continua da $U\subset X$ a $E$ t.c. $p\circ \phi=id_U$}
+
+È facile osservare che $z\rar-z$ è un automorfismo di rivestimento olomorfo per $p$. È però possibile avere rivestimenti senza automorfismi olomorfi. Un esempio è dato di seguito.
+\notamargine{lo stesso argomento è (abbastanza alla lontana) trattato dal Manetti, capitolo 13, sezione 5}
+
+Sia dunque $\phi:\bbC\rar\bbC$ definita da $\phi(z)=z^3-3z$. Voglio capire se induce un rivestimento su $\bbC$ o perlomeno su un suo sottoinsieme.
+Essendo un polinomio di grado $3$, l'eventuale rivestimento indotto avrà grado $3$, dunque devono essere scartati tutti i punti $\ol z$ tali che, se $\phi(z)=a$ ha soluzione doppia, $\ol z$ è una delle soluzioni di questa equazione, anche non doppia.
+\notamargine{Questo significa che devono essere scartati tutti i punti che stanno in una fibra di cardinalità minore di $3$, perché in un rivestimento la cardinalità delle fibre è costante}
+
+Questi punti si possono identificare tramite gli zeri della derivata, che è $3z^2-3$. In particolare, gli zeri della derivata sono $\pm1$, e gli $a$ corrispondenti sono $\mp2$. Gli $z$ soluzione di $z^3-3z\pm2=0$ sono $\pm1,\pm2$, dunque il rivestimento indotto da questa $\phi$ sarà $\phi:\bbC\minus\{\pm1,\pm2\}\rar\bbC\minus\{\pm2\}$.
+
+%TODO: capire per bene quella cosa di Galois, intanto metto due parole
+
+Sembra che questa cosa sia collegata in qualche modo al fatto che, se considero il campo delle funzioni razionali $\bbC(x)$, e $y$ è radice di $y^3-3y-x$, allora l'estensione $\quotient{\bbC(x,y)}{\bbC(x)}$ non è di Galois.
+
+Ora supponiamo per assurdo che il rivestimento di $\phi$ abbia un automorfismo olomorfo non banale $f$. Allora posso estenderlo per continuità a tutto $\bbC$, perché è limitato jin quanto $f$ soddisfa $f(z)^3-3f(z)=z^3-3z$, e questo porta a $f(z)$ limitato se $z$ limitato.
+
+Inoltre, per $\abs{z}$ abbastanza grande, si può scrivere $\dst 1=\frac{f(z)^3-3f(z)}{z^3-3z}$, e per $\abs{z}\rar+\infty$ devo avere $\abs{f(z)/z}\rar1$, per cui, essendo $f$ olomorfa, si ha $f(z)=az+b$. Chiedendo che $f(z)$ sia automorfismo di rivestimenti, si scopre che l'unica possibilità è $f(z)\equiv z$.
+
+Ora che ha finito di parlare di rivestimenti senza automorfismi, possiamo parlare di automorfismi di $\oc \bbC$.
+
+Identifico $\oc\bbC\isom\bbP_1(\bbC)$ con $\bbC\cup\{\infty\}$, attraverso la seguente mappa: $[z:1]\mapsto a, [1:0]\mapsto\infty$.
+
+Considero $\phi\in\GL_2(\bbC)=\matrice abcd, ad\cdot bc \neq 0$. $\phi$ è un isomorfismo lineare, dunque manda rette in rette, e si ha $\phi(z_0,z_1)=(az_0+bz_1,cz_0+dz_1)$. Questo isomorfismo, poichè manda rette in rette, induce un isomorfismo $\ot \phi$ a livello di $\oc\bbC$ tale che $\ot\phi[z_0,z_1]=[az_0+bz_1,cz_0+dz_1]$.
+
+Sotto l'identificazione con $\bbC\cup\{\infty\}$, possiamo scrivere $\ot\phi(z)=\frac{az+b}{cz+d}$, dove si intende che $\ot\phi(\infty)=\frac{a}{c}$ e che $\frac{1}{0}=\infty$. Il gruppo degli isomorfismi di questa forma in $\oc \bbC$, con $ad\neq bc$, si chiama $\bbP\GL_2(\bbC)$, e si ha che $\bbP\GL_2(\bbC)\isom\quotient{\GL_2(\bbC)}{\{\lambda\Id\}}$.
+
+Questo è un sottogruppo di $\Aut(\bbC)$, e la prossima lezione vedremo che in effetti coincide con esso.
+

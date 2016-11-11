@@ -13,4 +13,8 @@
 *.fls
 *.idx
 *.ilg
-
+*.out
+*.dat
+*.gnuplot
+*.table
+*.old
