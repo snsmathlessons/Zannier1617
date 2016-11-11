@@ -1,0 +1,179 @@
+\chapter{03/10/16 - Automorfismi delle superfici di Riemann semplicemente connesse}
+\justify
+
+\begin{definizione}[Superficie di Riemann (speriamo)]
+Si dice superficie di Riemann una varietà complessa connessa di dimensione $1$, cioè uno spazio topologico di Hausdorff (T2)
+connesso tale che ogni suo punto abbia un intorno $U_\alpha$ omeomorfo a un aperto $V_\alpha$ di $\mathbb{C}$
+tramite l'omeomorfismo $\varphi_\alpha$, e che per ogni $\alpha$ e $\beta$ valga che $\varphi_\beta \circ {\varphi_\alpha}^{-1}$
+sia una funzione olomorfa in $\varphi_\alpha \left( U_\alpha \cap U_\beta \right)$.
+\end{definizione}
+
+\begin{osservazione}
+La richiesta di essere T2 non si deduce dalle altre condizioni. Infatti se consideriamo il "disco con due origini",
+cioè il quoziente $S/\!\!\sim$ dove $S=D\times\{0\} \cup D\times\{1\}$ e $x\sim y \Longleftrightarrow x=y$ oppure $x=(u,i),\ y=(u,j)$ con $\{i,j\}=\{0,1\}$,
+si osserva che ogni punto ha un intorno omeomorfo a un aperto di $\mathbb{C}$ ma $(0,0)$ e $(0,1)$ non hanno intorni disgiunti.
+\end{osservazione}
+
+\begin{esercizio}
+$S/\!\!\sim$ è semplicemente connessa.
+\end{esercizio}
+
+Determiniamo ora i gruppi degli automorfismi delle superfici di Riemann semplicemente
+connesse: $\mathbb{P}^1(\mathbb{C})$, $\mathbb{C}$, $D$.
+
+
+\section{Automorfismi di $\mathbb{P}^1(\mathbb{C})=\hat{\mathbb{C}}$}
+Vogliamo dimostrare che $Aut( \hat{\mathbb{C}} )= \mathbb{P}GL_2 (\mathbb{C} )=\left\{z\mapsto \displaystyle{\frac{az+b}{cz+d}} \ ,\ \  ad\neq bc\right\}$
+
+\begin{definizione}[Grado di una funzione razionale]
+Si definisce grado di $\frac{p(x)}{q(x)}$ il massimo tra i gradi di $p(x)$ e $q(x)$.
+Si può osservare che, come per i polinomi, il grado è il numero di controimmagini di ogni punto contate con molteplicità.
+\end{definizione}
+
+\begin{osservazione}
+$\varphi \in Aut( \hat{\mathbb{C}} ) \Longrightarrow deg(\varphi )=1$, perché deve essere un omeomorfismo e quindi è iniettivo. 
+\end{osservazione}
+
+
+\begin{lemma}
+$G= \mathbb{P}GL_2 (\mathbb{C} )$ è triplamente transitivo, cioè date due terne
+$(x_1 , x_2 , x_3 ) \in \hat{\mathbb{C}}^3$ e $(y_1 , y_2 , y_3 ) \in \hat{\mathbb{C}}^3$
+con $x_i \neq x_j$ e $y_i \neq y_j$ se $i \neq j$, $\exists ! g \in G$ t.c. $g(x_i )=y_i$ per $i=1,2,3$.
+\end{lemma}
+\begin{proof}
+Basta farlo per $(x_1 , x_2 , x_3 ) = (0,1,\infty )$ e $y_i \neq \infty$, a meno di comporre con qualche elemento di $G$.
+Devo quindi trovare $a,b,c,d \in \mathbb{C}$ tali che:
+$$
+\left\{
+\begin{array}{l}
+\medskip
+\displaystyle{\frac{0a+b}{0c+d}=\frac{b}{d}=y_1} \\
+\medskip
+\displaystyle{\frac{1a+b}{1c+d}=\frac{a+b}{c+d}=y_2} \\
+\displaystyle{\frac{\infty a+b}{\infty c+d}=\frac{a}{c}=y_3}
+\end{array}
+\right.
+$$
+da cui sostituendo si ottiene $y_3 c + y_1 d=y_2 (c+d)$ e si vede che, se $y_i \neq y_j$ quando $i \neq j$, esistono $c$ e $d$ con $c+d \neq 0$ che risolvono l'equazione.
+
+Resta quindi da mostrare l'unicità. Per farlo basta verificare che l'unico elemento di $G$ che fissa una data terna
+(prendiamo ancora $(0,1,\infty )$) è l'identità. Imponiamo quindi che:
+$$
+\left\{
+\begin{array}{l}
+\medskip
+\displaystyle{\frac{0a+b}{0c+d}=\frac{b}{d}=0} \\
+\medskip
+\displaystyle{\frac{1a+b}{1c+d}=\frac{a+b}{c+d}=1} \\
+\displaystyle{\frac{\infty a+b}{\infty c+d}=\frac{a}{c}= \infty}
+\end{array}
+\right.
+$$
+da cui si ricava subito $a=d=1$, $b=0$ e $c=0$, cioè la trasformazione considerata è l'identità.
+\end{proof}
+
+\begin{esercizio}
+I sottogruppi finiti di $\mathbb{P}GL_2 (\mathbb{C} )$ sono:
+\begin{itemize}
+\item Tutti i gruppi ciclici
+\item Tutti gruppi diedrali
+\item $S_4$ e $A_5$
+\end{itemize}
+\end{esercizio}
+
+
+\begin{proposizione}
+$Aut (\hat{\mathbb{C}} ) = G = \mathbb{P}GL_2 (\mathbb{C} )$
+\end{proposizione}
+\begin{proof}
+Sia $\varphi \in Aut (\hat{\mathbb{C}} )$. Sappiamo già che $Aut (\hat{\mathbb{C}} ) \subseteq G$.
+Quindi, essendo $G$ triplamente transitivo, possiamo assumere $\varphi( \infty ) = \infty$.
+Ora osserivamo che, essendo $\varphi$ un automorfismo olomorfo, detto $D=D(0,1)$, $\varphi (D)$ conterrà
+un certo disco $D_1$. Quindi $\varphi$ non può avere una sigolarità essenziale all'infinito poiché in tal caso,
+per il teorema di Weierstrass, dovrebbe assumere valori densi in $\mathbb{C}$ in ogni intorno di $\infty$
+e quindi anche valori in $D_1$ contraddicendo l'iniettività di $\varphi$.
+Allora $\varphi$ ha un polo all'infinito ed è olomorfa su $\mathbb{C}$, quindi deve essere un polinomio (basta considerare la sua espansione in serie) e,
+essendo anche iniettiva, deve avere grado $1$. Quindi $\varphi \in G$.
+\end{proof}
+
+
+\section{Automorfismi di $\mathbb{C}$}
+Studiamo ora gli automorfismi olomorfi di $\mathbb{C}$.
+Sia $g \in Aut(\mathbb{C})$. Allora, come prima, per il teorema di Weierstrass $g$ ha un polo all'$\infty$,
+quindi è un polinomio e ha grado $1$ per iniettività. Quindi
+$Aut(\mathbb{C} )= \left\{ z\mapsto az+b \right\} = Stab_{\mathbb{P} GL_2 (\mathbb{C})} (\infty )$.
+
+
+\section{Automorfismi di $D$}
+\begin{definizione}[Trasformazioni di Möbius]
+Si chiamano Trasformazioni di Möbius le trasformazioni del tipo $z\mapsto c \displaystyle{\frac{z-a}{1- \bar{a}z}}$ con $|c|=1$ e $a \in D$.
+\end{definizione}
+
+\notamargine{A volte invece si chiamano così tutte le trasformazioni di $\mathbb{P} GL_2 (\mathbb{C})$}
+%Esce troppo in alto. Come faccio a metterla vicino alla definizione?
+
+\begin{esercizio}
+Le trasformazioni di Möbius sono un sottogruppo di $\mathbb{P} GL_2 (\mathbb{C})$.
+\end{esercizio}
+
+\begin{osservazione}
+Le trasformazioni di Möbius mandano D in se stesso. Infatti: 
+$$\left|c \frac{z-a}{1- \bar{a}z} \right|= 1 \frac{(z-a)(\bar{z}-\bar{a})}{(1- \bar{a}z)({1- a\bar{z}})}=
+\frac{|z|^2 + |a|^2 - 2Re(a \bar{z})}{1+ |a|^2 |z|^2 - 2Re(a \bar{z})} <1
+\Longleftrightarrow \left( 1-|z|^2 \right) \left( 1-|a|^2 \right) >0$$
+Questa è vera $\forall z \in D$.
+\end{osservazione}
+
+\begin{osservazione}
+Il gruppo delle Trasformazioni di Möbius G ha dimensione topologica 3 (è come $S^1 \times D$),
+quindi ci aspettiamo che sia transitivo ma non doppiamente transitivo.
+\end{osservazione}
+
+\begin{lemma}
+$G= \left \{ z \mapsto \displaystyle{c \frac{z-a}{1- \bar{a}z}} \right \}$ è transitivo.
+\end{lemma}
+\begin{proof}
+È evidente che si può mandare $0$ in qualsiasi punto di $D$ (anche ponendo $c=1$).
+\end{proof}
+
+\begin{osservazione}
+$Stab_G (0) = \{z \mapsto cz \}$ cioè tutte e sole le rotazioni.
+\end{osservazione}
+
+\begin{lemma}[di Schwarz]
+Sia $f:D\rightarrow D$ una funzione olomorfa tale che $f(0)=0$. 
+Allora $|f(z)| \leq |z|\ \ \forall z \in D$ e $f'(0) \leq 1$. Inoltre, se vale un'uguaglianza, $f$ è una rotazione.
+\end{lemma}
+\begin{proof}
+$f(0)=0 \Rightarrow \frac{f(z)}{z}$ è olomorfa in $D$. Detto $D_r$ il disco di raggio $r$,
+per il principio del massimo modulo si ha che, per $z \in D_r$
+$$\left| \frac{f(z)}{z} \right| \leq \sup_{|z|=r} \left| \frac{f(z)}{z} \right| \leq \frac{1}{r} \ \  \forall r \in (0,1)
+\Longrightarrow \left| \frac{f(z)}{z} \right| \leq 1 \ \ \forall z \in D$$
+Facendo tendere $z$ a $0$ si ottiene anche la tesi sulla derivata.
+Infine, se si verifica un'uguaglianza, sempre per il principio del massimo modulo risulta che
+$\left| \frac{f(z)}{z} \right|$ è costante in $D$, quindi $f$ è una rotazione.
+\end{proof}
+
+\begin{proposizione}
+$Aut(D)=G$
+\end{proposizione}
+\begin{proof}
+Sappiamo che $Aut(D) \supseteq G$. Sia quindi $\varphi \in Aut(D)$. Essendo $G$ transitivo posso supporre che $\varphi(0)=0$.
+Sia $\psi$ l'inversa di $\varphi$. $\psi (0)=0$. Quindi
+$\psi (\varphi (z))=z \stackrel{deriviamo}{\Longrightarrow} \psi ' (\varphi (z)) \varphi '(z) =1 \Rightarrow \psi'(0) \varphi'(0) =1$
+Ma per il lemma di Schwarz $|\psi'(0)| \leq 1$ e $|\varphi'(0)| \leq 1|$. Quindi $|\varphi'(0)|=1$ e, sempre per il lemma di Schwarz,
+$\varphi$ è una rotazione e quindi appartiene a $G$. 
+\end{proof}
+
+\subsection {$D \simeq \mathcal{H}$}
+
+Vediamo ora che il disco $D$ è biolomorfo al semipiano $\mathcal{H} = \left \{ z \in \mathbb{C} | \ Im (z)>0 \right \}$
+Presi $w \in \mathcal{h}$ e $z \in D$, consideriamo le mappe:
+$$w \mapsto z=\frac{i-w}{i+w} \qquad z \mapsto w= i\frac{1-z}{1+z}$$
+Si può verificare sono una l'inversa dell'altra e che sono effettivamente omeomorfismi tra $\mathcal{H}$ e $D$.
+Quindi $D \simeq \mathcal{H}$ come superfici di Riemann.
+
+Questo ci permette anche di determinare che $Aut( \mathcal{H}) = \left \{ z \mapsto \displaystyle{\frac{az+b}{cz+d}} \ | \ ad>bc \right \}$
+
+Ora quindi dovremo capire quali sottgruppi di $Aut (\hat{\mathbb{C}})$, $Aut(\mathbb{C})$ e $Aut(D)$ agiscono in modo propriamente discontinuo
+e non hanno punti fissi, per classificare le superfici di Riemann.
