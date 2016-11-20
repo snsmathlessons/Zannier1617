@@ -1,0 +1,153 @@
+\chapter{26/10/2016 - Delle Cose}
+	Abbiamo distinto le superfici di Riemann in tre tipi:
+	\begin{itemize}
+	 \item La superficie sferica $\hat\bbC$;
+	 \item Le superfici euclidee, ottenute quozientando $\bbC$;
+	 \item Le superfici iperboliche, ottenute da quozienti del disco $D$.
+	\end{itemize}
+
+	\begin{proposizione}
+		Ogni mappa biolomorfa da una superficie sferica a una euclidea è costante. Allo stesso modo, ogni mappa biolomorfa da una superficie euclidea a una iperbolica è costante.
+	\end{proposizione}
+	
+	\begin{proof}
+		Siano $S_1$, $S_2$ e $S_3$ tre superfici, rispettivamente sferica, euclidea e iperbolica, e siano $f: S_1 \rar S_2$, $g: S_2 \rar S_3$ mappe biolomorfe, come nel diagramma.
+		
+		\[
+			\begin{diagram}
+				\hat \bbC 		& \rTo^{\tilde f} 	& \bbC 			& \rTo^{\tilde g} 	& D 	\\
+				\dTo>{\pi_1}	&					& \dTo>{\pi_2}	&					& \dTo>{\pi_3}	\\
+				S_1				& \rTo^f 			& S_2 			& \rTo^g 			& S_3
+			\end{diagram}
+		\]
+		
+		Poichè sia $\hat\bbC$ sia $\bbC$ sono semplicemente connessi, per il solito lemma $f \circ \pi_1$ e $g \circ \pi_2$ si sollevano a $\tilde f, \tilde g$. 
+		
+		Ma $\tilde f$, ristretta a $\bbC$, è una mappa intera (olomorfa su $\bbC$) limitata (perchè all'infinito deve tendere ad $f(\infty)$). Quindi per Liouville è costante.
+		Stesso discorso vale per $\tilde g$, che è olomorfa su $\bbC$ ed è limitata (ha immagine contenuta nel disco). Quindi anche $f$ e $g$ devono essere costanti.
+		
+		
+	\end{proof}
+	
+	Restringiamoci ora ai tori. Una mappa tra due tori $T_1 = \bbC/L_1$ e $T_2 = \bbC/L_2$ abbiamo visto che deve essere della forma $f(z)=\alpha z + \beta$.\notamargine{D'ora in poi faremo spesso confusione tra un numero complesso e la sua classe di equivalenza.}
+	
+	\begin{definizione}
+		Una legge di gruppo olomorfa su una superficie di Riemann $S$ è una legge di gruppo in cui la moltiplicazione e l'inverso sono mappe biolomorfe rispettivamente da $S \times S$ a $S$ e da $S$ a $S$ (per un'opportuna definizione di mappa biolomorfa da una varietà bidimensionale).
+	\end{definizione}
+	
+	Su un toro abbiamo un'ovvia legge di gruppo ereditata dalla somma su $\bbC$. Inoltre possiamo mettere una legge di gruppo isomorfa, in cui cambio l'origine. Questo si può fare in generale: data la moltiplicazione $\cdot$ su un gruppo $G$, posso definire l'operazione $g * h = g\cdot a^{-1}\cdot h$, con $a\in G$. Allora $(G,*)$ ha $a$ come origine, e ho l'ovvio isomorfismo tra $(G,\cdot)$ e $(G,*)$ dato da $g\mapsto g\cdot a$.
+	
+	\begin{proposizione}
+		A meno di cambi di origine, ho una sola legge di gruppo olomorfa sul toro $T$.
+	\end{proposizione}
+	
+	\begin{proof}
+		Sia $x \in T$, sia $*$ una legge di gruppo e sia senza perdita di generalità $0$ l'elemento neutro. Consideriamo la funzione $\phi_x: z \mapsto x * z - x$.
+
+		Questa è una mappa biolomorfa tra tori, e sappiamo che deve essere della forma $z \mapsto \alpha z + \beta$. Ma $\phi_x(0)=0$, quindi $\beta=0$. Sia quindi $c_x \in \bbC$ tale che $\phi_x(z)=c_xz$.
+		
+		Quindi abbiamo, riarrangiando i termini della definizione 
+		\[
+		 x*z = \phi_x(z) + x = c_xz + x
+		\]
+		(ricordiamo che si tratta di numeri complessi modulo il reticolo $L$).
+		
+		Fissiamo ora $z_0\ne 0$. $c_x$ è una funzione olomorfa in $x$, infatti, detta $f(\zeta) = \zeta * z_0$, vale
+		\[
+			f(\zeta) = \zeta + c_\zeta z_0 + \lambda, \lambda \in L
+		\]
+		stavolta pensata su $\bbC$. Quindi posso ricavare $c_\zeta$, e dato che $f$ è olomorfa per ipotesi, ottengo quello che volevo.
+		
+		D'altra parte, fissato un qualsiasi $\lambda \in L$, allora $c_x\lambda \in L \; \forall x$, quindi poichè $x \mapsto c_x \lambda$ è olomorfa a valori in un discreto, deve essere localmente costante e quindi costante. Sia quindi $c=c_x$.
+		
+		Ponendo $x=0$ ottengo che $\phi_0(z) = cz = z$, da cui $(c-1)z$ sta nel reticolo per ogni $z$, e quindi $c=1$.
+
+
+	\end{proof}
+
+	% Aggiungere delirio su Aut(D)
+	
+	\section{Tori}
+	
+	Torniamo ora sull'argomento principale del corso, che sono i tori. Sia $T = \bbC / L$ un toro, con $L$ reticolo, con la struttura di gruppo indotta da $\bbC$.
+	
+	Siano ora $\Aut_0(T)$ gli automorfismi che fissano l'origine. Abbiamo visto che sono solo le omotetie di fattore $\mu$ che fissano il reticolo. Sicuramente nel reticolo ho un complesso di norma minima, essendo un insieme discreto: ma allora la norma minima deve conservarsi dopo l'omotetia, quindi $\abs \mu=1$.
+	
+	Inoltre, dato un qualsiasi $\lambda_0 \in L$, vale $\abs{\lambda_0 \mu} = \abs {\lambda_0}$, da cui segue che $\Aut_0(T)$ è finito; essendo un sottogruppo di $\bbC^*$, per un noto lemma è anche ciclico.
+	
+	Fissando una base del reticolo, ogni automorfismo si scrive come una matrice $2 \times 2$ a coefficienti interi. Per qualche strano motivo da capire che c'entra con le radici dell'unità, %TODO%
+	posso avere solo rotazioni di $180, 90, 60$.
+	
+	\subsection{Isogenie}
+	
+	\begin{definizione}
+		Una mappa $c: T_1 \rar T_2$ si dice un'isogenia se è un'omomorfismo suriettivo (di gruppi olomorfi).
+
+	\end{definizione}
+	
+	\begin{proposizione}
+		$\Ker c$ è finito.
+	\end{proposizione}
+	\begin{proof}
+		Se non fosse finito, essendo il toro compatto, avrei un punto di accumulazione del kernel, ma dato che l'isogenia è olomorfa l'insieme di livello deve essere discreto, a meno che f non sia costantemente nulla.
+	\end{proof}
+	
+	\begin{definizione}
+		Si dice grado dell'isogenia $[L_2 : \mu L_1]$.
+	\end{definizione}
+	
+	\begin{osservazione}
+		La composizione di due isogenie è un'isogenia che ha come grado il prodotto dei gradi.
+	\end{osservazione}
+	
+	Attenzione! Il fattore $\mu$ non dipende solo dal toro, ma anche dal fattore di omotetia. In altre parole, quando quoziento penso il toro come un elemento del quoziente $\{ \mbox{reticoli} \} / \{ \mbox{omotetia} \}$, $\mu$ non è indipendente dal rappresentante, ma dipende dal reticolo scelto.
+	
+	\begin{osservazione} 
+		Gli isomorfismi sono un sottoinsieme proprio delle isogenie.
+	\end{osservazione}
+
+	Ci chiediamo ora quando due tori $T_1, T_2$ ammettono un'isogenia $c: T_1 \rar T_2$. Siano quindi i reticoli associati $L_1=\bbZ + \bbZ \tau_1$, $L_2=\bbZ + \bbZ \tau_2$, con $\tau_1,\tau_2 \in H$ (abbiamo visto che ci si può ricondurre a questo caso a meno di isomorfismi).
+	
+	Allora l'isogenia, se esiste, è data dalla moltiplicazione per un complesso $\mu$ tale che $\mu L_1 \subseteq L_2$, che implica che $\mu \in L_2, \mu\tau_1 \in L_2$. Ne segue che $\tau_1 = \frac{\mu\tau_1}{\mu}$ è della forma 
+	\[
+		\tau_1 = \frac{a + b\tau_2}{c+d\tau_2}, \qquad a,b,c,d \in \bbZ
+	\]
+	
+	D'altra parte, se vale l'ultima condizione, $\mu=1$ induce un'isogenia.
+
+
+	\subsection{Isogenia duale}
+	
+	Sia $c: T_1 \rar T_2$ un'isogenia. Si definisce l'isogenia duale $\hat c: T_2 \rar T_1$ come 
+	\[
+		\hat c(z) = \deg c\cdot x, \qquad x \in c^{-1}(z)
+	\]
+	
+	Innanzitutto controlliamo che sia ben definita. Dati $x, x' \in c^{-1}(z)$ ho che $\deg c \cdot x - \deg c \cdot x' = \deg c \cdot (x-x')$. Ma $\Ker c$ è un gruppo che ha ordine $\deg c$, quindi dato che $x-x' \in \Ker c$ allora $\deg c \cdot (x-x') = 0$.
+	
+	Inoltre sappiamo che $\hat c \circ c = \deg c \in \End T_1$.
+	
+	A questo punto, fissiamo i due reticoli $L_1$ e $L_2$. Siano ora $c$ e $\hat c$ rappresentate da $\mu$ e $\frac{\deg c}\mu$.
+	
+	
+	Notiamo innanzitutto la funtorialità controvariante del duale, o più prosaicamente che $\hat{c_2 \circ c_1} = \hat c_2 \circ \hat c_1$ (ci sarebbe da verificarlo).
+
+	
+	
+	Cerchiamo ora di calcolare $\deg \hat c$.
+	
+	
+	\[
+		\deg \hat c \cdot \deg c = \deg(\hat c \circ c) = \deg(\deg c) = \deg^2 c
+	\]
+	
+	dove con $\deg(\deg c)$ indico il grado dell'applicazione ``moltiplicazione per il grado'', che essendo un omotetia del piano, ha grado $\deg^2 c$ (moralmente sto infittendo il reticolo dividendo ``righe'' e ``colonne'' in $\deg c$ parti).
+	
+	Semplificando ora un $\deg c$ ottengo che $\deg \hat c = \deg c$.
+
+	
+
+
+	
+	
+
