@@ -60,7 +60,7 @@
 		
 		D'altra parte, fissato un qualsiasi $\lambda \in L$, allora $c_x\lambda \in L \; \forall x$, quindi poichè $x \mapsto c_x \lambda$ è olomorfa a valori in un discreto, deve essere localmente costante e quindi costante. Sia quindi $c=c_x$.
 		
-		Ponendo $x=0$ ottengo che $\phi_0(z) = cz = z$, da cui $c=1$.
+		Ponendo $x=0$ ottengo che $\phi_0(z) = cz = z$, da cui $(c-1)z$ sta nel reticolo per ogni $z$, e quindi $c=1$.
 
 
 	\end{proof}
@@ -71,9 +71,9 @@
 	
 	Torniamo ora sull'argomento principale del corso, che sono i tori. Sia $T = \bbC / L$ un toro, con $L$ reticolo, con la struttura di gruppo indotta da $\bbC$.
 	
-	Siano ora $\Aut_0(T)$ gli automorfismi che fissano l'origine. Abbiamo visto che sono solo le omotetie di fattore $\mu$ che fissano il reticolo. sicuramente nel reticolo ho un complesso di norma minima, essendo un insieme discreto: ma allora la norma minima deve conservarsi dopo l'omotetia, quindi $\abs \mu=1$.
+	Siano ora $\Aut_0(T)$ gli automorfismi che fissano l'origine. Abbiamo visto che sono solo le omotetie di fattore $\mu$ che fissano il reticolo. Sicuramente nel reticolo ho un complesso di norma minima, essendo un insieme discreto: ma allora la norma minima deve conservarsi dopo l'omotetia, quindi $\abs \mu=1$.
 	
-	Inoltre, dato un qualsiasi $\lambda_0 \in L$, vale $\abs{\lambda_0 \mu} = \abs \lambda_0$, da cui segue che $\Aut_0(T)$ è finito; essendo un sottogruppo di $\bbC^*$, per un noto lemma è anche ciclico.
+	Inoltre, dato un qualsiasi $\lambda_0 \in L$, vale $\abs{\lambda_0 \mu} = \abs {\lambda_0}$, da cui segue che $\Aut_0(T)$ è finito; essendo un sottogruppo di $\bbC^*$, per un noto lemma è anche ciclico.
 	
 	Fissando una base del reticolo, ogni automorfismo si scrive come una matrice $2 \times 2$ a coefficienti interi. Per qualche strano motivo da capire che c'entra con le radici dell'unità, %TODO%
 	posso avere solo rotazioni di $180, 90, 60$.
@@ -89,7 +89,7 @@
 		$\Ker c$ è finito.
 	\end{proposizione}
 	\begin{proof}
-		Da fare.
+		Se non fosse finito, essendo il toro compatto, avrei un punto di accumulazione del kernel, ma dato che l'isogenia è olomorfa l'insieme di livello deve essere discreto, a meno che f non sia costantemente nulla.
 	\end{proof}
 	
 	\begin{definizione}
@@ -116,8 +116,35 @@
 	D'altra parte, se vale l'ultima condizione, $\mu=1$ induce un'isogenia.
 
 
+	\subsection{Isogenia duale}
+	
+	Sia $c: T_1 \rar T_2$ un'isogenia. Si definisce l'isogenia duale $\hat c: T_2 \rar T_1$ come 
+	\[
+		\hat c(z) = \deg c\cdot x, \qquad x \in c^{-1}(z)
+	\]
+	
+	Innanzitutto controlliamo che sia ben definita. Dati $x, x' \in c^{-1}(z)$ ho che $\deg c \cdot x - \deg c \cdot x' = \deg c \cdot (x-x')$. Ma $\Ker c$ è un gruppo che ha ordine $\deg c$, quindi dato che $x-x' \in \Ker c$ allora $\deg c \cdot (x-x') = 0$.
+	
+	Inoltre sappiamo che $\hat c \circ c = \deg c \in \End T_1$.
+	
+	A questo punto, fissiamo i due reticoli $L_1$ e $L_2$. Siano ora $c$ e $\hat c$ rappresentate da $\mu$ e $\frac{\deg c}\mu$.
+	
+	
+	Notiamo innanzitutto la funtorialità controvariante del duale, o più prosaicamente che $\hat{c_2 \circ c_1} = \hat c_2 \circ \hat c_1$ (ci sarebbe da verificarlo).
 
 	
+	
+	Cerchiamo ora di calcolare $\deg \hat c$.
+	
+	
+	\[
+		\deg \hat c \cdot \deg c = \deg(\hat c \circ c) = \deg(\deg c) = \deg^2 c
+	\]
+	
+	dove con $\deg(\deg c)$ indico il grado dell'applicazione ``moltiplicazione per il grado'', che essendo un omotetia del piano, ha grado $\deg^2 c$ (moralmente sto infittendo il reticolo dividendo ``righe'' e ``colonne'' in $\deg c$ parti).
+	
+	Semplificando ora un $\deg c$ ottengo che $\deg \hat c = \deg c$.
+
 	
 
 
