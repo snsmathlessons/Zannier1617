@@ -1,10 +1,10 @@
-\chapter{28 Novembre 2016 - Mappa tra il Toro e la cubica corrispondente}
+\chapter{28 Novembre 2016}
 \justify
 
 \newthought{La volta scorsa}, dato un reticolo $L \subseteq \bbC$, avevamo
 costruito la funzione di Weierstrass associata $\wp_L (z)$, che soddisfa
 un'equazione del tipo $\wp'^2(z) = 4 \wp^3(z) - g_2 \wp(z) - g_3$ dove
-$g_2 = 60 s_4$ e $g_3 = 140 s_6$ con $s_n = \sum_{\omega \in L^*}
+$g_2 = 60 s_4$ e $g_3 = 140 s_6$ con $S_n = \sum_{\omega \in L^*}
 \omega^{-n}$.
 
 Sia $E: y^2 = 4x^3 - g_2 x - g_3$ (il luogo di zeri in $\bbC^2$) e
@@ -14,17 +14,18 @@ consideriamone la chiusura proiettiva $\ol{E} = E \cup \{ (0 : 1 : 0)
 \begin{notazione}
   Con $\ol{E}(\bbK)$ si intendono i punti $\bbK$-razionali di $\ol{E}$,
   ovvero i punti di $\bbP^2 \bbC$ per le quali il rapporto tra le
-  coordina è un numero di $\bbK$, ovvero
+  coordinate è un numero di $\bbK$, ovvero
   $\ol{E}(\bbK) = \{ (x : y : z) \in \ol{E} \mid \frac{x}{y},
   \frac{y}{z} \in \bbK \}$
 \end{notazione}
 
 \newthought{Consideriamo la mappa} $F: T = \sfrac{\bbC}{L} \rar \ol{E}$
-dal toro relativo al reticolo $L$ alla chiusura della cubica. $F$ è
-definita da $z \mapsto (\wp(z) : \wp'(z) : 1)$ dove questa espressione
-ha senso. Quando invece $z$ è un polo di $\wp$, si può usare un'altra
-espressione per la mappa, definita sul polo, ma che coincida con
-quella fornita sui punti in cui si intersecano gli aperti di definizione.
+dal toro relativo al reticolo $L$ alla chiusura proiettiva della
+cubica. $F$ è definita da $z \mapsto (\wp(z) : \wp'(z) : 1)$ dove questa
+espressione ha senso. Quando invece $z$ è un polo di $\wp$, si può usare
+un'altra espressione per la mappa, definita sul polo, ma che coincida
+con quella fornita sui punti in cui si intersecano gli aperti di
+definizione.
 
 \notamargine{Ad esempio si può considerare l'espressione
   $$\lbr{1 : \frac{\wp'(z)}{\wp(z)} : \frac{1}{\wp(z)}}$$
@@ -36,24 +37,33 @@ quella fornita sui punti in cui si intersecano gli aperti di definizione.
 \begin{proposizione}
   $F$ è una biggezione tra $T$ ed $\ol{E}(\bbC)$ (ed è olomorfa)
 \end{proposizione}
+\notamargine{Ricordiamo che tutte le funzioni meromorfe su $T$ sono
+  $\bbC(\wp(z), \wp'(z))$, mentre le fuznioni meromorfe pari su $T$ sono
+  esattamente $\bbC(\wp(z))$}
 \begin{proof}
   Sia $p \in \ol{E}(\bbC)$. Distinguiamo in due casi:
   \begin{itemize}
   \item Se $p = (0 : 1 : 0)$ ok per costruzione (significa che la $\wp$
     ha un polo e quindi come unico punto abbiamo $z = 0 \in T$)
   \item Se $p \in E(\bbC)$ (nella parte affine della cubica) sia $p =
-    (x_0, y_0)$.
+    (x_0, y_0)$
 
     Consideriamo allora $\wp(z) - x_0$ che è una funzione ellittica pari
-    non costante e quindi ha due zeri (con molteplicità). Se $z_0$ è uno
-    zero lo è anche $- z_0$ (dove i punti si intendono sul
+    non costante che ha due zeri (con molteplicità). Se $z_0$ è uno zero
+    lo è anche $- z_0$ (dove i punti si intendono sul
     toro). Distinguiamo in due casi a seconda della derivata nel punto:
     \begin{itemize}
     \item Se $\wp'(z_0) = 0$ allora $z_0$ è uno zero doppio e deve
       quindi coincidere con $-z_0$ sul toro, ovvero nel piano ho
       solamente quattro possibilità: sono la metà dei generatori del
       parallelogramma fondamentale del toro.
-      % TODO: Disegno del parallelogramma fondamentale con i punti evidenziati
+      
+      \notamargine{Nella figura qui sotto è disegnato il
+        parallelogramma fondamentale di un toro. Sono evidenziati con
+        un pallino vuoto i punti che corrispondono alla metà dei
+        generatori del parallelogrammo.
+
+        \includegraphics[width=3cm]{lezione-161128-fig1}}
 
       Allora si ha un solo punto tale che $4x_0^3 - g_2 x_0 - g_3 = 0 (=
       \wp'(z_0))$ e quindi anche questo caso è ok
@@ -103,16 +113,19 @@ punti $x_0$ ed $x_1$ del $\bbC$ ``che viene ricoperto'' posso sollevare
 il cammino, perché ho un rivestimento. Per mostrare la connessione del
 rivestimento basta quindi dimostrare che la fibra di $x_0 \neq \alpha,
 \beta, \gamma$ ``è connessa'', ovvero ho un cammino che connette i due
-elementi della fibra. E ciò è molto semplice da fare con la radice
-quadrata:
+elementi della fibra.
 
-Prendiamo infatti un punto $x_0$ vicino ad $\alpha$. Allora si ha che
+\begin{center}
+  \includegraphics[width=8cm]{lezione-161128-fig2}
+\end{center}
+
+Ciò è molto semplice da fare con la radice quadrata: prendiamo infatti
+un punto $x_0$ vicino ad $\alpha$. Allora si ha che
 $\sqrt{f(x)} = (x - \alpha)^{\frac{1}{2}} \cdot g(x)$ con $g(x)$
 olomorfa vicino ad $\alpha$ (poiché siamo lontani da $\beta$ e da
 $\gamma$)
 
 % TODO: Fare i conti espliciti o motivarlo meglio
-% TODO: Aggiungere disegno di Zannier
 
 Scegliamo una determinazione della radice e facciamo un giro attorno ad
 $\alpha$ tornando sulla fibra di $x_0$ ma con valore del segno cambiato.
@@ -127,6 +140,22 @@ nel caso la cubica è parametrizzabile se e solo se è singolare.
   $f: \bbP^1 \rar E$ che si intende definita da quasi tutti i punti di
   $\bbP^1$ a quasi tutti i punti di $E$. (Quasi tutti significa tutti
   tranne al più un numero finito)}
+
+\subsection{Caso singolare}
+Sappiamo che esiste un punto singolare (ovvero che appartiene alla curva
+e su cui tutte le derivate parziali dell'equazione definente la curva si
+annullano, ovvero in cui la dimensione del tangente è due).
+
+Allora, se intersechiamo la cubica con il fascio di rette passante per
+il punto singolare otteniamo la parametrizzazione (per esercizio
+mostrare che ogni retta incontra esattamente un punto della chiusura
+proiettiva della cubica e che, ovviamente, dato ogni punto della cubica
+esiste una retta che passa per lui e per il punto singolare). La cubica
+è quindi singolare.
+
+\notamargine{Inoltre di punti singolari ne ha al più uno: se ve ne
+  fossero due $p, q$ posso tracciare la retta passante per $p$ e per
+  $q$, che intersecherebbe la cubica con molteplicità quattro.}
 
 \subsection{Caso non singolare}
 In ogni cubica c'è sempre un punto di flesso (ovvero dove l'hessiano si
@@ -146,7 +175,7 @@ all'infinito $(0 : 1 : 0)$.
 
 Facendo i conti con il flesso all'infinito e con tangente al flesso la
 retta $\{ z = 0 \}$ ottengo un'equazione simile a quella di Weierstrass
-a cui si arriva con poche manipolazioni algebriche:
+a cui si arriva con alcune manipolazioni algebriche:
 $y^2 = 4 x^3 - a x - b$.
 
 Se poi effettuiamo la trasformazione $x \mapsto \lambda^2 x$ e $y
