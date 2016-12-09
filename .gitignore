@@ -18,3 +18,5 @@
 *.gnuplot
 *.table
 *.old
+*.dvi
+

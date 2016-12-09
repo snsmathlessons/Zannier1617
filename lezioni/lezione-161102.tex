@@ -1,0 +1,146 @@
+%% Lezione di esempio. Copiate questo file nella lezione che dovete creare
+%% per avere già uno scheletro di come scrivere le lezioni
+
+%% Diamo un nome al capitolo. Idealmente mettiamo la data della lezione ed
+%% una sua breve descrizione / argomenti trattati
+\chapter{02/11/16 - Isogenie dei Tori e Anello degli Endomorfismi}
+\justify
+
+%% Le parole dentro a \newthought vengono scritte in maiuscoletto. Usatele
+%% per sottolineare meglio alcune parole ad inizio paragrafo
+\newthought{Avevamo}  mostrato, nelle lezioni precedenti, che il $ \bbP_{1}\bbC $ non ammette strutture di gruppo olomorfo. \\
+Abbiamo inoltre mostrato che i tori ammettono come unica struttura di gruppo quella di gruppo quoziente di $\bbC$ sul reticolo $L$.\\
+
+
+%% Si può poi inserire una section per scrivere degli argomenti specifici
+\section{Leggi di gruppo su superfici di Riemann}
+\begin{osservazione}
+Sia G un gruppo olomorfo. $\forall g \in G$ le traslazioni $L_{g}$ e $R_{g}$ sono mappe biolomorfe senza punti fissi. 
+\end{osservazione}
+
+\noindent Il nostro obiettivo, in questa sezione, è quello di mostrare come nessuna superficie di Riemann iperbolica ammetta una struttura di gruppo olomorfo. In realtà ci basterà mostrarlo solo per il disco unitario grazie al seguente lemma:
+\begin{lemma}
+Sia $X$ un gruppo topologico con $\mu : X\times X \rar X$ legge di gruppo. Sia inoltre $p :\widetilde{X} \rar X$ il rivestimento universale.
+Allora $\mu$ si solleva ad una $\tilde{\mu} : \widetilde{X} \times \widetilde{X} \rar \widetilde{X}$ che rende $\widetilde{X}$ un gruppo topologico.
+\end{lemma}
+
+\begin{proof}
+
+			\begin{diagram}
+				\widetilde{X}\times\widetilde{X}	& \rTo^{\widetilde{\mu}} 	& \widetilde{X}	\\
+				\dTo<{p \times p}	&					& \dTo>{p}\\
+				X\times X				& \rTo^\mu 		& X 
+			\end{diagram}
+
+\noindent Sia $e \in X$ l'identità di $X$ e sia $\tilde{e} \in \widetilde{X}$ un punto t.c. $p(\tilde{e})=e$. Prodotto di semplicemente connessi è semplicemente connesso, dunque la mappa $\mu \circ (p \times p)$ solleva ad una mappa $\widetilde{\mu}$ che chiude il diagramma. Basta ora mostrare che $\widetilde{\mu}$ è una legge di moltiplicazione {\it (un po' di verifiche emozionantissime)}.\\
+
+{\bf Elemento neutro:}
+	\begin{diagram}
+		\{\tilde{e}\}\times\widetilde{X}	& \rTo^{\widetilde{\mu}}_{\pi_{2}} 	& \widetilde{X}	\\
+		\dTo<{p \times p}			&					& \dTo>{p}\\
+		\{e\}\times X				& \rTo^\mu 				& X 
+	\end{diagram}
+
+\noindent Per restrizione, $\tilde{\mu}$ chiude il diagramma. Ma anche la proiezione sul secondo fattore fa commutare il quadrato; per unicità del sollevamento a punto base fissato si ha che $\tilde{\mu}(\tilde{e}, \bullet) \equiv \pi_{2}(\bullet)$. Analogamente si ha che $\tilde{\mu}(\bullet, \tilde{e}) \equiv \pi_{1}(\bullet)$ e dunque $\tilde{e}$ è elemento neutro per $\tilde{\mu}$.\\
+{\bf Associatività} e {\bf inverso} si ottengono in maniera del tutto analoga (cioè sfruttando l'unicità del sollevamento).
+\end{proof}
+
+\begin{teorema}
+Il disco unitario in $\bbC$ non ammette una struttura di gruppo olomorfa
+\end{teorema}
+
+\begin{proof}
+Per assurdo; ci sono due possibili vie.\\
+Conoscendo i gruppi di Lie, basta considerare la mappa esponenziale dal tangente nel disco: dovrebbe essere una mappa non costante da $\bbC$ nel disco. \hfill \Lightning \\
+Altrimenti, sia $\star : D\times D \rar D$ una legge di gruppo olomorfa. Sia inoltre $x^{*}$ l'inverso di $x$ per $\star$. Senza perdita di generalità, si può supporre che $0 \in D$ sia l'elemento neutro.
+Allora $\forall x\in D$ la mappa $L_{x}: z\mapsto x\star z$ è un automorfismo olomorfo. \\
+Dunque,  $$x\star z = c(x)\frac{z -a(x)}{1- \overline{a}(x) z}$$
+con $|c(x)|\equiv 1$ e $a:D \rar D$.\\
+Per $z=0$ si ha $x=-c(x)a(x)$.\\
+Per $z=a(x)$ si ha $x*a(x)=0$ $\Rar$ $a(x)=x^{*}$ $\Rar$ $a(x)$ è olomorfa $\Rar$ (per $x\neq 0$) $c(x)=-\frac{x}{x^{*}}$ $\Rar$ $c(x)$ è olomorfa per $x\neq 0$, ma $|c(x)| \equiv 1$ $\Rar$ per principio di prolungamento analitico {\it (non credo si chiami così ma vabbè...)}, $ \ c(x) \equiv k \neq 0$. Da cui $a(x)= -\frac{x}{k}$.\\
+Allora, $$x\star 1/2 = k\frac{1-2a(x)}{2-\overline{a}(x) z}$$
+ma questa non è olomorfa ( $\overline{a}(x)$ non lo è, il resto sì). 
+
+\end{proof}
+
+\begin{corollario}
+Curve algebriche non ellittiche \underline{non} ammettono struttura di gruppo olomorfo.
+\end{corollario}
+%% Le subsection sono, ovviamente, le sottosezioni. State attenti però che
+%% con il tipo di testo che stiamo usando le subsubsection non esistono
+
+\section{Endomorfismi di un Toro}
+
+\newthought{In questa sezione} vogliamo studiare l'anello delle isogenie di un toro in sè. Ma prima classifichiamo un po' meglio le isogenie tra tori.
+
+\begin{proposizione}
+Siano $T_{1}$ e $T_{2}$ due tori.\\
+$\exists f:T_{1} \rar T_{2}$ isogenia $\sse$ $\exists \Gamma < T_{1}$ sottogruppo finito t.c. $\sfrac{T_{1}}{\Gamma} \simeq T_{2}$ come gruppi olomorfi. 
+\end{proposizione}
+\begin{proof}
+\fbox{$\Rar$}\\
+\'E il primo teorema di omomorfismo (ci sarebbe da mostrare che gli isomorfismi sono olomorfi ma ci crediamo).\\
+\fbox{$\Leftarrow$}\\
+Sia $\pi:\bbC \rar T_{1} = \sfrac{\bbC}{L}$ la proiezione al quoziente. Allora $\overline{L}=\pi^{-1}(\Gamma)$ è un sottogruppo discreto di $\bbC$ (rimane discreto perche $\Gamma$ è finito). Per teoremi di omomorfismo (di nuovo sarebbe da mostrare l'olomorfia):
+$$\sfrac{T_{1}}{\Gamma} \simeq \sfrac{\sfrac{\bbC}{L}}{\Gamma} \simeq \sfrac{\bbC}{\overline{L}}$$
+Di conseguenza $\sfrac{T_{1}}{\Gamma}$ è un toro $T_{2}$ e la proiezione al quoziente è isogenia tra $T_{1}$ e $T_{2}$.
+\end{proof}
+
+Più avanti definiremo le funzioni di Weierstrass, che ci permetteranno di trasformare i tori in curve algebriche (ellittiche). Le isogenie verranno trasformate in funzioni razionali tra le curve.
+
+\subsection{Anello degli Endomorfismi di un Toro}
+
+Fissiamo un toro $T=\sfrac{\bbC}{L}$ e consideriamo l'insieme $End(T)$ delle isogenie del toro in sè, con in più la mappa nulla.
+
+\begin{proposizione} $End(T)$ ha una naturale struttura di anello (somma tra mappe e prodotto di composizione). Inoltre vale che:
+\begin{enumerate}
+\item $End(T)$ è un anello commutativo
+\item $\bbZ \subseteq End(T)$
+\item $End(T) \hookrightarrow \bbC$
+\item $End(T) \otimes_{\bbZ} \bbQ$ è un campo ({\it d'ora in poi, se non diversamente specificato, tutti i tensori saranno su $\bbZ$})
+\end{enumerate}
+\end{proposizione}
+
+\begin{proof} {\it Lui ha dato tutto ciò per buono. Non so quanto sia utile dimostrarlo ma vabbè}\\
+3.\\
+Abbimo mostrato precedentemente che ogni isogenia è passaggio al quoziente di un'opportuna moltiplicazione per scalare su $\bbC$. Per gli endomorfismi vale un risultato più forte: lo scalare che induce l'isogenia è unico.
+Infatti, siano $\lambda$ e $\mu$ elementi di $\bbC$ che inducono la stessa isogenia $f:T\rar T$. Allora, $\forall x\in \bbC,  \ (\lambda - \mu)x \in L$. Quindi, l'ideale generato da $\lambda -\mu$ deve essere contenuto nel reticolo, che è discreto $\Rar$ $\lambda - \mu = 0$. \'E quindi ben definita la mappa $f \mapsto \mu$ che associa ad ogni endomorfismo lo scalare di cui è passaggio al quoziente. Questa mappa è chiaramente un omomorfismo iniettivo di anelli.\\
+1.\\
+ovvia dalla 3.\\
+2.\\
+Poichè $L$ è uno $\bbZ$-modulo, $\forall n \in \bbZ, nL\subseteq L$. Inoltre, sia $x\in \bbC \setminus L$. Allora $x/n \not\in L$ e si ha che $n[x/n]=[x]$ $\Rar$ la moltipicazione per n è surgettiva sul toro $\Rar$ $\bbZ \subseteq End(T)$\\
+4.\\
+Sia $t=\sum\limits_{i=0}^{k} \mu_{i} \otimes \frac{p_{i}}{q_{i}}$. Sia $q$ il minimo comune multiplo dei $q_{i}$ e siano $a_{i} \in \bbZ$ tali che $\forall i, q=q_{i}a_{i}$. Allora,\\
+$t=\sum\limits_{i=0}^{k} \mu_{i}\otimes \frac{p_{i}}{q_{i}} = \sum\limits_{i=0}^{k} \mu_{i} \otimes \frac{p_{i}a_{i}}{q}= \sum\limits_{i=0}^{k} a_{i}p_{i}\mu_{i}\otimes \frac{1}{q} = (\sum\limits_{i=0}^{k} a_{i}p_{i}\mu_{i})\otimes \frac{1}{q}$ $\Rar$ ogni tensore è semplice. L'inverso di un tensore $\mu \otimes \frac{p}{q}$ (dove $\mu$ è una mappa non nulla di grado $d$) è il tensore $\hat{\mu} \otimes \frac{q}{pd}$, con $\hat{\mu}$ l'endomorfismo duale di $\mu$ (la moltiplicazione è quella indotta sull'anello tensore dai due anelli $End(T)$ e $\bbQ$. Sui tensori semplici diventa semplicemente la moltiplicazione "componente per componente").
+\end{proof}
+
+Volendo, potremmo fare gli stessi discorsi (anello degli endomorfismi etc...) sulle curve ellittiche (che sono definite anche su altri campi). Cosa cambia? In $char \ K >0$ {\bf non } è detto che $End(T)$ sia commutativo (con $T$ curva ellittica).\\
+
+\noindent Cerchiamo ora di caratterizzare un po' meglio $F=End(T) \otimes \bbQ$. Sia $T=\tau \bbZ + \bbZ$ e $\mu : T \rar T$ l'isogenia indotta dalla moltiplicazione per $\mu$. La condizione di mappare il reticolo in sé si traduce nel sistema:
+\begin{equation*}
+\begin{cases}
+	\mu \tau = a\tau + b\\
+	\mu = c\tau + d\\
+\end{cases}
+\end{equation*}
+Con $M=
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}$, $ \ M\in \mathfrak{M}_{2}(\bbZ)$.\\
+Se $\bar{\mu}=\mu$ $\Rar$ $c=0$ $\Rar$ $\mu \in \bbZ$.\\
+Altrimenti $\mu$ è quadratico immaginario perchè è autovalore della matrice $M$, ma non razionale.
+Quando posso avere i due casi?\\
+Si deve avere $\tau = \frac{a\tau + b}{c\tau + d}$ $\Rar$ $c\tau^{2} + (d-a)\tau - b=0$\\
+$\tau$ non è immaginario quadratico $\Rar$ $End(T)=\bbZ$.
+$\tau$ è immaginario quadratico $\Rar$ $\bbZ \subsetneq End(T)$. Questo fenomeno si chiama {\bf moltiplicazione complessa dei tori}.
+
+\newthought{Chi è} il rappresentante del duale di una isogenia?\\
+La moltiplcazione tra i due rappresentanti deve dare il grado dell'isogenia $\Rar$ $\hat{\mu} = \overline{\mu}$. 
+\begin{corollario}
+$\hat{\mu + \nu} =\hat{\mu} + \hat{\nu}$
+\end{corollario}
+
+\noindent {\bf $\underline{\mbox{Esercizio:}}$} $c_{i}: T_{1} \rar T_{2}$ ($i=1 , 2$) isogenie, $c_{1}+c_{2} \neq 0$ $\Rar$ $\hat{c_{1} + c_{2}}=\hat{c_{1}}+\hat{c_{2}}$.\\
+{\bf $\underline{\mbox{Hint:}}$} $\hat{c_{2}}\circ c_{1} \in End(T_{1})$
+
