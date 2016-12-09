@@ -7,8 +7,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[italian]{babel}
 \usepackage{ragged2e}
-
-
+\usepackage{hyperref}
 \usepackage{xfrac}
 \usepackage{marginfix}
 \usepackage{tikz}
@@ -31,6 +30,8 @@
 % \DeclareMathAlphabet      {\mathtt}{OT1}{cmtt}{m}{n}
 % \DeclareMathAlphabet      {\mathbb}{OT1}{cmr}{m}{n}
 % \DeclareMathAlphabet      {\mathfrak}{OT1}{euler}{m}{n}
+
+\input{diagrams.sty}
 
 \usepackage{enumitem}
 \setlist{nolistsep}
@@ -311,6 +312,7 @@
     \newtheorem{corollario}[gencounter]{Corollario}
     \newtheorem{osservazione}[defcounter]{Osservazione}
     \newtheorem{remark}[defcounter]{Remark}
+    \newtheorem{notazione}[defcounter]{Notazione}
 
     \newcommand{\notamargine}[1]{
       \vspace{-7\baselineskip}
@@ -363,14 +365,20 @@
 
 % v.4 copyright page
 \newpage
-\newcommand{\contributori}{Nomi di tutti da aggiungere}
+\newcommand{\contributori}{Giovanni Italiano, Federico Franceschini,
+  Andrea Caberletti, Dario Ascari, Nicola Picenni, Matteo Migliorini,
+  Dario Balboni, Umberto Pappalettera, Andrea Marino, Manuele Cusumano,
+  Gianluca Tasinato, Clara Antonucci}
 \begin{fullwidth}
 \begin{doublespace}
   \thispagestyle{empty}
   \setlength{\parindent}{0pt}
   \setlength{\parskip}{\baselineskip}
   \noindent\fontsize{16}{16}\selectfont\scshape
-  \par\nohyphenation Hanno collaborato alla stesura di questo testo: \contributori
+  \par\nohyphenation Hanno collaborato alla stesura di questo testo:
+  \itshape\contributori
+
+  (Ordine per terza lettera del cognome)
 \end{doublespace}
 
 ~\vfill
@@ -462,12 +470,14 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
 \setlength{\parindent}{0cm}
 
 \include{lezioni/lezione-160919}
+\include{lezioni/lezione-160921}
 \include{lezioni/lezione-160926}
 \include{lezioni/lezione-160928}
 \include{lezioni/lezione-161003}
 \include{lezioni/lezione-161005}
 \include{lezioni/lezione-161024}
+\include{lezioni/lezione-161026}
 \include{lezioni/lezione-161102}
-
+\include{lezioni/lezione-161128}
 \end{document}
 
