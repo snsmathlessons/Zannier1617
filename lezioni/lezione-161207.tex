@@ -2,13 +2,13 @@
 \justify
 
 \section{Legge di gruppo sulla cubica}
-Abbiamo già visto che con la proiezione al quoziente $\pi : \mathbb{C} \rightarrow T$ il toro eredita la struttura di gruppo additivo da $\mathbb{C}$.
+Abbiamo già visto che con la proiezione al quoziente $\pi : \bbC \rightarrow T$ il toro eredita la struttura di gruppo additivo da $\bbC$.
 Vogliamo vedere adesso chi è la legge di gruppo sulla cubica $\widetilde{E}$.
 Considero la mappa di Weierstrass: $T\rightarrow \widetilde{E}$ che manda $z \rightarrow (\wp(z):\wp'(z):1)$. Mi chiedo chi sia l'immagine di $z_1 + z_2$.
 
 \begin{teorema}
-$$\wp(z_1+z_2)=\frac{a^2}{4}-\wp(z_1)-\wp(z_2)$$
-con $a=\displaystyle{\frac{\wp'(z_2)-\wp'(z_1)}{\wp(z_2)-\wp(z_1)}}$.
+$\wp(z_1+z_2) = \frac{a^2}{4} - \wp(z_1) - \wp(z_2) $
+con $a = \frac{\wp'(z_2) - \wp'(z_1)}{\wp(z_2) - \wp(z_1)}$.
 \end{teorema}
 
 \begin{proof}
@@ -135,7 +135,7 @@ Si definisce gruppo dei divisori di grado zero sulla cubica $\Div^0(\widetilde{E
 
 \begin{definizione}
 Per questa definizione supponiamo di sapere che la cubica viene da un toro.
-Considero una funzione $f$ razionale non nulla su $\widetilde{E}$, cioè $f \in \mathbb{C}(\wp(z),\wp'(z))$. So che ha finiti zeri e finiti poli.
+Considero una funzione $f$ razionale non nulla su $\widetilde{E}$, cioè $f \in \bbC(\wp(z),\wp'(z))$. So che ha finiti zeri e finiti poli.
 Si definisce: $\div(f) = \sum_{P\in T} \ord_P(f) \cdot (P) \in \Div(\widetilde(E))$.
 L'insieme di tutti i possibili $\div(f)$ si chiama insieme dei divisori principali.
 \end{definizione}
@@ -144,7 +144,7 @@ Un teorema che abbiamo visto (T2 sulle superfici di riemann compatte) garantisce
 Inoltre $\{\div(f)\}$ è un sottogruppo di $\Div^0(\widetilde{E})$ (le verifiche sono banali).
 
 C'è dunque un omomorfismo (non surgettivo) tra il gruppo moltiplicativo delle funzioni razionali non nulle su $\widetilde{E}$ e i divisori di grado zero.
-$\varrho: \mathbb{C}(\widetilde(E))^* \rightarrow \Div^0(\widetilde{E})$. Infatti $\div(fg)=\div(f)+\div(g)$.
+$\varrho: \bbC(\widetilde(E))^* \rightarrow \Div^0(\widetilde{E})$. Infatti $\div(fg)=\div(f)+\div(g)$.
 
 \begin{proposizione}
 $\Ker(\varrho) = \{\text{le funzioni costanti diverse da zero}\}$
@@ -156,22 +156,22 @@ neutro di $\Div^0(\widetilde{E})$ (la stringa vuota), allora essa non ha né pol
 
 \begin{osservazione}
 Quindi ho una successione esatta che comincia così:
-$$0 \rightarrow \mathbb{C}^* \rightarrow \mathbb{C}^*(\widetilde{E}^*) \rightarrow \Div^0(\widetilde{E})$$
+$$0 \rightarrow \bbC^* \rightarrow \bbC^*(\widetilde{E}^*) \rightarrow \Div^0(\widetilde{E})$$
 \end{osservazione}
 
 
-\section{Divisori in un caso più semplice: $\mathbb{P}_1$}
-$\mathbb{C}(\mathbb{P}_1) = \mathbb{C}(t)$ con $t$ che è la funzione coordinata $t(x_1, x_0)=\frac{x_1}{x_0}$.
+\section{Divisori in un caso più semplice: $\bbP_1$}
+$\bbC(\bbP_1) = \bbC(t)$ con $t$ che è la funzione coordinata $t(x_1, x_0)=\frac{x_1}{x_0}$.
 Ha un polo nel punto all'infinito, cioè in $(1:0)$.
 
 \begin{proposizione}
-Ogni divisore di grado $0$ è il divisore di una funzione (nel caso di $\mathbb{P}_1$! Per $\widetilde(E)$ è falso.)
+Ogni divisore di grado $0$ è il divisore di una funzione (nel caso di $\bbP_1$! Per $\widetilde(E)$ è falso.)
 \end{proposizione}
 \begin{proof}
 Possiamo supporre che $\infty$ non compaia nel divisore di grado $0$ (infatti, se per caso ci compare con coefficiente $n$,
 sarà sufficiente sottrarre alla fine una funzione che ha un solo polo di ordine $n$ all'infinito).
-Allora (col piccolo abuso di identificare $\mathbb{P}_1 \backslash \infty$ con $\mathbb{C}$)
-questo divisore sarà $\sum m_i (\alpha_i)$ con $m_i \in \mathbb{Z}$ e $\alpha_i \in \mathbb{C}$, e so che $\sum m_i=0$.
+Allora (col piccolo abuso di identificare $\bbP_1 \backslash \infty$ con $\bbC$)
+questo divisore sarà $\sum m_i (\alpha_i)$ con $m_i \in \mathbb{Z}$ e $\alpha_i \in \bbC$, e so che $\sum m_i=0$.
 Calo dal cielo $\prod(t-\alpha_i)^m_i$, e si vede facilmente che risolve.
 \end{proof}
 
@@ -185,13 +185,13 @@ $\Pic^0(\widetilde{E}) := \frac{\Div^0(\widetilde{E})}{\text{divisori principali
 
 \begin{osservazione}
 Ho quindi la successione esatta:
-$$0 \rightarrow \mathbb{C}^* \rightarrow \mathbb{C}^*(\widetilde{E}^*) \rightarrow \Div^0(\widetilde{E})\rightarrow \Pic^0(\widetilde{E})\rightarrow 0$$
+$$0 \rightarrow \bbC^* \rightarrow \bbC^*(\widetilde{E}^*) \rightarrow \Div^0(\widetilde{E})\rightarrow \Pic^0(\widetilde{E})\rightarrow 0$$
 \end{osservazione}
 
-Nel caso visto prima di $\mathbb{P}_1$, già $\Pic^0(\mathbb{P}_1)=0$
+Nel caso visto prima di $\bbP_1$, già $\Pic^0(\bbP_1)=0$
 
 \notamargine{
-Avere il $\Pic=0$ è imparentato in qualche modo con l'essere UFD. Ad esempio $\mathbb{Z}(i)$ ha $\Pic=0$. Nel caso del $\mathbb{P}_1$, il fatto che il suo $\Pic$ sia nullo è dunque legato alla fattorizzazione unica dei polinomi.
+Avere il $\Pic=0$ è imparentato in qualche modo con l'essere UFD. Ad esempio $\mathbb{Z}(i)$ ha $\Pic=0$. Nel caso del $\bbP_1$, il fatto che il suo $\Pic$ sia nullo è dunque legato alla fattorizzazione unica dei polinomi.
 }
 
 \section{Vogliamo ora studiare il Pic di una curva ellittica}
