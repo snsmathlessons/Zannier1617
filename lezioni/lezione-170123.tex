@@ -9,11 +9,12 @@ ellittiche dalle ellissi \notamargine{Abbiamo infatti già visto che si
 Prendiamo un'ellisse di equazione $ax^2 + by^2 = 1$ e supponiamo di
 giocare a biliardo sull'ellisse: facendo partire la pallina da un punto
 la lanciamo contro il bordo dell'ellisse su cui rimbalza secondo la nota
-legge \notamargine{Ovvero rispetto alla tangente all'ellisse nel punto
-  rimbalza via con lo stesso angolo, come indicato in figura}
+legge della riflessione \notamargine{Ovvero rispetto alla tangente
+  all'ellisse nel punto rimbalza via con lo stesso angolo, come indicato
+  in figura}
 
 \begin{center}
-  \includegraphics[width=3cm]{lezione-170123-fig1}
+  \includegraphics[width=8cm]{lezione-170123-fig1}
 \end{center}
   
 Una cosa che è nota da tempo è che le rette che compongono la
@@ -23,10 +24,47 @@ parametro di ellissi che descrive tutte le possibili traiettorie.
 
 \newthought{Vediamo allora che succede} quando prendiamo un punto $P$
 sul bordo dell'ellisse ed una retta $l$ con $P \in l$ e tangente alla
-caustica.
+caustica:
 
 \includegraphics[width=3cm]{lezione-170123-fig2}
-% TODO: Finire paragrafo che diventa bruttissimo
+
+Possiamo definire un'applicazione $\phi$ dalle coppie punto-retta in sè
+che è la funzione di ``evoluzione'' della traiettoria sul biliardo,
+ovvero manda la coppia $(P, l)$ in $(P', l')$ con $P'$ l'altro punto di
+intersezione della retta $l$ con l'ellisse e $l'$ la retta passante per
+$P'$ che segue la legge della riflessione con $l$.
+
+\newthought{È noto} che le tangenti in $\bbP^2$ ad una conica sono
+parametrizzate da un'altra conica: la conica duale.
+\notamargine{Tutto ciò non è difficile da verificare: se la conica $\cC$
+  ha equazione $f = ax^2 + by^2 + cz^2$ e $(x_0, y_0, z_0) = P \in \cC$
+  allora $(\nabla f)_P = (2ax_0, 2by_0, 2cz_0)$ e, ricordando che tutti
+  i punti/vettori considerati sono in $\bbP^2$ si ha che dare la retta
+  tangente in $P$ è uguale a fornire il vettore $(\nabla f)_P$. D'altra
+  parte si riesce ovviamente a recuperare il punto $P$ dato $(\nabla
+  f)_P$ a cui è tangente (basta vedere la formula scritta sopra in
+  coordinate, visto che i coefficienti della conica sono noti)}
+Allora il luogo di punti su cui la $\phi$ agisce è una sottovarietà
+(algebrica) di $C_1 \times \hat{C_2}$, con $C_1 = \text{punti della
+  conica}$ e $\hat{C_2} = \text{conica duale delle rette tangenti}$.
+
+Il luogo di punti è dato dalle coppie $(P, l) \in C_1 \times \hat{C_2}$
+tali che $P \in l$ (che è una condizione chiusa, ovvero dà luogo ad una
+sottovarietà algebrica). Questa è anche una superficie di Riemann.
+
+Scrivendo l'equazione si ottiene una curva ellittica e l'operazione
+$\phi$ si rivela essere una traslazione sulla cubica detta ``gioco di
+Poncelèt''.
+
+Il gioco ``finisce'' se e solo se la traslazione $\phi(x) = x + \tau$ ha
+un punto di ordine finito, ovvero $\exists n$
+$\phi^n (x) = x + n\tau = x$ se e solo se $n\tau \in L$, il
+reticolo. Ovvero si avrebbe $\phi^n(x) = x$ per ogni punto. Allora se il
+gioco finisce per una traiettoria finisce per tutte le altre, cosa che
+non è per nulla banale.
+
+\notamargine{Come curiosità, se il gioco non finisce, le traiettorie del
+  biliardo sono dense nello spazio tra le due caustiche}
 
 \section{Funzioni Modulari}
 
@@ -83,6 +121,21 @@ $j$ è una funzione di $\tau$
 \end{divagazione}
 
 \section{Costruzione di un dominio fondamentale}
+
+Vogliamo costruire un dominio fondamentale per lo spazio dei reticoli,
+ovvero su cui agiranno le funzioni modulari.
+\notamargine{Per dominio fondamentale intendiamo uno spazio in cui è
+  presente esattamente un rappresentante per ogni reticolo. Nel nostro
+  caso portiamo ogni reticolo nella forma $L = \bbZ + \bbZ \tau$}
+
+Descriviamo innanzitutto la forma del dominio fondamentale:
+$ F = \cH \cap \{ \Re z \in [ -\frac{1}{2}, \frac{1}{2} ) \} $
+tolto l'insieme $\{ \abs{z} < 1 \} \cup \{ \abs{z} = 1 \mid \Re z > 0 \}$
+
+e definiamo le due applicazioni
+$$ S = \lbr{\begin{array}{cc} 0 & 1 \\ -1 & 0 \\ \end{array}} $$
+$$ T = \lbr{\begin{array}{cc} 1 & 1 \\ 0 & 1 \\ \end{array}} $$
+tra cui si hanno le relazioni $S^2 = (TS)^3 = \Id$
 
 \begin{center}
   \includegraphics[width=8cm]{lezione-170123-fig3}
