@@ -19,4 +19,5 @@
 *.table
 *.old
 *.dvi
-
+*.gz
+*.zip
