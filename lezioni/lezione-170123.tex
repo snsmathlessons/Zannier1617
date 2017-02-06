@@ -26,13 +26,15 @@ parametro di ellissi che descrive tutte le possibili traiettorie.
 sul bordo dell'ellisse ed una retta $l$ con $P \in l$ e tangente alla
 caustica:
 
-\includegraphics[width=6cm]{lezione-170123-fig2}
-
 Possiamo definire un'applicazione $\phi$ dalle coppie punto-retta in sè
 che è la funzione di ``evoluzione'' della traiettoria sul biliardo,
 ovvero manda la coppia $(P, l)$ in $(P', l')$ con $P'$ l'altro punto di
 intersezione della retta $l$ con l'ellisse e $l'$ la retta passante per
 $P'$ che segue la legge della riflessione con $l$.
+
+\notamargine{
+  \includegraphics[width=4cm]{lezione-170123-fig2}
+}
 
 \newthought{È noto} che le tangenti in $\bbP^2$ ad una conica sono
 parametrizzate da un'altra conica: la conica duale.
@@ -109,16 +111,35 @@ $j$ è una funzione di $\tau$
   Quando $\tau$ è un immaginario quadratico il reticolo ha infatti degli
   automorfismi non banali. Se $j$ fosse trascendente, visto che gli
   automorfismi sono funzioni razionali delle coordinate e avremmo
-  $\bbQ(j, funz.raz.)$ come campo finitamente generato su $\bbQ$, che ha
-  però grado di trascendenza uno.
+  $\bbQ(j, \text{funz.raz.})$ come campo finitamente generato su $\bbQ$,
+  che ha grado di trascendenza uno.
 
-  Allora si può specializzare $j$, visto che il campo è isomorfo ad una
-  cosa con una variabile. Specializzandolo ad ogni altro numero
-  trascendente ottengo un campo isomorfo e quindi tutte le curve
-  ellittiche avrebbero degli automorfismi non banali (poiché hanno
-  uguali campi) e ciò è impossibile poiché le cubiche con automorfismi
-  sono in numero numerabile.
+  Allora si può ``specializzare'' $j$, visto che il campo è isomorfo ad
+  una cosa con una variabile.
+
+  \notamargine{Qui intendiamo ad esempio che $\bbQ(j, \sqrt{j + 2})
+    \cong \bbQ(t, \sqrt{t + 2})$ con $t$ come variabile e quindi $\cong
+    \bbQ(t_0, \sqrt{t_0 + 2})$ con $t_0$ trascendente.}
+  
+  Specializzandolo ad ogni altro numero trascendente ottengo un campo
+  isomorfo e quindi tutte le curve ellittiche avrebbero degli
+  automorfismi non banali (poiché hanno uguali campi) e ciò è
+  impossibile poiché le cubiche con automorfismi sono in numero
+  numerabile.
 \end{divagazione}
+
+Il reticolo $L$ può avere altre basi, date dall'applicazione di matrici
+$\kM_{2 \times 2} (\bbZ)$ invertibili. Possiamo scegliere l'ordine dei
+due elementi della base in modo da avere soltanto le matrici con
+determinante uno.
+
+Diciamo che due reticoli $\bbZ + \bbZ \tau = \bbZ + \bbZ \tau'$ sono
+equivalenti se $\exists g \in \SL_2 \bbZ$
+$\tc g\tau = \tau' = \frac{a \tau + b}{c \tau + d}$
+
+Allora i tori complessi modulo isomorfismo sono in biggezione con $\cH$
+modulo $\SL_2 \bbZ$ (in realtà l'azione si quozienta per $\{\pm 1\}$,
+quindi l'azione è di $\bbP\SL_2 \bbZ$).
 
 \section{Costruzione di un dominio fondamentale}
 
