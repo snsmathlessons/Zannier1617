@@ -26,7 +26,7 @@ parametro di ellissi che descrive tutte le possibili traiettorie.
 sul bordo dell'ellisse ed una retta $l$ con $P \in l$ e tangente alla
 caustica:
 
-\includegraphics[width=3cm]{lezione-170123-fig2}
+\includegraphics[width=6cm]{lezione-170123-fig2}
 
 Possiamo definire un'applicazione $\phi$ dalle coppie punto-retta in sè
 che è la funzione di ``evoluzione'' della traiettoria sul biliardo,
@@ -140,4 +140,49 @@ tra cui si hanno le relazioni $S^2 = (TS)^3 = \Id$
 \begin{center}
   \includegraphics[width=8cm]{lezione-170123-fig3}
 \end{center}
+
+\begin{osservazione}
+  Sarà parecchio importante sapere che se
+  $g = \lbr{\begin{array}{cc} a & b \\ c & d \\ \end{array}} \in
+  \SL_2(\bbZ)$, allora si ha $\Im (gz) = \frac{\Im z}{\abs{cz + d}^2}$.
+\end{osservazione}
+
+\begin{lemma}
+  $\SL_2 \bbZ$ è un sottogruppo discreto come sottoinsieme di $\SL_2 \bbR$
+  ed agisce in modo propriamente discontinuo su $\cH$
+\end{lemma}
+\begin{proof}
+  Sia $K \subseteq \cH$ un compatto: vogliamo mostrare che allora
+  $gK \cap K \neq \emptyset$ per al più un numero finito di $g \in G$.
+
+  Allora sia $z_0 \in K$ tale che $g z_0 \in K$. Sappiamo però che per
+  un qualunque compatto in $\cH$ $\exists \rho, \rho'$ che dipendono
+  solo dal compatto tali che $\rho' > \Im z > \rho > 0$ per un qualunque
+  $z \in K$. Se anche $g z_0 \in K$ ne segue allora che $\abs{cz_0 + d}$
+  è limitato uniformemente in $z_0$ $\implies$
+  $\Im (cz_0 + d) = c \Im z_0$ $\implies$ $c$ è limitato ed anche $d$ è
+  limitato (e la limitazione dipende solo da $K$)
+
+  $\frac{a z_0 + b}{c z_0 + d} \in K$. Allora, visto che le possibili
+  coppie $(c, d)$ sono finite, si ha
+  $a z_0 + b \in \cup_{(c, d)} (cK + d)K$ che è compatto e quindi si
+  conclude come sopra (utilizzando $\rho$ e $\rho'$)
+\end{proof}
+
+Anche se l'azione è propriamente discontinua il quoziente non è comunque
+rivestito perché ci sono dei punti fissi: ad esempio $Si = i$ e $TS
+\zeta_3 = \zeta_3$. Ma sono gli unici due punti che danno fastidio.
+
+\notamargine{Incollando i bordi del dominio fondamentale si può vedere
+  che topologicamente lo spazio delle curve ellittiche è omeomorfo a
+  $\bbC$, anche se ovviamente non può esserne biolomorfo né rivestito
+  per le conseguenze del teorema di classificazione di Riemann}
+
+Nella prossima lezione vedremo il teorema che ci mostra che $F$ come
+descritto è effettivamente un dominio fondamentale e, come curiosità:
+\begin{teorema}
+  $G = \SL_2 \bbZ$ è generato da $S$ e da $T$. Inoltre è esattamente il
+  gruppo libero su due elementi ($S$ e $T$) con le relazioni
+  $S^2 = (TS)^3 = \Id$
+\end{teorema}
 
