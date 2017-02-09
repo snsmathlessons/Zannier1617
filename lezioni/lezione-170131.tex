@@ -1,17 +1,18 @@
-\chapter{31/01/17 - Azione di $SL_2 \left( \mathbb{Z} \right)$ su $\mathcal{H}$ e Funzioni Modulari}
+\chapter{31 Gennaio 2017 - Azione di $SL_2 \left( \bbZ \right)$ su $\cH$ e Funzioni Modulari}
 \justify
 
-\section{Azione di $SL_2 \left( \mathbb{Z} \right)$ su $\mathcal{H}$}
+\section{Azione di $SL_2 \left( \bbZ \right)$ su $\cH$}
 
-Siano $F=\left\{z \in \mathcal{H} | -\frac{1}{2} \leq \Re(z) \leq 0
+Siano $F=\left\{z \in \cH | -\frac{1}{2} \leq \Re(z) \leq 0
 \wedge |z| \geq 1 \right\} \cup
-\left\{z \in \mathcal{H} | 0 < \Re(z) < \frac{1}{2} \wedge |z| > 1 \right\}$,
-$G=SL_2 \left( \mathbb{Z} \right)/\{\pm Id\}$,   $\rho=\frac{-1+i\sqrt{3}}{2}$,
+\left\{z \in \cH | 0 < \Re(z) < \frac{1}{2} \wedge |z| > 1 \right\}$,
+b$G=SL_2 \left( \bbZ \right)/\{\pm Id\}$,   $\rho=\frac{-1+i\sqrt{3}}{2}$,
 $S=\left( \begin{array}{cc} 0 & 1 \\ -1 & 0 \end{array} \right) \in G$,
 $T=\left( \begin{array}{cc} 1 & 1 \\ 0 & 1 \end{array} \right) \in G$.
 
 \begin{teorema}[1]
-$\forall z \in \mathcal{H} \  \exists g \in G$ tale che $gz \in \mathcal{H}$.
+$\forall z \in \cH \quad \exists g \in G$ tale che $gz \in \cH$.
+
 Inoltre:
 \begin{itemize}
 	\item se $z,gz \in \bar{F}$, allora $z \in \partial F$ e $g=S$ oppure $g=T$.
@@ -37,11 +38,11 @@ G è generato da S e T
 generato da $S$ e $T$ modulo le relazioni $S^2=Id$ e $(TS)^3=Id$}
 
 \begin{proof}
-Sia $G'=\left\langle S,T \right\rangle$. Sia $z \in \mathcal{H}$ e $z' \in G'z$ l'elemento con $\Im(z')$ massimo possibile. Tale elemento esiste perché se
+Sia $G'=\left\langle S,T \right\rangle$. Sia $z \in \cH$ e $z' \in G'z$ l'elemento con $\Im(z')$ massimo possibile. Tale elemento esiste perché se
 $\sigma = \left( \begin{array}{cc} a & b \\ c & d \end{array} \right) \in G'$,
 allora $\Im(\sigma z') = \frac{\Im(z')}{|cz'+d|^2}$ ed essendo
-$c,d \in \mathbb{Z}$, $|cz'+d|^2 \geq \Im(z')^2$ (per $c \neq 0$, se no fa 1) per cui $\Im(\sigma z')$ è limitato dall'alto e il sup viene raggiunto perché
-ci sono solo un numero finito di $c,d \in \mathbb{Z}$ per cui
+$c,d \in \bbZ$, $|cz'+d|^2 \geq \Im(z')^2$ (per $c \neq 0$, se no fa 1) per cui $\Im(\sigma z')$ è limitato dall'alto e il sup viene raggiunto perché
+ci sono solo un numero finito di $c,d \in \bbZ$ per cui
 $|cz'+d|^2 \leq 1$.
 Possiamo anche supporre che $z=z'$ e, a meno di comporre con qualche potenza
 di $T$, supponiamo anche che $-\frac{1}{2} \leq \Re(z) < \frac{1}{2}$.
@@ -73,7 +74,7 @@ $|\Re(z')| = \frac{1}{2}$ e $|\Re(z)| = -\frac{1}{2}$ o viceversa,
 cioè $z,z' \in \partial F$ e $g=T$.
 
 Se invece $c=1$ (il caso $c=-1$ è uguale perché
-$G=SL_2 \left( \mathbb{Z} \right)/\{\pm Id\}$),
+$G=SL_2 \left( \bbZ \right)/\{\pm Id\}$),
 $\Im(z') \leq \frac{1}{\Im(z)} \Rightarrow \Im(z) \leq \frac{2}{\sqrt{3}}$.
 Allora $\Im(z') \leq \frac{2}{\sqrt{3}|z+d|^2} \Rightarrow
 |z+d|^2 \leq \frac{4}{3} \Rightarrow |z|^2+d^2+2d \Re(z) \leq \frac{4}{3}$. 
@@ -112,23 +113,23 @@ Se $d=1$, $|z-1|=1$ che non ha soluzioni in $F$.
 \end{proof}
 
 \begin{osservazione}
-Al quoziente $\mathcal{H}/G$ si può dare una struttura di superficie di Riemann
-(che non è quella che viene da $\mathbb{C}$),
+Al quoziente $\cH/G$ si può dare una struttura di superficie di Riemann
+(che non è quella che viene da $\bbC$),
 identificando le rette $\Re(z)=\pm \frac{1}{2}$ e i due archi di circonferenza
-sul bordo di $F$. Il quoziente è omeomorfo a $\mathbb{C}$.
+sul bordo di $F$. Il quoziente è omeomorfo a $\bbC$.
 \end{osservazione}
 
 \section{Forme quadratiche binarie intere}
 Una forma quadratica binaria intera è un'espressione del tipo:
-$$ ax^2+bxy+cy^2 \qquad a,b,c,d \in \mathbb{Z} $$
+$$ ax^2+bxy+cy^2 \qquad a,b,c,d \in \bbZ $$
 Si vogliono classificare a meno di equivalenza lineare con elementi di
-$SL_2 \left( \mathbb{Z} \right)$.
+$SL_2 \left( \bbZ \right)$.
 
 \begin{osservazione}
 Il discriminante $\Delta =b^2-4ac$ è invariante per trasformazioni lineari
 invertibili. Inoltre, fissato $\Delta$, il numero di classi di equivalenza con
 quel discriminante è FINITO (questo però è difficile).
-Quando $\Delta < 0$, è utile considerare $\xi \in \mathcal{H}$ che risolve
+Quando $\Delta < 0$, è utile considerare $\xi \in \cH$ che risolve
 $a \xi^2 + b \xi + c =0$. Per quanto abbiamo visto, $\exists \sigma \in G$
 tale che $\sigma \xi \in F$. Tramite $\sigma$ si ottiene la forma ridotta secondo
 Gauss.
@@ -137,11 +138,11 @@ Gauss.
 \section{Funzioni Modulari}
 
 \begin{definizione}
-Una funzione $f$ meromorfa su $\mathcal{H}$ di dice debolmente modulare di peso $2k$ (per $k \in \mathbb{N}$), se $\forall
+Una funzione $f$ meromorfa su $\cH$ di dice debolmente modulare di peso $2k$ (per $k \in \mathbb{N}$), se $\forall
 \left( \begin{array}{cc} a & b \\ c & d \end{array} \right) \in
-SL_2 \left( \mathbb{Z} \right)$ si ha:
+SL_2 \left( \bbZ \right)$ si ha:
 $$ f\left( \frac{az+b}{cz+d} \right) = (cz+d)^{2k} f(z)
-\qquad \forall z \in \mathbb{C}$$
+\qquad \forall z \in \bbC$$
 \end{definizione}
 
 \begin{osservazione}
@@ -155,7 +156,7 @@ Sono k-forme differenziali.
 Dalla definizione segue immediatamente che $f(z+1)=f(z)$, cioè che una
 funzione debolmente modulare è periodica di periodo $1$. Quindi $f$ si può scrivere in serie di Fourier in $q=e^{2 \pi i z}$, cioè
 $\displaystyle{f(z)=\widetilde{f}(q)=\sum^{+\infty}_{n=-\infty}{a_n q^n}}$.
-Inoltre $q$ manda $\mathcal{H}$ in $D^*$, quindi $\widetilde{f}$ è meromorfa
+Inoltre $q$ manda $\cH$ in $D^*$, quindi $\widetilde{f}$ è meromorfa
 in $D^*$ e $\displaystyle{\sum^{+\infty}_{n=-\infty}{a_n q^n}}$ è la sua
 serie di Laurent.
 \end{osservazione}
@@ -175,7 +176,7 @@ cuspidale
 \section{Esempio: Le Serie di Eisenstein}
 
 \begin{definizione}
-Se $L$ è un reticolo in $\mathbb{C}$, per $k \geq 2$ poniamo
+Se $L$ è un reticolo in $\bbC$, per $k \geq 2$ poniamo
 $G_k(L):=\displaystyle{\sum_{\lambda \in L \setminus \{ 0 \}}{\lambda ^{-2k}}}$.
 \end{definizione}
 
@@ -185,22 +186,22 @@ Proprietà di $G_k$:
 \begin{itemize}
 \item Le $G_k$ sono $(-2k)$-omogenee, cioè
 $L_1=cL_2 \Rightarrow G_k(L_1)=c^{-2k}G_k(L_2)$.
-Scrivendo $L=\mathbb{Z} \tau + \mathbb{Z}$, con $\tau \in \mathcal{H}$,
-si può anche vedere $G_k(L) = G_k(\tau)$ come funzione su $\mathcal{H}$.
-In questo modo, $\displaystyle{G_k(z)=\sum_{(m,n) \in \mathbb{Z}^2 \setminus
+Scrivendo $L=\bbZ \tau + \bbZ$, con $\tau \in \cH$,
+si può anche vedere $G_k(L) = G_k(\tau)$ come funzione su $\cH$.
+In questo modo, $\displaystyle{G_k(z)=\sum_{(m,n) \in \bbZ^2 \setminus
 (0,0)}{\frac{1}{(mz+n)^{2k}}}}$, che converge uniformemente sui compatti
-di $\mathcal{H}$.
-\item $G_k(z)$ converge puntualmente su $\mathcal{H}$ e su $-\mathcal{H}$, ma non su tutto $\mathbb{C}$. Infatti se $z \in \mathbb{R}$ i denominatori possono
+di $\cH$.
+\item $G_k(z)$ converge puntualmente su $\cH$ e su $-\cH$, ma non su tutto $\bbC$. Infatti se $z \in \mathbb{R}$ i denominatori possono
 essere arbitrariamente vicini a $0$ e quindi la serie diverge.
 \item Ricordando la definizione di $g_2$ e $g_3$ \textbf{\textcolor[rgb]{1,0,0}{(qui si potrebbe mettere il riferimento alla definizione)}}, si ha: $g_2(z)=60G_2(z)$ e $g_3(z)=140G_3(z)$.
 \item Se $\left( \begin{array}{cc} a & b \\ c & d \end{array} \right) \in
-SL_2 \left( \mathbb{Z} \right)$,
+SL_2 \left( \bbZ \right)$,
 $\displaystyle{ G_k \left(\frac{az+b}{cz+d} \right) = 
-\sum_{(m,n) \in \mathbb{Z}^2 \setminus (0,0)}
+\sum_{(m,n) \in \bbZ^2 \setminus (0,0)}
 {\frac{(cz+d)^{2k}} {(m(az+b)+n(cz+d))^{2k}}} =}$
 $\displaystyle{ =(cz+d)^{2k} \sum_{m,n}{\frac{1} {(m(az+b)+n(cz+d))^{2k}}} =
 (cz+d)^{2k} \sum_{m,n}{\frac{1}{(mz+n)^{2k}}} }$, perché
-$SL_2 \left( \mathbb{Z} \right)$ lascia invariati i reticoli. Quindi $G_k$
+$SL_2 \left( \bbZ \right)$ lascia invariati i reticoli. Quindi $G_k$
 è debolmente modulare.
 \end{itemize}
 \end{osservazione}
@@ -211,9 +212,9 @@ Le $G_k$ sono forme modulari.
 \end{proposizione}
 
 \begin{proof}
-Sono tutte olomorfe su $\mathcal{H}$ per teoremi classici di convergenza.
+Sono tutte olomorfe su $\cH$ per teoremi classici di convergenza.
 Se $G_k$ avesse un polo o un sigolarità essenziale all'$\infty$, ci sarebbero
-delle successioni $\{ z_n \} \subset \mathcal{H}$ tali che
+delle successioni $\{ z_n \} \subset \cH$ tali che
 $|z_n| \rightarrow +\infty$ e $|G_k(z_n)| \rightarrow +\infty$.
 Ma $\displaystyle{\lim_{\Im(z) \rightarrow +\infty} G_k(z)=
 2 \sum_{n=1}^{+\infty}{\frac{1}{n^{2k}}} = 2 \zeta(2k)}$, perché i termini
@@ -223,5 +224,5 @@ all'$\infty$.
 
 \begin{osservazione}
 $\Delta = g_2 ^3 (z) - 27 g_3 ^2 (z)$ è una forma modulare di peso $12$ che
-non si annulla mai in $\mathcal{H}$.
+non si annulla mai in $\cH$.
 \end{osservazione}
