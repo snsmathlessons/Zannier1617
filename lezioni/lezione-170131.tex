@@ -1,0 +1,227 @@
+\chapter{31/01/17 - Azione di $SL_2 \left( \mathbb{Z} \right)$ su $\mathcal{H}$ e Funzioni Modulari}
+\justify
+
+\section{Azione di $SL_2 \left( \mathbb{Z} \right)$ su $\mathcal{H}$}
+
+Siano $F=\left\{z \in \mathcal{H} | -\frac{1}{2} \leq \Re(z) \leq 0
+\wedge |z| \geq 1 \right\} \cup
+\left\{z \in \mathcal{H} | 0 < \Re(z) < \frac{1}{2} \wedge |z| > 1 \right\}$,
+$G=SL_2 \left( \mathbb{Z} \right)/\{\pm Id\}$,   $\rho=\frac{-1+i\sqrt{3}}{2}$,
+$S=\left( \begin{array}{cc} 0 & 1 \\ -1 & 0 \end{array} \right) \in G$,
+$T=\left( \begin{array}{cc} 1 & 1 \\ 0 & 1 \end{array} \right) \in G$.
+
+\begin{teorema}[1]
+$\forall z \in \mathcal{H} \  \exists g \in G$ tale che $gz \in \mathcal{H}$.
+Inoltre:
+\begin{itemize}
+	\item se $z,gz \in \bar{F}$, allora $z \in \partial F$ e $g=S$ oppure $g=T$.
+	\item se $z \in F$ e $z=gz$,
+				allora $z=i$ e $g \in \left\langle S \right\rangle$ oppure
+				$z= \rho$ e $g \in \left\langle ST \right\rangle$
+\end{itemize}
+\end{teorema}
+
+\begin{corollario}
+F è un dominio fondamentale.
+
+$Stab(i)=\left\langle S \right\rangle$, 
+$Stab(\rho)=\left\langle ST \right\rangle$ e $Stab(z)=\emptyset$ se 
+$z \notin \{i, \rho \}$.
+\end{corollario}
+
+\begin{teorema}
+G è generato da S e T
+\end{teorema}
+
+\notamargine{In realtà si potrebbe dimostrare anche che G è il gruppo libero
+generato da $S$ e $T$ modulo le relazioni $S^2=Id$ e $(TS)^3=Id$}
+
+\begin{proof}
+Sia $G'=\left\langle S,T \right\rangle$. Sia $z \in \mathcal{H}$ e $z' \in G'z$ l'elemento con $\Im(z')$ massimo possibile. Tale elemento esiste perché se
+$\sigma = \left( \begin{array}{cc} a & b \\ c & d \end{array} \right) \in G'$,
+allora $\Im(\sigma z') = \frac{\Im(z')}{|cz'+d|^2}$ ed essendo
+$c,d \in \mathbb{Z}$, $|cz'+d|^2 \geq \Im(z')^2$ (per $c \neq 0$, se no fa 1) per cui $\Im(\sigma z')$ è limitato dall'alto e il sup viene raggiunto perché
+ci sono solo un numero finito di $c,d \in \mathbb{Z}$ per cui
+$|cz'+d|^2 \leq 1$.
+Possiamo anche supporre che $z=z'$ e, a meno di comporre con qualche potenza
+di $T$, supponiamo anche che $-\frac{1}{2} \leq \Re(z) < \frac{1}{2}$.
+
+Verifichiamo quindi che $|z| \geq 1$ (se poi fosse $|z|=1$ e
+$z \in \bar{F} \setminus F$ basta applicarci $S$).
+$\Im(Sz) = \frac{\Im(z)}{|z|^2} \leq \Im(z)$ per la massimalità di $\Im(z)$.
+Quindi $|z| \geq 1$.
+
+
+Siano ora $g \in G$, $z'=gz$ e supponiamo che $z,z' \in \bar{F}$ e (wlog)
+che $\Im(z) \leq \Im(z')$.
+$$
+z'= \frac{az+b}{cz+d} \frac{c \bar{z} +d}{c \bar{z} +d} =
+\frac{ac|z|^2 + bd + bc \bar{z} + adz}{|cz+d|^2} \stackrel{det=1}{=}
+\frac{ac|z|^2 + bd + bc \bar{z} + (bc+1)z}{|cz+d|^2} =
+$$
+$$
+\frac{ac|z|^2 + bd + bc (\bar{z} + z) + z}{|cz+d|^2} =
+\frac{ac|z|^2 + bd + (2bc+1) \Re(z)}{|cz+d|^2} + i \frac{\Im(z)}{|cz+d|^2}
+$$
+Ora, usando che $z,z' \in \bar{F}$, per cui $|z|,|z'| \geq 1$ e
+$|\Re(z)|, |\Re(z')| \leq \frac{1}{2}$, si ottiene che, se $c \neq 0$,
+$\Im(z') = \frac{\Im(z)}{|cz+d|^2} \leq \frac{\Im(z)}{c^2 \Im(z)^2}
+= \frac{1}{c^2 \Im(z)} \leq \frac{2}{c^2 \sqrt{3}}$, quindi $|c| \leq 1$.
+
+Se $c=0$, allora deve essere $z'=z+b$, per cui $z'=z$ e $g=Id$, oppure
+$|\Re(z')| = \frac{1}{2}$ e $|\Re(z)| = -\frac{1}{2}$ o viceversa,
+cioè $z,z' \in \partial F$ e $g=T$.
+
+Se invece $c=1$ (il caso $c=-1$ è uguale perché
+$G=SL_2 \left( \mathbb{Z} \right)/\{\pm Id\}$),
+$\Im(z') \leq \frac{1}{\Im(z)} \Rightarrow \Im(z) \leq \frac{2}{\sqrt{3}}$.
+Allora $\Im(z') \leq \frac{2}{\sqrt{3}|z+d|^2} \Rightarrow
+|z+d|^2 \leq \frac{4}{3} \Rightarrow |z|^2+d^2+2d \Re(z) \leq \frac{4}{3}$. 
+Quindi $d=0$ o $d=\pm 1$.
+
+Se $d=0$, $\Im(z') = \frac{\Im(z)}{|z|^2} \leq \Im(z)$, quindi $|z|=1$.
+
+Se $d=\pm 1$, similmente si ottiene $|z \pm 1|=1$, da cui $z=\rho$ e
+$z'=\rho +1$ o viceversa.
+
+\bigskip
+Vediamo ora che $G'=G$:
+
+Sia $z=2i$ e sia $g \in G$. Per quanto visto sopra, $\exists \sigma \in G'$
+tale che $\sigma g(z) \in \bar{F}$. Allora, dato che $z \notin \partial F$,
+$\sigma g(z)=z$.
+Verifichiamo quindi che gli unici stabilizzatori non banali sono quelli
+previsti dal corollario, così potremo dedurre che $\sigma g = Id$ e quindi
+$G=G'$.
+
+Abbiamo visto che se $z=gz$ con $z \in F$ e $g \in G$, deve essere
+$|cz+d|=1$ e $c \in \{ 0,1,-1 \}$.
+
+Se $c=0$, $d=\pm 1$ e, dato che $det(g)=1$, $a=d$. Quindi
+$g=\left( \begin{array}{cc} 1 & b \\ 0 & 1 \end{array} \right)$ che non ha
+punti fissi per $b\neq 0$ ed è l'identità per $b=0$.
+
+Se $c=1$, $|z+d|=1$ da cui $d \in \{0,1,-1 \}$. Se $d=0$, dal determinante
+si ottiene $b=-1$, quindi $gz=\frac{az-1}{z}=z$. Risolvendo in $z$ si trova
+che le uniche soluzioni contenute in $F$ sono $z=i$ (per $a=0$ e quindi $g=S$)
+e $z=\rho$ (per a=-1 e quindi $g=(ST)^2$).
+Se $d=1$, $|z+1|=1$ che ha $z=\rho$ come unica soluzione in $F$. Risolvendo il
+sistema dato da $\frac{a \rho +b}{\rho +1}=\rho$ e $a-b=1$, si ottiene $g=ST$.
+Se $d=1$, $|z-1|=1$ che non ha soluzioni in $F$.
+(Questi ultimi 2 casi lui li ha lasciati per esercizio)
+\end{proof}
+
+\begin{osservazione}
+Al quoziente $\mathcal{H}/G$ si può dare una struttura di superficie di Riemann
+(che non è quella che viene da $\mathbb{C}$),
+identificando le rette $\Re(z)=\pm \frac{1}{2}$ e i due archi di circonferenza
+sul bordo di $F$. Il quoziente è omeomorfo a $\mathbb{C}$.
+\end{osservazione}
+
+\section{Forme quadratiche binarie intere}
+Una forma quadratica binaria intera è un'espressione del tipo:
+$$ ax^2+bxy+cy^2 \qquad a,b,c,d \in \mathbb{Z} $$
+Si vogliono classificare a meno di equivalenza lineare con elementi di
+$SL_2 \left( \mathbb{Z} \right)$.
+
+\begin{osservazione}
+Il discriminante $\Delta =b^2-4ac$ è invariante per trasformazioni lineari
+invertibili. Inoltre, fissato $\Delta$, il numero di classi di equivalenza con
+quel discriminante è FINITO (questo però è difficile).
+Quando $\Delta < 0$, è utile considerare $\xi \in \mathcal{H}$ che risolve
+$a \xi^2 + b \xi + c =0$. Per quanto abbiamo visto, $\exists \sigma \in G$
+tale che $\sigma \xi \in F$. Tramite $\sigma$ si ottiene la forma ridotta secondo
+Gauss.
+\end{osservazione}
+
+\section{Funzioni Modulari}
+
+\begin{definizione}
+Una funzione $f$ meromorfa su $\mathcal{H}$ di dice debolmente modulare di peso $2k$ (per $k \in \mathbb{N}$), se $\forall
+\left( \begin{array}{cc} a & b \\ c & d \end{array} \right) \in
+SL_2 \left( \mathbb{Z} \right)$ si ha:
+$$ f\left( \frac{az+b}{cz+d} \right) = (cz+d)^{2k} f(z)
+\qquad \forall z \in \mathbb{C}$$
+\end{definizione}
+
+\begin{osservazione}
+$\displaystyle{gz=\frac{az+b}{cz+d} \rightarrow
+\frac{dgz}{dz}=\frac{1}{(cz+d)^2}}$. Quindi la condizione della definizione di
+funzione debolmente modulare può essere scritta come $f(gz)(d(gz))^k=f(z)(dz)^k$.
+Sono k-forme differenziali.
+\end{osservazione}
+
+\begin{osservazione}
+Dalla definizione segue immediatamente che $f(z+1)=f(z)$, cioè che una
+funzione debolmente modulare è periodica di periodo $1$. Quindi $f$ si può scrivere in serie di Fourier in $q=e^{2 \pi i z}$, cioè
+$\displaystyle{f(z)=\widetilde{f}(q)=\sum^{+\infty}_{n=-\infty}{a_n q^n}}$.
+Inoltre $q$ manda $\mathcal{H}$ in $D^*$, quindi $\widetilde{f}$ è meromorfa
+in $D^*$ e $\displaystyle{\sum^{+\infty}_{n=-\infty}{a_n q^n}}$ è la sua
+serie di Laurent.
+\end{osservazione}
+
+\begin{definizione}
+Nelle notazioni di sopra, se $\widetilde{f}$ è meromorfa anche in $D$, cioè
+se gli $a_n$ con indice $n<0$ non nulli sono in numero finito, la $f$
+è "meromorfa all'$\infty$" e si dice funzione modulare.
+
+Se poi $\widetilde{f}$ è olomorfa in $0$, cioè se tutti gli $a_n$ con $n<0$
+sono nulli, la $f$ è "olomorfa all'$\infty$" e si dice forma modulare.
+
+Infine, se anche $a_0=0$, cioè $f(\infty)=0$, $f$ si dice forma modulare
+cuspidale
+\end{definizione}
+
+\section{Esempio: Le Serie di Eisenstein}
+
+\begin{definizione}
+Se $L$ è un reticolo in $\mathbb{C}$, per $k \geq 2$ poniamo
+$G_k(L):=\displaystyle{\sum_{\lambda \in L \setminus \{ 0 \}}{\lambda ^{-2k}}}$.
+\end{definizione}
+
+\begin{osservazione}
+Proprietà di $G_k$:
+
+\begin{itemize}
+\item Le $G_k$ sono $(-2k)$-omogenee, cioè
+$L_1=cL_2 \Rightarrow G_k(L_1)=c^{-2k}G_k(L_2)$.
+Scrivendo $L=\mathbb{Z} \tau + \mathbb{Z}$, con $\tau \in \mathcal{H}$,
+si può anche vedere $G_k(L) = G_k(\tau)$ come funzione su $\mathcal{H}$.
+In questo modo, $\displaystyle{G_k(z)=\sum_{(m,n) \in \mathbb{Z}^2 \setminus
+(0,0)}{\frac{1}{(mz+n)^{2k}}}}$, che converge uniformemente sui compatti
+di $\mathcal{H}$.
+\item $G_k(z)$ converge puntualmente su $\mathcal{H}$ e su $-\mathcal{H}$, ma non su tutto $\mathbb{C}$. Infatti se $z \in \mathbb{R}$ i denominatori possono
+essere arbitrariamente vicini a $0$ e quindi la serie diverge.
+\item Ricordando la definizione di $g_2$ e $g_3$ \textbf{\textcolor[rgb]{1,0,0}{(qui si potrebbe mettere il riferimento alla definizione)}}, si ha: $g_2(z)=60G_2(z)$ e $g_3(z)=140G_3(z)$.
+\item Se $\left( \begin{array}{cc} a & b \\ c & d \end{array} \right) \in
+SL_2 \left( \mathbb{Z} \right)$,
+$\displaystyle{ G_k \left(\frac{az+b}{cz+d} \right) = 
+\sum_{(m,n) \in \mathbb{Z}^2 \setminus (0,0)}
+{\frac{(cz+d)^{2k}} {(m(az+b)+n(cz+d))^{2k}}} =}$
+$\displaystyle{ =(cz+d)^{2k} \sum_{m,n}{\frac{1} {(m(az+b)+n(cz+d))^{2k}}} =
+(cz+d)^{2k} \sum_{m,n}{\frac{1}{(mz+n)^{2k}}} }$, perché
+$SL_2 \left( \mathbb{Z} \right)$ lascia invariati i reticoli. Quindi $G_k$
+è debolmente modulare.
+\end{itemize}
+\end{osservazione}
+
+
+\begin{proposizione}
+Le $G_k$ sono forme modulari.
+\end{proposizione}
+
+\begin{proof}
+Sono tutte olomorfe su $\mathcal{H}$ per teoremi classici di convergenza.
+Se $G_k$ avesse un polo o un sigolarità essenziale all'$\infty$, ci sarebbero
+delle successioni $\{ z_n \} \subset \mathcal{H}$ tali che
+$|z_n| \rightarrow +\infty$ e $|G_k(z_n)| \rightarrow +\infty$.
+Ma $\displaystyle{\lim_{\Im(z) \rightarrow +\infty} G_k(z)=
+2 \sum_{n=1}^{+\infty}{\frac{1}{n^{2k}}} = 2 \zeta(2k)}$, perché i termini
+con $m \neq 0$ vanno a $0$ uniformemente. Quindi le $G_k$ sono olomorfe
+all'$\infty$.
+\end{proof}
+
+\begin{osservazione}
+$\Delta = g_2 ^3 (z) - 27 g_3 ^2 (z)$ è una forma modulare di peso $12$ che
+non si annulla mai in $\mathcal{H}$.
+\end{osservazione}
