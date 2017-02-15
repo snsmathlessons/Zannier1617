@@ -1,0 +1,132 @@
+\chapter{14 Dicembre 2016 - Le curve ellittiche non sono unirazionali}
+\begin{definizione}
+Siano $F$ e $L$ due estensioni di un campo $K$. Si dice omomorfismo su $K$ tra $F$ e $L$ una funzione $f:F\rightarrow L$ che sia un omomorfismo e tale che $\forall z\in K\subseteq F$ valga $f(z)=z$.
+\end{definizione}
+In questa lezione fissiamo $E$ la curva data dall'equazione $y^2=4x^3-g_2x-g_3$ (ed $\widetilde{E}$ la sua chiusura proiettiva).
+
+\notamargine{Abbiamo già visto che una generale curva ellittica si può scrivere in questa forma.}
+Consideriamo $\bbC$ come campo base, e consideriamo il campo di funzioni della curva $\bbC(x,y)$. Si noti che l'estensione di campi $\bbC(x)\subseteq\bbC(x,y)$ è algebrica di grado 2.
+
+\begin{definizione}
+Una curva si dice razionale se il suo campo di funzioni è isomorfo su $\bbC$ ad un campo del tipo $\bbC(t)$ (con $t$ trascendente su $\bbC$).
+\end{definizione}
+\begin{definizione}
+Una curva si dice unirazionale se il suo campo di funzioni si immerge con un omomorfismo (su $\bbC$) in un campo del tipo $\bbC(t)$ (con $t$ trascendente su $\bbC$).
+\end{definizione}
+\begin{osservazione}
+In $\bbP^2(\bbC)$ le due definizioni sono equivalenti (Teorema di Luroth).
+\end{osservazione}
+Supponiamo di voler definire $\varphi: \bbC(x,y) \rightarrow \bbC(t)$ in modo che $\varphi_{|\bbC}$ sia l'identità. Basta definirlo sui generatori: $1\mapsto 1$, $x\mapsto a(t)$ e $y\mapsto b(t)$, dove $a$ e $b$ sono due funzioni razionali di una variabile (ovvero due elementi di $\bbC(t)$).
+
+Affinchè questa mappa sia ben definita deve valere l'uguaglianza (data dall'equazione della curva)   $b(t)^2=4a(t)^3-g_2a(t)-g_3$.
+Viceversa, ogni mappa che soddisfa questa identità è un'inclusione $\varphi: \bbC(x,y) \hookrightarrow \bbC(t)$.
+
+Richiedere che $\varphi$ sia un isomorfismo è equivalente a richiedere la sua suriettività, o analogamente che $t\in Im(\varphi)$, ovvero che esista $R\in \bbC(s,r)$ tale che $t=R(a(t),b(t))$.
+\begin{osservazione}
+La circonferenza ($y^2=1-x^2$) è una curva razionale: la mappa $\varphi$ può essere definita da $\varphi(x)=\frac{2t}{1+t^2}=a(t)$, $\varphi(y)=\frac{1-t^2}{1+t^2}=b(t)$.
+
+In questo modo infatti si ottiene facilmente che $t=\frac{a(t)}{b(t)+1}\in Im(\varphi)$.
+\end{osservazione}
+\notamargine{In realtà si può mostrare che ogni conica non degenere è razionale.}
+\begin{osservazione}
+Esistono delle cubiche che sono razionali: ad esempio $y^2=\alpha x^3 + \beta x^2$ può essere parametrizzata come $y=\frac{1-\beta t^2}{\alpha t^3}$ e $x=t\cdot\frac{1-\beta t^2}{\alpha t^3}$.
+In questo modo vale $t=\frac{y}{x}$.
+\end{osservazione}
+\notamargine{Geometricamente questa parametrizzazione si ottiene usando il fascio di rette passante per il punto singolare della cubica.}
+
+L'obiettivo di questa lezione è di mostrare che le curve ellittiche non sono razionali, e nemmeno unirazionali.
+
+\begin{fatto}
+Considero $\bbP^1$ come curva in $\bbP^2$. Sia $\varphi$ l'immersione $\bbC(\widetilde{E})\hookrightarrow\bbC(\bbP^1)$ (ovvero l'immersione $\bbC(x,y)\hookrightarrow\bbC(t)$) descritta all'inizio).
+Allora esiste una $\varphi^*:\bbP^1\rightarrow\widetilde{E}$ data da $t\mapsto (a(t),b(t))$.
+Tale $\varphi^*$ (che sappiamo essere una funzione razionale per definizione) è una funzione olomorfa (solo se si usa $\widetilde{E}$: se uno la considera a valori in $E$ questa proprietà non vale)
+\end{fatto}
+
+\begin{teorema}
+$\bbC(\widetilde{E})$ non è un campo razionale.
+\end{teorema}
+
+\begin{proof}
+Supponiamo per assurdo di avere $\psi:\bbC(x,y)\rightarrow\bbC(t)$ isomorfismo (su $\bbC$). Poiché $\psi$ è invertibile si nota che anche $\psi^*$ è invertibile. Si conclude dunque che $\psi^*$ è un biolomorfismo tra $\bbP^1$ e $\widetilde{E}$.
+
+Per ottenere un assurdo è quindi sufficiente mostrare che $\widetilde{E}$ e $\bbP^1$ non sono biolomorfe. Per vedere che non lo sono, consideriamo l'automorfismo di $E$ dato da $(x_0,y_0)\mapsto(x_0,-y_0)$. Questo si estende all'infinito lasciandolo fisso, ed ha tre punti fissi su $E$ (sono solo tre i punti con $y_0=0$). Sappiamo quindi che $\widetilde{E}$ ha un automorfismo con $4$ punti fissi, ma invece $Aut(\bbP^1)=\bbP GL_2(\bbC)$ non contiene nessun elemento con 4 punti fissi (lo abbiamo visto nelle prime lezioni). Segue banalmente che, avendo gruppi di automorfismi diversi, $\widetilde{E}$ e $\bbP^1$ non possono essere biolomorfe e dunque la tesi.
+\end{proof}
+
+\begin{osservazione}
+Questa dimostrazione si può fare in modo puramente algebrico considerando gli automorfismi dei campi in questione. In particolare l'automorfismo da cui si ricava l'assurdo è $\varphi\in Aut(\bbC(x,y))$ dato da $\varphi(x)=x$, $\varphi(y)=-y$.
+\end{osservazione}
+%\notamargine{$\psi^*$ si potrebbe definire tra due curve qualsiasi (senza che necessariamente la seconda sia $\bbP^1$), in tal caso la definizione coincide con quella data in questa dimostrazione.} #NONSO...
+\begin{lemma}[modello quartico di una cubica]
+Una cubica (non singolare) di equazione $y^2=r(z)$ con $deg(r)=3$ è equivalente ad una curva del tipo $y^2=p(x)$ con $deg(p)=4$ e $p$ senza radici doppie.
+\end{lemma}
+
+\begin{proof}
+Partiamo dal modello $y^2=p(x)$ e arriviamo ad un modello cubico usando solo operazioni birazionali.
+
+Per prima cosa operiamo una traslazione $s=x+\alpha$ per annullare il termine noto di $p(x)$: l'equazione diventa $y^2=sq(s)$.
+Operando ora la sostituzione $s=\frac{1}{z}$, ottengo l'equazione $y^2=\frac{q(\frac{1}{z})}{z}$. Moltiplicando l'equazione per $z^4$, e sostituendo $w=z^2y$ si ottiene $w^2=z^3q(\frac{1}{z})=r(z)$, (dove $r(z)$ è un polinomio, perché $deg(q)=3$).
+
+Le operazioni che abbiamo fatto sono birazionali, infatti:
+$$z=\frac{1}{x+\alpha}  \;\;\;\;\;\;\;   w=\frac{y}{(x+\alpha)^2}  \;\;\;\leftrightsquigarrow\;\;\;  x=\frac{1}{z}-\alpha   \;\;\;\;\;\;\;  y=\frac{w}{z^2}$$
+Resta da verificare solo che $deg(r)=3$ e che $r$ non abbia radici doppie, ma questo segue banalmente dal fatto che $p$ non ha radici doppie (e dunque in particolare $q$ deve avere termine noto $\neq 0$).
+\end{proof}
+
+\begin{teorema}
+Ogni curva ellittica $\widetilde{E}$ non è unirazionale.
+\end{teorema}
+
+\begin{proof}[Dimostrazione 1]
+Questa dimostrazione utilizza il fatto che $\widetilde{E}$ viene da un toro $\bbC/L$ (che sarà dimostrato più avanti nel corso).
+
+Supponiamo per assurdo che $\widetilde{E}$ sia unirazionale. Allora ho un morfismo $\varphi: \bbC(x,y)\hookrightarrow\bbC(t)$, a cui è associato $\varphi^*:\bbP^1\rightarrow\widetilde{E}$. Poichè $\bbP^1$ è semplicemente connesso, e ho il rivestimento $\pi_L:\bbC\rightarrow\widetilde{E}$, questa mappa si può rialzare a una certa $\phi:\bbP^1\rightarrow\bbC$, ed ottengo dunque un assurdo.
+
+Infatti $\bbP^1$ è compatto, dunque ha immagine limitata, e restringendo $\phi$ a $\bbC\subset\bbP^1$ ho che questa è olomorfa limitata e dunque è costante.
+\end{proof}
+
+Vediamo ora una seconda dimostrazione, puramente algebrica, che evita di usare il fatto che ogni curva ellittica è associata ad un toro.
+\begin{proof}[Dimostrazione 2]
+Utilizziamo il modello quartico della cubica dato dal lemma:
+
+$y^2=(x-\alpha_1)(x-\alpha_2)(x-\alpha_3)(x-\alpha_4)$.
+
+Supponiamo per assurdo di avere soluzioni razionali in un parametro $t$.
+
+Allora $x=\frac{p(t)}{q(t)}$ con $MCD(p,q)=1$.
+
+Sostituendo questa uguaglianza ho che $RHS$ ha denominatore $q(t)^4$ e numeratore coprimo con $q(t)$.
+Da questo si ottiene che $y$ deve essere necessariamente $\frac{r(t)}{q(t)^2}$ con $MCD(r,q)=1$.
+
+    \notamargine{L'idea "geometrica" di questa dimostrazione viene dal fatto che le trasformazioni qui descritte corrispondono ad un'isogenia di grado due tra la curva di partenza $\widetilde{E'}$ e quella di arrivo $\widetilde{E}$, e la mappa $\psi^*:\bbP^1\rightarrow\widetilde{E}$ si solleva a una mappa $\bbP^1\rightarrow\widetilde{E'}$ perchè $\bbP^1$ è semplicemente connesso.
+
+    In un certo senso l'analogo algebrico del rivestimento è il passaggio $r^2=abcd\Rightarrow a,b,c,d$ sono tutti quadrati.}
+
+Sostituendo anche questa uguaglianza, e moltiplicando per $q(t)^4$ otteniamo:
+$$r(t)^2=(p(t)-\alpha_1q(t))(p(t)-\alpha_2q(t))(p(t)-\alpha_3q(t))(p(t)-\alpha_4q(t))$$
+Si osserva facilmente che i polinomi $(p(t)-\alpha_i q(t))$ sono coprimi fra loro: poichè il loro prodotto è un quadrato, allora devono essere tutti quanti dei quadrati. Abbiamo quindi ottenuto che esistono quattro polinomi $r_1$, $r_2$, $r_3$, $r_4$ tali che $(p(t)-\alpha_iq(t))=r_i(t)^2$.
+
+Chiamando $A_i$ l'$i$-esima equazione, considero le equazioni $\alpha_2A_1-\alpha_1A_2$ e $A_1-A_2$.
+\begin{eqnarray*}
+% \nonumber to remove numbering (before each equation)
+  (\alpha_2-\alpha_1)p(t) &=& \alpha_2r_1(t)^2-\alpha_1r_2(t)^2 \\
+  (\alpha_2-\alpha_1)q(t) &=& r_1(t)^2-r_2(t)^2
+\end{eqnarray*}
+Sostituendo i valori di $p(t)$ e di $q(t)$ in $A_3$ e $A_4$ ottengo:
+\begin{eqnarray*}
+% \nonumber to remove numbering (before each equation)
+  (\alpha_2-\alpha_1)r_3^2 &=& (\alpha_2-\alpha_3)r_1^2-(\alpha_1-\alpha_3)r_2^2 \\
+  (\alpha_2-\alpha_1)r_4^2 &=& (\alpha_2-\alpha_4)r_1^2-(\alpha_1-\alpha_4)r_2^2
+\end{eqnarray*}
+Moltiplicando fra loro queste ultime due equazioni si ottiene:
+\begin{equation*}
+  ((\alpha_2-\alpha_1)r_3r_4)^2 = ((\alpha_2-\alpha_3)r_1^2-(\alpha_1-\alpha_3)r_2^2)((\alpha_2-\alpha_4)r_1^2-(\alpha_1-\alpha_4)r_2^2)
+\end{equation*}
+Dividendo entrambi i membri per $r_2^2$, e applicando infine le sostituzioni $w=\frac{(\alpha_2-\alpha_1)r_3r_4}{r_2^2}$ e $z=\frac{r_1}{r_2}$, l'equazione diventa:
+$$w^2=((\alpha_2-\alpha_3)z^2-(\alpha_1-\alpha_3))((\alpha_2-\alpha_4)z^2-(\alpha_1-\alpha_4))$$
+Il polinomio in $z$ al $RHS$ si verifica facilmente non avere radici multiple, quindi rappresenta un'altra cubica.
+
+Inoltre $z=\frac{r_1(t)}{r_2(t)}$, $MCD(r_1,r_2)=1$ e $max(deg(r_1), deg(r_2))\leq\frac{1}{2}\cdot max(deg(p),deg(q))$.
+
+Abbiamo quindi ricavato che da ogni parametrizzazione di una cubica si ricava un'altra parametrizzazione dove $max(deg(p),deg(q))$ è almeno dimezzato.
+Procedendo così, poiché il grado iniziale è finito, il procedimento termina ed ho una curva parametrizzata con $max(deg(p),deg(q))=0$. 
+Tuttavia, questo vuol dire che la curva ha una parametrizzazione non dipendente da $t$, ovvero che l'omomorfismo della definizione $\bbC(x,y)\hookrightarrow\bbC(t)$ manda $x$ in un elemento di $\bbC$, dunque non è iniettivo, e questo ci fornisce un assurdo.
+\end{proof}

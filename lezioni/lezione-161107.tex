@@ -1,0 +1,163 @@
+\chapter{07 Novembre 2016}
+\justify
+
+
+Prendiamo $T_1=\bbC/L_1$ e $T_2=\bbC/L_2$ tori complessi.
+Ogni morfismo (omomorfismo di gruppi che sia anche olomorfo) $T_1\rar T_2$ si solleva ad un unico morfismo $\bbC\rar\bbC$, che è per forza dato dalla moltiplicazione per una costante.
+Se rappresentiamo $T_1$ e $T_2$ come quozienti di $\bbC$ in un modo diverso, la costante può cambiare (quindi non è canonica).
+Tuttavia, se $T_1=T_2$ allora la costante è determinata in modo canonico (quella ottenuta rappresentando $T_1$ e $T_2$ nello stesso modo come quozienti di $\bbC)$.
+
+
+\begin{teorema}\label{puppa}
+$T$ un toro e $f:T\rar\bbC$ meromorfa (non costante). Allora
+
+(i) $\sum_{x\in T}\res_xf=0$ $\qquad$ (uguaglianza di numeri complessi)
+
+(ii) $\sum_{x\in T}\ord_xf=0$ $\qquad$ (uguaglianza di numeri interi)
+
+(iii) $\sum_{x\in T}x\cdot\ord_xf=0$ $\qquad$ (uguaglianza di elementi del gruppo $T$)
+\end{teorema}
+
+\notamargine{$\res_xf$ indica il residuo di $f$ in $x$ (e $0$ se $f(x)\in\bbC$)}
+
+\notamargine{$\ord_xf$ indica la molteplicità di $x$ come radice di $f(x)=0$, o l'opposto dell'ordine del polo in $x$ (e $0$ se $f(x)\in\bbC\setminus\{0\}$)}
+
+\begin{proof}
+$f^{-1}(0)$ è finita: se fosse infinita, allora dovrebbe accumularsi da qualche parte su $T$ (per compattezza), e quindi $f$ sarebbe costante (per prolungamento analitico).
+Analogamente l'insieme dei punti in cui $f$ non è definita è finito.
+
+Scegliamo una rappresentazione $T=\bbC/L$ con $L=\{a\omega_1+b\omega_2 : a,b\in\bbZ\}$. Prendiamo la funzione biperiodica $F:\bbC\rar\bbP^1$ data da $\bbC\rar T\xrightarrow{f}\bbP_1$.
+
+Sia $\gamma:[0,1]\rar\bbC$ un cammino che percorre il bordo di un parallelogrammo del reticolo (un solo giro, verso antiorario):
+possiamo supporre che in $\Img\gamma$ valga $F\in\bbC\setminus\{0\}$ (a meno di traslare $\gamma$).
+
+(i) Uso il teorema dei residui sulla funzione $F$ con il gammino $\gamma$: ottengo
+
+$2\pi i\sum_{x\in T}\res_xf=\int_\gamma F=(\int_0^{\omega_1}F-\int_{\omega_2}^{\omega_1+\omega_2}F)+(\int_{\omega_1}^{\omega_1+\omega_2}F-\int_{0}^{\omega_2}F)$
+
+ed entrambe le parentesi si annullano per biperiodicità di $F$.
+
+\notamargine{Un po' di libertà di notazione}
+
+(ii) Identico ad (i), usando la funzione $\frac{F'}{F}$ al posto di $F$ (osservo che $\frac{F'}{F}$ è ancora biperiodica) (osservo che $\res_x\frac{F'}{F}=\ord_xF$).
+
+(iii) Uso il teorema dei residui sulla funzione $z\frac{F'(z)}{F(z)}$ con il cammino $\gamma$.
+
+Notare che $\res_xz\frac{F'(z)}{F(z)}=x\cdot\res_x\frac{F'}{F}=x\cdot\ord_xF$.
+
+Ottengo $2\pi i\sum_{x\in T}x\cdot\ord_xf=\int_\gamma z\frac{F'(z)}{F(z)}\ dz=(\int_0^{\omega_1}-\int_{\omega_2}^{\omega_1+\omega_2})+(\int_{\omega_1}^{\omega_1+\omega_2}-\int_{0}^{\omega_2})$
+
+e per biperiodicità si ha $\int_{\omega_2}^{\omega_1+\omega_2}z\frac{F'z}{Fz}\ dz=\int_0^{\omega_1}(z-\omega_2)\frac{F'z}{Fz}\ dz$ quindi
+
+$(\int_0^{\omega_1}-\int_{\omega_2}^{\omega_1+\omega_2})=\omega_2\int_0^{\omega_1}\frac{d}{dz}(\log F)\ dz=\omega_22\pi i m$ per qualche $m\in\bbZ$
+(più precisamente, $m$ è il numero di giri che fa $\log F$ intorno a $0$ quando $z$ varia da $0$ a $\omega_1$).
+
+Quindi $\sum_{x\in T}x\cdot\ord_xf$ è un elemento del reticolo $L$, da cui la tesi.
+\end{proof}
+
+
+Fissiamo un toro $T$ e rappresentiamolo come $\bbC/L$ ($L$ reticolo).
+Consideriamo la serie di funzioni definite sull'aperto $\bbC\setminus L$ a valori in $\bbC$ data da $\frac{1}{z^2}+\sum_{\omega\in L\ \omega\not=0}(\frac{1}{(z-\omega)^2}-\frac{1}{\omega^2})$.
+
+\begin{proposizione}
+La serie sopra converge totalmente (e quindi uniformemente) sui compatti contenuti in $\bbC\setminus L$.
+\end{proposizione}
+\begin{proof}(sketch)
+
+Fissiamo $K\subseteq\bbC\setminus L$ compatto.
+
+Si ha $\sup_{z\in K}\abs{\frac{1}{(z-\omega)^2}-\frac{1}{\omega^2}}=\sup_{z\in K}\abs{\frac{z(2\omega-z)}{\omega^2(z-\omega)^2}}$ che per $\omega$ 'lontano' da $K$ è circa $\abs{\frac{1}{\omega^3}}$.
+
+Ma $\sum_{\omega\in L\setminus\{0\}}\abs{\frac{1}{\omega^3}}$ converge, perchè
+gli $\omega$ di modulo $R$ sono circa $R$, e quindi quella è circa $\sum R\cdot\frac{1}{R^3}=\sum\frac{1}{R^2}<+\infty$.
+\end{proof}
+
+Quindi il limite della serie sopra è una funzione olomorfa $P:\bbC\setminus L\rar\bbC$.
+
+\'E inoltre facile (non del tutto ovvio, TO DO) verificare che $P$ è una funzione $L$-biperiodica.
+
+Se prendiamo la serie che definisce $P$ e togliamo il termine $\frac{1}{z^2}$, converge uniformemente in un intorno di $0$ (e analogo per ogni $\omega\in L$).
+Quindi $P$ è meromorfa su tutto $\bbC$.
+
+Fattorizzando $P$, otteniamo una funzione meromorfa $\wp:T\rar\bbC$, chiamata \textbf{funzione di Weierstrass} (tale definizione dipende dal reticolo $L$ scelto per rappresentare $T$? TO DO).
+
+\begin{proposizione}
+La funzione meromorfa $\wp:T\rar\bbC$ ha le seguenti proprietà:
+
+(i) $\wp(-z)=\wp(z)$.
+
+(ii) $\wp$ ha un polo doppio in $0$ e nessun altro polo.
+
+(iii) Fissato $u\in T$ con $u\not=-u$, si ha $\ord_u(\wp-\wp(u))=\ord_{-u}(\wp-\wp(u))=1$ e $\ord_0(\wp-\wp(u))=-2$ e $\ord_x(\wp-\wp(u))=0$ per $x\not=0,u,-u$.
+
+In altre parole, $\wp-\wp(u)$ ha uno zero semplice in $u$, uno zero semplice in $-u$, un polo doppio in $0$ e nessun altro zero o polo.
+
+(iii') Fissato $u\in T$ con $u=-u\not=0$, si ha $\ord_u(\wp-\wp(u))=2$ e $\ord_0(\wp-\wp(u))=-2$ e $\ord_x(\wp-\wp(u))=0$ per $x\not=0,u$.
+
+In altre parole, $\wp-\wp(u)$ ha uno zero doppio in $u$, un polo doppio in $0$ e nessun altro zero o polo.
+\end{proposizione}
+\begin{proof}
+(i) Ovvio direttamente dalla definizione (riordinando gli addendi).
+
+(ii) Ovvio (perchè sappiamo dove stanno i poli di $P$).
+
+(iii) Prendiamo la funzione meromorfa $\wp-\wp(u):T\rar\bbC$ e usiamo il teorema \ref{puppa} (grazie a (ii) sappiamo dove questa ha poli e con che molteplicità).
+
+(iii') Idem come (iii).
+\end{proof}
+
+
+\begin{teorema}
+Non esiste un polinomio $A\in\bbC[x]$ tale che $A(\wp):T\rar\bbC$ sia la funzione costantemente nulla.
+\end{teorema}
+\begin{proof}
+Sia $A(x)=(x-a_1)...(x-a_n)$. Se $A(\wp)\equiv0$, allora almeno una tra le $(\wp-a_i)$ dovrebbe essere $\equiv0$, ma $\wp-a_i$ ha un polo doppio in $0$...
+\end{proof}
+
+
+\begin{teorema}
+Il campo delle funzioni meromorfe pari $T\rar\bbC$ è $\bbC(\wp)$.
+\end{teorema}
+\begin{proof}
+Prendiamo $f:T\rar\bbC$ meromorfa pari (non costante).
+
+Prendiamo $u\not=-u$ con $\ord_uf\not=0$ (quindi uno zero o un polo). Allora $\ord_{-u}f=\ord_uf$ e possiamo considerare $f\cdot(\wp-\wp(u))^{-\ord_uf}$:
+questa è meromorfa pari ed ha gli stessi zeri e poli di $f$ (con le stesse molteplicità) eccetto
+in zero ed in $u,-u$ (in cui $\ord_uf\cdot(\wp-\wp(u))^{-\ord_uf}=\ord_{-u}f\cdot(\wp-\wp(u))^{-\ord_uf}=0$).
+Sostituiamo $f$ con $f\cdot(\wp-\wp(u))^{-\ord_uf}$.
+
+Prendiamo $u=-u\not=0$ con $\ord_uf\not=0$. Allora $\ord_uf$ è pari (se $u$ è uno zero, osserviamo che $f'$ è dispari e quindi $f'(u)=0$, e analogo per tutte le derivate di ordine dispari;
+se $u$ è un polo, facciamo lo stesso ragionamento su $\frac{1}{f}$). Possiamo quindi considerare $f\cdot(\wp-\wp(u))^{-\frac{1}{2}\ord_uf}$:
+questa è meromorfa pari ed ha gli stessi zeri e poli di $f$ (con le stesse molteplicità) eccetto in zero ed in $u$ (in cui $\ord_uf\cdot(\wp-\wp(u))^{-\frac{1}{2}\ord_uf}=0$).
+Sostituiamo $f$ con $f\cdot(\wp-\wp(u))^{-\frac{1}{2}\ord_uf}$.
+
+Reiterando le operazioni sopra descritte, otteniamo un'uguaglianza del tipo $f\cdot\frac{A(\wp)}{B(\wp)}=g$ con $g$ meromorfa pari senza zeri e poli eccetto eventualmente in $0$.
+Ma dal teorema \ref{puppa} otteniamo che $g$ non ha uno zero o polo nemmeno in $0$. Ma allora $g$ deve essere costante
+(sollevate $g:T\rar\bbC$ ad una $G:\bbC\rar\bbC$: vi viene che $G$ è olomorfa su tutto $\bbC$ e biperiodica, quindi limitata, e quindi costante per Liouville).
+
+Quindi $f\in\bbC(\wp)$, come voluto.
+\end{proof}
+
+
+Fissiamo una funzione meromorfa dispari $h:T\rar\bbC$ (non costante) (ad esempio $\wp'$).
+Essendo $h^2$ pari, si ha $h^2\in\bbC(\wp)$.
+Ogni funzione meromorfa $g:T\rar\bbC$ si scrive (in modo unico) come $g_1+g_2$ con $g_1$ meromorfa pari e $g_2$ meromorfa dispari.
+Ma allora $g=g_1+h(\frac{g_2}{h})$ e $\frac{g_2}{h}$ è pari e quindi sta in $\bbC(\wp)$.
+
+Quindi abbiamo ottenuto che il campo delle funzioni meromorfe su $T$ è $\bbC(\wp,h)$ per una qualsiasi $h$ dispari non costante.
+
+
+$(\wp')^2=\frac{A(\wp)}{B(\wp)}$ e ci chiediamo chi siano $A$ e $B$. TO DO
+
+
+
+
+
+
+
+
+
+
+
+
+

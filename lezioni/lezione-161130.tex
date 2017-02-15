@@ -1,0 +1,105 @@
+\chapter{30/11/2016 - Collegamenti tra tori e curve ellittiche}
+	Se ho una mappa $\phi: X \rar Y$, bigettiva e olomorfa tra superfici di Riemann, allora non è necessariamente biolomorfa.
+	
+	Infatti sia $C = \{ (x,y) \in \bbC^2 : y^2=x^3 \}$, e sia $\tilde C$ il suo completamento proiettivo. Allora detta $\phi: \bbP^1 \rar \tilde C$ la mappa $ (t : 1) \mapsto (t^2 : t^3 : 1)$ e $(1 : 0) \mapsto (0:1:0)$ questa è chiaramente bigettiva e olomorfa.
+
+	Tuttavia l'inversa è data da $(x:y:1) \mapsto (\frac yx:1)$, che non è olomorfa in quanto il differenziale in $(0:0:1)$ è nullo (ma non è localmente costante).
+	
+	Il problema scaturisce dal fatto che il polinomio ha una radice doppia.
+	
+	Tuttavia se aggiungiamo che il differenziale sia full rank allora necessariamente deve essere biolomorfa.
+	\begin{proof}
+		Consideriamo il seguente diagramma:
+		\[
+		\begin{diagram}
+			X & \rTo^\phi & Y \\
+			\dTo>a & & \dTo>b \\
+			\Omega_1 & \rTo^\psi & \Omega_2
+		\end{diagram}
+		\]
+		
+		$a, b$ sono le rispettive proiezioni in carta, quindi hanno differenziale full-rank. Segue che la composizione $\psi = b\circ \phi \circ a^-1$ ha anch'essa differenziale full-rank.
+		Ora non capisco cosa stia cercando di scrivere formlmente, ma l'idea è che se ho il differenziale full-rank allora per il teorema di invertibilità locale posso trovare un'inversa differenziabile, e che soddisferà le condizioni per essere olomorfa. %TODO fare meglio% 
+	\end{proof}
+
+	\begin{proposizione}
+		La mappa di Weierstrass $\wp$ è biolomorfa. 
+	\end{proposizione}
+	\begin{proof}
+		Abbiamo già visto che la $\wp$ è olomorfa e biiettiva, manca da dimostrare che l'inversa è olomorfa.
+		Per questo mi basta guardare che il differenziale sia mai nullo. D'altra parte il differenziale della mappa di Weierstrass è $ (\wp'(z), \wp''(z))$ che non è mai nullo (basta derivare $\wp'(z)^2 = A(\wp(z))$ per convincersene).
+	\end{proof}
+	
+	Grazie a questo possiamo dire che la curva ellittica ha la stessa struttura complessa del toro da cui proviene (se proviene effettivamente da un toro, cosa che si rivelerà vera).
+	
+	\begin{osservazione}
+		Nonostante non abbia capito cosa c'entra, sul toro esiste una forma differenziale globale data da $dz$. Grazie alla mappa di Weierstrass, posso trasportarla sulla cubica e diventa $\frac{dx}y$, e segue che questa non ha poli, neanche all'infinito.
+	
+	\end{osservazione}
+	
+	\section{Discriminante}
+	
+	Ricordiamo che per una cubica del tipo $y^2=p(x)$ la non singolarità equivale all'assenza di radici multiple. Un modo rapido per vedere se un polinomio ha radici multiple è definire il discriminante.
+	
+	Sia quindi $f(t)$ un polinomio con radici $\alpha_i$ (eventualmente ripetute), definiamo $D_t=\prod_{i<j} (\alpha_i - \alpha_j)^2$. Questo è simmetrico nelle radici pertanto lo posso scrivere come un polinomio a coefficienti interi nei coefficienti di $f$.
+	
+	Se $\deg f=2$: $D_t= b^2-4ac$. Calcoliamolo ora per $\deg f=3$.
+
+	Prendo $f(t)=t^3+At+b$. Essendo $D_t$ di grado 6 nei coefficienti, deve essere combinazione linerare di $A_3 e B^2$. Ora mettendomi nel caso particolare $A=0,B=-1$ e nel caso $B=0$ posso agilmente scoprire che 
+	\[
+		D_t=-4a^3-27B^2
+	\]
+	
+	\section{Studio delle cubiche al variare di $\frac{a^3}{b^2}$}
+	
+	Sappiamo che ogni cubica non singolare è isomorfa a $y^2=x^3-ax-b$ mediante trasformazioni affini.
+	
+	Considero il parametro $\frac{a_3}{b^2}$. Sappiamo che è invariante per le omotetie del tipo $x\mapsto \lambda^2x, y\mapsto\lambda^3y$. Ho però il problema che esso non è definito per $b=0$.
+
+	Utilizzo quindi il discriminante. So che dato che il polinomio non ha radici multiple, il discriminante sarà non nullo: sfrutto questa informazione per considerare come parametro una funzione che dipenda solo da $\frac{a^3}{b^2}$ che abbia il discriminante come denominatore. Uso quindi
+	
+	\[
+		j = c \cdot \frac {a^3}{a^3-27b^2}
+	\]
+
+	Convenzionalmente, invece dell'ovvia $c=1$ si pone $c=1728$ per qualche oscuro motivo.
+	
+	Mostriamo ora, che una cubica proveniente da un toro non ha radici multiple.
+	
+	\begin{proof}
+		Sappiamo che 
+		\[
+			\wp'(z)^2=4\wp(z)^3-g_2\wp(z)-g_3 = 4(\wp(z)-e_1)(\wp(z)-e_2)(\wp(z)-e_3)
+		\]
+		
+		Quindi $\wp(z_0)=e_i \Rar wp'(z_0)=0$.
+		Se $L=\bbZ\omega_1 + \bbZ\omega_2$, allora $\wp'(z)$ si deve annullare su tutti i punti di $\frac L2$: infatti se $l \in \frac L2$ allora $l \equiv -l \pmod L$, e dato che $\wp'(z)$ è dispari ho che 
+		\[
+			\wp(l) = \wp(-l) = -\wp(l)
+		\]
+		
+		Visto sul toro, $\wp'(z)$ si annulla in quattro punti.
+		
+		E invece no! Ho mentito. Nell'origine non si annulla, c'è un polo. Dato che $\wp'(z)$ ha esattamente tre poli, allora ho trovato tutti gli zeri, che sono $\frac{\omega_1}2, \frac{\omega_2}2, \frac{\omega_1+\omega_2}2$.
+		
+		%TODO manca da dire perché sono davvero distinte, che non sto ben capendo
+
+	\end{proof}
+
+	Ora vediamo che tori con la stessa $j$ sono omotetitici.
+	
+	\begin{proof}
+		Suppongo che $T, T'$ abbiano la stessa $j$. Allora ho $\frac{a^3}{b^2}=\frac{a'^3}{b'^2}$. Quindi se con un omotetia faccio in modo che $a$ venga mandato in $a'$, allora sicuramente $b$ viene mandato in $b'$. %TODO: da capire perché non possa finire in -b'
+		
+		Quindi sia $T$ che $T'$ sono biolomorfi alla stessa curva, quindi sono biolomorfi tra loro e dunque omotoetici.
+	\end{proof}
+	
+	\begin{osservazione}
+		$j(\tau)$ è una funzione non costante e olomorfa. Vedremo anche che è suriettiva.
+	\end{osservazione}
+
+
+	
+	
+
+

@@ -1,28 +1,102 @@
 % This is a modified version of the tufte-latex book example in which the title page and the contents page resemble Tufte's
 % VDQI book, using Kevin Godby's code from this thread at https://groups.google.com/forum/#!topic/tufte-latex/ujdzrktC1BQ.
 % Taken from https://www.overleaf.com/5902299yxkgzs#/19519356/
-\documentclass[nohyper]{tufte-book}
+\documentclass[a4paper,oneside]{tufte-book}
 \usepackage{nameref}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[italian]{babel}
 \usepackage{ragged2e}
 \usepackage{hyperref}
+\usepackage{xfrac}
+\usepackage{marginfix}
+\usepackage{tikz}
+\usepackage{epstopdf}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{etoolbox}
+\usepackage{afterpage}
+
+% \DeclareSymbolFont{operators}   {OT1}{cmr} {m}{n}
+% \DeclareSymbolFont{letters}     {OML}{cmm} {m}{it}
+% \DeclareSymbolFont{symbols}     {OMS}{cmsy}{m}{n}
+% \DeclareSymbolFontAlphabet{\mathrm}    {operators}
+% \DeclareSymbolFontAlphabet{\mathnormal}{letters}
+% \DeclareSymbolFontAlphabet{\mathcal}   {symbols}
+% \DeclareSymbolFontAlphabet{\mathfrak}  {symbols}
+% \DeclareMathAlphabet      {\mathbf}{OT1}{cmr}{bx}{n}
+% \DeclareMathAlphabet      {\mathsf}{OT1}{cmss}{m}{n}
+% \DeclareMathAlphabet      {\mathit}{OT1}{cmr}{m}{it}
+% \DeclareMathAlphabet      {\mathtt}{OT1}{cmtt}{m}{n}
+% \DeclareMathAlphabet      {\mathbb}{OT1}{cmr}{m}{n}
+% \DeclareMathAlphabet      {\mathfrak}{OT1}{euler}{m}{n}
+
+\input{diagrams.sty}
+
+\usepackage{enumitem}
+\setlist{nolistsep}
+\setitemize[0]{leftmargin=20pt, itemindent=0pt, labelsep=10pt,
+  listparindent=0pt}
+\setenumerate[0]{leftmargin=40pt, itemindent=0pt, labelsep=10pt,
+  listparindent=0pt}
+
+\geometry{
+  a4paper,
+  left=18mm,
+  textwidth=170mm, % main text block
+  marginparsep=0mm, % gutter between main text block and margin notes
+  marginparwidth=0mm % width of margin notes
+}
+
+% Cambiamo l'impostazione di tufte-common e non mettiamo spazio sopra i
+% titoli di inizio capitolo
+\titlespacing*{\chapter}{0pt}{0pt}{0pt}
+
+\titleformat{\chapter}%
+[hang]%shape
+{\scshape\huge\raggedright}%
+{\thesection}%
+{0.5em}%
+{}%
+[\vskip 1em]%
+
+% Cambiamo anche l'impostazione di come vengono visualizzati i titoli di
+% sezione, li vogliamo in maiuscoletto
+\titleformat{\section}%
+[hang]% shape
+{\scshape\LARGE\raggedright}% format to label + text
+{\thesection}% label
+{1em}% separation between label and title body
+{}% before the title body
+[]% after the title body
+
+\titleformat{\subsection}%
+[hang]%
+{\scshape\Large\raggedright}%
+{\thesection}%
+{1em}%
+{}%
+[]%
+
 \include{custom-commands}
+
 
 % Manteniamo le note a piè di pagina nella stessa pagina
 \interfootnotelinepenalty=10000
 \makeatletter
-\renewcommand\@makefntext[1]{\nohyphenation\justify\@makefnmark#1}
+% Eventualmente si può mettere un \nohyphenation prima di justify ma poi
+% le note a margine vengono in maniera terribile.
+\renewcommand\@makefntext[1]{\justify\@makefnmark#1}
 \makeatother
 
 % Book metadata
-\title{Curve Ellittiche e Modulari}
+\title{Funzioni Ellittiche e Modulari}
 \date{Note di un corso del Prof. Umberto Zannier}
 \author[]{Classe del Terzo Anno SNS}
 \publisher{Versione del \dateitalian\today}
 
 % Just some sample text
-\usepackage{lipsum}
+%\usepackage{lipsum}
 
 % For nicely typeset tabular material
 \usepackage{booktabs}
@@ -49,11 +123,11 @@
 \usepackage{xspace}
 
 % Prints the month name (e.g., January) and the year (e.g., 2008)
-\newcommand{\monthyear}{%
-  \ifcase\month\or January\or February\or March\or April\or May\or June\or
-  July\or August\or September\or October\or November\or
-  December\fi\space\number\year
-}
+% \newcommand{\monthyear}{%
+%   \ifcase\month\or January\or February\or March\or April\or May\or June\or
+%   July\or August\or September\or October\or November\or
+%   December\fi\space\number\year
+% }
 
 
 % Prints an epigraph and speaker in sans serif, all-caps type.
@@ -132,17 +206,56 @@
 %%%% Kevin Godny's code for title page and contents from https://groups.google.com/forum/#!topic/tufte-latex/ujdzrktC1BQ
 \makeatletter
 \renewcommand{\maketitlepage}{%
-\setlength{\parindent}{0pt}
-
-\fontsize{24}{24}\selectfont\textit{\@author}
-
-\vspace{1.75in}\fontsize{36}{54}\selectfont\@title
-
-\vspace{0.5in}\fontsize{14}{14}\selectfont\textsf{\smallcaps{\@date}}
-
-\vfill\fontsize{14}{14}\selectfont\textit{\@publisher}
-
-\thispagestyle{empty}
+  \setlength{\parindent}{0pt}
+  
+  \fontsize{24}{24}\selectfont\textit{\@author}
+  
+  \vspace{1.75in}\fontsize{36}{54}\selectfont\@title
+  
+  \vspace{0.5in}\fontsize{14}{14}\selectfont\textsf{\smallcaps{\@date}}
+  
+  \vfill\fontsize{14}{14}\selectfont\textit{\@publisher}
+  
+  \thispagestyle{empty}
+}
+\newcommand{\makefrontcover}{%
+% Cerchiamo di includere la copertina con la figura
+\afterpage{%
+  \newpage%
+  \thispagestyle{empty}%
+  \newgeometry{margin=0mm, top=0mm, bottom=0mm, left=0mm, right=0mm}
+  \begin{textblock*}{\paperwidth}(0pt,0pt)%
+    {%
+      \transparent{0.4}%
+      \begin{center}
+        \noindent\includegraphics*[height=\paperheight,width=\paperwidth]{cubicgrouplaw.eps}%
+      \end{center}%
+    }%
+  \end{textblock*}%
+  \begin{textblock*}{\paperwidth}(-20mm,59.5mm)%
+    {%
+      \transparent{0.90}%
+      \crule[white]{2\paperwidth}{50mm}
+      %\fbox{\crule[white]{\paperwidth}{50mm}}
+    }%
+  \end{textblock*}%
+  \begin{textblock*}{\paperwidth}(0mm,67mm)%
+    {
+      \makeatletter
+      \begin{center}
+        {\fontsize{32}{20}\selectfont\@title}
+      \end{center}
+      \vspace{0.4in}
+      \begin{center}
+        {\fontsize{14}{14}\selectfont\textsf{\smallcaps{\@date}}}
+      \end{center}
+      \makeatother
+    }
+  \end{textblock*}
+  \null%
+  \restoregeometry%
+  \newpage%
+}
 }
 \makeatother
 
@@ -167,12 +280,40 @@
     
     \newcounter{gencounter}
     \newcounter{defcounter}
+    \newcounter{escounter}
+
+    \linespread{1.2}
+
+    \newtheoremstyle{importante}% <name>
+    {\baselineskip}% <Space above>
+    {\baselineskip}% <Space below>
+    {}% <Body font>
+    {}% <Indent amount>
+    {\scshape}% <Theorem head font>
+    {:}% <Punctation after theorem head>
+    {1em}% <Space after theorem head>
+    {}% <Theorem head spec>
+    
+    \makeatletter
+    \def\th@importante{%
+      \thm@notefont{}%
+    }%
+    \makeatother
+    
+    \theoremstyle{importante}
     \newtheorem{teorema}[gencounter]{Teorema}
     \newtheorem{lemma}[gencounter]{Lemma}
-    \newtheorem{corollario}[gencounter]{Corollario}
+    \newtheorem{proposizione}[gencounter]{Proposizione}
+    \newtheorem{fatto}[gencounter]{Fatto}
     \newtheorem{definizione}[defcounter]{Definizione}
+
+    \newtheorem{esercizio}[escounter]{Esercizio}
+    
+    \newtheorem{corollario}[gencounter]{Corollario}
     \newtheorem{osservazione}[defcounter]{Osservazione}
+    \newtheorem{divagazione}[defcounter]{Divagazione}
     \newtheorem{remark}[defcounter]{Remark}
+    \newtheorem{notazione}[defcounter]{Notazione}
 
     \newcommand{\notamargine}[1]{
       \vspace{-7\baselineskip}
@@ -180,7 +321,13 @@
       \vspace{7\baselineskip}
     }
 
+    \newcommand\crule[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+
+    \usepackage{transparent}
+    \usepackage[absolute]{textpos}
+    
 \begin{document}
+\makefrontcover
 
 % Front matter
 \frontmatter
@@ -219,14 +366,20 @@
 
 % v.4 copyright page
 \newpage
-\newcommand{\contributori}{Nomi di tutti da aggiungere}
+\newcommand{\contributori}{Giovanni Italiano, Federico Franceschini,
+  Andrea Caberletti, Dario Ascari, Nicola Picenni, Matteo Migliorini,
+  Dario Balboni, Umberto Pappalettera, Andrea Marino, Manuele Cusumano,
+  Gianluca Tasinato, Clara Antonucci}
 \begin{fullwidth}
 \begin{doublespace}
   \thispagestyle{empty}
   \setlength{\parindent}{0pt}
   \setlength{\parskip}{\baselineskip}
-  \noindent\fontsize{18}{18}\selectfont\itshape
-  \par\nohyphenation Hanno collaborato alla stesura di questo testo: \contributori
+  \noindent\fontsize{16}{16}\selectfont\scshape
+  \par\nohyphenation Hanno collaborato alla stesura di questo testo:
+  \itshape\contributori
+
+  (Ordine per terza lettera del cognome)
 \end{doublespace}
 
 ~\vfill
@@ -239,13 +392,13 @@ Copyright \copyright\ \the\year\ \contributori
 
 \par\smallcaps{zannier1617.surge.sh}
 
-\par\nohyphenation This text is licensed under a Creative Commons
+\par\justify\nohyphenation This text is licensed under a Creative Commons
 \smallcaps{``Attribution-ShareAlike 4.0 International''}
 license (the ``License''). You may not use this file
 except in compiance with the License. You may obtain a
 copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legalcode}.
 
-\includegraphics[width=5em]{by-sa.pdf}
+\includegraphics[width=5em]{by-sa.eps}
 \index{license}
 
 %\par\textit{First printing, \monthyear}
@@ -277,8 +430,62 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
 
 % Start the main matter (normal chapters)
 \mainmatter
+% Regoliamo ora i margini del documento e lo spazio che lasciamo alle
+% note a margine.
+\newgeometry{
+  left=12mm, % left margin
+  textwidth=150mm, % main text block
+  marginparsep=6mm, % gutter between main text block and margin notes
+  marginparwidth=35mm, % width of margin notes
+  headsep=8mm,
+  footskip=20pt,
+  top=2.5cm,
+  bottom=1.5cm,
+  showframe
+}
 
-\include{lezioni/draft}
+% Cambiamo il font per metterlo più piccolo
+\fontsize{11}{14}\selectfont
+
+% Mettiamo indentazione e skip tra i paragrafi
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{0pc}%
+  \setlength{\parskip}{0.3\baselineskip}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0.5pc}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0pc}%
+  \setlength{\parskip}{0.3\baselineskip}%
+}
+\makeatother
+
+\setlength{\parskip}{0cm}
+\setlength{\parindent}{0cm}
+
+\include{lezioni/lezione-160919}
 \include{lezioni/lezione-160921}
+\include{lezioni/lezione-160926}
+\include{lezioni/lezione-160928}
+\include{lezioni/lezione-161003}
+\include{lezioni/lezione-161005}
+\include{lezioni/lezione-161024}
+\include{lezioni/lezione-161026}
+\include{lezioni/lezione-161102}
+\include{lezioni/lezione-161107}
+\include{lezioni/lezione-161128}
+\include{lezioni/lezione-161130}
+\include{lezioni/lezione-161205}
+\include{lezioni/lezione-161207}
+\include{lezioni/lezione-161214}
+\include{lezioni/lezione-170123}
+\include{lezioni/lezione-170131}
 \end{document}
 

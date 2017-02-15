@@ -1,9 +1,7 @@
-\RequirePackage[utf8]{inputenc}
-\RequirePackage[italian]{babel}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amsfonts}
 \usepackage{xifthen}
+\usepackage{marvosym}
+
+
 %\usepackage{xparse}
 %\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
 %\usepackage[linktoc=all]{hyperref} % Per i collegamenti ipertestuali. [linktoc=all] mette i link nell'indice
@@ -34,64 +32,93 @@
    \lowercase{\mydefgreek{#1}}\expandafter\mydefallgreek\fi}
 \mydefallgreek {Gamma}{Delta}{Theta}{Lambda}{Xi}{Pi}{Sigma}{Upsilon}{Phi}{Varphi}{Psi}{Omega}{alpha}{beta}{gamma}{delta}{epsilon}{varepsilon}{zeta}{eta}{theta}{iota}{kappa}{lambda}{mu}{nu}{xi}{omicron}{pi}{rho}{sigma}{tau}{upsilon}{phi}{varphi}{chi}{psi}{omega}\mydefallgreek
 
-%\NewDocumentCommand{\de}{gg}{
-%\IfNoValueTF{#1}
-%		{\text{ d}}
-%		{\IfNoValueTF{#2}	{\text{ d}#1}
-%			{\frac{\text{d}#1}{\text{d}#2}}
-%	}
-%}
+\newcommand{\de}{\text{ d}}
 
-%\NewDocumentCommand{\dpar}{gg}{
-%	\IfNoValueTF{#1}
-%		{\partial}
-%		{\IfNoValueTF{#2}	{\partial_{#1}}
-%			{\frac{\partial {#1}}{\partial {#2}}}
-%	}
-%}
-
-
-%nuovi comandi per svariate cose
+%nuovi comandi per svariate cose (alcune per evitare di scrivere
 \newcommand{\sse}{\Leftrightarrow}
 \newcommand{\Rar}{\Rightarrow}
 \newcommand{\rar}{\rightarrow}
 \newcommand{\ol}[1]{\overline{#1}}
 \newcommand{\ot}[1]{\widetilde{#1}}
 \newcommand{\oc}[1]{\widehat{#1}}
-\newcommand{\tc}{\mbox{ t.c. }}
+\renewcommand{\hat}{\widehat}
+\newcommand{\tc}{\text{ t.c. }}
+\newcommand{\nowlog}{ Senza perdità di generalità }
+\newcommand{\wlogsupp}{ Senza perdità di generalità possiamo supporre }
+\newcommand{\spa}{ Supponiamo per assurdo }
 
+% Ti supplico, cambiali
 \newcommand{\norma}[1]{\mid\mid #1 \mid\mid}
 \newcommand{\abs}[1]{\mid #1 \mid}
 \newcommand{\scal}[2]{\langle #1 \mid #2 \rangle}
 \newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\lbr}[1]{\ensuremath{\left({#1}\right)}}
 
-\newcommand{\de}[1]{\partial_{#1}}
+
 \newcommand{\chr}{\text{char }}
 \newcommand{\Ker}{\mbox{Ker } }
 \newcommand{\Deg}{\mbox{deg }}
+\newcommand{\Div}{\mbox{Div }}
+\newcommand{\ord}{\mbox{ord }}
+\newcommand{\Pic}{\mbox{Pic }}
+\renewcommand{\div}{\mbox{div }}
 \newcommand{\Det}{\mbox{det }}
 \newcommand{\Dim}{\mbox{dim }}
 \newcommand{\End}{\mbox{End }}
 \newcommand{\Rad}{\mbox{Rad }}
 \newcommand{\Ann}{\mbox{Ann }}
 \newcommand{\Sp}{\mbox{Sp }}
+\renewcommand{\Im}{\kI\km\,}
+\renewcommand{\Re}{\kR\ke\,}
 \newcommand{\Rk}{\mbox{rk }}
-\newcommand{\Tr}{\mbox{tr }}
-\newcommand{\GL}{\mbox{GL}}
-\newcommand{\Isom}{\mbox{Isom}}
-\newcommand{\Fix}{\mbox{Fix }}
-\newcommand{\Giac}{\mbox{Giac }}
-\newcommand{\Ort}{\mbox{O}}
-\newcommand{\Aff}{\mbox{Aff }}
-\newcommand{\Supp}{\mbox{Supp }}
-\newcommand{\Span}{\mbox{Span }}
-\newcommand{\Symm}{\mbox{Sym }}
-\newcommand{\Asymm}{\mbox{Asym }}
-\newcommand{\Img}{\mbox{Im }}
-\newcommand{\Id}{\mbox{id}}
-\newcommand{\PS}{\mbox{PS }}
-\newcommand{\Mtr}{\mathfrak{m}}
-\newcommand{\fucknullset}{\{0\}}
+\newcommand{\Tr}{\text{tr }}
+\newcommand{\Aut}{\text{Aut }}
+\newcommand{\GL}{\text{GL}}
+\newcommand{\Omeo}{\text{Omeo }}
+\newcommand{\Fix}{\text{Fix }}
+\newcommand{\Img}{\text{Im }}
+\newcommand{\Supp}{\text{Supp }}
+\newcommand{\Span}{\text{Span }}
+\newcommand{\Id}{\text{Id}}
+\newcommand{\res}{\text{res}}
+\newcommand{\SL}{\text{SL}}
+
+% Cusu-comandi
+\newcommand{\sdR}{superficie di Riemann}
+\newcommand{\quotient}[2]{\left.\raisebox{.2em}{$#1$}\middle/\raisebox{-.2em}{$#2$}\right.}
+\newcommand{\Lar}{\Leftarrow}
+\newcommand{\lar}{\leftarrow}
+\newcommand{\isom}{\simeq}
+% Il meno insiemistico
+\newcommand{\minus}{\backslash}
+\newcommand{\dst}{\displaystyle}
+\newcommand{\matrice}[4]{\left(\begin{array}{cc} #1 & #2 \\ #3 & #4 \end{array} \right)}
+
+% Comando per plottare una curva algebrica
+% Nell'ordine i parametri sono:
+% 1. Equazione della curva (in due variabili)
+% 2. xrange (in notazione [inizio:fine])
+% 3. yrange (come sopra)
+% DAMETTERE 4. opzioni (tipo se metterci la griglia o no)
+\newcommand{\curvegraph}[3]{
+    \begin{tikzpicture}
+    \draw[very thin,color=gray] (-1.9,-3.9) grid (3.9,3.9);
+    \draw[->] (-2,0) -- (4.2,0) node[right] {$x$};
+    \draw[->] (0,-4.2) -- (0,4.2) node[above] {$y$};
+    \draw plot[id=curve, raw gnuplot, smooth] function{
+    f(x,y) = #1;
+    set xrange #2;
+    set yrange #3;
+    set view 0,0;
+    set isosample 1000,1000;
+    set size square;
+    set cont base;
+    set cntrparam levels incre 0,0.1,0;
+    unset surface;
+    splot f(x,y);
+    };
+    \end{tikzpicture}
+}
 
 \sloppy
 
