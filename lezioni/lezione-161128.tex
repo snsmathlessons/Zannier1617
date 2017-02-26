@@ -99,13 +99,25 @@ definizione.
 volta che $\ol{E}(\bbC)$ è connesso, iniziando dalla connessione di
 $E(\bbC)$ (spazio dei punti affini)
 
-La funzione $\bbC \rar \bbC$ definita da $x \mapsto 4x^3 - g_2 x - g_3$
+% $x \mapsto 4x^3 - g_2 x - g_3$
+
+La funzione di proiezione $E(\bbC) \rar \bbC$ definita da $(x, y) \mapsto x$ 
 diventa un rivestimento tolte le tre radici $\alpha, \beta, \gamma$ del
 polinomio $4x^3 - g_2 x - g_3$.
 
 \notamargine{L'idea è che, tolte le radici, abbiamo un rivestimento di
   grado due. I punti del rivestimento si riescono a connettere ``facendo
   dei giri attorno alle radici''}
+
+\begin{center}
+  \includegraphics[width=8cm]{lezione-161128-fig1bis}
+\end{center}
+
+\notamargine{Per dimostrare che è un rivestimento, possiamo utilizzare
+  il fatto che le proiezioni sono mappe aperte e che il numero di punti
+  $(x, y) \in E(\bbC)$ che si proiettano su $x$ sono, per
+  $x \neq \alpha, \beta, \gamma$, esattamente due, ovvero quelli che
+  risolvono $y^2 = 4x^3 - g_2 x - g_3$ con $x$ fissato}
 
 Ovviamente si ha che, avendo il rivestimento grado due, o è connesso,
 oppure ha due componenti connesse. Ora, se facciamo un cammino tra due
@@ -154,7 +166,7 @@ il punto singolare otteniamo la parametrizzazione (per esercizio
 mostrare che ogni retta incontra esattamente un punto della chiusura
 proiettiva della cubica e che, ovviamente, dato ogni punto della cubica
 esiste una retta che passa per lui e per il punto singolare). La cubica
-è quindi singolare.
+è quindi parametrizzabile.
 
 \notamargine{Inoltre di punti singolari ne ha al più uno: se ve ne
   fossero due $p, q$ posso tracciare la retta passante per $p$ e per
@@ -204,7 +216,7 @@ $E_{\lambda L}: y^2 = 4x^3 - \frac{g_2}{\lambda^4} x -
 Quali sono le funzioni razionali di $a$ e di $b$ che rimangono
 invarianti per trasformazioni omotetiche? Sicuramente vi è
 $\frac{a^3}{b^2}$.
-\notamargine{Per esercizio si può dimostrare che ogni funzione
+\notamargine{Per esercizio si può dimostrare che ogni funzione razionale
   invariante per omotetia di $a$ e di $b$ si scrive come funzione
   razionale di $\frac{a^3}{b^2}$}
 
@@ -223,8 +235,8 @@ che $\frac{g_2^3}{g_3^2} = \frac{S_2^3(\tau)}{S_3^2(\tau)}$ per
 definizione e quindi la succitata funzione è meromorfa.
 
 \notamargine{Per verificare la convergenza assoluta della sommatoria per
-  $n \ge 2$ si può maggiorare la serie dei valori assoluti con
-  l'opportuno integrale in due variabili}
+  $n > 2$ si può maggiorare la serie dei valori assoluti con l'opportuno
+  integrale in due variabili. Per il caso $n=2$ non saprei...}
 
 Inoltre, se trovassimo due reticoli $L_1$ ed $L_2$ in cui valga
 rispettivamente

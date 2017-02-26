@@ -74,12 +74,21 @@ gli $\omega$ di modulo $R$ sono circa $R$, e quindi quella è circa $\sum R\cdot
 
 Quindi il limite della serie sopra è una funzione olomorfa $P:\bbC\setminus L\rar\bbC$.
 
-\'E inoltre facile (non del tutto ovvio, TO DO) verificare che $P$ è una funzione $L$-biperiodica.
+\'E inoltre facile verificare che $P$ è una funzione $L$-biperiodica.
+Ad esempio, basta considerare $P(z+\tau)-P(z)$ con $\tau \in L$: per le proprietà di convergenza, posso raccogliere la sommatoria e ottenere 
+\[ P(z+\tau) - P(z) = \frac1{(z+\tau)^2} + \frac1{z^2} - \sum_{\omega \in L\ \omega\ne 0} \frac1{(z+\tau-\omega)^2}-\frac1{(z-\omega)^2}\]
+e ora mettendo il caso $\omega=0$ nella sommatoria e riarrangiando si conclude.
 
 Se prendiamo la serie che definisce $P$ e togliamo il termine $\frac{1}{z^2}$, converge uniformemente in un intorno di $0$ (e analogo per ogni $\omega\in L$).
 Quindi $P$ è meromorfa su tutto $\bbC$.
 
-Fattorizzando $P$, otteniamo una funzione meromorfa $\wp:T\rar\bbC$, chiamata \textbf{funzione di Weierstrass} (tale definizione dipende dal reticolo $L$ scelto per rappresentare $T$? TO DO).
+Fattorizzando $P$, otteniamo una funzione meromorfa $\wp:T\rar\bbC$, chiamata \textbf{funzione di Weierstrass}. Attenzione: tale definizione dipende dal reticolo $L$ scelto per rappresentare $T$! Però non cambia in modo sostanziale: infatti la $\wp$ dovrebbe trasformare, per un cambio di reticolo $L \mapsto \alpha L$:
+\[
+ \wp_L(z) = \alpha^2 \wp_{\alpha L}(\alpha z) 
+\]
+
+In particolare, non vengono modificati né gli zeri né i poli (che saranno le cose che ci interesseranno maggiormente).
+
 
 \begin{proposizione}
 La funzione meromorfa $\wp:T\rar\bbC$ ha le seguenti proprietà:
@@ -147,7 +156,15 @@ Ma allora $g=g_1+h(\frac{g_2}{h})$ e $\frac{g_2}{h}$ è pari e quindi sta in $\b
 Quindi abbiamo ottenuto che il campo delle funzioni meromorfe su $T$ è $\bbC(\wp,h)$ per una qualsiasi $h$ dispari non costante.
 
 
-$(\wp')^2=\frac{A(\wp)}{B(\wp)}$ e ci chiediamo chi siano $A$ e $B$. TO DO
+$(\wp')^2=\frac{A(\wp)}{B(\wp)}$ e ci chiediamo chi siano $A$ e $B$.
+
+\begin{itemize}
+ \item Contiamo i poli in 0. A sinistra ho un polo sestuplo, mentre a destra l'ordine del polo è dato da $2\cdot (\deg A - \deg B)$. Quindi $\deg A = \deg B + 3$.
+ \item Contiamo ora gli zeri. A sinistra ho 6 zeri, a destra il numero di zeri è dato da $2*\deg A$: infatti il numeratore contribuisci con zeri in posti diversi da 0 e con poli in zero; il denominatore contribuisce con zeri in 0 (che però vengono mangiati dai poli del denominatore) e con poli altrove. Quindi $\deg A = 3$
+\end{itemize}
+
+In conclusione otteniamo che $(\wp')^2=A(\wp)$, con $A$ di grado 3.
+
 
 
 
