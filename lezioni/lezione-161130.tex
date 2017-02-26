@@ -18,7 +18,7 @@
 		\end{diagram}
 		\]
 		
-		$a, b$ sono le rispettive proiezioni in carta, quindi hanno differenziale full-rank. Segue che la composizione $\psi = b\circ \phi \circ a^-1$ ha anch'essa differenziale full-rank.
+		$a, b$ sono le rispettive proiezioni in carta, quindi hanno differenziale full-rank. Segue che la composizione $\psi = b\circ \phi \circ a^{-1}$ ha anch'essa differenziale full-rank.
 		Ora non capisco cosa stia cercando di scrivere formlmente, ma l'idea è che se ho il differenziale full-rank allora per il teorema di invertibilità locale posso trovare un'inversa differenziabile, e che soddisferà le condizioni per essere olomorfa. %TODO fare meglio% 
 	\end{proof}
 
@@ -45,7 +45,7 @@
 	
 	Se $\deg f=2$: $D_t= b^2-4ac$. Calcoliamolo ora per $\deg f=3$.
 
-	Prendo $f(t)=t^3+At+b$. Essendo $D_t$ di grado 6 nei coefficienti, deve essere combinazione linerare di $A_3 e B^2$. Ora mettendomi nel caso particolare $A=0,B=-1$ e nel caso $B=0$ posso agilmente scoprire che 
+	Prendo $f(t)=t^3+At+b$. Essendo $D_t$ di grado 6 nei coefficienti, deve essere combinazione linerare di $A^3$ e $B^2$. Ora mettendomi nel caso particolare $A=0,B=-1$ e nel caso $B=0$ posso agilmente scoprire che 
 	\[
 		D_t=-4a^3-27B^2
 	\]
@@ -64,7 +64,7 @@
 
 	Convenzionalmente, invece dell'ovvia $c=1$ si pone $c=1728$ per qualche oscuro motivo.
 	
-	Mostriamo ora, che una cubica proveniente da un toro non ha radici multiple.
+	Mostriamo ora che una cubica proveniente da un toro non ha radici multiple.
 	
 	\begin{proof}
 		Sappiamo che 
@@ -72,7 +72,7 @@
 			\wp'(z)^2=4\wp(z)^3-g_2\wp(z)-g_3 = 4(\wp(z)-e_1)(\wp(z)-e_2)(\wp(z)-e_3)
 		\]
 		
-		Quindi $\wp(z_0)=e_i \Rar wp'(z_0)=0$.
+		Quindi $\wp(z_0)=e_i \Rar\wp'(z_0)=0$.
 		Se $L=\bbZ\omega_1 + \bbZ\omega_2$, allora $\wp'(z)$ si deve annullare su tutti i punti di $\frac L2$: infatti se $l \in \frac L2$ allora $l \equiv -l \pmod L$, e dato che $\wp'(z)$ è dispari ho che 
 		\[
 			\wp(l) = \wp(-l) = -\wp(l)
@@ -97,9 +97,3 @@
 	\begin{osservazione}
 		$j(\tau)$ è una funzione non costante e olomorfa. Vedremo anche che è suriettiva.
 	\end{osservazione}
-
-
-	
-	
-
-
