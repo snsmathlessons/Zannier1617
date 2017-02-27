@@ -3,17 +3,76 @@
 \section{Una relazione tra forme modulari e ordini di annullamento}
 
 \begin{teorema}
-    Sia $f$ una funzione modulare di peso $2k$, $F$ il dominio fondamentale delle lezioni precedenti. Allora si ha
-    \begin{equation*}
-	\ord_\infty(f)+\frac{1}{2}\ord_i(f)+\frac{1}{3}\ord_{\rho}(f)+{\sum_{p\in F}}^{*}\ord_p(f)=\frac{k}{6},
-    \end{equation*}
-    dove con $\dst {\sum_{p\in F}}^{*}$ si intende la somma per tutti i $p \neq i, \rho, \infty$.
-    
-    Se $e_p=\abs{\Stab(p)}$, allora l'uguaglianza sopra si può anche scrivere
-    \begin{equation*}
-     	\sum_{p\in F \cup \{\infty\}} \frac{1}{e_p}\ord_p(f)=\frac{k}{6}
-    \end{equation*}
+	Sia $f$ una forma modulare di peso $2k$, $F$ il dominio fondamentale delle lezioni precedenti,
+	e $v_p(f)=\ord_p(f)\geq0$ (poiché $f$ è olomorfa). Allora si ha
+	\begin{equation*}
+	\v_\infty(f)+\frac{1}{2}\v_i(f)+\frac{1}{3}\v_{\rho}(f)+{\sum_{p\in F}}^{*}\v_p(f)=\frac{k}{6},
+	\end{equation*}
+	dove con $\dst {\sum_{p\in F}}^{*}$ si intende la somma per tutti i $p \neq i, \rho, \infty$,
+	e con $\v_\infty(f)$ si intende $\ord_0(\ot{f})$.
+	
+	Se $e_p=\abs{\Stab(p)}$, allora l'uguaglianza sopra si può anche scrivere
+	\begin{equation*}
+		\sum_{p\in F \cup \{\infty\}} \frac{1}{e_p}\v_p(f)=\frac{k}{6}
+	\end{equation*}
 \end{teorema}
+
 \begin{proof}
-    Integriamo $\dst \frac{\de f}{f}$ nei posti giusti
+	\begin{figure}
+		%\centering
+		\input{lezioni/immagini/lezione-170201-cammino.tikz}
+	\end{figure}
+	Integriamo $\dst \frac{\de f}{f}$ nei posti giusti: Sia $\gamma$ il cammino mostrato in rosso in figura,
+	dove i tratti curvi sono archi di circonferenza e $B$ e $D'$ sono uno il traslato dell'altro.
+	
+	Possiamo supporre che $f$ non abbia zero al di fuori della regione delimitata da $\gamma$.
+	Infatti, $f$ (o $\ot f$, se siamo in $\infty$) è olomorfa, dunque gli zeri non possono accumularsi;
+	consideriamo ad esempio $\rho$: se $f(\rho)=0$, allora esiste un intorno in cui $\rho$ è l'unico zero,
+	mentre se $f(\rho)\neq0$ per continuità $f$ sarà diversa da $0$ in tutto un intorno.
+	
+	Inoltre possiamo supporre che $f$ non abbia zeri su $\gamma$: se li avesse sui lati $AB$ e $D'E$
+	sarebbe possibile modificare $\gamma$ attraverso una ``piccola'' deviazione in modo che i due pezzi del percorso
+	continuino ad essere l'uno il traslato dell'altro, e la zona interna rimarrebbe la stessa perché 
+	a due punti traslati corrisponde lo stesso valore di $f$; sugli archi $B'C$ e $C'D$ si agisce in modo analogo,
+	e sugli altri tratti è possibile non avere zeri per lo stesso ragionamento di prima.
+	
+	Dunque per il teorema dei residui si ha
+	\begin{equation}
+		\frac{1}{2\pi i} \int_{\gamma} \frac{\de f}{f}={\sum_{p\in F}}^{*}v_p(f)
+	\end{equation}
+	
+	Scriviamo l'integrale in un altro modo, spezzandolo nei vari pezzi.
+	
+	\begin{equation}
+		\frac{1}{2\pi i}\int_E^A\frac{\de f}{f}=\frac{1}{2\pi i}\int_{\de\Omega}\frac{\de \ot{f}}{\ot{f}}=-v_0(\ot{f})=-v_\infty(f),
+	\end{equation}
+	dove $\Omega$ è un disco intorno all'origine, di raggio $e^{2\pi \mbox{Im}(A)}$, e $\de\Omega$ è percorso in senso orario.
+	
+	\begin{equation}
+		\frac{1}{2\pi i}\left( \int_A^B\frac{\de f}{f} + \int_{D'}^E\frac{\de f}{f} \right) =0
+	\end{equation}
+	
+	Si ha che, poiché $f$ è una forma modulare, $f(Sz)=f(-\frac{1}{z})=z^{2k}f(z)$, da cui, prendendo la derivata logaritmica,
+	$\dst\frac{\de f}{f}(Sz)=2k\cdot\frac{\de z}{z}+\frac{\de f}{f}(z)$. Dunque
+	\begin{multline}
+		\frac{1}{2\pi i}\left\{ \int_{B'}^C\frac{\de f}{f} + \int_{C'}^D\frac{\de f}{f} \right\} \overset{*}{=} %
+		\frac{1}{2\pi i}\left\{ \int_{B'}^C\frac{\de f}{f} + \int_{C}^{B'} \left[2k \cdot \frac{\de z}{z} + \frac{\de f}{f}\right] \right\} = \\
+		= \frac{1}{2\pi i}\int_{C}^{B'} 2k \cdot \frac{\de z}{z} \longrightarrow \frac{2k}{2\pi i}\int_i^\rho \frac{\de z}{z} = \frac{\pi}{6},
+	\end{multline}
+	dove l'uguaglianza $*$ è valida perché $S(C'D)=CB'$, dove conservo anche il verso di percorrenza
+	
+	Supponendo che $f(z)=(z-i)^mg(z)$, dove $g$ è olomorfa e non si annulla in $i$, cioè $m=v_i(f)$, possiamo scrivere
+	\begin{equation}
+		\frac{1}{2\pi i}\int_C^{C'}\frac{\de f}{f} = \frac{1}{2\pi i}\int_C^{C'}\left[ m\cdot\frac{\de z}{z-i} + %
+		\frac{\de g}{g}(z) \right] \longrightarrow -\frac{m}{2},
+	\end{equation}
+	perché $\int_C^{C'}\frac{\de g}{g}(z)$ tende a $0$ se $C$ tende a $i$, e se $C$ tende a $i$
+	l'arco di circonferenza $CC'$ tende ad essere un semicerchio, percorso in senso orario.
+	
+	Analogamente si ottiene 
+	\begin{equation}
+		\frac{1}{2\pi i}\int_B^{B'}\frac{\de f}{f}=\frac{1}{2\pi i}\int_D^{D'}\frac{\de f}{f}=-\frac{v_\rho(f)}{6}
+	\end{equation}
+	
+	Uguagliando gli integrali si ottiene la tesi.
 \end{proof}
