@@ -3,17 +3,15 @@
 \section{Una relazione tra forme modulari e ordini di annullamento}
 
 \begin{teorema}
-	Sia $f$ una forma modulare di peso $2k$, $F$ il dominio fondamentale delle lezioni precedenti,
-	e $v_p(f)=\ord_p(f)\geq0$ (poiché $f$ è olomorfa). Allora si ha
+	Sia $f$ una forma modulare di peso $2k$, $F$ il dominio fondamentale delle lezioni precedenti, e $v_p(f)=\ord_p(f)\geq0$ (poiché $f$ è olomorfa). Allora si ha
 	\begin{equation*}
-	\v_\infty(f)+\frac{1}{2}\v_i(f)+\frac{1}{3}\v_{\rho}(f)+{\sum_{p\in F}}^{*}\v_p(f)=\frac{k}{6},
+	v_\infty(f)+\frac{1}{2}v_i(f)+\frac{1}{3}v_{\rho}(f)+{\sum_{p\in F}}^{*}v_p(f)=\frac{k}{6},
 	\end{equation*}
-	dove con $\dst {\sum_{p\in F}}^{*}$ si intende la somma per tutti i $p \neq i, \rho, \infty$,
-	e con $\v_\infty(f)$ si intende $\ord_0(\ot{f})$.
+	dove con $\dst {\sum_{p\in F}}^{*}$ si intende la somma per tutti i $p \neq i, \rho, \infty$, e con $v_\infty(f)$ si intende $\ord_0(\ot{f})$.
 	
 	Se $e_p=\abs{\Stab(p)}$, allora l'uguaglianza sopra si può anche scrivere
 	\begin{equation*}
-		\sum_{p\in F \cup \{\infty\}} \frac{1}{e_p}\v_p(f)=\frac{k}{6}
+		\sum_{p\in F \cup \{\infty\}} \frac{1}{e_p}v_p(f)=\frac{k}{6}
 	\end{equation*}
 \end{teorema}
 
@@ -22,19 +20,12 @@
 		%\centering
 		\input{lezioni/immagini/lezione-170201-cammino.tikz}
 	\end{figure}
-	Integriamo $\dst \frac{\de f}{f}$ nei posti giusti: Sia $\gamma$ il cammino mostrato in rosso in figura,
-	dove i tratti curvi sono archi di circonferenza e $B$ e $D'$ sono uno il traslato dell'altro.
+	Integriamo $\dst \frac{\de f}{f}$ nei posti giusti: Sia $\gamma$ il cammino mostrato in rosso in figura, dove i tratti curvi sono archi di circonferenza e $B$ e $D'$ sono uno il traslato dell'altro.
 	
 	Possiamo supporre che $f$ non abbia zero al di fuori della regione delimitata da $\gamma$.
-	Infatti, $f$ (o $\ot f$, se siamo in $\infty$) è olomorfa, dunque gli zeri non possono accumularsi;
-	consideriamo ad esempio $\rho$: se $f(\rho)=0$, allora esiste un intorno in cui $\rho$ è l'unico zero,
-	mentre se $f(\rho)\neq0$ per continuità $f$ sarà diversa da $0$ in tutto un intorno.
+	Infatti, $f$ (o $\ot f$, se siamo in $\infty$) è olomorfa, dunque gli zeri non possono accumularsi; consideriamo ad esempio $\rho$: se $f(\rho)=0$, allora esiste un intorno in cui $\rho$ è l'unico zero, mentre se $f(\rho)\neq0$ per continuità $f$ sarà diversa da $0$ in tutto un intorno.
 	
-	Inoltre possiamo supporre che $f$ non abbia zeri su $\gamma$: se li avesse sui lati $AB$ e $D'E$
-	sarebbe possibile modificare $\gamma$ attraverso una ``piccola'' deviazione in modo che i due pezzi del percorso
-	continuino ad essere l'uno il traslato dell'altro, e la zona interna rimarrebbe la stessa perché 
-	a due punti traslati corrisponde lo stesso valore di $f$; sugli archi $B'C$ e $C'D$ si agisce in modo analogo,
-	e sugli altri tratti è possibile non avere zeri per lo stesso ragionamento di prima.
+	Inoltre possiamo supporre che $f$ non abbia zeri su $\gamma$: se li avesse sui lati $AB$ e $D'E$ sarebbe possibile modificare $\gamma$ attraverso una ``piccola'' deviazione in modo che i due pezzi del percorso continuino ad essere l'uno il traslato dell'altro, e la zona interna rimarrebbe la stessa perché a due punti traslati corrisponde lo stesso valore di $f$; sugli archi $B'C$ e $C'D$ si agisce in modo analogo, e sugli altri tratti è possibile non avere zeri per lo stesso ragionamento di prima.
 	
 	Dunque per il teorema dei residui si ha
 	\begin{equation}
@@ -46,7 +37,7 @@
 	\begin{equation}
 		\frac{1}{2\pi i}\int_E^A\frac{\de f}{f}=\frac{1}{2\pi i}\int_{\de\Omega}\frac{\de \ot{f}}{\ot{f}}=-v_0(\ot{f})=-v_\infty(f),
 	\end{equation}
-	dove $\Omega$ è un disco intorno all'origine, di raggio $e^{2\pi \mbox{Im}(A)}$, e $\de\Omega$ è percorso in senso orario.
+	dove $\Omega$ è un disco intorno all'origine, di raggio $e^{2\pi \Im(A)}$, e $\de\Omega$ è percorso in senso orario.
 	
 	\begin{equation}
 		\frac{1}{2\pi i}\left( \int_A^B\frac{\de f}{f} + \int_{D'}^E\frac{\de f}{f} \right) =0
@@ -66,8 +57,7 @@
 		\frac{1}{2\pi i}\int_C^{C'}\frac{\de f}{f} = \frac{1}{2\pi i}\int_C^{C'}\left[ m\cdot\frac{\de z}{z-i} + %
 		\frac{\de g}{g}(z) \right] \longrightarrow -\frac{m}{2},
 	\end{equation}
-	perché $\int_C^{C'}\frac{\de g}{g}(z)$ tende a $0$ se $C$ tende a $i$, e se $C$ tende a $i$
-	l'arco di circonferenza $CC'$ tende ad essere un semicerchio, percorso in senso orario.
+	perché $\int_C^{C'}\frac{\de g}{g}(z)$ tende a $0$ se $C$ tende a $i$, e se $C$ tende a $i$ l'arco di circonferenza $CC'$ tende ad essere un semicerchio, percorso in senso orario.
 	
 	Analogamente si ottiene 
 	\begin{equation}
@@ -76,3 +66,44 @@
 	
 	Uguagliando gli integrali si ottiene la tesi.
 \end{proof}
+
+\section{Struttura delle forme modulari}
+
+\begin{corollario}
+	Sia $M_k$ l'insieme delle forme modulari di peso $2k$. Allora $M_k$ è uno spazio vettoriale su $\bbC$ di dimensione finita.
+\end{corollario}
+
+\begin{proof}
+	Per induzione: il passo base è per $k\leq6$.
+	\begin{itemize}
+		\item Per $k<0$ si ha che $M_k=\{0\}$;
+		
+		\item Per $k=0$ si ha $M_0=\bbC$: infatti, per il teorema precedente, ogni $f\in M_0$ o è $0$ o la somma pesata degli ordini di annullamento è $0$. Poiché gli ordini sono positivi, la funzione non si deve mai annullare, ed è quindi una costante diversa da $0$;
+		
+		\item Per $k=1$ si ha $M_1=\{0\}$. Infatti non è possibile scrivere $\frac{1}{6}$ come combinazione lineare intera positiva di $1, \frac{1}{3}, \frac{1}{2}$;
+		
+		\item Per $k=2$ si ha $M_2=\bbC G_2$. Infatti le forme $\neq0$ in $M_2$ si annullano solo in $\rho$ con ordine 1,
+		e $G_2$ soddisfa questa proprietà. Se $f\in M_2$, sia $x\neq\rho$. Allora considero $f-\frac{f(x)}{G_2(x)}G_2$. Questa funzione si annulla in $x$ e in $\rho$, ed è quindi $0$, dunque $f=\frac{f(x)}{G_2(x)}G_2$
+		
+		\item Per $k=3, 4, 5$, allo stesso modo, si ha $M_3=\bbC G_3, M_4=\bbC G_2^2, M_5= \bbC G_2G_3$
+		
+		\item Per $k=6$, si ha $M_6=\bbC G_2^3 + \bbC G_3^2$. Infatti, con lo stesso ragionamento di prima, otteniamo che $G_2^3, G_3^2 \in M_6$, e, con combinazioni lineari di queste, possiamo trasformare una funzione $f \in M_6$ in un'altra $f'$ con $v_\rho(f')=3, v_i(f')=2$.
+		Dunque, per la formula del teorema precedente, $f'$ non può essere in $M_6$ a meno che non sia $0$.
+		Notiamo inoltre che $\Delta\in M_6$, poiché combinazione di $G_2^3$ e $G_3^2$.
+		Poiché $\Delta(z)\neq0$ in $\cH$, si deve avere che $\Delta(\infty)=0$ con ordine $1$.
+	\end{itemize}
+	
+	Per $k>6$ abbiamo che $G_k \in M_k$, e inoltre $G_k(\infty)\neq0$.
+	Sia allora $f \in M_k$, e $c=\frac{f(\infty)}{G_k(\infty)}$. $f-cG_k$ si annulla in $\infty$, dunque $\frac{f-cG_k}{\Delta}$ è ancora una forma modulare, di peso $2(k-6)$, e dunque appartiene a $M_{k-6}$.
+	\notamargine{$\frac{f-cG_k}{\Delta}$ è olomorfa in $\infty$ perché $\ord_\infty(\Delta)=1$, e $\ord_\infty(f-cG_k)\geq1$, e altrove perché $\Delta$ non assume il valore $0$ su $\cH$}
+	Dunque $f$ si scrive come $cG_k+\Delta f_{k-6}$, per un qualche $f_{k-6} \in M_{k-6}$, e di conseguenza si ha $M_k=\bbC G_k + \Delta M_{k-6}$.
+	
+	Per ipotesi induttiva $M_{k-6}$ è di dimensione finita, dunque lo è anche $M_k$, e in particolare $\dim(M_k)=\dim(M_{k-6})+1$.
+\end{proof}
+
+Come ulteriore corollario abbiamo che $M_k$ è generato dai monomi $G_2^\alpha G_3^\beta$, con $2\alpha+3\beta=k$.
+Infatti, siano $a$ e $b$ fissati tali che $2a+3b=k$.
+Allora si ha $G_2^a G_3^b\in M_k$, e $(G_2^a G_3^b)(\infty)\neq0$.
+Ripercorrendo la dimostrazione, usando $G_2^a G_3^b$ al posto di $G_k$, si ottiene $M_k=\bbC G_2^a G_3^b + \Delta M_{k-6}$, ma $M_{k-6}$ è generato da $G_2^x G_3^y$ con $2x+3y=k-6$, e $\Delta$ si scrive come combinazione lineare di $G_2^3$ e $G_3^2$, dunque $\Delta M_{k-6}$ è generato da $G_2^x G_3^y$ con $2x+3y=k$, e dunque lo è anche $M_k$.
+
+\notamargine{Secondo Zannier le serie di Fourier delle $G_k$ sono ``interessanti'', perché i coefficienti di Fourier sono delle funzioni aritmetiche notevoli}
