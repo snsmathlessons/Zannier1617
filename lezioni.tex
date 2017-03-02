@@ -303,6 +303,22 @@
       \thm@notefont{}%
     }%
     \makeatother
+
+    \setcounter{chapter}{-1}
+    \let\oldchapter\chapter
+    \renewcommand{\chapter}[1]{%
+      \oldchapter{#1}%
+      \stepcounter{chapter}%
+      \setcounter{gencounter}{0}%
+      \setcounter{defcounter}{0}%
+      \setcounter{escounter}{0}%
+      \setcounter{equation}{0}%
+    }
+
+    \renewcommand{\thegencounter}{\arabic{chapter}.\arabic{gencounter}}
+    \renewcommand{\thedefcounter}{\arabic{chapter}.\arabic{defcounter}}
+    \renewcommand{\theescounter}{\arabic{chapter}.\arabic{escounter}}
+    \renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
     
     \theoremstyle{importante}
     \newtheorem{teorema}[gencounter]{Teorema}
