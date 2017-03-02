@@ -14,7 +14,7 @@ Data una curva $\gamma$ descritta come zeri in $\bbP_n(\bbK)$ di $f \in \bbK[x_0
 %\includegraphics[width=20em]{punti-singolari.jpeg}
 \curvegraph{y**2 - x**3 - x**2}{[-2:2]}{[-2:2]}
 
-\textit{Algebricamente}, un punto $p$ zero di $f$ è singolare se $\de{x_i}f(p)=0$ per $i=0,\ldots,n$ (ha il differenziale nullo). \notamargine{Se il campo ha caratteristica 0, notare che $\de{x_i}f(p) = 0$ per ogni $i$ implica $f(p)=0$ per il \href{https://it.wikipedia.org/wiki/Funzione_omogenea}{teorema di eulero} sulle funzioni omogenee.}
+\textit{Algebricamente}, un punto $p$ zero di $f$ è singolare se $\partial_{x_i}f(p)=0$ per $i=0,\ldots,n$ (ha il differenziale nullo). \notamargine{Se il campo ha caratteristica 0, notare che $\partial_{x_i}f(p) = 0$ per ogni $i$ implica $f(p)=0$ per il \href{https://it.wikipedia.org/wiki/Funzione_omogenea}{teorema di eulero} sulle funzioni omogenee.}
 
 
 \section{Cubiche, forma di Weierstrass}
@@ -29,9 +29,9 @@ $$ zy^2= ax^3+bx^2z+cxz^2+dz^3 $$
 
 $$ \left\{ 
 \begin{matrix}
-&3ax^2&+2bxz&+cz^2 & = & -\de{x}f & = 0 \\
-&&yz& & = & \de{y}f / 2 &= 0 \\
-y^2 &-bx^2&-2cx&-3dz^2 & = & \de{z}f& = 0 \\
+&3ax^2&+2bxz&+cz^2 & = & -\partial_{x}f & = 0 \\
+&&yz& & = & \partial_{y}f / 2 &= 0 \\
+y^2 &-bx^2&-2cx&-3dz^2 & = & \partial_{z}f& = 0 \\
 ax^3&+bx^2z&+cxz^2&+dz^3& = & zy^2&
 \end{matrix}
 \right.$$
@@ -43,11 +43,12 @@ Dalla (2) abbiamo due casi:
 	\notamargine{ Siamo nel proiettivo: $x=y=z=0$ non è un punto!} 
 
 	\item Se $y = 0$, $z \neq 0$ allora (4) dà $q(x/z) = 0$ e (1) dà $q'(x/z) = 0$ (dove $q$ è il polinomio di coefficienti $a,b,c,d$). Ma allora $x/z$ sarebbe una radice multipla di $q$, assurdo.  
-	\notamargine{Infatti se $\chr \bbK = 0$ vale il criterio della derivata.}
+	\notamargine{Infatti vale il criterio della derivata, cioè un polinomio $p$ ha radici multiple se e solo se $p$ e $p'$ hanno un fattore in comune.}
 \end{itemize}
 
-Viceversa, data una curva cubica non singolare, può essere descritta da un polinomio in forma di weierstrass. Algebricamente, per ogni polinomio omogeneo $f$ di grado 3 con differenziale mai nullo, esiste una $L \in \bbP GL_2(\bbK) $ tale che $f \circ L$ (che è ancora un polinomio omogeneo di grado 3) è in forma di weierstrass. 
-\paragraph{IDEA}. Si dimostra che esiste un punto di flesso (?), e poi si considera una proiettività che scambia il  punto di flesso con il punto all'infinito. A quel punto, con pochi conti, si arriva alla forma di weierstrass.
+Viceversa, data una curva cubica non singolare, può essere descritta da un polinomio in forma di weierstrass. Algebricamente, per ogni polinomio omogeneo $f$ di grado 3 con differenziale mai nullo, esiste una $L \in \bbP GL_2(\bbK) $ tale che $f \circ L$ (che è ancora un polinomio omogeneo di grado 3) è in forma di Weierstrass. 
+\paragraph{IDEA}. Si dimostra che esiste un punto di flesso, e poi si considera una proiettività che manda il punto di flesso nel punto all'infinito. A quel punto, con pochi conti, si arriva alla forma di Weierstrass.
+\notamargine{Un punto sulla cubica è di flesso se è un punto non singolare e la tangente ha ordine di contatto $>2$. Notare che nella forma di Weierstrass $(0:1:0)$ è un punto di flesso}
 
 \section{Cubiche, struttura di gruppo}
 
@@ -64,7 +65,7 @@ L'associatività è la proprietà più impegnativa da dimostrare. Vale la pena d
 \section{Funzioni ellittiche, curve ellittiche, reticoli}
 C'è una stretta correlazione tra reticoli\notamargine{Per reticoli, dove non diversmaente specificato, intendermo reticoli di rango 2 nel piano complesso}, funzioni ellittiche, curve ellittiche.
 
-Dato un reticolo $L$, saremo in grado di costruire una funzione analitica con gruppo dei periodi L detta $\wp_L$.
+Dato un reticolo $L$, saremo in grado di costruire una funzione meromorfa con gruppo dei periodi L detta $\wp_L$.
 D'altronde, questa speciale funzione ellittica $\wp_L$ rispetta $\wp_L'(z)^2= f_L(\wp_L(z))$ per un opportuno polinomio di terzo grado $f_L$. Perciò, la funzione $\varphi_L: z \mapsto (\wp_L'(z), \wp_L(z) )$ parametrizza una cubica $E_L$.
 
 \begin{diagram}

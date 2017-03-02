@@ -1,5 +1,5 @@
 \chapter{09 Novembre 2016 - Differenziale dell'ellittica di Weierstrass}
-Abbiamo dimostrato che sussite la seguente relazione differenziale tra la funzione di weierstrass e la sua derivata:
+Abbiamo dimostrato che sussite la seguente relazione differenziale tra la funzione di Weierstrass e la sua derivata:
 
 $$\wp_L'(z)^2 = A_L(\wp_L(z)) $$
 
@@ -15,11 +15,11 @@ Il polinomio $A_L$ non ha radici multiple.
 \end{proposizione}
 
 \begin{proof}[Dimostrazione 1]
-Evitiamo di esplicitare la dipendenza dal reticolo in $\wp, E,A..$ per non appesantire la notazione. Supponiamo per assurdo che $A(t) = (t-c)^2(at+b)$. Allora, sostituendo $\wp, \wp'$ nell'equazione di $E$ si ottiene
+Evitiamo di esplicitare la dipendenza dal reticolo in $\wp, E,A \dots$ per non appesantire la notazione. Supponiamo per assurdo che $A(t) = (t-c)^2(at+b)$. Allora, sostituendo $\wp, \wp'$ nell'equazione di $E$ si ottiene
 $$\wp'(z)^2 = (\wp(z) - c)^2(a\wp(z)+b) $$
 $$ \left ( \frac{\wp'(z)}{\wp(z)-c} \right )^2 = a\wp(z)+b $$
 
-Contiamo il numero di poli con molteplicità a destra e a sinistra. A destra ho un polo doppio in 0. A sinistra ho un polo doppio ogni volta che $\wp - c$ si annulla: infatti se $\ord_{z}(\wp -c) = m > 0$, vale $\ord_{z}(\wp') = m-1$, e perciò $\ord_{z}(LHS) = 2(m-1-m) = -2$. Ma $\wp-c$ ha un polo doppio in zero, dunque ha due zeri (con molteplicità). In definitiva, LHS ha almeno 4 poli mentre RHS ne ha solo 2, assurdo.
+Contiamo il numero di poli con molteplicità a destra e a sinistra. A destra ho un polo doppio in $0$. A sinistra ho un polo doppio ogni volta che $\wp - c$ si annulla: infatti se $\ord_{z}(\wp -c) = m > 0$, vale $\ord_{z}(\wp') = m-1$, e perciò $\ord_{z}(LHS) = 2(m-1-m) = -2$. Ma $\wp-c$ ha un polo doppio in zero, dunque ha due zeri (con molteplicità). In definitiva, LHS ha almeno 4 poli mentre RHS ne ha solo 2, assurdo.
 \end{proof}
 
 \begin{proof}[Dimostrazione 2]
