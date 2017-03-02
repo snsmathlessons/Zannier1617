@@ -1,0 +1,49 @@
+\definecolor{ffqqqq}{rgb}{1,0,0}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=3.0cm,y=3.0cm]
+\clip(6.66,0.62) rectangle (8.34,2.71);
+\draw(7.5,0) circle (3cm);
+\draw (7,0.62) -- (7,2.71);
+\draw (8,0.62) -- (8,2.71);
+\draw [color=ffqqqq] (7,2.43)-- (8,2.43);
+\draw [shift={(7,0.87)},color=ffqqqq]  plot[domain=0.46:1.57,variable=\t]({1*0.13*cos(\t r)+0*0.13*sin(\t r)},{0*0.13*cos(\t r)+1*0.13*sin(\t r)});
+\draw [shift={(7.5,1)},color=ffqqqq]  plot[domain=-0.04:3.18,variable=\t]({1*0.08*cos(\t r)+0*0.08*sin(\t r)},{0*0.08*cos(\t r)+1*0.08*sin(\t r)});
+\draw [shift={(8,0.87)},color=ffqqqq]  plot[domain=1.57:2.68,variable=\t]({1*0.13*cos(\t r)+0*0.13*sin(\t r)},{0*0.13*cos(\t r)+1*0.13*sin(\t r)});
+\draw [shift={(7.5,0)},color=ffqqqq]  plot[domain=1.18:1.49,variable=\t]({1*1*cos(\t r)+0*1*sin(\t r)},{0*1*cos(\t r)+1*1*sin(\t r)});
+\draw [shift={(7.5,0)},color=ffqqqq]  plot[domain=1.65:1.96,variable=\t]({1*1*cos(\t r)+0*1*sin(\t r)},{0*1*cos(\t r)+1*1*sin(\t r)});
+\draw [color=ffqqqq] (7,2.43)-- (7,1);
+\draw [color=ffqqqq] (8,2.43)-- (8,1);
+\begin{scriptsize}
+\fill [color=qqqqff] (6.5,0) circle (1.5pt);
+\draw[color=qqqqff] (6.55,0.09) node {$P$};
+\fill [color=ffqqqq] (7.5,0) circle (1.5pt);
+\draw[color=ffqqqq] (7.44,0.16) node {$X$};
+\fill [color=qqqqff] (8,0) circle (1.5pt);
+\draw[color=qqqqff] (8.06,0.09) node {$Q$};
+\fill [color=qqqqff] (7,0) circle (1.5pt);
+\draw[color=qqqqff] (7.06,0.09) node {$R$};
+\draw[color=ffqqqq] (7.09,1.33) node {$\gamma$};
+\fill [color=black] (7,0.87) circle (1.5pt);
+\draw[color=black] (6.93,0.90) node {$\rho$};
+\fill [color=black] (8,0.87) circle (1.5pt);
+\draw[color=black] (8.08,0.91) node {$-\ol{\rho}$};
+\fill [color=black] (7.5,1) circle (1.5pt);
+\draw[color=black] (7.5,0.92) node {$i$};
+\fill [color=black] (7,2.43) circle (1.5pt);
+\draw[color=black] (7.06,2.52) node {$A$};
+\fill [color=black] (7,1) circle (1.5pt);
+\draw[color=black] (7.06,1.09) node {$B$};
+\fill [color=black] (7.42,1) circle (1.5pt);
+\draw[color=black] (7.37,1.07) node {$C$};
+\fill [color=black] (7.88,0.92) circle (1.5pt);
+\draw[color=black] (7.86,1.02) node {$D$};
+\fill [color=black] (8,2.43) circle (1.5pt);
+\draw[color=black] (8.06,2.52) node {$E$};
+\fill [color=black] (7.12,0.93) circle (1.5pt);
+\draw[color=black] (7.19,1.02) node {$B'$};
+\fill [color=black] (7.58,1) circle (1.5pt);
+\draw[color=black] (7.64,1.08) node {$C'$};
+\fill [color=black] (8,1) circle (1.5pt);
+\draw[color=black] (8.08,1.09) node {$D'$};
+\end{scriptsize}
+\end{tikzpicture}
