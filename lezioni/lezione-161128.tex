@@ -13,8 +13,8 @@ consideriamone la chiusura proiettiva $\ol{E} = E \cup \{ (0 : 1 : 0)
 
 \begin{notazione}
   Con $\ol{E}(\bbK)$ si intendono i punti $\bbK$-razionali di $\ol{E}$,
-  ovvero i punti di $\bbP^2 \bbC$ per le quali il rapporto tra le
-  coordinate è un numero di $\bbK$, ovvero
+  ovvero i punti di $\bbP^2 \bbC$ (facenti parte di $\ol{E}$) per le
+  quali il rapporto tra le coordinate è un numero di $\bbK$, ovvero
   $\ol{E}(\bbK) = \{ (x : y : z) \in \ol{E} \mid \frac{x}{y},
   \frac{y}{z} \in \bbK \}$
 \end{notazione}
@@ -90,7 +90,8 @@ definizione.
 \end{osservazione}
 
 \begin{osservazione}
-  Se abbiamo un polinomio in due variabili $f(x, y) = 0$ abbiamo una
+  Se abbiamo un polinomio in due variabili $f(x, y) = 0$ tale che
+  $\nabla f$ non si annulli sul luogo di zeri di $f$ abbiamo una
   superficie di Riemman, ma non avevamo dimostrato (nel caso delle
   cubiche) la connessione, che in generale non è ovvia.
 
@@ -149,8 +150,9 @@ $\alpha$ tornando sulla fibra di $x_0$ ma con valore del segno cambiato.
 
 \section{Cubiche di $\bbP^2\bbC$}
 Consideriamo tutte le cubiche in $\bbP^2\bbC$: esse sono definite da
-un'equazione omogenea di grado tre $F(x, y, z) = 0$. Mostreremo ora che
-nel caso la cubica è parametrizzabile se e solo se è singolare.
+un'equazione omogenea di grado tre $F(x, y, z) = 0$ con $F$
+irriducibile. Mostreremo ora che la cubica è parametrizzabile se e solo
+se è singolare.
 
 \notamargine{Ricordiamo che per parametrizzazione intendiamo una
   isomorfismo birazionale con $\bbP^1$, ovvero una funzione razionale
@@ -164,11 +166,22 @@ e su cui tutte le derivate parziali dell'equazione definente la curva si
 annullano, ovvero in cui la dimensione del tangente è due).
 
 Allora, se intersechiamo la cubica con il fascio di rette passante per
-il punto singolare otteniamo la parametrizzazione (per esercizio
+il punto singolare otteniamo la parametrizzazione in termini del
+``parametro angolare'' / tangente della retta per il punto (per esercizio
 mostrare che ogni retta incontra esattamente un punto della chiusura
 proiettiva della cubica e che, ovviamente, dato ogni punto della cubica
 esiste una retta che passa per lui e per il punto singolare). La cubica
 è quindi parametrizzabile.
+
+Svolgiamo di seguito l'esercizio di cui sopra.
+Supponiamo senza perdità di generalità che il punto singolare sia $(0,
+0)$. Il fascio di rette si scrive allora come $y - \lambda x = 0$ con
+$\lambda \in \bbP^1$. Cercare i punti comuni della cubica e della retta
+significa sostituire nell'equazione della cubica $y = \lambda x$. A
+questo punto otteniamo un polinomio di terzo grado che deve avere tre
+radici, ma due ci sono già note ($x = 0$ è radice doppia). La terza
+radice ora è funzione razionale dei coefficienti del polinomio, che
+dipendono dal parametro $\lambda \in \bbP^1$.
 
 \notamargine{Inoltre di punti singolari ne ha al più uno: se ve ne
   fossero due $p, q$ posso tracciare la retta passante per $p$ e per

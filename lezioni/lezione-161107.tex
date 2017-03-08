@@ -3,12 +3,12 @@
 
 
 Prendiamo $T_1=\bbC/L_1$ e $T_2=\bbC/L_2$ tori complessi.
-Ogni morfismo (omomorfismo di gruppi che sia anche olomorfo) $T_1\rar T_2$ si solleva ad un unico morfismo $\bbC\rar\bbC$, che è per forza dato dalla moltiplicazione per una costante.
-Se rappresentiamo $T_1$ e $T_2$ come quozienti di $\bbC$ in un modo diverso, la costante può cambiare (quindi non è canonica).
-Tuttavia, se $T_1=T_2$ allora la costante è determinata in modo canonico (quella ottenuta rappresentando $T_1$ e $T_2$ nello stesso modo come quozienti di $\bbC)$.
+Ogni morfismo (omomorfismo di gruppi che sia anche olomorfo) $T_1\rar T_2$ si solleva ad un unico morfismo $\bbC\rar\bbC$, che è dato da una funzione affine $z \mapsto az + b$.
+Se rappresentiamo $T_1$ e $T_2$ come quozienti di $\bbC$ in un modo diverso, il sollevamento può cambiare (quindi non è canonico).
+Tuttavia, se $T_1=T_2$ allora la sollevata si può prendere della forma $z \mapsto az$ ed $a$ è determinato in modo canonico (quello ottenuto rappresentando $T_1$ e $T_2$ nello stesso modo come quozienti di $\bbC)$.
 
-
-\begin{teorema}\label{puppa}
+\begin{teorema}
+  \label{residui-funzioni-toriche}
 $T$ un toro e $f:T\rar\bbC$ meromorfa (non costante). Allora
 
 (i) $\sum_{x\in T}\res_xf=0$ $\qquad$ (uguaglianza di numeri complessi)
@@ -44,6 +44,8 @@ ed entrambe le parentesi si annullano per biperiodicità di $F$.
 (iii) Uso il teorema dei residui sulla funzione $z\frac{F'(z)}{F(z)}$ con il cammino $\gamma$.
 
 Notare che $\res_xz\frac{F'(z)}{F(z)}=x\cdot\res_x\frac{F'}{F}=x\cdot\ord_xF$.
+\notamargine{In generale, data $g(z) = \sum_{k \in \bbZ} c_k (z - a)^k$ vale che $res_a (g(z)z) = c_{-2} + a c_{-1} = c_{-2} + a res_a(g(z))$
+Se scegliamo $g(z) = \frac{f'(z)}{f(z)}$ effettivamente $c_{-2} = 0$}
 
 Ottengo $2\pi i\sum_{x\in T}x\cdot\ord_xf=\int_\gamma z\frac{F'(z)}{F(z)}\ dz=(\int_0^{\omega_1}-\int_{\omega_2}^{\omega_1+\omega_2})+(\int_{\omega_1}^{\omega_1+\omega_2}-\int_{0}^{\omega_2})$
 
@@ -75,9 +77,10 @@ gli $\omega$ di modulo $R$ sono circa $R$, e quindi quella è circa $\sum R\cdot
 Quindi il limite della serie sopra è una funzione olomorfa $P:\bbC\setminus L\rar\bbC$.
 
 \'E inoltre facile verificare che $P$ è una funzione $L$-biperiodica.
-Ad esempio, basta considerare $P(z+\tau)-P(z)$ con $\tau \in L$: per le proprietà di convergenza, posso raccogliere la sommatoria e ottenere 
-\[ P(z+\tau) - P(z) = \frac1{(z+\tau)^2} + \frac1{z^2} - \sum_{\omega \in L\ \omega\ne 0} \frac1{(z+\tau-\omega)^2}-\frac1{(z-\omega)^2}\]
+Ad esempio, basta considerare $P(z+\tau)-P(z)$ con $\tau \in L$: per le proprietà di convergenza, posso raccogliere la sommatoria e ottenere
+\[ P(z+\tau) - P(z) = \frac1{(z+\tau)^2} - \frac1{z^2} + \sum_{\omega \in L\ \omega\ne 0} \frac1{(z+\tau-\omega)^2}-\frac1{(z-\omega)^2}\]
 e ora mettendo il caso $\omega=0$ nella sommatoria e riarrangiando si conclude.
+\notamargine{Notiamo che gli addendi non vanno spezzati, vanno solamente sommati con la loro ``controparte simmetrizzata'', ovvero ciascun addendo con $\omega$ lo si somma con l'addendo $\tau-\omega$}
 
 Se prendiamo la serie che definisce $P$ e togliamo il termine $\frac{1}{z^2}$, converge uniformemente in un intorno di $0$ (e analogo per ogni $\omega\in L$).
 Quindi $P$ è meromorfa su tutto $\bbC$.
@@ -110,7 +113,7 @@ In altre parole, $\wp-\wp(u)$ ha uno zero doppio in $u$, un polo doppio in $0$ e
 
 (ii) Ovvio (perchè sappiamo dove stanno i poli di $P$).
 
-(iii) Prendiamo la funzione meromorfa $\wp-\wp(u):T\rar\bbC$ e usiamo il teorema \ref{puppa} (grazie a (ii) sappiamo dove questa ha poli e con che molteplicità).
+(iii) Prendiamo la funzione meromorfa $\wp-\wp(u):T\rar\bbC$ e usiamo il teorema \ref{residui-funzioni-toriche} (grazie a (ii) sappiamo dove questa ha poli e con che molteplicità).
 
 (iii') Idem come (iii).
 \end{proof}
@@ -141,7 +144,7 @@ questa è meromorfa pari ed ha gli stessi zeri e poli di $f$ (con le stesse molt
 Sostituiamo $f$ con $f\cdot(\wp-\wp(u))^{-\frac{1}{2}\ord_uf}$.
 
 Reiterando le operazioni sopra descritte, otteniamo un'uguaglianza del tipo $f\cdot\frac{A(\wp)}{B(\wp)}=g$ con $g$ meromorfa pari senza zeri e poli eccetto eventualmente in $0$.
-Ma dal teorema \ref{puppa} otteniamo che $g$ non ha uno zero o polo nemmeno in $0$. Ma allora $g$ deve essere costante
+Ma dal teorema \ref{residui-funzioni-toriche} otteniamo che $g$ non ha uno zero o polo nemmeno in $0$. Ma allora $g$ deve essere costante
 (sollevate $g:T\rar\bbC$ ad una $G:\bbC\rar\bbC$: vi viene che $G$ è olomorfa su tutto $\bbC$ e biperiodica, quindi limitata, e quindi costante per Liouville).
 
 Quindi $f\in\bbC(\wp)$, come voluto.

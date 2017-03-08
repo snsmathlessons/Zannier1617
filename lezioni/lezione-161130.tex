@@ -36,7 +36,9 @@
 		Nonostante non abbia capito cosa c'entra, sul toro esiste una forma differenziale globale data da $dz$. Grazie alla mappa di Weierstrass, posso trasportarla sulla cubica e diventa $\frac{dx}y$, e segue che questa non ha poli, neanche all'infinito.
 	
 	\end{osservazione}
-	
+
+        \notamargine{Mostriamo questa affermazione sui differenziali: nella parametrizzazione di Weierstrass, si ha che $x = \wp(z)$ e $y = \wp'(z)$. Allora, chiamata $g: E \rar \bbC$ l'inversa della parametrizzazione si ha che $g_*(\frac{dx}{y}) = \frac{d(\wp(z))}{\wp'(z)} = \frac{\wp'(z) dz}{\wp'(z)} = dz$}
+        
 	\section{Discriminante}
 	
 	Ricordiamo che per una cubica del tipo $y^2=p(x)$ la non singolarità equivale all'assenza di radici multiple. Un modo rapido per vedere se un polinomio ha radici multiple è definire il discriminante.
@@ -80,20 +82,25 @@
 		
 		Visto sul toro, $\wp'(z)$ si annulla in quattro punti.
 		
-		E invece no! Ho mentito. Nell'origine non si annulla, c'è un polo. Dato che $\wp'(z)$ ha esattamente tre poli, allora ho trovato tutti gli zeri, che sono $\frac{\omega_1}2, \frac{\omega_2}2, \frac{\omega_1+\omega_2}2$.
+		E invece no! Ho mentito. Nell'origine non si annulla, c'è un polo. Dato che $\wp'(z)$ ha esattamente un polo di ordine tre, allora ho trovato tutti gli zeri, che sono $\frac{\omega_1}2, \frac{\omega_2}2, \frac{\omega_1+\omega_2}2$.
 		
 		%TODO manca da dire perché sono davvero distinte, che non sto ben capendo
+                % Sono distinte perché se ho om1/2 = om2/2 ==> om1 = om2 assurdo perché i generatori del reticolo sono distinti
+                % Il caso om1/2 = (om1+om2)/2 ==> om2 = 0 assurdo perché so che devono generare un reticolo di rango due
 
 	\end{proof}
 
-	Ora vediamo che tori con la stessa $j$ sono omotetitici.
+	Ora vediamo che tori con la stessa $j$ sono omotetici.
 	
 	\begin{proof}
-		Suppongo che $T, T'$ abbiano la stessa $j$. Allora ho $\frac{a^3}{b^2}=\frac{a'^3}{b'^2}$. Quindi se con un omotetia faccio in modo che $a$ venga mandato in $a'$, allora sicuramente $b$ viene mandato in $b'$. %TODO: da capire perché non possa finire in -b'
+          Suppongo che $T, T'$ abbiano la stessa $j$. Allora ho $\frac{a^3}{b^2}=\frac{a'^3}{b'^2}$. Quindi se con un omotetia faccio in modo che $a$ venga mandato in $a'$, allora sicuramente $b$ viene mandato in $b'$ oppure in $-b'$.
+
+          Osserviamo che le due cubiche che in forma normale di Weierstrass hanno come parametri $a, b$ e $a, -b$ sono in realtà la stessa curva. Infatti applicando la trasformazione $x' = -x$, $y' = iy$ si ha $y^2 = 4x^3 - ax - b \mapsto - y'^2 = - 4x'^3 + ax - b$ che coincide con la forma $y'^2 = 4x'^3 - ax - (-b)$.
 		
-		Quindi sia $T$ che $T'$ sono biolomorfi alla stessa curva, quindi sono biolomorfi tra loro e dunque omotoetici.
+          Quindi sia $T$ che $T'$ sono biolomorfi alla stessa curva, quindi sono biolomorfi tra loro e dunque omotetici.
 	\end{proof}
 	
 	\begin{osservazione}
 		$j(\tau)$ è una funzione non costante e olomorfa. Vedremo anche che è suriettiva.
 	\end{osservazione}
+
