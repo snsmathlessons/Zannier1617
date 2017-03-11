@@ -14,7 +14,7 @@ Una curva si dice razionale se il suo campo di funzioni è isomorfo su $\bbC$ ad
 Una curva si dice unirazionale se il suo campo di funzioni si immerge con un omomorfismo (su $\bbC$) in un campo del tipo $\bbC(t)$ (con $t$ trascendente su $\bbC$).
 \end{definizione}
 \begin{osservazione}
-In $\bbP^2(\bbC)$ le due definizioni sono equivalenti (Teorema di Luroth).
+In $\bbP^2(\bbC)$ le due definizioni sono equivalenti (Teorema di Lüroth).
 \end{osservazione}
 Supponiamo di voler definire $\varphi: \bbC(x,y) \rightarrow \bbC(t)$ in modo che $\varphi_{|\bbC}$ sia l'identità. Basta definirlo sui generatori: $1\mapsto 1$, $x\mapsto a(t)$ e $y\mapsto b(t)$, dove $a$ e $b$ sono due funzioni razionali di una variabile (ovvero due elementi di $\bbC(t)$).
 
@@ -57,11 +57,10 @@ Questa dimostrazione si può fare in modo puramente algebrico considerando gli a
 \end{osservazione}
 %\notamargine{$\psi^*$ si potrebbe definire tra due curve qualsiasi (senza che necessariamente la seconda sia $\bbP^1$), in tal caso la definizione coincide con quella data in questa dimostrazione.} #NONSO...
 \begin{lemma}[modello quartico di una cubica]
-Una cubica (non singolare) di equazione $y^2=r(z)$ con $deg(r)=3$ è equivalente ad una curva del tipo $y^2=p(x)$ con $deg(p)=4$ e $p$ senza radici doppie.
+Una cubica (non singolare) di equazione $y^2=r(z)$ con $deg(r)=3$ è birazionalmente equivalente ad una curva del tipo $y^2=p(x)$ con $deg(p)=4$ e $p$ senza radici doppie.
 \end{lemma}
-
 \begin{proof}
-Partiamo dal modello $y^2=p(x)$ e arriviamo ad un modello cubico usando solo operazioni birazionali.
+Partiamo dal modello quartico $y^2=p(x)$ e arriviamo ad un modello cubico usando solo operazioni birazionali.
 
 Per prima cosa operiamo una traslazione $s=x+\alpha$ per annullare il termine noto di $p(x)$: l'equazione diventa $y^2=sq(s)$.
 Operando ora la sostituzione $s=\frac{1}{z}$, ottengo l'equazione $y^2=\frac{q(\frac{1}{z})}{z}$. Moltiplicando l'equazione per $z^4$, e sostituendo $w=z^2y$ si ottiene $w^2=z^3q(\frac{1}{z})=r(z)$, (dove $r(z)$ è un polinomio, perché $deg(q)=3$).
@@ -70,6 +69,8 @@ Le operazioni che abbiamo fatto sono birazionali, infatti:
 $$z=\frac{1}{x+\alpha}  \;\;\;\;\;\;\;   w=\frac{y}{(x+\alpha)^2}  \;\;\;\leftrightsquigarrow\;\;\;  x=\frac{1}{z}-\alpha   \;\;\;\;\;\;\;  y=\frac{w}{z^2}$$
 Resta da verificare solo che $deg(r)=3$ e che $r$ non abbia radici doppie, ma questo segue banalmente dal fatto che $p$ non ha radici doppie (e dunque in particolare $q$ deve avere termine noto $\neq 0$).
 \end{proof}
+
+Notiamo che {\it essere unirazionali} per una varietà algebrica è invariante per equivalenza birazionale. Possiamo quindi mostrare che le cubiche non sono unirazionali utilizzando il modello quartico.
 
 \begin{teorema}
 Ogni curva ellittica $\widetilde{E}$ non è unirazionale.
@@ -120,7 +121,7 @@ Moltiplicando fra loro queste ultime due equazioni si ottiene:
 \begin{equation*}
   ((\alpha_2-\alpha_1)r_3r_4)^2 = ((\alpha_2-\alpha_3)r_1^2-(\alpha_1-\alpha_3)r_2^2)((\alpha_2-\alpha_4)r_1^2-(\alpha_1-\alpha_4)r_2^2)
 \end{equation*}
-Dividendo entrambi i membri per $r_2^2$, e applicando infine le sostituzioni $w=\frac{(\alpha_2-\alpha_1)r_3r_4}{r_2^2}$ e $z=\frac{r_1}{r_2}$, l'equazione diventa:
+Dividendo entrambi i membri per $r_2^4$, e applicando infine le sostituzioni $w=\frac{(\alpha_2-\alpha_1)r_3r_4}{r_2^2}$ e $z=\frac{r_1}{r_2}$, l'equazione diventa:
 $$w^2=((\alpha_2-\alpha_3)z^2-(\alpha_1-\alpha_3))((\alpha_2-\alpha_4)z^2-(\alpha_1-\alpha_4))$$
 Il polinomio in $z$ al $RHS$ si verifica facilmente non avere radici multiple, quindi rappresenta un'altra cubica.
 
