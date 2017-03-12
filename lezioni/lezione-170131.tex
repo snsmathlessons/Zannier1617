@@ -148,7 +148,6 @@ Gauss.
 \end{osservazione}
 
 \section{Funzioni Modulari}
-
 \begin{definizione}
 Una funzione $f$ meromorfa su $\cH$ di dice debolmente modulare di peso $2k$ (per $k \in \mathbb{N}$), se $\forall
 \left( \begin{array}{cc} a & b \\ c & d \end{array} \right) \in
@@ -158,28 +157,32 @@ $$ f\left( \frac{az+b}{cz+d} \right) = (cz+d)^{2k} f(z)
 \end{definizione}
 
 \begin{osservazione}
-$\displaystyle{gz=\frac{az+b}{cz+d} \rightarrow
-\frac{dgz}{dz}=\frac{1}{(cz+d)^2}}$. Quindi la condizione della definizione di
+$\displaystyle{gz=\frac{az+b}{cz+d} \stackrel{\det = 1}{\Rightarrow}
+\frac{d(gz)}{dz}=\frac{1}{(cz+d)^2}}$. Quindi la condizione della definizione di
 funzione debolmente modulare può essere scritta come $f(gz)(d(gz))^k=f(z)(dz)^k$.
-Sono k-forme differenziali.
+Sono k-forme differenziali (secondo noi però sono tensori $(0, k)$ simmetrici).
 \end{osservazione}
 
 \begin{osservazione}
 Dalla definizione segue immediatamente che $f(z+1)=f(z)$, cioè che una
-funzione debolmente modulare è periodica di periodo $1$. Quindi $f$ si può scrivere in serie di Fourier in $q=e^{2 \pi i z}$, cioè
+funzione debolmente modulare è periodica di periodo $1$. Definendo $q(z) = e^{2 \pi i z}$
+si ha che $q$ manda $\cH$ in $D^*$ (e in particolare $\cH / \bbZ \simeq D^*$), quindi
+$\widetilde{f} = f \circ q^{-1}$ è meromorfa in $D^*$ e
+$\displaystyle{\sum^{+\infty}_{n=-\infty}{a_n q^n}}$ è la sua serie di Laurent.
+Quindi $f$ si può scrivere in ``serie di Fourier'' in $q=e^{2 \pi i z}$, cioè
 $\displaystyle{f(z)=\widetilde{f}(q)=\sum^{+\infty}_{n=-\infty}{a_n q^n}}$.
-Inoltre $q$ manda $\cH$ in $D^*$, quindi $\widetilde{f}$ è meromorfa
-in $D^*$ e $\displaystyle{\sum^{+\infty}_{n=-\infty}{a_n q^n}}$ è la sua
-serie di Laurent.
 \end{osservazione}
+\notamargine{Non capiamo bene come si possa dedurre la sviluppabilità in serie di Laurent
+  (i poli potrebbero accumularsi in $0$). Si può invece ben fare se $f$ è una funzione modulare,
+  definita poco più sotto.}
 
 \begin{definizione}
 Nelle notazioni di sopra, se $\widetilde{f}$ è meromorfa anche in $D$, cioè
 se gli $a_n$ con indice $n<0$ non nulli sono in numero finito, la $f$
-è "meromorfa all'$\infty$" e si dice funzione modulare.
+è "meromorfa all'$\infty$" e si dice {\bf funzione modulare}.
 
-Se poi $\widetilde{f}$ è olomorfa in $0$, cioè se tutti gli $a_n$ con $n<0$
-sono nulli, la $f$ è "olomorfa all'$\infty$" e si dice forma modulare.
+Se poi $\widetilde{f}$ è olomorfa su tutto $D$ ($0$ compreso), cioè se tutti gli $a_n$ con $n<0$
+sono nulli, la $f$ è "olomorfa all'$\infty$" e si dice {\bf forma modulare}.
 
 Infine, se anche $a_0=0$, cioè $f(\infty)=0$, $f$ si dice forma modulare
 cuspidale
