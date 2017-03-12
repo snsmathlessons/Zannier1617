@@ -27,7 +27,7 @@
 	Possiamo supporre che $f$ non abbia zero al di fuori della regione delimitata da $\gamma$.
 	Infatti, $f$ (o $\ot f$, se siamo in $\infty$) è olomorfa, dunque gli zeri non possono accumularsi; consideriamo ad esempio $\rho$: se $f(\rho)=0$, allora esiste un intorno in cui $\rho$ è l'unico zero, mentre se $f(\rho)\neq0$ per continuità $f$ sarà diversa da $0$ in tutto un intorno.
 	
-	Inoltre possiamo supporre che $f$ non abbia zeri su $\gamma$: se li avesse sui lati $AB$ e $D'E$ sarebbe possibile modificare $\gamma$ attraverso una ``piccola'' deviazione in modo che i due pezzi del percorso continuino ad essere l'uno il traslato dell'altro, e la zona interna rimarrebbe la stessa perché a due punti traslati corrisponde lo stesso valore di $f$; sugli archi $B'C$ e $C'D$ si agisce in modo analogo, e sugli altri tratti è possibile non avere zeri per lo stesso ragionamento di prima.
+	Inoltre possiamo supporre che $f$ non abbia zeri su $\gamma$: se li avesse sui lati $AB$ e $D'E$ sarebbe possibile modificare $\gamma$ attraverso una ``piccola'' deviazione in modo che i due pezzi del percorso continuino ad essere l'uno il traslato dell'altro, e la zona interna rimarrebbe la stessa perché a due punti traslati corrisponde lo stesso valore di $f$; sugli archi $B'C$ e $C'D$ si agisce in modo analogo (considerando anziché l'azione di $T$, quella di $S$), e sugli altri tratti è possibile non avere zeri per lo stesso ragionamento di prima.
 	
 	Dunque per il teorema dei residui si ha
 	\begin{equation*}
@@ -50,7 +50,7 @@
 	\begin{multline}
 		\frac{1}{2\pi i}\left\{ \int_{B'}^C\frac{\de f}{f} + \int_{C'}^D\frac{\de f}{f} \right\} \overset{*}{=} %
 		\frac{1}{2\pi i}\left\{ \int_{B'}^C\frac{\de f}{f} + \int_{C}^{B'} \left[2k \cdot \frac{\de z}{z} + \frac{\de f}{f}\right] \right\} = \\
-		= \frac{1}{2\pi i}\int_{C}^{B'} 2k \cdot \frac{\de z}{z} \longrightarrow \frac{2k}{2\pi i}\int_i^\rho \frac{\de z}{z} = \frac{\pi}{6},
+		= \frac{1}{2\pi i}\int_{C}^{B'} 2k \cdot \frac{\de z}{z} \longrightarrow \frac{2k}{2\pi i}\int_i^\rho \frac{\de z}{z} = \frac{k}{6},
 	\end{multline}
 	dove l'uguaglianza $*$ è valida perché $S(C'D)=CB'$, dove conservo anche il verso di percorrenza.
 	
@@ -131,6 +131,6 @@ $j$ è una funzione modulare di peso $0$, dunque è invariante per trasformazion
 Ora, sia $c \in \bbC$. Applicando il teorema \ref{170201-forme-ordini} alla funzione $j-c$, otteniamo che questa, avendo un solo polo, deve avere anche un solo zero (di ordine opportuno se in $\rho$ o in $i$), e dunque facendo variare $c$ si ottiene che la funzione $j$ assume ogni possibile valore complesso. Dunque, per l'osservazione \ref{170123-j_suriettiva}, abbiamo effettivamente dimostrato che \emph{ogni cubica viene da un toro}.
 \notamargine{In particolare $\quotient{\cH}{G} \overset{j}{\rar} \bbC$ è una bigezione}
 
-Infine come nota finale, aggiungiamo che ogni funzione modulare di peso $0$ appartiene a $\bbC(j)$, cioè è una funzione razionale della funzione $j$ (non dimostrato).
+Infine come nota finale, aggiungiamo che ogni funzione modulare di peso $0$ appartiene a $\bbC(j)$, cioè è una funzione razionale della funzione $j$ (non dimostrato). Per la dimostrazione vedere il Serre (A course in Arithmetic) pagina 90 (Sotto il 3. The space of modular function - Proposizione 6)
 
 % Qui finiscono le avventure del terzo anno 2016/17 nella landa di Zannier. 

@@ -8,19 +8,95 @@ Siano $F=\left\{z \in \cH | -\frac{1}{2} \leq \Re(z) \leq 0
 \left\{z \in \cH | 0 < \Re(z) < \frac{1}{2} \wedge |z| > 1 \right\}$,
 $G=SL_2 \left( \bbZ \right)/\{\pm Id\}$,   $\rho=\frac{-1+i\sqrt{3}}{2}$,
 $S=\left( \begin{array}{cc} 0 & 1 \\ -1 & 0 \end{array} \right) \in G$,
-$T=\left( \begin{array}{cc} 1 & 1 \\ 0 & 1 \end{array} \right) \in G$.
+$T=\left( \begin{array}{cc} 1 & 1 \\ 0 & 1 \end{array} \right) \in G$,
+$G' = \langle S, T \rangle$.
 
 \begin{teorema}
-$\forall z \in \cH \quad \exists g \in G$ tale che $gz \in F$.
-
-Inoltre:
 \begin{itemize}
-	\item se $z,gz \in \bar{F}$, allora $z \in \partial F$ e $g=S$ oppure $g=T$.
-	\item se $z \in F$ e $z=gz$,
-				allora $z=i$ (nel qual caso $g \in \left\langle S \right\rangle$) oppure si ha che
-				$z= \rho$ (nel qual caso $g \in \left\langle ST \right\rangle$)
+\item[P0] $\forall z \in \cH \quad \exists g \in G$ tale che $gz \in F$
+\item[P1] se $z,gz \in \bar{F}$ con $g \neq \Id$, allora $z \in \partial F$.
+  Più precisamente si hanno i tre casi (anche se non disgiunti):
+  \begin{enumerate}
+  \item[C1] $\Re z = \pm \frac{1}{2}$ e $z' = z \mp 1$
+  \item[C2] $|z| = 1$ e $z' = - \frac{1}{z}$
+  \item[C3] $z = z' = \rho$ oppure $z = z' = \rho + 1$
+  \end{enumerate}
+\item[P2] se $z \in F$ e $z=gz$,
+  allora $z=i$ (nel qual caso $g \in \left\langle S \right\rangle$) oppure si ha che
+  $z= \rho$ (nel qual caso $g \in \left\langle ST \right\rangle$)
 \end{itemize}
 \end{teorema}
+
+\begin{proof}
+  \squared{P0}
+Sia $G'=\left\langle S,T \right\rangle$. Sia $z \in \cH$ e cerchiamo $z' \in G'z$ con $\Im(z')$ massima possibile. Tale elemento esiste, infatti se
+$\sigma = \left( \begin{array}{cc} a & b \\ c & d \end{array} \right) \in G'$, allora $\Im(\sigma z) = \frac{\Im(z)}{|cz+d|^2}$ ed essendo
+$c,d \in \bbZ$, $|cz+d|^2 \geq (\Im(z))^2$ (per $c \neq 0$, se no fa $d^2 \ge 1$) per cui $\Im(\sigma z)$ è limitato dall'alto e il sup viene raggiunto perché
+ci sono solo un numero finito di $c,d \in \bbZ$ per cui $|cz+d|^2 \leq 1$. (Infatti siccome lo cerco massimo voglio denominatore più piccolo di uno,
+altrimenti già $z$ andava bene)
+
+\notamargine{Per vedere che ve ne sono un numero finito scriviamo $|cz+d|^2 = c^2 (\Im z)^2 + (c \Re z + d)^2 \le 1$.
+  Allora ciascun termine è minore di $1$, quindi ci sono un numero finito di $c$, e da questo si ricava che vi sono un numero finito di $d$.}
+
+Possiamo quindi supporre che $z=z'$ e, a meno di comporre con qualche potenza
+di $T$ (che è una traslazione), supponiamo anche che $-\frac{1}{2} \leq \Re(z) < \frac{1}{2}$.
+
+Verifichiamo quindi che $|z| \geq 1$ (se poi fosse $|z|=1$ e
+$z \in \bar{F} \setminus F$ basta applicarci $S$).
+$\frac{\Im(z)}{|z|^2} = \Im(Sz) \leq \Im(z)$ per la massimalità di $\Im(z)$.
+Quindi $|z| \geq 1$.
+\vskip 0.5cm
+
+\squared{P1}
+Siano ora $g \in G$, $z'=gz$ e supponiamo che $z,z' \in \bar{F}$ e (wlog)
+che $\Im(z) \leq \Im(z')$.
+$$
+z'= gz \cdot 1 = \frac{az+b}{cz+d} \frac{c \bar{z} +d}{c \bar{z} +d} =
+\frac{ac|z|^2 + bd + bc \bar{z} + adz}{|cz+d|^2} \stackrel{det=1}{=}
+\frac{ac|z|^2 + bd + bc \bar{z} + (bc+1)z}{|cz+d|^2} =
+$$
+$$
+\frac{ac|z|^2 + bd + bc (\bar{z} + z) + z}{|cz+d|^2} =
+\frac{ac|z|^2 + bd + (2bc+1) \Re(z)}{|cz+d|^2} + i \frac{\Im(z)}{|cz+d|^2}
+$$
+Ora, usando che $z,z' \in \bar{F}$, per cui $|z|,|z'| \geq 1$ e
+$|\Re(z)|, |\Re(z')| \leq \frac{1}{2}$, si ottiene che, se $c \neq 0$,
+$\Im(z') = \frac{\Im(z)}{|cz+d|^2} \leq \frac{\Im(z)}{c^2 \Im(z)^2}
+= \frac{1}{c^2 \Im(z)} \leq \frac{2}{c^2 \sqrt{3}}$ $\implies c^2 \le \frac{2}{\sqrt{3}\Im z'} \le \frac{4}{3}$
+quindi $|c| \leq 1$.
+
+\begin{itemize}
+\item Se $c=0$, allora (visto che $ad - bc = 1$) deve essere $z' = z \pm b$, per cui si può avere $z'=z$ e $g=Id$; oppure
+  $|\Re(z')| = \frac{1}{2}$ e $|\Re(z)| = -\frac{1}{2}$; o viceversa.
+  \notamargine{Nel caso $c=0$ stando $z, z' \in F$ si ha $|\Re z - \Re z'| \le 1$}
+  Negli ultimi due casi si ha $z,z' \in \partial F$ e $g=T$ e vale C1.
+
+\item Se invece $c=1$ (il caso $c=-1$ è uguale perché
+  $G=SL_2 \left( \bbZ \right)/\{\pm Id\}$),
+  $\Im(z') \leq \frac{1}{\Im(z)} \stackrel{z' \in F}{\Rightarrow} \Im(z) \leq \frac{2}{\sqrt{3}}$.
+  Allora $\Im(z') \leq \frac{2}{\sqrt{3}|z+d|^2} \Rightarrow
+  |z+d|^2 \leq \frac{4}{3} \Rightarrow |z|^2+d^2+2d \Re(z) \leq \frac{4}{3}$. 
+  Quindi (poiché $\Re z \ge -\frac{1}{2}$) $d=0$ o $d=\pm 1$.
+
+  Se $d=0$, $\Im(z') = \frac{\Im(z)}{|z|^2} \leq \Im(z)$, quindi $|z|=1$ (Perché avevamo precedentemente assunto che $\Im(z) \le \Im(z')$).
+  Considerando il determinante si ottiene $b = -1$ e quindi $z' = \frac{az - 1}{z} = a - \frac{1}{z} = a - \bar{z}$. Siccome $z$ è sulla circonferenza unitaria anche $- \bar{z}$ lo è; visto che sia $z'$ che $z$ devono stare in $F$, deve essere $a = 0, \pm 1$.
+  \begin{itemize}
+  \item $a = 0$. Allora siamo nel caso C2
+  \item $a = \pm 1$ allora $z = z' \in \{\rho, \rho + 1\}$ e siamo nel caso C3
+  \end{itemize}
+
+  Se $d=\pm 1$, similmente $\Im(z') = \frac{\Im(z)}{|z \pm 1|^2}$. Usando che $|z \pm 1| \ge 1$ (Fare disegno e cercare minimo modulo di $F + 1$)
+  si ottiene $|z \pm 1|=1$, da cui, di nuovo, $z=\rho, z'=\rho + 1$ o viceversa e siamo nel caso C1.
+\end{itemize}
+
+\bigskip
+\squared{P2} Utilizzando il punto P1 distinguiamo i tre casi:
+\begin{itemize}
+\item Il caso C1 non si realizza perché avevamo $z' \neq z$
+\item Il caso C2 ci da $z^2 = -1 \implies z = i$ e, per quanto visto sopra, si ha $g = S$
+\item Il caso C3 ci da solo $z = z' = \rho$ perché $\rho + 1 \notin F$ e si ottiene $g = \left(\begin{array}{cc} -1 & -1 \\ 1 & 0 \\ \end{array} \right) = (ST)^2$, quindi (visto che $(ST)^3 = \Id$) lo stabilizzatore è il sottogruppo $\langle ST \rangle$
+\end{itemize}
+\end{proof}
 
 \begin{corollario}
 F è un dominio fondamentale.
@@ -38,86 +114,13 @@ G è generato da S e T
 generato da $S$ e $T$ modulo le relazioni $S^2=Id$ e $(TS)^3=Id$}
 
 \begin{proof}
-Sia $G'=\left\langle S,T \right\rangle$. Sia $z \in \cH$ e cerchiamo $z' \in G'z$ con $\Im(z')$ massima possibile. Tale elemento esiste, infatti se
-$\sigma = \left( \begin{array}{cc} a & b \\ c & d \end{array} \right) \in G'$, allora $\Im(\sigma z) = \frac{\Im(z)}{|cz+d|^2}$ ed essendo
-$c,d \in \bbZ$, $|cz+d|^2 \geq (\Im(z))^2$ (per $c \neq 0$, se no fa $d^2 \ge 1$) per cui $\Im(\sigma z)$ è limitato dall'alto e il sup viene raggiunto perché
-ci sono solo un numero finito di $c,d \in \bbZ$ per cui $|cz+d|^2 \leq 1$. (Infatti siccome lo cerco massimo voglio denominatore più piccolo di uno,
-altrimenti già $z$ andava bene)
-
-\notamargine{Per vedere che ve ne sono un numero finito scriviamo $|cz+d|^2 = c^2 (\Im z)^2 + (c \Re z + d)^2 \le 1$.
-  Allora ciascun termine è minore di $1$, quindi ci sono un numero finito di $c$, e da questo si ricava che vi sono un numero finito di $d$.}
-
-\vskip 0.5cm
-Possiamo quindi supporre che $z=z'$ e, a meno di comporre con qualche potenza
-di $T$ (che è una traslazione), supponiamo anche che $-\frac{1}{2} \leq \Re(z) < \frac{1}{2}$.
-
-Verifichiamo quindi che $|z| \geq 1$ (se poi fosse $|z|=1$ e
-$z \in \bar{F} \setminus F$ basta applicarci $S$).
-$\frac{\Im(z)}{|z|^2} = \Im(Sz) \leq \Im(z)$ per la massimalità di $\Im(z)$.
-Quindi $|z| \geq 1$.
-\vskip 0.5cm
-
-Siano ora $g \in G$, $z'=gz$ e supponiamo che $z,z' \in \bar{F}$ e (wlog)
-che $\Im(z) \leq \Im(z')$.
-$$
-z'= gz \cdot 1 = \frac{az+b}{cz+d} \frac{c \bar{z} +d}{c \bar{z} +d} =
-\frac{ac|z|^2 + bd + bc \bar{z} + adz}{|cz+d|^2} \stackrel{det=1}{=}
-\frac{ac|z|^2 + bd + bc \bar{z} + (bc+1)z}{|cz+d|^2} =
-$$
-$$
-\frac{ac|z|^2 + bd + bc (\bar{z} + z) + z}{|cz+d|^2} =
-\frac{ac|z|^2 + bd + (2bc+1) \Re(z)}{|cz+d|^2} + i \frac{\Im(z)}{|cz+d|^2}
-$$
-Ora, usando che $z,z' \in \bar{F}$, per cui $|z|,|z'| \geq 1$ e
-$|\Re(z)|, |\Re(z')| \leq \frac{1}{2}$, si ottiene che, se $c \neq 0$,
-$\Im(z') = \frac{\Im(z)}{|cz+d|^2} \leq \frac{\Im(z)}{c^2 \Im(z)^2}
-= \frac{1}{c^2 \Im(z)} \leq \frac{2}{c^2 \sqrt{3}}$ $\implies c^2 \ge \frac{2}{\sqrt{3}\Im z'} \ge \frac{4}{3}$
-quindi $|c| \leq 1$.
-
-\begin{itemize}
-\item Se $c=0$, allora (visto che $ad - bc = 1$) deve essere $z' = z \pm b$, per cui si può avere $z'=z$ e $g=Id$; oppure
-  $|\Re(z')| = \frac{1}{2}$ e $|\Re(z)| = -\frac{1}{2}$; o viceversa.
-  \notamargine{Nel caso $c=0$ stando $z, z' \in F$ si ha $|\Re z - \Re z'| \le 1$}
-  Negli ultimi due casi si ha $z,z' \in \partial F$ e $g=T$.
-
-\item Se invece $c=1$ (il caso $c=-1$ è uguale perché
-  $G=SL_2 \left( \bbZ \right)/\{\pm Id\}$),
-  $\Im(z') \leq \frac{1}{\Im(z)} \stackrel{z' \in F}{\Rightarrow} \Im(z) \leq \frac{2}{\sqrt{3}}$.
-  Allora $\Im(z') \leq \frac{2}{\sqrt{3}|z+d|^2} \Rightarrow
-  |z+d|^2 \leq \frac{4}{3} \Rightarrow |z|^2+d^2+2d \Re(z) \leq \frac{4}{3}$. 
-  Quindi (poiché $\Re z \ge -\frac{1}{2}$) $d=0$ o $d=\pm 1$.
-
-  Se $d=0$, $\Im(z') = \frac{\Im(z)}{|z|^2} \leq \Im(z)$, quindi $|z|=1$ (Perché avevamo precedentemente assunto che $\Im(z) \le \Im(z')$).
-
-  Se $d=\pm 1$, similmente $\Im(z') = \frac{\Im(z)}{|z \pm 1|^2}$. Usando che $|z \pm 1| \ge 1$ (Fare disegno e cercare minimo modulo di $F + 1$)
-  si ottiene $|z \pm 1|=1$, da cui $z=\rho$ e $z'=\rho +1$ o viceversa.
-\end{itemize}
-
-\bigskip
 Vediamo ora che $G'=G$:
 
 Sia $z=2i$ e sia $g \in G$. Per quanto visto sopra, $\exists \sigma \in G'$
 tale che $\sigma g(z) \in \bar{F}$. Allora, dato che $z \notin \partial F$,
 $\sigma g(z)=z$.
-Verifichiamo quindi che gli unici stabilizzatori non banali sono quelli
-previsti dal corollario, così potremo dedurre che $\sigma g = Id$ e quindi
-$G=G'$.
-
-Abbiamo visto che se $z=gz$ con $z \in F$ e $g \in G$, deve essere
-$|cz+d|=1$ e $c \in \{ 0,1,-1 \}$.
-
-Se $c=0$, $d=\pm 1$ e, dato che $det(g)=1$, $a=d$. Quindi
-$g=\left( \begin{array}{cc} 1 & b \\ 0 & 1 \end{array} \right)$ che non ha
-punti fissi per $b\neq 0$ ed è l'identità per $b=0$.
-
-Se $c=1$, $|z+d|=1$ da cui $d \in \{0,1,-1 \}$. Se $d=0$, dal determinante
-si ottiene $b=-1$, quindi $gz=\frac{az-1}{z}=z$. Risolvendo in $z$ si trova
-che le uniche soluzioni contenute in $F$ sono $z=i$ (per $a=0$ e quindi $g=S$)
-e $z=\rho$ (per a=-1 e quindi $g=(ST)^2$).
-Se $d=1$, $|z+1|=1$ che ha $z=\rho$ come unica soluzione in $F$. Risolvendo il
-sistema dato da $\frac{a \rho +b}{\rho +1}=\rho$ e $a-b=1$, si ottiene $g=ST$.
-Se $d=1$, $|z-1|=1$ che non ha soluzioni in $F$.
-(Questi ultimi 2 casi lui li ha lasciati per esercizio)
+Poiché gli unici stabilizzatori non banali sono quelli
+previsti dal corollario, ne deduciamo che $\sigma g = Id$ e quindi $G=G'$.
 \end{proof}
 
 \begin{osservazione}
@@ -145,7 +148,6 @@ Gauss.
 \end{osservazione}
 
 \section{Funzioni Modulari}
-
 \begin{definizione}
 Una funzione $f$ meromorfa su $\cH$ di dice debolmente modulare di peso $2k$ (per $k \in \mathbb{N}$), se $\forall
 \left( \begin{array}{cc} a & b \\ c & d \end{array} \right) \in
@@ -155,28 +157,32 @@ $$ f\left( \frac{az+b}{cz+d} \right) = (cz+d)^{2k} f(z)
 \end{definizione}
 
 \begin{osservazione}
-$\displaystyle{gz=\frac{az+b}{cz+d} \rightarrow
-\frac{dgz}{dz}=\frac{1}{(cz+d)^2}}$. Quindi la condizione della definizione di
+$\displaystyle{gz=\frac{az+b}{cz+d} \stackrel{\det = 1}{\Rightarrow}
+\frac{d(gz)}{dz}=\frac{1}{(cz+d)^2}}$. Quindi la condizione della definizione di
 funzione debolmente modulare può essere scritta come $f(gz)(d(gz))^k=f(z)(dz)^k$.
-Sono k-forme differenziali.
+Sono k-forme differenziali (secondo noi però sono tensori $(0, k)$ simmetrici).
 \end{osservazione}
 
 \begin{osservazione}
 Dalla definizione segue immediatamente che $f(z+1)=f(z)$, cioè che una
-funzione debolmente modulare è periodica di periodo $1$. Quindi $f$ si può scrivere in serie di Fourier in $q=e^{2 \pi i z}$, cioè
+funzione debolmente modulare è periodica di periodo $1$. Definendo $q(z) = e^{2 \pi i z}$
+si ha che $q$ manda $\cH$ in $D^*$ (e in particolare $\cH / \bbZ \simeq D^*$), quindi
+$\widetilde{f} = f \circ q^{-1}$ è meromorfa in $D^*$ e
+$\displaystyle{\sum^{+\infty}_{n=-\infty}{a_n q^n}}$ è la sua serie di Laurent.
+Quindi $f$ si può scrivere in ``serie di Fourier'' in $q=e^{2 \pi i z}$, cioè
 $\displaystyle{f(z)=\widetilde{f}(q)=\sum^{+\infty}_{n=-\infty}{a_n q^n}}$.
-Inoltre $q$ manda $\cH$ in $D^*$, quindi $\widetilde{f}$ è meromorfa
-in $D^*$ e $\displaystyle{\sum^{+\infty}_{n=-\infty}{a_n q^n}}$ è la sua
-serie di Laurent.
 \end{osservazione}
+\notamargine{Non capiamo bene come si possa dedurre la sviluppabilità in serie di Laurent
+  (i poli potrebbero accumularsi in $0$). Si può invece ben fare se $f$ è una funzione modulare,
+  definita poco più sotto.}
 
 \begin{definizione}
 Nelle notazioni di sopra, se $\widetilde{f}$ è meromorfa anche in $D$, cioè
 se gli $a_n$ con indice $n<0$ non nulli sono in numero finito, la $f$
-è "meromorfa all'$\infty$" e si dice funzione modulare.
+è "meromorfa all'$\infty$" e si dice {\bf funzione modulare}.
 
-Se poi $\widetilde{f}$ è olomorfa in $0$, cioè se tutti gli $a_n$ con $n<0$
-sono nulli, la $f$ è "olomorfa all'$\infty$" e si dice forma modulare.
+Se poi $\widetilde{f}$ è olomorfa su tutto $D$ ($0$ compreso), cioè se tutti gli $a_n$ con $n<0$
+sono nulli, la $f$ è "olomorfa all'$\infty$" e si dice {\bf forma modulare}.
 
 Infine, se anche $a_0=0$, cioè $f(\infty)=0$, $f$ si dice forma modulare
 cuspidale
