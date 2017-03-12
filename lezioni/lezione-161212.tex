@@ -1,15 +1,10 @@
-%% Lezione di esempio. Copiate questo file nella lezione che dovete creare
-%% per avere già uno scheletro di come scrivere le lezioni
-
-%% Diamo un nome al capitolo. Idealmente mettiamo la data della lezione ed
-%% una sua breve descrizione / argomenti trattati
 \chapter{12 Dicembre 16 - burlesque}
 \justify
 
-%% Le parole dentro a \newthought vengono scritte in maiuscoletto. Usatele
-%% per sottolineare meglio alcune parole ad inizio paragrafo
-\newthought{La} lezione comincia con un richiamo delle nozioni recentemente aquisite: il gruppo dei divisori della cubica completata proiettivamente $\Div(\widetilde{E})$, del morfismo $\deg$, del suo nucleo $\Div^0(\widetilde{E})$, del divisore di una funzione meromorfa sul toro $\div(f)\in\Div^0(\widetilde{E})$ e infine del gruppo di Picard $\Pic^0(\widetilde{E}) := \frac{\Div^0(\widetilde{E})}{\text{divisori principali}}$.
-%% Si può poi inserire una section per scrivere degli argomenti specifici
+\newthought{La lezione comincia} con un richiamo delle nozioni recentemente acquisite: il gruppo dei divisori della cubica completata proiettivamente $\Div(\widetilde{E})$, del morfismo $\deg$, del suo nucleo $\Div^0(\widetilde{E})$, del divisore di una funzione meromorfa sul toro $\div(f)\in\Div^0(\widetilde{E})$ e infine del gruppo di Picenni $\Pic^0(\widetilde{E}) := \frac{\Div^0(\widetilde{E})}{\text{divisori principali}}$.
+
+Ricordiamo che per parlare di divisori stiamo assumendo di sapere già che la cubica $\widetilde{E}$ viene da un toro.
+
 \section{Sulla legge di gruppo su $\widetilde{E}$}
 Costruiamo la mappa seguente intesa come morfismo di gruppi:
 $$
@@ -20,6 +15,10 @@ $$
 $$
 dove la somma a destra è fatta rispetto alla legge di gruppo della cubica.
 Osserviamo che questa mappa è surgettiva: $\Theta((P)-(O))=P$.
+
+\notamargine{La mappa $\Theta$ è la cosa più naturale da considerare:
+  sappiamo già sommare (non solo formalmente) gli elementi di $\widetilde{E}$}
+
 \begin{lemma}
 Il nucleo della mappa $\Theta$ è dato esattamente dai divisori principali.
 \end{lemma}
@@ -28,38 +27,28 @@ Prendiamo un generico divisore principale e calcoliamoci sopra la mappa:
 $$
 \Theta(\div f)=\Theta\left(\sum_P \ord_P(f) \cdot (P)\right)=\sum_P \ord_P(f)\cdot P=0
 $$
-poichè avevamo visto che era vero in $\bbC/L$ usando il T3.\\
-Viceversa la scorsa volta vedemmo che ogni divisore della forma
-$$
-(P+Q)-(P)-(Q)+(O)\ \ \ P,Q \in\, \widetilde(E)
-$$
-è principale; da questo la formula di scambio:
-$$
-(P+Q)-(O)=\mbox{divisore principale}+(P)-(O)+(Q)-(O).
-$$
-Ora prendiamo un generico elemento $\sum_P a_p\, (P)$ del nucleo di $\Theta$; avendo grado zero si può scrivere:
-$$
-\sum_P a_p\, (P)=\sum_P a_p\, ((P)-(O))
-$$
-e, usando ripetutamente la proprietà di scambio (o meglio, una sua diretta generalizzazione) si ha:
-$$
-\sum_P a_p\, (P)=\mbox{divisore principale}+ \left(\sum_p a_p\, P\right)-(O)=\mbox{divisore principale}+(R)-(O)
-$$
+poichè avevamo visto che era vero in $\bbC/L$ usando il T3.
+
+Viceversa la scorsa volta vedemmo (\ref{teorema_divisori_semplici}) che ogni divisore di grado zero $d$ si può scrivere nella forma
+$$ d = \mbox{divisore principale} + \sigma(R) = (R) - (O) $$
 applicando ora $\Theta$ si ottiene che $R=O$ e ci siamo.
 \end{proof}
-Grazie al Lemma 1 e al teorema di isomorfismo di gruppi si ottiene l' isomorfismo
+
+\notamargine{Visto quanto fa schifo la legge di gruppo sulle cubiche, l'affermazione che facciamo è abbastanza forte. Per ogni combinazione su $\bbZ$ di punti (sommati sulla cubica) $\sum_i \alpha_i P_i = 0$ c'è una funzione $f$ razionale per cui vale $\forall i \quad \ord_{P_i}(f) = \alpha_i$}
+
+Grazie a questo lemma e al primo teorema di isomorfismo si ottiene l' isomorfismo
 $$
 \widetilde{\Theta}: \Pic^0 \rar \widetilde{E}
 $$
-che ci dà una nuova interpretazione della legge di gruppo sulla cubica: essa è indotta dalla somma di divisori dentro al Picard. Per gli amanti delle sequenze (esatte ?) riassumiamo il tutto così:
+che ci dà una nuova interpretazione della legge di gruppo sulla cubica: essa è indotta dalla somma di divisori dentro al Picard. Per gli amanti delle sequenze esatte riassumiamo il tutto così:
 $$
 0\rar\mbox{divisori principali}\rar \Div^0(\widetilde{E})\rar \widetilde{E}\rar 0.
 $$
 Prima di procedere diamo un insight di ciò che si potrebbe dimostare; prendiamo l' anello:
 $$
-\bbC[\wp(z),\wp'(z)]\simeq\frac{\bbC[x,y]}{y^2=ax^3+bx+c}
+\bbC[\wp(z),\wp'(z)]\simeq\frac{\bbC[x,y]}{(y^2 - ax^3 - bx - c)}
 $$
-quello che si puo' far vedere che i suoi ideali (o meglio il modulo dei suoi ideali principali) sono in naturale corrispondenza con il Picard della cubica. All' occhio esperto non sfuggirà l' analogia con gli anelli quadratici che si riassume nei simboli seguenti:
+quello che si può far vedere è che i suoi ideali (o meglio il modulo dei suoi ideali principali) sono in naturale corrispondenza con il Picard della cubica. All' occhio esperto non sfuggirà l' analogia con gli anelli quadratici che si riassume nei simboli seguenti:
 $$
 \bbC[x] \leftrightarrow \bbZ\, \ \ , \ \ \ \bbC\left[x,\sqrt{ax^3+bx+c}\right] \leftrightarrow \bbZ\left[\sqrt{\alpha}\right].
 $$ 
@@ -70,7 +59,7 @@ Accettiamo il fatto che si possa dare una nozione di forma differenziale sulla c
 $$
 \omega=\frac{dx}{y(x)}=\frac{dx}{\pm\sqrt{ax^3+bx+c}}
 $$
-questa forma è definita su $\bbC\setminus\{\alpha, \beta, \gamma\}$ le tre radici della cubica ma ha un problema di scelta della determinazione della radice; perchè sia ben definita occorre operare dei {\it tagli} $\gamma_1$ e $\gamma_2$ che collegano le radici $\alpha,\beta$ e $\gamma,\infty$. Se rimuoviamo questi cammmini dal nostro piano una scelta del segno nella forma $\omega$ è coerente ovunque e si può felicemente integrare. Inolre aver tolto l' $\infty$ ci permette di passsare dal piano complesso alla sfera di Riemann.\\
+questa forma è definita su $\bbC\setminus\{\alpha, \beta, \gamma\}$ le tre radici della cubica ma ha un problema di scelta della determinazione della radice; perchè sia ben definita occorre operare dei {\it tagli} $\gamma_1$ e $\gamma_2$ che collegano le radici $\alpha,\beta$ e $\gamma,\infty$. Se rimuoviamo questi cammmini dal nostro piano una scelta del segno nella forma $\omega$ è coerente ovunque e si può felicemente integrare. Inolre aver tolto l' $\infty$ ci permette di passare dal piano complesso alla sfera di Riemann.\\
 Alla fine abbiamo due forme $\omega_+$ ed $\omega_-$ definite su $\widehat{\bbC}\setminus\{\gamma_1,\gamma_2\}$. Adesso avviene il passaggio critico: dobbiamo incollare queste due sfere tramite l' identificazione rispettiva dei cammini che abbiamo rimosso:
 $$
 \gamma_1^+\sim \gamma_1^-\ \ , \ \ \gamma_2^+\sim\gamma_2^-;
@@ -110,27 +99,27 @@ quindi possiamo scrivere la relazione di commutazione nel modo più efficiente:
 $$
 \phi_\mu(\wp_1(z),\wp_1'(z))=(\wp_2(\mu z),\wp_2'(\mu z))
 $$
-a questo punto osserviamo che, grazie alla condizione $\mu L_1\subseteq L_2$, la funzione $\wp_2(\mu z)$ (e la sua derivata) è periodica anche per $L_1$ e dunque appartiene a $\bbC[\wp_1,\wp_1']$; questo implica che la funzione $\phi_\mu$ sia razionale.
+a questo punto osserviamo che, grazie alla condizione $\mu L_1\subseteq L_2$, la funzione $\wp_2(\mu z)$ (e la sua derivata) è periodica anche per $L_1$ e dunque appartiene a $\bbC(\wp_1,\wp_1')$; questo implica che la funzione $\phi_\mu$ sia razionale.
 \end{proof}
-A questo punto è obbligatorio un esempio di reticoli che abbiamno morfismi in sè stessi non dati da moltiplicazione per interi:
+A questo punto è obbligatorio un esempio di reticoli che abbiano morfismi in sè stessi non dati da moltiplicazione per interi:
 \begin{fatto}
 Per $L=\bbZ[i]$ la corrispondente cubica è $y^2=x^3-x$ e un' isogenia qui è data da $(x,y)\mapsto (-x,iy)$.
 \end{fatto}
 \section{Grado di una funzione razionale su una curva ellittica}
 Diamo la definizione di grado. 
 \begin{definizione}
-Consideriamo una mappa $f:\widetilde{E}\rar\ \bbC$ che sia funzione razionale delle coordinate. Una tale $f$ verrà detta {\it funzione razionale}. Se e noncostante il suo grado è definito come:
+Consideriamo una mappa $f:\widetilde{E}\rar\ \bbC$ che sia funzione razionale delle coordinate. Una tale $f$ verrà detta {\it funzione razionale}. Se è noncostante il suo grado è definito come:
 $$
 \deg(f,\alpha)=\#\{x\in \widetilde{E}:f(x)=\alpha\}
 $$
 dove $\alpha$ è un qualsiasi valore regolare di $f$.
 \end{definizione}
-Il fatto vero e a priori non ovvio è che questo numero sta in $\bbN$ e non dipende da $\alpha$.\\
+Il fatto vero e a priori non ovvio è che questo numero sia finito e non dipenda da $\alpha$.\\
 Osserviamo subito che per il T2 sulle funzioni ellittiche $f$ ed $f-\alpha$ hanno stesso numero di poli (ovvero di zeri) e quindi:
 $$
-\deg(f,\alpha)=\#\{f=\alpha\}=\#\{f-\alpha=0\}=\#\{\mbox{poli di } f-\alpha\}=\#\{\mbox{poli di} f\}
+\deg(f,\alpha)=\#\{f=\alpha\}=\#\{f-\alpha=0\}=\#\{\mbox{poli di } f-\alpha\}=\#\{\mbox{poli di } f\}
 $$
-e abbiamo elimminato la dipendenza da $\alpha$.\\
+e abbiamo eliminato la dipendenza da $\alpha$.\\
 Il legame tra grado e curve ellittiche è dato dal seguente
 \begin{esercizio}
 Sia $f$ funzione ellittica non costante, allora vale:
@@ -138,5 +127,5 @@ $$
 \deg f= [\bbC(\wp(z),\wp'(z)):\bbC(f(z))].
 $$
 \end{esercizio}
-Con questa nota si chiude, a Dio piacendo, la lezione di Umberto.
+Con questa sfida si chiude, a Dio piacendo, la lezione di Umberto.
 
