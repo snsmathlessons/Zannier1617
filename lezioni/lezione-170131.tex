@@ -6,19 +6,19 @@
 Siano $F=\left\{z \in \cH | -\frac{1}{2} \leq \Re(z) \leq 0
 \wedge |z| \geq 1 \right\} \cup
 \left\{z \in \cH | 0 < \Re(z) < \frac{1}{2} \wedge |z| > 1 \right\}$,
-b$G=SL_2 \left( \bbZ \right)/\{\pm Id\}$,   $\rho=\frac{-1+i\sqrt{3}}{2}$,
+$G=SL_2 \left( \bbZ \right)/\{\pm Id\}$,   $\rho=\frac{-1+i\sqrt{3}}{2}$,
 $S=\left( \begin{array}{cc} 0 & 1 \\ -1 & 0 \end{array} \right) \in G$,
 $T=\left( \begin{array}{cc} 1 & 1 \\ 0 & 1 \end{array} \right) \in G$.
 
-\begin{teorema}[1]
-$\forall z \in \cH \quad \exists g \in G$ tale che $gz \in \cH$.
+\begin{teorema}
+$\forall z \in \cH \quad \exists g \in G$ tale che $gz \in F$.
 
 Inoltre:
 \begin{itemize}
 	\item se $z,gz \in \bar{F}$, allora $z \in \partial F$ e $g=S$ oppure $g=T$.
 	\item se $z \in F$ e $z=gz$,
-				allora $z=i$ e $g \in \left\langle S \right\rangle$ oppure
-				$z= \rho$ e $g \in \left\langle ST \right\rangle$
+				allora $z=i$ (nel qual caso $g \in \left\langle S \right\rangle$) oppure si ha che
+				$z= \rho$ (nel qual caso $g \in \left\langle ST \right\rangle$)
 \end{itemize}
 \end{teorema}
 
@@ -38,25 +38,29 @@ G è generato da S e T
 generato da $S$ e $T$ modulo le relazioni $S^2=Id$ e $(TS)^3=Id$}
 
 \begin{proof}
-Sia $G'=\left\langle S,T \right\rangle$. Sia $z \in \cH$ e $z' \in G'z$ l'elemento con $\Im(z')$ massimo possibile. Tale elemento esiste perché se
-$\sigma = \left( \begin{array}{cc} a & b \\ c & d \end{array} \right) \in G'$,
-allora $\Im(\sigma z') = \frac{\Im(z')}{|cz'+d|^2}$ ed essendo
-$c,d \in \bbZ$, $|cz'+d|^2 \geq \Im(z')^2$ (per $c \neq 0$, se no fa 1) per cui $\Im(\sigma z')$ è limitato dall'alto e il sup viene raggiunto perché
-ci sono solo un numero finito di $c,d \in \bbZ$ per cui
-$|cz'+d|^2 \leq 1$.
-Possiamo anche supporre che $z=z'$ e, a meno di comporre con qualche potenza
-di $T$, supponiamo anche che $-\frac{1}{2} \leq \Re(z) < \frac{1}{2}$.
+Sia $G'=\left\langle S,T \right\rangle$. Sia $z \in \cH$ e cerchiamo $z' \in G'z$ con $\Im(z')$ massima possibile. Tale elemento esiste, infatti se
+$\sigma = \left( \begin{array}{cc} a & b \\ c & d \end{array} \right) \in G'$, allora $\Im(\sigma z) = \frac{\Im(z)}{|cz+d|^2}$ ed essendo
+$c,d \in \bbZ$, $|cz+d|^2 \geq (\Im(z))^2$ (per $c \neq 0$, se no fa $d^2 \ge 1$) per cui $\Im(\sigma z)$ è limitato dall'alto e il sup viene raggiunto perché
+ci sono solo un numero finito di $c,d \in \bbZ$ per cui $|cz+d|^2 \leq 1$. (Infatti siccome lo cerco massimo voglio denominatore più piccolo di uno,
+altrimenti già $z$ andava bene)
+
+\notamargine{Per vedere che ve ne sono un numero finito scriviamo $|cz+d|^2 = c^2 (\Im z)^2 + (c \Re z + d)^2 \le 1$.
+  Allora ciascun termine è minore di $1$, quindi ci sono un numero finito di $c$, e da questo si ricava che vi sono un numero finito di $d$.}
+
+\vskip 0.5cm
+Possiamo quindi supporre che $z=z'$ e, a meno di comporre con qualche potenza
+di $T$ (che è una traslazione), supponiamo anche che $-\frac{1}{2} \leq \Re(z) < \frac{1}{2}$.
 
 Verifichiamo quindi che $|z| \geq 1$ (se poi fosse $|z|=1$ e
 $z \in \bar{F} \setminus F$ basta applicarci $S$).
-$\Im(Sz) = \frac{\Im(z)}{|z|^2} \leq \Im(z)$ per la massimalità di $\Im(z)$.
+$\frac{\Im(z)}{|z|^2} = \Im(Sz) \leq \Im(z)$ per la massimalità di $\Im(z)$.
 Quindi $|z| \geq 1$.
-
+\vskip 0.5cm
 
 Siano ora $g \in G$, $z'=gz$ e supponiamo che $z,z' \in \bar{F}$ e (wlog)
 che $\Im(z) \leq \Im(z')$.
 $$
-z'= \frac{az+b}{cz+d} \frac{c \bar{z} +d}{c \bar{z} +d} =
+z'= gz \cdot 1 = \frac{az+b}{cz+d} \frac{c \bar{z} +d}{c \bar{z} +d} =
 \frac{ac|z|^2 + bd + bc \bar{z} + adz}{|cz+d|^2} \stackrel{det=1}{=}
 \frac{ac|z|^2 + bd + bc \bar{z} + (bc+1)z}{|cz+d|^2} =
 $$
@@ -67,23 +71,27 @@ $$
 Ora, usando che $z,z' \in \bar{F}$, per cui $|z|,|z'| \geq 1$ e
 $|\Re(z)|, |\Re(z')| \leq \frac{1}{2}$, si ottiene che, se $c \neq 0$,
 $\Im(z') = \frac{\Im(z)}{|cz+d|^2} \leq \frac{\Im(z)}{c^2 \Im(z)^2}
-= \frac{1}{c^2 \Im(z)} \leq \frac{2}{c^2 \sqrt{3}}$, quindi $|c| \leq 1$.
+= \frac{1}{c^2 \Im(z)} \leq \frac{2}{c^2 \sqrt{3}}$ $\implies c^2 \ge \frac{2}{\sqrt{3}\Im z'} \ge \frac{4}{3}$
+quindi $|c| \leq 1$.
 
-Se $c=0$, allora deve essere $z'=z+b$, per cui $z'=z$ e $g=Id$, oppure
-$|\Re(z')| = \frac{1}{2}$ e $|\Re(z)| = -\frac{1}{2}$ o viceversa,
-cioè $z,z' \in \partial F$ e $g=T$.
+\begin{itemize}
+\item Se $c=0$, allora (visto che $ad - bc = 1$) deve essere $z' = z \pm b$, per cui si può avere $z'=z$ e $g=Id$; oppure
+  $|\Re(z')| = \frac{1}{2}$ e $|\Re(z)| = -\frac{1}{2}$; o viceversa.
+  \notamargine{Nel caso $c=0$ stando $z, z' \in F$ si ha $|\Re z - \Re z'| \le 1$}
+  Negli ultimi due casi si ha $z,z' \in \partial F$ e $g=T$.
 
-Se invece $c=1$ (il caso $c=-1$ è uguale perché
-$G=SL_2 \left( \bbZ \right)/\{\pm Id\}$),
-$\Im(z') \leq \frac{1}{\Im(z)} \Rightarrow \Im(z) \leq \frac{2}{\sqrt{3}}$.
-Allora $\Im(z') \leq \frac{2}{\sqrt{3}|z+d|^2} \Rightarrow
-|z+d|^2 \leq \frac{4}{3} \Rightarrow |z|^2+d^2+2d \Re(z) \leq \frac{4}{3}$. 
-Quindi $d=0$ o $d=\pm 1$.
+\item Se invece $c=1$ (il caso $c=-1$ è uguale perché
+  $G=SL_2 \left( \bbZ \right)/\{\pm Id\}$),
+  $\Im(z') \leq \frac{1}{\Im(z)} \stackrel{z' \in F}{\Rightarrow} \Im(z) \leq \frac{2}{\sqrt{3}}$.
+  Allora $\Im(z') \leq \frac{2}{\sqrt{3}|z+d|^2} \Rightarrow
+  |z+d|^2 \leq \frac{4}{3} \Rightarrow |z|^2+d^2+2d \Re(z) \leq \frac{4}{3}$. 
+  Quindi (poiché $\Re z \ge -\frac{1}{2}$) $d=0$ o $d=\pm 1$.
 
-Se $d=0$, $\Im(z') = \frac{\Im(z)}{|z|^2} \leq \Im(z)$, quindi $|z|=1$.
+  Se $d=0$, $\Im(z') = \frac{\Im(z)}{|z|^2} \leq \Im(z)$, quindi $|z|=1$ (Perché avevamo precedentemente assunto che $\Im(z) \le \Im(z')$).
 
-Se $d=\pm 1$, similmente si ottiene $|z \pm 1|=1$, da cui $z=\rho$ e
-$z'=\rho +1$ o viceversa.
+  Se $d=\pm 1$, similmente $\Im(z') = \frac{\Im(z)}{|z \pm 1|^2}$. Usando che $|z \pm 1| \ge 1$ (Fare disegno e cercare minimo modulo di $F + 1$)
+  si ottiene $|z \pm 1|=1$, da cui $z=\rho$ e $z'=\rho +1$ o viceversa.
+\end{itemize}
 
 \bigskip
 Vediamo ora che $G'=G$:
@@ -113,10 +121,11 @@ Se $d=1$, $|z-1|=1$ che non ha soluzioni in $F$.
 \end{proof}
 
 \begin{osservazione}
-Al quoziente $\cH/G$ si può dare una struttura di superficie di Riemann
-(che non è quella che viene da $\bbC$),
-identificando le rette $\Re(z)=\pm \frac{1}{2}$ e i due archi di circonferenza
-sul bordo di $F$. Il quoziente è omeomorfo a $\bbC$.
+  Al quoziente $\cH/G \simeq F$ si può dare una struttura di superficie di Riemann
+  (che non è quella data dall'immersione per via dei due stabilizzatori non banali),
+  identificando le rette $\Re(z)=\pm \frac{1}{2}$ e i due archi di circonferenza
+  (quelli passanti per $i$) sul bordo di $F$. Il quoziente è omeomorfo a $\bbC$.
+  Possiamo quindi indurre una struttura di superficie di Riemann con l'omemomorfismo trovato.
 \end{osservazione}
 
 \section{Forme quadratiche binarie intere}
