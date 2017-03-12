@@ -7,7 +7,7 @@
 	\end{itemize}
 
 	\begin{proposizione}
-		Ogni mappa biolomorfa da una superficie sferica a una euclidea è costante. Allo stesso modo, ogni mappa biolomorfa da una superficie euclidea a una iperbolica è costante.
+		Ogni mappa olomorfa da una superficie sferica a una euclidea è costante. Allo stesso modo, ogni mappa biolomorfa da una superficie euclidea a una iperbolica è costante.
 	\end{proposizione}
 	
 	\begin{proof}
@@ -24,15 +24,15 @@
 		Poichè sia $\hat\bbC$ sia $\bbC$ sono semplicemente connessi, per il solito lemma $f \circ \pi_1$ e $g \circ \pi_2$ si sollevano a $\tilde f, \tilde g$. 
 		
 		Ma $\tilde f$, ristretta a $\bbC$, è una mappa intera (olomorfa su $\bbC$) limitata (perchè all'infinito deve tendere ad $f(\infty)$). Quindi per Liouville è costante.
-		Stesso discorso vale per $\tilde g$, che è olomorfa su $\bbC$ ed è limitata (ha immagine contenuta nel disco). Quindi anche $f$ e $g$ devono essere costanti.
-		
-		
-	\end{proof}
+		Stesso discorso vale per $\tilde g$, che è olomorfa su $\bbC$ ed è limitata (ha immagine contenuta nel disco). Quindi anche $f$ e $g$ devono essere costanti.		
+        \end{proof}
+
+\notamargine{Inoltre, potete mostrare che non vi sono mappe olomorfe da superfici sferiche a superfici iperboliche, utilizzando le carte su $\hat\bbC$ ed il teorema di Liouville su queste. Nell'altro verso invece ve ne sono di non costanti, in particolare potete prendere l'immersione da $D$ in $\bbC$ e quella da $\bbC$ in $\hat\bbC$}
 	
 	Restringiamoci ora ai tori. Una mappa tra due tori $T_1 = \bbC/L_1$ e $T_2 = \bbC/L_2$ abbiamo visto che deve essere della forma $f(z)=\alpha z + \beta$.\notamargine{D'ora in poi faremo spesso confusione tra un numero complesso e la sua classe di equivalenza.}
 	
 	\begin{definizione}
-		Una legge di gruppo olomorfa su una superficie di Riemann $S$ è una legge di gruppo in cui la moltiplicazione e l'inverso sono mappe biolomorfe rispettivamente da $S \times S$ a $S$ e da $S$ a $S$ (per un'opportuna definizione di mappa biolomorfa da una varietà bidimensionale).
+		Una legge di gruppo olomorfa su una superficie di Riemann $S$ è una legge di gruppo in cui la moltiplicazione e l'inverso sono mappe olomorfe rispettivamente da $S \times S$ a $S$ e da $S$ a $S$ (per un'opportuna definizione di mappa olomorfa da una varietà bidimensionale).
 	\end{definizione}
 	
 	Su un toro abbiamo un'ovvia legge di gruppo ereditata dalla somma su $\bbC$. Inoltre possiamo mettere una legge di gruppo isomorfa, in cui cambio l'origine. Questo si può fare in generale: data la moltiplicazione $\cdot$ su un gruppo $G$, posso definire l'operazione $g * h = g\cdot a^{-1}\cdot h$, con $a\in G$. Allora $(G,*)$ ha $a$ come origine, e ho l'ovvio isomorfismo tra $(G,\cdot)$ e $(G,*)$ dato da $g\mapsto g\cdot a$.
@@ -44,7 +44,7 @@
 	\begin{proof}
 		Sia $x \in T$, sia $*$ una legge di gruppo e sia senza perdita di generalità $0$ l'elemento neutro. Consideriamo la funzione $\phi_x: z \mapsto x * z - x$.
 
-		Questa è una mappa biolomorfa tra tori, e sappiamo che deve essere della forma $z \mapsto \alpha z + \beta$. Ma $\phi_x(0)=0$, quindi $\beta=0$. Sia quindi $c_x \in \bbC$ tale che $\phi_x(z)=c_xz$.
+		Questa è una mappa olomorfa tra tori, e sappiamo che deve essere della forma $z \mapsto \alpha z + \beta$. Ma $\phi_x(0)=0$, quindi $\beta=0$. Sia quindi $c_x \in \bbC$ tale che $\phi_x(z)=c_xz$.
 		
 		Quindi abbiamo, riarrangiando i termini della definizione 
 		\[
@@ -73,16 +73,14 @@
 	
 	Siano ora $\Aut_0(T)$ gli automorfismi che fissano l'origine. Abbiamo visto che sono solo le omotetie di fattore $\mu$ che fissano il reticolo. Sicuramente nel reticolo ho un complesso di norma minima, essendo un insieme discreto: ma allora la norma minima deve conservarsi dopo l'omotetia, quindi $\abs \mu=1$.
 	
-	Inoltre, dato un qualsiasi $\lambda_0 \in L$, vale $\abs{\lambda_0 \mu} = \abs {\lambda_0}$, da cui segue che $\Aut_0(T)$ è finito; essendo un sottogruppo di $\bbC^*$, per un noto lemma è anche ciclico.
+	Inoltre, dato un qualsiasi $\lambda_0 \in L$, vale $\abs{\lambda_0 \mu} = \abs {\lambda_0}$, da cui segue che $\Aut_0(T)$ è finito; essendo un sottogruppo di $\bbC^*$, per un noto lemma (sottogruppo moltiplicativo finito di un campo) è anche ciclico.
 	
 	Fissando una base del reticolo, ogni automorfismo si scrive come una matrice $2 \times 2$ a coefficienti interi. Per qualche strano motivo da capire che c'entra con le radici dell'unità, %TODO%
 	posso avere solo rotazioni di $180, 90, 60$.
 	
 	\subsection{Isogenie}
-	
 	\begin{definizione}
 		Una mappa $c: T_1 \rar T_2$ si dice un'isogenia se è un'omomorfismo suriettivo (di gruppi olomorfi).
-
 	\end{definizione}
 	
 	\begin{proposizione}
@@ -94,8 +92,8 @@
 	
 	\begin{definizione}
 		Si dice grado dell'isogenia $[L_2 : \mu L_1]$.
-	\end{definizione}
-	
+        \end{definizione}
+              
 	\begin{osservazione}
 		La composizione di due isogenie è un'isogenia che ha come grado il prodotto dei gradi.
 	\end{osservazione}
@@ -115,7 +113,6 @@
 	
 	D'altra parte, se vale l'ultima condizione, $\mu=1$ induce un'isogenia.
 
-
 	\subsection{Isogenia duale}
 	
 	Sia $c: T_1 \rar T_2$ un'isogenia. Si definisce l'isogenia duale $\hat c: T_2 \rar T_1$ come 
@@ -124,18 +121,15 @@
 	\]
 	
 	Innanzitutto controlliamo che sia ben definita. Dati $x, x' \in c^{-1}(z)$ ho che $\deg c \cdot x - \deg c \cdot x' = \deg c \cdot (x-x')$. Ma $\Ker c$ è un gruppo che ha ordine $\deg c$, quindi dato che $x-x' \in \Ker c$ allora $\deg c \cdot (x-x') = 0$.
+        \notamargine{Potrebbe essere utile notare che la cardinalità di $\Ker c$ è proprio $\deg c$}
 	
 	Inoltre sappiamo che $\hat c \circ c = \deg c \in \End T_1$.
 	
 	A questo punto, fissiamo i due reticoli $L_1$ e $L_2$. Siano ora $c$ e $\hat c$ rappresentate da $\mu$ e $\frac{\deg c}\mu$.
 	
-	
-	Notiamo innanzitutto la funtorialità controvariante del duale, o più prosaicamente che $\hat{c_2 \circ c_1} = \hat c_2 \circ \hat c_1$ (ci sarebbe da verificarlo).
+	Notiamo innanzitutto la funtorialità controvariante del duale, o più prosaicamente che $\hat{c_2 \circ c_1} = \hat c_1 \circ \hat c_2$ (ci sarebbe da verificarlo).
 
-	
-	
 	Cerchiamo ora di calcolare $\deg \hat c$.
-	
 	
 	\[
 		\deg \hat c \cdot \deg c = \deg(\hat c \circ c) = \deg(\deg c) = \deg^2 c
@@ -144,10 +138,4 @@
 	dove con $\deg(\deg c)$ indico il grado dell'applicazione ``moltiplicazione per il grado'', che essendo un omotetia del piano, ha grado $\deg^2 c$ (moralmente sto infittendo il reticolo dividendo ``righe'' e ``colonne'' in $\deg c$ parti).
 	
 	Semplificando ora un $\deg c$ ottengo che $\deg \hat c = \deg c$.
-
-	
-
-
-	
-	
 
