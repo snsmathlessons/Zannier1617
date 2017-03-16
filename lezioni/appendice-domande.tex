@@ -1,0 +1,55 @@
+\chapter{Appendice B - Domande degli Orali}
+\justify
+
+\newthought{In preparazione al giorno del giudizio}, riportiamo di seguito le domande che sono state fatte agli orali.
+Esse hanno la piacevole tendenza a ripetersi con particolare frequenza, ragion per cui conviene considerare questa appendice come parte integrante del corso.
+
+\section{Punti di torsione}
+Per punti di $n$-torsione si intendono i punti $P$ di una curva ellittica $E$ tali che $nP = 0$ (ovvero $P + \ldots + P$ con le operazioni sulla cubica).
+
+\subsection{$n$-torsione sul toro}
+Notate che sul toro la $n$-torsione è una scemenza: infatti si ha che i punti di $n$-torsione sono $p_{h, k} = \omega_1 \frac{k}{n} + \omega_2 \frac{h}{n}$ con $1 \le k, h \le n$.
+Questi sono sicuramente di $n$-torsione: $n p_{h, k} \in L$. D'altra parte visto che la moltiplicazione sul toro coincide con la moltiplicazione sui numeri complessi risulta immediato anche il contrario.
+
+Allora se sappiamo che la cubica viene da un toro si ha immediatamente che i punti di $n$-torsione sono $n^2$ e corrispondono a $(\wp(p_{h, k}), \wp'(p_{h, k})$ in coordinate affini.
+
+Sulla cubica (senza assumere la provenienza da un toro, ovvero anche su campi diversi da $\bbC$) la questione è molto più complicata, visto che la legge di gruppo non ha una descrizione così bella come sui complessi.
+\notamargine{Anche se rimane vero che i punti di ordine che divide $n$ sono un sottogruppo isomorfo a $\frac{\bbZ}{n\bbZ} \times \frac{\bbZ}{n\bbZ}$}
+
+\subsection{Punti di $2$-torsione}
+Notiamo che per le cubiche provenienti da tori si ha che i punti di due torsione sono le immagini dei punti di $\frac{L}{2}$, ovvero i punti dove $\wp'$ si annulla, ovvero le coppie $(0, \alpha)$ con $\alpha$ radice del polinomio $p(x)$ nella forma di Weierstrass $y^2 = p(x)$.
+
+Ciò vale anche per le cubiche generiche: infatti calcolando la retta proiettiva tangente in quei punti si ha che essa incontra la cubica nel punto all'infinito, che è l'elemento neutro del gruppo.
+Inoltre 
+
+\subsection{Calcolo dei punti di $3$-torsione}
+\paragraph{Domanda} Trovare un polinomio che si annulla esattamente sulle coordinate dei punti di $3$-torsione
+
+\paragraph{Soluzione}
+\squared{1} Notiamo che se $P = (x_0, y_0)$ è di $3$-torsione, allora anche $-P = (x_0, -y_0)$ lo è
+\squared{2} Prima di lanciarvi in lunghi e boriosi conti per calcolare le coordinate di $3P$ notate che si ha $3P = 0 \sse 2P = -P$. Allora i punti di tre torsione sono precisamente (per l'osservazione precedente ed il fatto che ad $x_0$ fissato si hanno al più due punti della cubica affine con $x_0$ come prima coordinata) quelli tali che $x_{2P} = x_{-P} = x_{P}$. Lestamente ricordando la formula di duplicazione si giunge alla formula $\left( \frac{12 x_P^2 - g_2}{2 y_P} \right)^2 - 2 x_P = x_P$. Ricordando $y_P^2 = 4 x_P^2 - g_2 x_P - g_3$ si giunge ad un polinomio di quarto grado nella sola $x_P$.
+\squared{3} Bisogna dimostrare che il polinomio ottenuto non ha radici multiple. In questo modo abbiamo otto punti che sono di $3$-torsione sull'affine, a cui bisogna aggiungere quello all'infinito, per un totale di $9$.
+
+\subsection{Coincidenza con i flessi della cubica}
+\paragraph{Domanda} Dimostrare che i punti di $3$-torsione coincidono con i flessi della cubica
+
+\paragraph{Soluzione}
+\squared{1} Per un semplice computo della cardinalità delli due insiemi considerati (entrambi con $9$ punti) basta dimostrare che tutti i flessi sono punti di $3$-torsione.
+\squared{2} Se $(x_0, y_0)$ è un flesso allora anche $(x_0, -y_0)$ lo è
+\squared{3} Se una retta è tangente in un flesso (si annulla di ordine 2) allora è la tangente di flesso (si annulla di ordine 3) poiché i punti sono non singolari
+\squared{4} Il punto all'infinito è di flesso
+\squared{5} Si prenda un flesso $P$. Vogliamo calcolare $2P = P + P$: tracciamo allora la retta tangente al flesso e cerchiamo il terzo punto di intersezione: esso è il punto di flesso stesso per l'osservazione (3). Allora si ha che $2P$ è l'opposto del flesso stesso, ovvero se $P = (x_0, y_0)$, sappiamo che il terzo punto di intersezione con la retta passante per il punto all'infinito è $(x_0, -y_0) = -P$. Allora abbiamo appena mostrato che $2P = -P$ e quindi $3P = 0$.
+
+\subsection{Proprietà delle rette}
+\paragraph{Domanda} Mostra che i punti di $3$-torsione hanno la seguente proprietà: se $P$ e $Q$ sono punti di tre torsione, e traccio la retta tra di essi, la interseco con la cubica, anche il terzo punto è di tre torsione.
+\notamargine{A quanto pare questa proprietà delle rette per punti nel piano reale implica che siano tutti allineati, quindi possiamo dire che almeno un punto di tre torsione non ha coordinate entrambe reali}
+
+\paragraph{Soluzione}
+\squared{1} ho che $3P = 0$ e $3Q = 0$. Allora (per abelianità del gruppo) $3(P + Q) = 0$, ovvero anche $3(- P - Q) = 0$.
+\squared{2} Notare che la terza intersezione della retta con la cubica è proprio $- P - Q$ (infatti se ne prende l'inverso per ottenere $P + Q$).
+
+\section{Altre domande}
+\subsection{$g = \widetilde{j}(e^{4\pi i z})$ è modulare?}
+\subsection{$\deg f = [\bbC(t) : \bbC(f)]$ per $f \in \bbC(t)$}
+
+
