@@ -86,7 +86,7 @@ I sottogruppi finiti di $\mathbb{P}GL_2 (\mathbb{C} )$ sono:
 $Aut (\hat{\mathbb{C}} ) = G = \mathbb{P}GL_2 (\mathbb{C} )$
 \end{proposizione}
 \begin{proof}
-Sia $\varphi \in Aut (\hat{\mathbb{C}} )$. Sappiamo già che $Aut (\hat{\mathbb{C}} ) \subseteq G$.
+Sia $\varphi \in Aut (\hat{\mathbb{C}} )$. Sappiamo già che $Aut (\hat{\mathbb{C}} ) \supseteq G$.
 Quindi, essendo $G$ triplamente transitivo, possiamo assumere $\varphi( \infty ) = \infty$.
 Ora osserivamo che, essendo $\varphi$ un automorfismo olomorfo, detto $D=D(0,1)$, $\varphi (D)$ conterrà
 un certo disco $D_1$. Quindi $\varphi$ non può avere una sigolarità essenziale all'infinito poiché in tal caso,
@@ -106,7 +106,7 @@ $Aut(\mathbb{C} )= \left\{ z\mapsto az+b \right\} = Stab_{\mathbb{P} GL_2 (\math
 
 \section{Automorfismi di $D$}
 \begin{definizione}[Trasformazioni di Möbius]
-Si chiamano Trasformazioni di Möbius le trasformazioni del tipo $z\mapsto c \displaystyle{\frac{z-a}{1- \bar{a}z}}$ con $|c|=1$ e $a \in D$.
+Si chiamano Trasformazioni di Möbius le trasformazioni $D \rar D$ del tipo $z\mapsto c \displaystyle{\frac{z-a}{1- \bar{a}z}}$ con $|c|=1$ e $a \in D$.
 \end{definizione}
 
 \notamargine{A volte invece si chiamano così tutte le trasformazioni di $\mathbb{P} GL_2 (\mathbb{C})$}
@@ -118,7 +118,7 @@ Le trasformazioni di Möbius sono un sottogruppo di $\mathbb{P} GL_2 (\mathbb{C}
 
 \begin{osservazione}
 Le trasformazioni di Möbius mandano D in se stesso. Infatti: 
-$$\left|c \frac{z-a}{1- \bar{a}z} \right|= 1 \frac{(z-a)(\bar{z}-\bar{a})}{(1- \bar{a}z)({1- a\bar{z}})}=
+$$\left|c \frac{z-a}{1- \bar{a}z} \right|^2 = 1 \frac{(z-a)(\bar{z}-\bar{a})}{(1- \bar{a}z)({1- a\bar{z}})}=
 \frac{|z|^2 + |a|^2 - 2Re(a \bar{z})}{1+ |a|^2 |z|^2 - 2Re(a \bar{z})} <1
 \Longleftrightarrow \left( 1-|z|^2 \right) \left( 1-|a|^2 \right) >0$$
 Questa è vera $\forall z \in D$.
@@ -137,12 +137,12 @@ $G= \left \{ z \mapsto \displaystyle{c \frac{z-a}{1- \bar{a}z}} \right \}$ è tr
 \end{proof}
 
 \begin{osservazione}
-$Stab_G (0) = \{z \mapsto cz \}$ cioè tutte e sole le rotazioni.
+$Stab_G (0) = \{z \mapsto cz \}$ cioè tutte e sole le rotazioni ($|c| = 1$).
 \end{osservazione}
 
 \begin{lemma}[di Schwarz]
 Sia $f:D\rightarrow D$ una funzione olomorfa tale che $f(0)=0$. 
-Allora $|f(z)| \leq |z|\ \ \forall z \in D$ e $f'(0) \leq 1$. Inoltre, se vale un'uguaglianza, $f$ è una rotazione.
+Allora $|f(z)| \leq |z|\ \ \forall z \in D$ e $|f'(0)| \leq 1$. Inoltre, se vale la prima uguaglianza anche solo in un punto, $f$ è una rotazione.
 \end{lemma}
 \begin{proof}
 $f(0)=0 \Rightarrow \frac{f(z)}{z}$ è olomorfa in $D$. Detto $D_r$ il disco di raggio $r$,
@@ -153,6 +153,8 @@ Facendo tendere $z$ a $0$ si ottiene anche la tesi sulla derivata.
 Infine, se si verifica un'uguaglianza, sempre per il principio del massimo modulo risulta che
 $\left| \frac{f(z)}{z} \right|$ è costante in $D$, quindi $f$ è una rotazione.
 \end{proof}
+\notamargine{In realtà $f$ è una rotazione anche se vale solo $|f'(0)| = 1$ (sviluppare in serie attorno all'origine).
+Infatti poi usiamo questo enunciato...}
 
 \begin{proposizione}
 $Aut(D)=G$
@@ -161,19 +163,19 @@ $Aut(D)=G$
 Sappiamo che $Aut(D) \supseteq G$. Sia quindi $\varphi \in Aut(D)$. Essendo $G$ transitivo posso supporre che $\varphi(0)=0$.
 Sia $\psi$ l'inversa di $\varphi$. $\psi (0)=0$. Quindi
 $\psi (\varphi (z))=z \stackrel{deriviamo}{\Longrightarrow} \psi ' (\varphi (z)) \varphi '(z) =1 \Rightarrow \psi'(0) \varphi'(0) =1$
-Ma per il lemma di Schwarz $|\psi'(0)| \leq 1$ e $|\varphi'(0)| \leq 1|$. Quindi $|\varphi'(0)|=1$ e, sempre per il lemma di Schwarz,
+Ma per il lemma di Schwarz $|\psi'(0)| \leq 1$ e $|\varphi'(0)| \leq 1$. Quindi $|\varphi'(0)|=1$ e, sempre per il lemma di Schwarz,
 $\varphi$ è una rotazione e quindi appartiene a $G$. 
 \end{proof}
 
 \subsection {$D \simeq \mathcal{H}$}
 
 Vediamo ora che il disco $D$ è biolomorfo al semipiano $\mathcal{H} = \left \{ z \in \mathbb{C} | \ Im (z)>0 \right \}$
-Presi $w \in \mathcal{h}$ e $z \in D$, consideriamo le mappe:
+Presi $w \in \mathcal{H}$ e $z \in D$, consideriamo le mappe:
 $$w \mapsto z=\frac{i-w}{i+w} \qquad z \mapsto w= i\frac{1-z}{1+z}$$
 Si può verificare sono una l'inversa dell'altra e che sono effettivamente omeomorfismi tra $\mathcal{H}$ e $D$.
 Quindi $D \simeq \mathcal{H}$ come superfici di Riemann.
 
-Questo ci permette anche di determinare che $Aut( \mathcal{H}) = \left \{ z \mapsto \displaystyle{\frac{az+b}{cz+d}} \ | \ ad>bc \right \}$
+Questo ci permette anche di determinare che $Aut( \mathcal{H}) = \left \{ z \mapsto \displaystyle{\frac{az+b}{cz+d}} \mid ad > bc \right \} = \GL^+ (2, \bbR)$
 
-Ora quindi dovremo capire quali sottgruppi di $Aut (\hat{\mathbb{C}})$, $Aut(\mathbb{C})$ e $Aut(D)$ agiscono in modo propriamente discontinuo
+Ora quindi dovremo capire quali sottogruppi di $Aut (\hat{\mathbb{C}})$, $Aut(\mathbb{C})$ e $Aut(D)$ agiscono in modo propriamente discontinuo
 e non hanno punti fissi, per classificare le superfici di Riemann.
