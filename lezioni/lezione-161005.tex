@@ -131,20 +131,26 @@ $$
 g_k=\gamma_k+\lambda_k\, g_0=\gamma_k+q(k)\cdot\, g_0+\delta_k\, g_0,
 $$
 $$
-q(k)\in\bbZ,\ \ 0\leq \delta_k<|g_0|
+q(k)\in\bbZ,\ \ 0\leq \delta_k<1
 $$
-dove nell' ultimo pasaggio abbiamo diviso con resto $\lambda_k$ per $|g_0|$. Dunque abbiamo una successione di elementi di $G$ limitata dentro $\bbR^n$:
+dove nell'ultimo passaggio abbiamo diviso con resto $\lambda_k$ per $|g_0|$. Dunque abbiamo una successione di elementi di $G$ limitata dentro $\bbR^n$:
 $$
-|g_k-q(k)\cdot g_0|\leq|\gamma_k|+|g_0|^2
+|g_k-q(k)\cdot g_0| \leq |\gamma_k|+|g_0|
 $$
-che per discretezza può essere composta solo a un numero finito di elementi, assurdo.
+che per discretezza può essere composta solo da un numero finito di elementi, assurdo.
 \notamargine{Altrimenti ne estraggo di infiniti distinti, riestraggo per far convergere, considero le differenze che stanno in G e tendono a $0$. Assurdo ché 0 è isolato.}
 
-A questo punto uso l' ipotesi induttiva su $\Gamma$ e ne produco una base $\{\gamma_1=\pi(g_1),\ldots,\ldots \gamma_{d-1}=\pi(g_{d-1})\}$. A questo punto è ovvio che la famiglia
+(Da questo punto dimenticate chi sono i $g_i$ ed i $\gamma_i$ e ne definiamo di nuovi)
+A questo punto uso l'ipotesi induttiva su $\Gamma$ e ne produco una $\bbZ$-base come reticolo $\{\gamma_1, \ldots, \gamma_{d-1}\}$.
+Inoltre prendiamo $\gamma_0$ come generatore della proiezione su $\bbR g_0$.
+A questo punto è ovvio che la famiglia (pensata immersa in $V_G$)
 $$
-\{g_0,g_1,\ldots,g_{d-1}\}
+\{\gamma_0,\gamma_1,\ldots,\gamma_{d-1}\}
 $$ 
-genera $G$ su $\bbZ$.\\
+contiene il reticolo $G$, ovvero $G \sqsubseteq \bbZ \gamma_0 + \bbZ \gamma_1 + \ldots + \bbZ \gamma_{d-1}$.
+
+A questo punto usando Nakayama (o il teorema dei gruppi abeliani finitamente generati) si ottiene che $G$ ha dimensione finita (e $\le d$).
+
 Mostriamo che è fatta di vettori linearmente indipendenti addirittura su $\bbR$:
 $$
 0=\mu_0\, g_0+\mu_1\, g_1+\ldots+\mu_{d-1}\, g_{d-1}
