@@ -18,20 +18,6 @@
 \usepackage{afterpage}
 \usepackage{faktor}
 
-% \DeclareSymbolFont{operators}   {OT1}{cmr} {m}{n}
-% \DeclareSymbolFont{letters}     {OML}{cmm} {m}{it}
-% \DeclareSymbolFont{symbols}     {OMS}{cmsy}{m}{n}
-% \DeclareSymbolFontAlphabet{\mathrm}    {operators}
-% \DeclareSymbolFontAlphabet{\mathnormal}{letters}
-% \DeclareSymbolFontAlphabet{\mathcal}   {symbols}
-% \DeclareSymbolFontAlphabet{\mathfrak}  {symbols}
-% \DeclareMathAlphabet      {\mathbf}{OT1}{cmr}{bx}{n}
-% \DeclareMathAlphabet      {\mathsf}{OT1}{cmss}{m}{n}
-% \DeclareMathAlphabet      {\mathit}{OT1}{cmr}{m}{it}
-% \DeclareMathAlphabet      {\mathtt}{OT1}{cmtt}{m}{n}
-% \DeclareMathAlphabet      {\mathbb}{OT1}{cmr}{m}{n}
-% \DeclareMathAlphabet      {\mathfrak}{OT1}{euler}{m}{n}
-
 \input{diagrams.sty}
 
 \usepackage{enumitem}
@@ -206,7 +192,7 @@
 
 % Generates the index
 \usepackage{makeidx}
-\makeindex
+%\makeindex
 
 %%%% Kevin Godny's code for title page and contents from https://groups.google.com/forum/#!topic/tufte-latex/ujdzrktC1BQ
 \makeatletter
@@ -305,7 +291,7 @@
     }%
     \makeatother
 
-    \setcounter{chapter}{-1}
+    \setcounter{chapter}{0}
     \let\oldchapter\chapter
     \renewcommand{\chapter}[1]{%
       \oldchapter{#1}%
@@ -396,18 +382,23 @@
   \thispagestyle{empty}
   \setlength{\parindent}{0pt}
   \setlength{\parskip}{\baselineskip}
+  {\justify
   \noindent\fontsize{16}{16}\selectfont\scshape
-  \par\nohyphenation Hanno collaborato alla stesura di questo testo:
+  \par\nohyphenation\noindent Hanno collaborato alla stesura di questo testo:
   \itshape\contributori
 
   (Ordine per terza lettera del cognome)
+  }
 \end{doublespace}
 
 ~\vfill
 \thispagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{\baselineskip}
-Copyright \copyright\ \the\year\ \contributori
+{
+  \justify
+  \par\nohyphenation Copyright \copyright\ \the\year\ \contributori
+}
 
 %\par\smallcaps{Pubblicato da \thanklesspublisher}
 
@@ -511,6 +502,10 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
 \include{lezioni/lezione-170123}
 \include{lezioni/lezione-170131}
 \include{lezioni/lezione-170201}
+
+\appendix
+\include{lezioni/appendice-geomalg}
 \include{lezioni/appendice-domande}
+\include{lezioni/appendice-esercizi-svolti}
 \end{document}
 
