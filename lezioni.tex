@@ -1,10 +1,10 @@
 % This is a modified version of the tufte-latex book example in which the title page and the contents page resemble Tufte's
 % VDQI book, using Kevin Godby's code from this thread at https://groups.google.com/forum/#!topic/tufte-latex/ujdzrktC1BQ.
 % Taken from https://www.overleaf.com/5902299yxkgzs#/19519356/
-\documentclass[a4paper,oneside]{tufte-book}
+\documentclass[a4paper,oneside,notoc]{tufte-book}
 \usepackage{nameref}
-\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
 \usepackage{ragged2e}
 \usepackage{hyperref}
@@ -17,6 +17,7 @@
 \usepackage{etoolbox}
 \usepackage{afterpage}
 \usepackage{faktor}
+\usepackage{bold-extra}
 
 \input{diagrams.sty}
 
@@ -34,18 +35,6 @@
   marginparsep=0mm, % gutter between main text block and margin notes
   marginparwidth=0mm % width of margin notes
 }
-
-% Cambiamo l'impostazione di tufte-common e non mettiamo spazio sopra i
-% titoli di inizio capitolo
-\titlespacing*{\chapter}{0pt}{0pt}{0pt}
-
-\titleformat{\chapter}%
-[hang]%shape
-{\scshape\huge\raggedright}%
-{\thesection}%
-{0.5em}%
-{}%
-[\vskip 1em]%
 
 % Cambiamo anche l'impostazione di come vengono visualizzati i titoli di
 % sezione, li vogliamo in maiuscoletto
@@ -67,7 +56,6 @@
 
 \include{custom-commands}
 
-
 % Manteniamo le note a piè di pagina nella stessa pagina
 \interfootnotelinepenalty=10000
 \makeatletter
@@ -79,13 +67,9 @@
 % Book metadata
 \title{Funzioni Ellittiche e Modulari}
 \date{Note di un corso del Prof. Umberto Zannier}
-\author[]{Classe del Terzo Anno SNS}
+\author[]{Classe del Terzo Anno SNS - AA 2016/2017}
 \publisher{Versione del \dateitalian\today}
 
-% Just some sample text
-%\usepackage{lipsum}
-
-% For nicely typeset tabular material
 \usepackage{booktabs}
 
 % For graphics / images
@@ -112,14 +96,6 @@
 
 % Prints a trailing space in a smart way.
 \usepackage{xspace}
-
-% Prints the month name (e.g., January) and the year (e.g., 2008)
-% \newcommand{\monthyear}{%
-%   \ifcase\month\or January\or February\or March\or April\or May\or June\or
-%   July\or August\or September\or October\or November\or
-%   December\fi\space\number\year
-% }
-
 
 % Prints an epigraph and speaker in sans serif, all-caps type.
 \newcommand{\openepigraph}[2]{%
@@ -190,10 +166,6 @@
 \newcommand{\docfilehook}[2]{\texttt{#1}\index{file hooks!#2}\index{#1@\texttt{#1}}}
 \newcommand{\doccounter}[1]{\texttt{#1}\index{#1 counter@\texttt{#1} counter}}
 
-% Generates the index
-\usepackage{makeidx}
-%\makeindex
-
 %%%% Kevin Godny's code for title page and contents from https://groups.google.com/forum/#!topic/tufte-latex/ujdzrktC1BQ
 \makeatletter
 \renewcommand{\maketitlepage}{%
@@ -250,21 +222,59 @@
 }
 \makeatother
 
+\setcounter{tocdepth}{1}
+
+\usepackage{tocloft}
+
+\makeatletter
+\@addtoreset{section}{part}
+
+\def\part#1{%
+  \clearpage\hbox{}\vskip -32pt%
+  \refstepcounter{part}%
+  \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
+  \markboth{}{}%
+  \@tempswafalse
+}
+\renewcommand\chapter{%
+  \if@tempswa\clearpage\else\@tempswatrue\fi
+  \global\@topnum\z@%
+  \@afterindentfalse%
+  \secdef\@chapter\@schapter%
+}
+\def\@makechapterhead#1{%
+  {\parindent \z@ \raggedright \normalfont
+    \interlinepenalty\@M
+    \scshape\huge\raggedright #1\par\nobreak
+    \vskip 20\p@
+  }
+}
+\makeatother
+  
 \titlecontents{part}%
-    [0pt]% distance from left margin
-    {\addvspace{0.25\baselineskip}}% above (global formatting of entry)
-    {\allcaps{Part~\thecontentslabel}\allcaps}% before w/ label (label = ``Part I'')
-    {\allcaps{Part~\thecontentslabel}\allcaps}% before w/o label
-    {}% filler and page (leaders and page num)
-    [\vspace*{0.5\baselineskip}]% after
+    [0em] % distance from left margin
+    {\vskip 2em\begin{fullwidth}\huge\scshape} % above (global formatting of entry)
+    {\hspace*{0em}\contentslabel{2em}} % before w/label (label = ``2'')
+    {\hspace*{0em}} % before w/o label
+    {} % {\rmfamily\upshape\hfill\thecontentspage} % filler + page (leaders and page num)
+    [\end{fullwidth}\vskip -0.75em] % after
 
 \titlecontents{chapter}%
-    [4em]% distance from left margin
-    {}% above (global formatting of entry)
-    {\contentslabel{2em}\textit}% before w/ label (label = ``Chapter 1'')
-    {\hspace{0em}\textit}% before w/o label
-    {\qquad\thecontentspage}% filler and page (leaders and page num)
-    [\vspace*{0.5\baselineskip}]% after
+    [0em] % distance from left margin
+    {\vskip 0.75em\begin{fullwidth}\LARGE\scshape} % above (global formatting of entry)
+    {\hspace*{0em}\contentslabel{2em}} % before w/label (label = ``2'')
+    {\hspace*{0em}} % before w/o label
+    {\rmfamily\upshape{\normalsize\dotfill}\thecontentspage} % filler + page (leaders and page num)
+    [\end{fullwidth}] % after
+
+\titlecontents{section}%
+    [0em] % distance from left margin
+    {\begin{fullwidth}\large\itshape} % above (global formatting of entry)
+    {\hspace*{0em}\contentslabel{2em}} % before w/label (label = ``2'')
+    {\hspace*{0em}\hskip 1.5em} % before w/o label
+    {\rmfamily\upshape{\small\dotfill}\thecontentspage} % filler + page (leaders and page num)
+    [\end{fullwidth}] % after
+  
 %%%% End additional code by Kevin Godby
 
     \usepackage{amsthm}
@@ -291,16 +301,16 @@
     }%
     \makeatother
 
-    \setcounter{chapter}{0}
-    \let\oldchapter\chapter
-    \renewcommand{\chapter}[1]{%
-      \oldchapter{#1}%
-      \stepcounter{chapter}%
+    % \setcounter{chapter}{0}
+    % \let\oldchapter\chapter
+    % \renewcommand{\chapter}[1]{%
+    %   \oldchapter{#1}%
+    %   \stepcounter{chapter}%
       \setcounter{gencounter}{0}%
       \setcounter{defcounter}{0}%
       \setcounter{escounter}{0}%
       \setcounter{equation}{0}%
-    }
+    % }
 
     \renewcommand{\thegencounter}{\arabic{chapter}.\arabic{gencounter}}
     \renewcommand{\thedefcounter}{\arabic{chapter}.\arabic{defcounter}}
@@ -416,8 +426,20 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
 %\par\textit{First printing, \monthyear}
 \end{fullwidth}
 
-% r.5 contents
-\tableofcontents
+{
+  \newpage
+  \pagenumbering{gobble}
+  \makeatletter
+  \patchcmd{\@makeschapterhead}
+  {\raggedright}
+  {\centering}
+  {}
+  {}
+  \renewcommand{\contentsname}{\vskip -4.0em{~\hfill\normalfont\Huge\textsc{Indice dei Contenuti}\hfill~}\vskip -2.0em}
+  % r.5 contents
+  \tableofcontents
+  \makeatother
+}
 
 %\listoffigures
 %\listoftables
@@ -481,31 +503,36 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
 
 \setlength{\parskip}{0cm}
 \setlength{\parindent}{0cm}
+\pagenumbering{arabic}
 
-\include{lezioni/lezione-160919}
-\include{lezioni/lezione-160921}
-\include{lezioni/lezione-160926}
-\include{lezioni/lezione-160928}
-\include{lezioni/lezione-161003}
-\include{lezioni/lezione-161005}
-\include{lezioni/lezione-161024}
-\include{lezioni/lezione-161026}
-\include{lezioni/lezione-161102}
-\include{lezioni/lezione-161107}
-\include{lezioni/lezione-161109}
-\include{lezioni/lezione-161128}
-\include{lezioni/lezione-161130}
-\include{lezioni/lezione-161205}
-\include{lezioni/lezione-161207}
-\include{lezioni/lezione-161212}
-\include{lezioni/lezione-161214}
-\include{lezioni/lezione-170123}
-\include{lezioni/lezione-170131}
-\include{lezioni/lezione-170201}
+\part{Introduzione}
+\input{lezioni/lezione-160919}
+\input{lezioni/lezione-160921}
+
+\part{Contenuto del Corso}
+\input{lezioni/lezione-160926}
+\input{lezioni/lezione-160928}
+\input{lezioni/lezione-161003}
+\input{lezioni/lezione-161005}
+\input{lezioni/lezione-161024}
+\input{lezioni/lezione-161026}
+\input{lezioni/lezione-161102}
+\input{lezioni/lezione-161107}
+\input{lezioni/lezione-161109}
+\input{lezioni/lezione-161128}
+\input{lezioni/lezione-161130}
+\input{lezioni/lezione-161205}
+\input{lezioni/lezione-161207}
+\input{lezioni/lezione-161212}
+\input{lezioni/lezione-161214}
+\input{lezioni/lezione-170123}
+\input{lezioni/lezione-170131}
+\input{lezioni/lezione-170201}
 
 \appendix
-\include{lezioni/appendice-geomalg}
-\include{lezioni/appendice-domande}
-\include{lezioni/appendice-esercizi-svolti}
+\part{Extra}
+\input{lezioni/appendice-geomalg}
+\input{lezioni/appendice-domande}
+\input{lezioni/appendice-esercizi-svolti}
 \end{document}
 
