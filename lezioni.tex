@@ -18,15 +18,15 @@
 \usepackage{afterpage}
 \usepackage{faktor}
 \usepackage{bold-extra}
+\usepackage{usebib}
+\bibinput{bibliografia}
 
 \input{diagrams.sty}
 
 \usepackage{enumitem}
 \setlist{nolistsep}
-\setitemize[0]{leftmargin=20pt, itemindent=0pt, labelsep=10pt,
-  listparindent=0pt}
-\setenumerate[0]{leftmargin=40pt, itemindent=0pt, labelsep=10pt,
-  listparindent=0pt}
+\setitemize[0]{leftmargin=20pt, itemindent=0pt, labelsep=10pt, listparindent=0pt}
+\setenumerate[0]{leftmargin=40pt, itemindent=0pt, labelsep=10pt, listparindent=0pt}
 
 \geometry{
   a4paper,
@@ -573,5 +573,19 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
 \input{lezioni/appendice-geomalg}
 \input{lezioni/appendice-domande}
 \input{lezioni/appendice-esercizi-svolti}
+
+\newgeometry{
+  left=12mm, % left margin
+  textwidth=190mm, % main text block
+  marginparsep=0mm, % gutter between main text block and margin notes
+  marginparwidth=0mm, % width of margin notes
+  headsep=8mm,
+  footskip=20pt,
+  top=2.5cm,
+  bottom=1.5cm,
+  showframe
+}
+\bibliographystyle{plainnat}
+\bibliography{bibliografia}
 \end{document}
 
