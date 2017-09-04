@@ -233,6 +233,7 @@
   \clearpage\hbox{}\vskip -32pt%
   \refstepcounter{part}%
   \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
+  \def\partstring{#1}%
   \markboth{}{}%
   \@tempswafalse
 }
@@ -248,6 +249,7 @@
     \scshape\huge\raggedright #1\par\nobreak
     \vskip 20\p@
   }
+  \def\chapterstring{#1}
 }
 \makeatother
   
@@ -274,15 +276,25 @@
     {\hspace*{0em}\hskip 1.5em} % before w/o label
     {\rmfamily\upshape{\small\dotfill}\thecontentspage} % filler + page (leaders and page num)
     [\end{fullwidth}] % after
+
   
-%%%% End additional code by Kevin Godby
-
-    \usepackage{amsthm}
+\fancypagestyle{cusu}{
+  % The 'fancy' page style is the default style for all pages.
+  \fancyhf{} % clear header and footer fields
+  \ifthenelse{\boolean{@tufte@twoside}}
+  {\fancyhead[LE]{\thepage\quad\smallcaps{\newlinetospace{\plainauthor}}}%
+    \fancyhead[RO]{\smallcaps{\newlinetospace{\plaintitle}}\quad\thepage}}
+  {
+    \fancyhead[RE,RO]{\smallcaps{\chapterstring}\quad\thepage}
+  }
+}
+  
+\usepackage{amsthm}
     
-    \newcounter{gencounter}
-    \newcounter{defcounter}
-    \newcounter{escounter}
-
+  \newcounter{gencounter}
+  \newcounter{defcounter}
+  \newcounter{escounter}
+  
     \linespread{1.2}
 
     \newtheoremstyle{importante}% <name>
@@ -504,6 +516,7 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
 \setlength{\parskip}{0cm}
 \setlength{\parindent}{0cm}
 \pagenumbering{arabic}
+\pagestyle{cusu}
 
 \part{Introduzione}
 \input{lezioni/lezione-160919}
