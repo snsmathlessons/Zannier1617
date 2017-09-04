@@ -356,6 +356,7 @@
     \usepackage[absolute]{textpos}
     
 \begin{document}
+\pagenumbering{gobble}
 \makefrontcover
 
 % Front matter
@@ -456,23 +457,48 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
 %\listoffigures
 %\listoftables
 
-% r.7 dedication
-%\cleardoublepage
-%~\vfill
-%\begin{doublespace}
-%\noindent\fontsize{18}{22}\selectfont\itshape
-%\nohyphenation
-%Scritto con la collaborazione di tutta la classe del
-%Terzo Anno di Matematica della SNS dell' anno 2016-2017
-%
-%Qui ci andranno i nomi di tutti quanti.
-%\end{doublespace}
-%\vfill
-%\vfill
-
 % r.9 introduction
 % \cleardoublepage
 %\include{lezioni/lezione-introduzione}
+
+% r.7 dedication
+\clearpage
+\thispagestyle{empty}
+\vfill
+\begin{center}
+  \begin{minipage}{0.65\textwidth}
+    \begin{center}
+      \includegraphics[width=6.0cm]{uncle_sam.jpg}
+    \end{center}
+    \vskip 2.0em
+    \begin{center}
+      {\noindent\LARGE\scshape I Want You! - Messaggio ai Posteri}
+    \end{center}
+    
+    {\normalsize\selectfont\justify
+      \setlength{\parindent}{0cm}
+      \setlength{\parskip}{0.5em}
+      Siamo tutti d'accordo che avere gli appunti delle lezioni scritti in \LaTeX\ sia di notevole aiuto quando si deve studiare un corso, ma sappiamo anche che gli appunti non si scrivono da soli.
+
+      Pertanto vi pregherei di non limitarvi a leggere passivamente questo pdf, bensì di impegnarvi attivamente per renderlo uno strumento migliore per lo studio del corso dal quale è tratto, per i vostri compagni d'anno e per le annate future.
+
+      Tra le cose da fare per rendere migliore questo lavoro, potreste:
+      \begin{itemize}
+      \item Correggere gli errori e le imprecisioni che vi trovate.
+      \item Sistemare la presentazione degli argomenti nei capitoli, togliendo la divisione in lezioni - che è stata scelta solo per una ripartizione uniforme del lavoro - ed organizzando gli argomenti in un ordine logico, eliminando anche le parti che vengono ripetute.
+      \item Aggiungere gli eventuali argomenti che il Prof.\@ Zannier potrebbe trattare quest'anno e che non compaiono ancora nel libro.
+      \item Aggiungere la soluzione degli esercizi che vengono proposti durante il corso, visto che alcuni vengono chiesti all'orale.
+      \end{itemize}
+      
+      Ricordatevi inoltre che \LaTeX\ vi servirà anche per scrivere la tesi.
+      Questa può quindi essere un'ottima occasione per impararlo senza necessariamente avere delle scadenze.
+    }
+
+    \vskip 1.4em
+    {~\hfill\normalsize\itshape Dario Balboni}
+  \end{minipage}
+\end{center}
+\vfill
 
 % Start the main matter (normal chapters)
 \mainmatter
