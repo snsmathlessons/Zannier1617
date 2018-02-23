@@ -79,7 +79,8 @@
 
 % For tikz images
 \usepackage{pgf,tikz}
-\usetikzlibrary{arrows}
+\usepackage{pgfplots}\pgfplotsset{compat=1.13}
+\usetikzlibrary{arrows,positioning,calc,patterns}
 
 % The fancyvrb package lets us customize the formatting of verbatim
 % environments.  We use a slightly smaller font.
@@ -170,15 +171,15 @@
 \makeatletter
 \renewcommand{\maketitlepage}{%
   \setlength{\parindent}{0pt}
-  
+
   \fontsize{24}{24}\selectfont\textit{\@author}
-  
+
   \vspace{1.75in}\fontsize{36}{54}\selectfont\@title
-  
+
   \vspace{0.5in}\fontsize{14}{14}\selectfont\textsf{\smallcaps{\@date}}
-  
+
   \vfill\fontsize{14}{14}\selectfont\textit{\@publisher}
-  
+
   \thispagestyle{empty}
 }
 \newcommand{\makefrontcover}{%
@@ -252,7 +253,7 @@
   \def\chapterstring{#1}
 }
 \makeatother
-  
+
 \titlecontents{part}%
     [0em] % distance from left margin
     {\vskip 2em\begin{fullwidth}\huge\scshape} % above (global formatting of entry)
@@ -277,7 +278,7 @@
     {\rmfamily\upshape{\small\dotfill}\thecontentspage} % filler + page (leaders and page num)
     [\end{fullwidth}] % after
 
-  
+
 \fancypagestyle{cusu}{
   % The 'fancy' page style is the default style for all pages.
   \fancyhf{} % clear header and footer fields
@@ -288,13 +289,13 @@
     \fancyhead[RE,RO]{\smallcaps{\chapterstring}\quad\thepage}
   }
 }
-  
+
 \usepackage{amsthm}
-    
+
   \newcounter{gencounter}
   \newcounter{defcounter}
   \newcounter{escounter}
-  
+
     \linespread{1.2}
 
     \newtheoremstyle{importante}% <name>
@@ -306,7 +307,7 @@
     {:}% <Punctation after theorem head>
     {1em}% <Space after theorem head>
     {}% <Theorem head spec>
-    
+
     \makeatletter
     \def\th@importante{%
       \thm@notefont{}%
@@ -328,7 +329,7 @@
     \renewcommand{\thedefcounter}{\arabic{chapter}.\arabic{defcounter}}
     \renewcommand{\theescounter}{\arabic{chapter}.\arabic{escounter}}
     \renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
-    
+
     \theoremstyle{importante}
     \newtheorem{teorema}[gencounter]{Teorema}
     \newtheorem{lemma}[gencounter]{Lemma}
@@ -337,7 +338,8 @@
     \newtheorem{definizione}[defcounter]{Definizione}
 
     \newtheorem{esercizio}[escounter]{Esercizio}
-    
+    \newtheorem{esempio}[escounter]{Esempio}
+
     \newtheorem{corollario}[gencounter]{Corollario}
     \newtheorem{osservazione}[gencounter]{Osservazione}
     \newtheorem{divagazione}[gencounter]{Divagazione}
@@ -354,7 +356,7 @@
 
     \usepackage{transparent}
     \usepackage[absolute]{textpos}
-    
+
 \begin{document}
 \pagenumbering{gobble}
 \makefrontcover
@@ -369,24 +371,24 @@
 % \newpage\thispagestyle{empty}
 % \openepigraph{%
 % The public is more familiar with bad design than good design.
-% It is, in effect, conditioned to prefer bad design, 
-% because that is what it lives with. 
+% It is, in effect, conditioned to prefer bad design,
+% because that is what it lives with.
 % The new becomes threatening, the old reassuring.
 % }{Paul Rand%, {\itshape Design, Form, and Chaos}
 % }
 % \vfill
 % \openepigraph{%
-% A designer knows that he has achieved perfection 
-% not when there is nothing left to add, 
+% A designer knows that he has achieved perfection
+% not when there is nothing left to add,
 % but when there is nothing left to take away.
 % }{Antoine de Saint-Exup\'{e}ry}
 % \vfill
 % \openepigraph{%
-% \ldots the designer of a new system must not only be the implementor and the first 
-% large-scale user; the designer should also write the first user manual\ldots 
-% If I had not participated fully in all these activities, 
-% literally hundreds of improvements would never have been made, 
-% because I would never have thought of them or perceived 
+% \ldots the designer of a new system must not only be the implementor and the first
+% large-scale user; the designer should also write the first user manual\ldots
+% If I had not participated fully in all these activities,
+% literally hundreds of improvements would never have been made,
+% because I would never have thought of them or perceived
 % why they were important.
 % }{Donald E. Knuth}
 
@@ -474,7 +476,7 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
     \begin{center}
       {\noindent\LARGE\scshape I Want You! - Messaggio ai Posteri}
     \end{center}
-    
+
     {\normalsize\selectfont\justify
       \setlength{\parindent}{0cm}
       \setlength{\parskip}{0.5em}
@@ -489,7 +491,7 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
       \item Aggiungere gli eventuali argomenti che il Prof.\@ Zannier potrebbe trattare quest'anno e che non compaiono ancora nel libro.
       \item Aggiungere la soluzione degli esercizi che vengono proposti durante il corso, visto che alcuni vengono chiesti all'orale.
       \end{itemize}
-      
+
       Ricordatevi inoltre che \LaTeX\ vi servirà anche per scrivere la tesi.
       Questa può quindi essere un'ottima occasione per impararlo senza necessariamente avere delle scadenze.
     }
@@ -545,28 +547,18 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
 \pagestyle{cusu}
 
 \part{Introduzione}
-\input{lezioni/lezione-160919}
-\input{lezioni/lezione-160921}
+\input{parti/intro.tex}
 
 \part{Contenuto del Corso}
-\input{lezioni/lezione-160926}
-\input{lezioni/lezione-160928}
-\input{lezioni/lezione-161003}
-\input{lezioni/lezione-161005}
-\input{lezioni/lezione-161024}
-\input{lezioni/lezione-161026}
-\input{lezioni/lezione-161102}
-\input{lezioni/lezione-161107}
-\input{lezioni/lezione-161109}
-\input{lezioni/lezione-161128}
-\input{lezioni/lezione-161130}
-\input{lezioni/lezione-161205}
-\input{lezioni/lezione-161207}
-\input{lezioni/lezione-161212}
-\input{lezioni/lezione-161214}
-\input{lezioni/lezione-170123}
-\input{lezioni/lezione-170131}
-\input{lezioni/lezione-170201}
+\input{parti/sdr-def.tex}
+\input{parti/sdr-aut.tex}
+\input{parti/sdr-tori.tex}
+\input{parti/fell-weierstrass.tex}
+\input{parti/fell-curve.tex}
+\input{parti/fell-gruppo.tex}
+\input{parti/fell-raz.tex}
+\input{parti/fmod.tex}
+
 
 \appendix
 \part{Extra}
@@ -588,4 +580,3 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
 \bibliographystyle{plainnat}
 \bibliography{bibliografia}
 \end{document}
-

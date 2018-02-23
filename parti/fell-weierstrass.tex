@@ -85,7 +85,7 @@ Quindi $P$ è meromorfa su tutto $\bbC$.
 
 Fattorizzando $P$, otteniamo una funzione meromorfa $\wp:T\rar\bbC$, chiamata \textbf{funzione di Weierstrass}. Attenzione: tale definizione dipende dal reticolo $L$ scelto per rappresentare $T$! Però non cambia in modo sostanziale: infatti la $\wp$ dovrebbe trasformare, per un cambio di reticolo $L \mapsto \alpha L$:
 \[
- \wp_L(z) = \alpha^2 \wp_{\alpha L}(\alpha z) 
+ \wp_L(z) = \alpha^2 \wp_{\alpha L}(\alpha z)
 \]
 
 In particolare, non vengono modificati né gli zeri né i poli (che saranno le cose che ci interesseranno maggiormente).
@@ -166,16 +166,104 @@ $(\wp')^2=\frac{A(\wp)}{B(\wp)}$ e ci chiediamo chi siano $A$ e $B$.
 
 In conclusione otteniamo che $(\wp')^2=A(\wp)$, con $A$ di grado 3.
 
+\thislesson{09 Novembre 2016}{Differenziale dell'ellittica di Weierstrass}
 
+Abbiamo dimostrato che sussite la seguente relazione differenziale tra la funzione di Weierstrass e la sua derivata:
 
+$$\wp_L'(z)^2 = A_L(\wp_L(z)) $$
 
+Dove $L$ è un reticolo di $\bbC$,  $A_L$ è un polinomio cubico. Questa lezione sarà dedicata a capire le caratteristiche di $A_L$; in particolare
+\begin{itemize}
+\item Proveremo che $A_L$ non ha radici multiple;
+\item Determineremo i coefficienti di $A_L$ in termini del reticolo $L$.
+\end{itemize}
 
+Chiameremo $E_L$ il luogo di zeri dell'equazione $y^2=A(x)$ in $\bbC^2$, $\tilde{E}_L$ il suo completamento proiettivo.
+\begin{proposizione}
+Il polinomio $A_L$ non ha radici multiple.
+\end{proposizione}
 
+\begin{proof}[Dimostrazione 1]
+Evitiamo di esplicitare la dipendenza dal reticolo in $\wp, E,A \dots$ per non appesantire la notazione. Supponiamo per assurdo che $A(t) = (t-c)^2(at+b)$. Allora, sostituendo $\wp, \wp'$ nell'equazione di $E$ si ottiene
+$$\wp'(z)^2 = (\wp(z) - c)^2(a\wp(z)+b) $$
+$$ \left ( \frac{\wp'(z)}{\wp(z)-c} \right )^2 = a\wp(z)+b $$
 
+Contiamo il numero di poli con molteplicità a destra e a sinistra. A destra ho un polo doppio in $0$. A sinistra ho un polo doppio ogni volta che $\wp - c$ si annulla: infatti se $\ord_{z}(\wp -c) = m > 0$, vale $\ord_{z}(\wp') = m-1$, e perciò $\ord_{z}(LHS) = 2(m-1-m) = -2$. Ma $\wp-c$ ha un polo doppio in zero, dunque ha due zeri (con molteplicità). In definitiva, LHS ha almeno 4 poli mentre RHS ne ha solo 2, assurdo.
+\end{proof}
 
+\begin{proof}[Dimostrazione 2]
+Riprendiamo l'equazione
+$$\wp'(z)^2 = (\wp(z) - c)^2(a\wp(z)+b) $$
+E sia $z_0$ uno zero di $\wp-c$. Contiamo gli ordini a destra e a sinistra, indicando con $m:=\ord_{z_0}(\wp-c) > 0$.
+A sinistra ho $\ord_{z_0}( \wp'^2) = 2\ord_{z_0}( \wp') = 2(m-1)$. A destra ho $\ord_{z_0}(RHS) = 2m + \ord_{z_0}(a\wp+b) >= 2m$, perchè $a \wp(z_0)+b = ac+b \neq \infty$. Ma $2m> 2(m-1)$, assurdo.
+\end{proof}
 
+\begin{proof}[Dimostrazione 3]
+Dimostriamo che se $L=\omega_1\bbZ + \omega_2 \bbZ$, gli zeri di $A$ sono $ \wp(\omega_1/2), \wp(\omega_2/2), \wp((\omega_1+\omega_2)/2)$. Questi sono distinti:
+\begin{itemize}
+\item Dato $z_0 \in \bbC$ diverso da 0, la funzione $\wp(z) - \wp(z_0)$ ha un polo doppio in 0. Visto che il numero di zeri e poli è uguale, avrà due zeri. Per parità di $\wp$, essi sono $\pm z_0$.
+\item I complessi $\omega_1/2, \omega_2/2, (\omega_1+\omega_2)/2$ sono a due a due non opposti.
+\end{itemize}
+Dunque ci basta dimostrare che questi sono effettivamente zeri di $A$ (che ne avrà tre, essendo di grado 3). La funzione $\wp'$ è dispari e periodica di periodo $L$, perciò per ogni $x$ tale che $2x \in L$ si ha
+$\wp'(x) = \wp'(x-2x) = \wp'(-x) = -\wp'(x)$
+da cui $\wp'(x) = 0$. I numeri $x=\omega_1/2, \omega_2/2, (\omega_1+\omega_2)/2$ sono effettivamente tali che $2x \in L$, perciò zeri di $\wp'$. Per tali $x$ ottengo
+$$ 0 = \wp'(x)^2 = A(\wp(x))$$
+che $\wp(x)$ è uno zero di $A$, as desired.
+\end{proof}
 
+\begin{proposizione}
+Il polinomio $A_L(x)$ è della forma $4x^3-g_2x-g_3$, dove
+\begin{itemize}
+\item $g_2=60s_4, g_3=140s_6$
+\item $\displaystyle s_n = \sum_{0 \neq \omega \in L} \frac{1}{\omega^n} $
+\end{itemize}
 
+\end{proposizione}
 
+\begin{proof}
+Questo conto è lungo. Bisogna avere pazienza, alle volte anche mesi. Ma lo portiamo a casa: è una promessa. \newline
+Sia $L^*$ il reticolo senza lo zero. Richiamiamo l'espressione in serie per la $\wp, \wp'$:
+\begin{eqnarray*}
+\wp(z) & = & \frac{1}{z^2} + \sum_{\omega \in L^*} \frac{1}{(\omega-z)^2} -\frac{1}{\omega^2} \\
+\wp'(z) & = & -\frac{2}{z^3} + \sum_{\omega \in L^*} \frac{2}{(\omega-z)^3} \\
+\end{eqnarray*}
+E le seguenti identità per $|x| < 1$ \notamargine{la seconda e la terza si ottengono derivando le precedenti}:
+\begin{eqnarray*}
+\frac{1}{1-x} & = & \sum_{k \ge 0} x^k \\
+\frac{1}{(1-x)^2} & = & \sum_{k \ge 0} (k+1)x^k \\
+\frac{2}{(1-x)^3} & = & \sum_{k \ge 0} (k+1)(k+2) x^k \\
+\end{eqnarray*}
+Si noti inoltre che $s_n=0$ per $n$ dispari, perchè se $\omega \in L^*$ allora $-\omega \in L^*$. Vogliamo sviluppare le $\wp, \wp'$ per $|z| < |\omega|, \ \forall \ \omega \in L^*$. Poi calcoleremo i coefficienti espliciti delle potenze negative di $z$ che compaiono nella serie, e troveremo i coefficienti di $A_L$ comparando le due espressioni $(\wp')^2 = A(\wp)$. Vale, per $|z| < |\omega| \ \forall \omega \in L^*$ \notamargine{Tutte gli scambi di sommatoria sono leciti perchè tutte le convergenze sono assolute}:
 
-
+\begin{eqnarray*}
+\wp(z) & = & \frac{1}{z^2} + \sum_{\omega \in L^*} \frac{1}{\omega^2} \frac{1}{(1-z/\omega)^2} - \frac{1}{\omega^2} = \\
+       & = & \frac{1}{z^2} + \sum_{\omega \in L^*} \frac{1}{\omega^2} \sum_{k \ge 1} (k+1) \left ( \frac{z}{\omega} \right ) ^k =  \text{attenzione al k=0 !}\\
+       & = & \frac{1}{z^2} + \sum_{k \ge 1} (k+1) z^k s_{k+2} = \\
+       & = & \frac{1}{z^2} + \sum_{\substack{k \text{ pari} \\ k \ge 2}} (k+1)s_{k+2} z^k \\
+\wp'(z)& = & -\frac{2}{z^3}+ \sum_{\omega \in L^*} \frac{1}{\omega^3} \frac{2}{(1-z/\omega)^3}= \\
+       & = & -\frac{2}{z^3}+ \sum_{\omega \in L^*} \frac{1}{\omega^3} \sum_{k \ge 0} (k+1)(k+2) \left ( \frac{z}{\omega} \right ) ^k =\\
+       & = & -\frac{2}{z^3} + \sum_{k \ge 0} (k+1)(k+2) z^k s_{k+3} =\\
+       & = & -\frac{2}{z^3} + \sum_{\substack{k \text{ dispari} \\ k \ge 1}} (k+1)(k+2) z^k s_{k+3}
+\end{eqnarray*}
+Notare che $\wp, \wp'$ si possono scrivere nella forma $\wp(z) = 1/z^2 + z^2 f(z), \ \ \wp'(z) = -2/z^3 + zg(z)$, per $f,g$ olomorfe. Calcoliamo ora le potenze di $\wp, \wp'$ a meno di un $O(z)$:
+\begin{eqnarray*}
+\wp'(z)^2 & = & \left ( \frac{-2}{z^3} + zg(z) \right )^2 = \\
+          & = & \frac{4}{z^6} -4\frac{g(z)}{z^2} + z^2g^2(z) = \text{ il termine in } z^2 \text{ è } O(z)\\
+          & = & \frac{4}{z^6} +\frac{-4 \cdot 6s_4 }{z^2} -4 \cdot 4 \cdot 5 s_6 + O(z) = \\
+          & = & \frac{4}{z^6} - \frac{24s_4 }{z^2} -80s_6 + O(z) = \\
+\wp(z)^2  & = & \left ( \frac{1}{z^2} + z^2f(z) \right )^2 = \\
+          & = & \frac{1}{z^4} +2f(z) + z^4f^2(z) = \text{ il termine in } z^4 \text{ è } O(z)\\
+          & = & \frac{1}{z^4} + 6s_4 + O(z) \\
+\wp(z)^3  & = & \left ( \frac{1}{z^2} + z^2f(z) \right )^3 = \\
+          & = & \frac{1}{z^6} +3\frac{1}{z^4}z^2f(z) + 3 \frac{1}{z^2} z^4 f^2(z) + z^6f(z)^3 = \\
+          & = & \frac{1}{z^6} + \frac{9s_4}{z^2} + 15s_6 + O(z) \\
+A(\wp(z)) = a\wp(z)^3+b\wp(z)^2 + c\wp(z)+d & = & \frac{a}{z^6} + \frac{b}{z^4} + \frac{9as_4+c}{z^2} + (15as_6+6bs_4+d) + O(z)
+\end{eqnarray*}
+Imponendo $A(\wp(z))=\wp'(z)^2$, si ottiene:
+\begin{itemize}
+\item Dal coefficiente di $1/z^6$, $a=4$;
+\item Dal coefficiente di $1/z^4$, $b=0$;
+\item Dal coefficiente di $1/z^2$, $c = -36s_4-24s_4 = -60s_4 = -g_2$;
+\item Dal coefficiente di $z^0$, $d=-80s_6-60s_6 = -140s_6 = -g_3$.
+\end{itemize}
+\end{proof}
