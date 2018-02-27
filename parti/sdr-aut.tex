@@ -1,27 +1,17 @@
-\thislesson{3 Ottobre 2016}{Automorfismi delle superfici di Riemann semplicemente connesse}
-
-\begin{definizione}[Superficie di Riemann (speriamo)]
-Si dice superficie di Riemann una varietà complessa connessa di dimensione $1$, cioè uno spazio topologico di Hausdorff (T2)
-connesso tale che ogni suo punto abbia un intorno $U_\alpha$ omeomorfo a un aperto $V_\alpha$ di $\mathbb{C}$
-tramite l'omeomorfismo $\varphi_\alpha$, e che per ogni $\alpha$ e $\beta$ valga che $\varphi_\beta \circ {\varphi_\alpha}^{-1}$
-sia una funzione olomorfa in $\varphi_\alpha \left( U_\alpha \cap U_\beta \right)$.
-\end{definizione}
-
-\begin{osservazione}
-La richiesta di essere T2 non si deduce dalle altre condizioni. Infatti se consideriamo il "disco con due origini",
-cioè il quoziente $S/\!\!\sim$ dove $S=D\times\{0\} \cup D\times\{1\}$ e $x\sim y \Longleftrightarrow x=y$ oppure $x=(u,i),\ y=(u,j)$ con $\{i,j\}=\{0,1\}$,
-si osserva che ogni punto ha un intorno omeomorfo a un aperto di $\mathbb{C}$ ma $(0,0)$ e $(0,1)$ non hanno intorni disgiunti.
-\end{osservazione}
-
-\begin{esercizio}
-$S/\!\!\sim$ è semplicemente connessa.
-\end{esercizio}
+\chapter{Automorfismi delle superfici di Riemann semplicemente connesse}
 
 Determiniamo ora i gruppi degli automorfismi delle superfici di Riemann semplicemente
-connesse: $\mathbb{P}^1(\mathbb{C})$, $\mathbb{C}$, $D$.
+connesse, che il teorema di Riemann dice essere $\mathbb{P}^1(\mathbb{C})$, $\mathbb{C}$, $D$.
 
 
 \section{Automorfismi di $\mathbb{P}^1(\mathbb{C})=\hat{\mathbb{C}}$}
+
+Identifico $\oc\bbC\isom\bbP_1(\bbC)$ con $\bbC\cup\{\infty\}$, attraverso la seguente mappa: $[z:1]\mapsto z, [1:0]\mapsto\infty$.
+
+Considero $\phi\in\GL_2(\bbC)=\matrice abcd, ad-bc \neq 0$. $\phi$ è un isomorfismo lineare, dunque manda rette in rette, e si ha $\phi(z_0,z_1)=(az_0+bz_1,cz_0+dz_1)$. Questo isomorfismo, poichè manda rette in rette, induce un isomorfismo $\ot \phi$ a livello di $\oc\bbC$ tale che $\ot\phi[z_0,z_1]=[az_0+bz_1,cz_0+dz_1]$.
+
+Sotto l'identificazione con $\bbC\cup\{\infty\}$, possiamo scrivere $\ot\phi(z)=\frac{az+b}{cz+d}$, dove si intende che $\ot\phi(\infty)=\frac{a}{c}$ e che $\frac{1}{0}=\infty$. Il gruppo degli isomorfismi di questa forma in $\oc \bbC$, con $ad\neq bc$, si chiama $\bbP\GL_2(\bbC)$, e si ha che $\bbP\GL_2(\bbC)\isom\quotient{\GL_2(\bbC)}{\{\lambda\Id\}}$.
+
 Vogliamo dimostrare che $Aut( \hat{\mathbb{C}} )= \mathbb{P}GL_2 (\mathbb{C} )=\left\{z\mapsto \displaystyle{\frac{az+b}{cz+d}} \ ,\ \  ad\neq bc\right\}$
 
 \begin{definizione}[Grado di una funzione razionale]
@@ -180,7 +170,7 @@ Ora quindi dovremo capire quali sottogruppi di $Aut (\hat{\mathbb{C}})$, $Aut(\m
 e non hanno punti fissi, per classificare le superfici di Riemann.
 
 
-\thislesson{5 Ottobre 2016}{Sottogruppi discreti}
+\chapter{Classificazione delle superfici di Riemann, parte II}
 
 La scorsa lezione abbiamo determinato i gruppi di automorfismi complessi delle tre superfici di Riemann:
 $$
@@ -239,6 +229,8 @@ $$
 Un sottogruppo finito di $\Aut{\bbC}$ è ciclico.
 \end{esercizio}
 \notamargine{Non può contenere traslazioni...}
+
+\section{Sottogruppi discreti}
 Supponiamo ora di avere una superficie di Riemann $X$ con rivestimento universale $\tilde X$.\\
 Cerchiamo i sottogruppi $G$ di $\Aut{\tilde{X}}$ tali che:
 \begin{itemize}
@@ -254,48 +246,9 @@ E' opportuno premettere dei lemmi generali, dopo aver osservato che in ognuno de
 \end{itemize}
 \end{lemma}
 
-Passiamo ora alla classificazione.
-
-{\it Primo caso: $X$ sferica i.e. $\tilde {X}=\hat{\bbC}$.} Questo caso è triviale, infatti se $g\in\Aut{\hat{\bbC}}=PGL_2(\bbC)$ la condizione $(ii)$ è soddisfatta solo da $g=\Id$:
-$$
-g(z)=\frac{az+b}{cz+d}=z\ \Leftrightarrow\ cz^2+(d-a)z-b=0
-$$
-basta fare i casi e ricordarsi di considerare anche $z=\infty$ per accorgersi che questa equazione ha sempre soluzioni in $\hat{\bbC}$.
-
-{\it Secondo caso: $X$ euclidea i.e. $\tilde{X}=\bbC$.} Questo caso è più interessante. Ricordiamo prima di tutto che gli automorfismi di $\bbC$ sono tutte e sole le affinità:
-$$
-z\mapsto az+b,\ \ a\in\bbC^*,\ b\in \bbC.
-$$
-Questa rappresentazione ci permette di mettere una metrica su $\Aut{\bbC}$ identificando i suoi elementi con coppie di numeri complessi, con la seconda coordinata non nulla:
-$$
-z\mapsto az+b\ \ \leftrightarrow\  (a,b).
-$$
-Osserviamo che se vogliamo che valga la proprietà (ii) dobbiamo richiedere $a=1$. Questo forza $G$ ad essere un sottogruppo di traslazioni.\\
-Vediamo ora che necessariamente l' identità di $G$ è isolata: ragionando per assurdo troveremmo infiniti elementi distinti $\{ g_k=(1,b_k) \}\in G$ tali che:
-$$
-g_k=(1,b_k)\rightarrow (1,0)=\Id\ \ \ \mbox{ se } k \rightarrow \infty,
-$$
-ma allora per ogni aperto non vuoto $U\subseteq \bbC$ si avrebbe definitivamente in $k$ che $g_k(U)\cap U\neq \emptyset$ per la definizione di limite.\\
-Per il Lemma 4 dunque si ha che $G$ è discreto.
-
-Consideriamo ora $V_G$ lo span su $\bbR$ di $G$ e separiamo i casi a secondo della sua dimensione reale. Se ha dimensione zero si tratta del gruppo banale, se ha dimensione 1 invece possiamo identificarlo, passando in coordinate, con un sottogruppo additivo discreto di $\bbR$. Con un principio variazionale vediamo che la struttura di tali gruppi è triviale. Consideriamo infatti $g_0$ il
-$$
-\inf\{g>0\ :\ g\in G\}
-$$
-di sicuro $g_0>0$ perchè l' identità è isolata. Vorremmo mostrare che $g_0\in G$, per farlo basta ragionare per assurdo e produrre una successione di elementi $\{g_n\}\subseteq G $ che tendono a $g_0$; allora si avrebbe che $g_m-g_n$ (che sta in $G$) si accumula su $0$, assurdo.\\
-Dividendo ora con resto un qualsiasi altro elemento di $g'\in G$ per $g_0$ otteniamo che:
-$$
-g'=k\cdot g+q,\ \ k\in \bbZ,\ \ 0\leq q <g
-$$
-ma allora per minimalità $q=0$ il che implica $G\subseteq \bbZ g_0$ e l' altra inclusione era ovvia.
-
-Rimane il caso in cui la dimensione reale di $V_G$ sia 2. In questo caso esistono $\omega_1,\omega_2$ numeri complessi linearmente indipendenti su $\bbR$ tali che:
-$$
-G=\bbZ\, \omega_1+\bbZ\, \omega_2.
-$$
-la dimostrazione è una immediata conseguenza del seguente teorema.
-
-\begin{teorema}Sia $G$ un sottogruppo discreto di $(\bbR^n,+)$. Allora esiste un naturale $d\leq n$ e $d$ vettori di $\bbR^n$, $g_1,\ldots,g_d$ linearmente indipendenti tali che:
+Inoltre possiamo caratterizzare i sottogruppi discreti in questo modo.
+\begin{teorema}\label{sgr_discreti}
+    Sia $G$ un sottogruppo discreto di $(\bbR^n,+)$. Allora esiste un naturale $d\leq n$ e $d$ vettori di $\bbR^n$, $g_1,\ldots,g_d$ linearmente indipendenti tali che:
 $$
 G=\bbZ\ g_1+\ldots+\bbZ\ g_d
 $$
@@ -344,10 +297,57 @@ $$
 e questo conclude la dimostrazione.
 \end{proof}
 
+Passiamo ora alla classificazione.
 
 
 
-Si prosegue con le notazioni della scorsa lezione.
+\section{Superfici euclidee}
+
+Consideriamo $X$ euclidea i.e. $\tilde{X}=\bbC$. Questo caso è più interessante. Ricordiamo prima di tutto che gli automorfismi di $\bbC$ sono tutte e sole le affinità:
+$$
+z\mapsto az+b,\ \ a\in\bbC^*,\ b\in \bbC.
+$$
+Questa rappresentazione ci permette di mettere una metrica su $\Aut{\bbC}$ identificando i suoi elementi con coppie di numeri complessi, con la seconda coordinata non nulla:
+$$
+z\mapsto az+b\ \ \leftrightarrow\  (a,b).
+$$
+Osserviamo che se vogliamo che valga la proprietà (ii) dobbiamo richiedere $a=1$. Questo forza $G$ ad essere un sottogruppo di traslazioni.\\
+Vediamo ora che necessariamente l' identità di $G$ è isolata: ragionando per assurdo troveremmo infiniti elementi distinti $\{ g_k=(1,b_k) \}\in G$ tali che:
+$$
+g_k=(1,b_k)\rightarrow (1,0)=\Id\ \ \ \mbox{ se } k \rightarrow \infty,
+$$
+ma allora per ogni aperto non vuoto $U\subseteq \bbC$ si avrebbe definitivamente in $k$ che $g_k(U)\cap U\neq \emptyset$ per la definizione di limite.\\
+Per il Lemma 4 dunque si ha che $G$ è discreto.
+
+Consideriamo ora $V_G$ lo span su $\bbR$ di $G$ e separiamo i casi a secondo della sua dimensione reale. Se ha dimensione zero si tratta del gruppo banale, se ha dimensione 1 invece possiamo identificarlo, passando in coordinate, con un sottogruppo additivo discreto di $\bbR$. Con un principio variazionale vediamo che la struttura di tali gruppi è triviale. Consideriamo infatti $g_0$ il
+$$
+\inf\{g>0\ :\ g\in G\}
+$$
+di sicuro $g_0>0$ perchè l' identità è isolata. Vorremmo mostrare che $g_0\in G$, per farlo basta ragionare per assurdo e produrre una successione di elementi $\{g_n\}\subseteq G $ che tendono a $g_0$; allora si avrebbe che $g_m-g_n$ (che sta in $G$) si accumula su $0$, assurdo.\\
+Dividendo ora con resto un qualsiasi altro elemento di $g'\in G$ per $g_0$ otteniamo che:
+$$
+g'=k\cdot g+q,\ \ k\in \bbZ,\ \ 0\leq q <g
+$$
+ma allora per minimalità $q=0$ il che implica $G\subseteq \bbZ g_0$ e l' altra inclusione era ovvia.
+
+Rimane il caso in cui la dimensione reale di $V_G$ sia 2. In questo caso esistono $\omega_1,\omega_2$ numeri complessi linearmente indipendenti su $\bbR$ tali che:
+$$
+G=\bbZ\, \omega_1+\bbZ\, \omega_2.
+$$
+la dimostrazione è una immediata conseguenza del teorema \ref{sgr_discreti}.
+
+
+Si è visto nella scorsa lezione che i sottogruppi $G\le\Aut(\tilde{X})=Aff(\bbC)$ del tipo che si cerca sono dei reticoli $L$ di rango che può essere solo $0$,$1$ o $2$. Distinguiamo quindi tre casi:
+\begin{itemize}
+\item $\Rk L=0$, l'unica superficie di Riemann è $\bbC$.
+\item $\Rk L=1$, l'unica superficie di Riemann è $\quotient{\bbC}{L}$, in cui siccome $L$ ha rango uno si ha $L=\omega \bbZ$, con $\omega\in\bbC$ non nullo. Quindi eseguendo un'omotetia di parametro $\omega$ (è un biolomorfismo) si ha che $X\cong \quotient{\bbC}{\bbZ}$.
+Osserviamo che in questo caso si ha che $\quotient{\bbC}{\bbZ}\cong \bbC^{*}=\mathbb{P}^1(\mathbb{C})\minus\{0,\infty\}$ tramite la mappa esponenziale, e che $\bbC^{*}=\mathbb{G}_m(\bbC)$, il gruppo algebrico moltiplicativo di $\bbC$. Quindi si possono trasferire le operazioni di gruppo di $\bbC^{*}$ su $\quotient{\bbC}{\bbZ}$ tramite la mappa esponenziale, cosa che si farà più avanti in modo analogo con le curve algebriche.
+\item $\Rk L=2$, in questo caso si hanno i Tori, $\quotient{\bbC}{L}$ con $L$ reticolo di rango $2$, che si studieranno più avanti in questa lezione.
+\end{itemize}
+
+\section{Superfici sferiche e iperboliche}
+
+
 Nelle scorsa lezioni si è visto che è possibile classificare le Superfici di Riemann come quozienti di:
 \begin{enumerate}
 \item $\mathbb{P}^1(\mathbb{C})=\hat{\bbC}$
@@ -358,15 +358,15 @@ per un gruppo $G\le\Aut(\tilde{X})$ di automorfismi che agisce in maniera propri
 
 Ne segue che per classificare le superfici di Riemann è sufficiente classificare i sottogruppi dei gruppi di automorfismi della superfici $1)$, $2)$ e $3)$.
 
+Se $X$ sferica i.e. $\tilde {X}=\hat{\bbC}$, la classificazione è banale, infatti se $g\in\Aut{\hat{\bbC}}=PGL_2(\bbC)$ la condizione $(ii)$ è soddisfatta solo da $g=\Id$:
+$$
+g(z)=\frac{az+b}{cz+d}=z\ \Leftrightarrow\ cz^2+(d-a)z-b=0
+$$
+basta fare i casi e ricordarsi di considerare anche $z=\infty$ per accorgersi che questa equazione ha sempre soluzioni in $\hat{\bbC}$.
+
+
 \newthought{Caso 1, Sferica.} Si è visto nella scorsa lezione che c'è una sola superficie di Riemann di questo tipo ed è $\hat{\bbC}$.
 
-\newthought{Caso 2, Euclidea.} Si è visto nella scorsa lezione che i sottogruppi $G\le\Aut(\tilde{X})=Aff(\bbC)$ del tipo che si cerca sono dei reticoli $L$ di rango che può essere solo $0$,$1$ o $2$. Distinguiamo quindi tre casi:
-\begin{itemize}
-\item $\Rk L=0$, l'unica superficie di Riemann è $\bbC$.
-\item $\Rk L=1$, l'unica superficie di Riemann è $\quotient{\bbC}{L}$, in cui siccome $L$ ha rango uno si ha $L=\omega \bbZ$, con $\omega\in\bbC$ non nullo. Quindi eseguendo un'omotetia di parametro $\omega$ (è un biolomorfismo) si ha che $X\cong \quotient{\bbC}{\bbZ}$.
-Osserviamo che in questo caso si ha che $\quotient{\bbC}{\bbZ}\cong \bbC^{*}=\mathbb{P}^1(\mathbb{C})\minus\{0,\infty\}$ tramite la mappa esponenziale, e che $\bbC^{*}=\mathbb{G}_m(\bbC)$, il gruppo algebrico moltiplicativo di $\bbC$. Quindi si possono trasferire le operazioni di gruppo di $\bbC^{*}$ su $\quotient{\bbC}{\bbZ}$ tramite la mappa esponenziale, cosa che si farà più avanti in modo analogo con le curve algebriche.
-\item $\Rk L=2$, in questo caso si hanno i Tori, $\quotient{\bbC}{L}$ con $L$ reticolo di rango $2$, che si studieranno più avanti in questa lezione.
-\end{itemize}
 \newthought{Caso 3, Iperbolica.} Ci sono molti problemi aperti...
 
 \notamargine{Se una superficie di Riemann non è né Sferica né Euclidea allora è Iperbolica.}

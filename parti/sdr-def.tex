@@ -1,14 +1,32 @@
-\thislesson{26 Settembre 2016}{Esempi di superfici di Riemann e inizio della classificazione}
+\chapter{Definizione e primi esempi}
 
 \section{Preliminari ed esempi}
-% TODO: definizione giusta di superficie di Riemann: forse è meglio sia direttamente nelle lezioni precedenti.
+In questa prima parte del corso ci occuperemo di superfici di Riemann e inizieremo una classificazione, che ci sarà utile soprattutto per i tori, ma anche per l'ultima parte sulle funzioni modulari.\\
+Cominciamo quindi con la
+\begin{definizione}[Superficie di Riemann]
+Si dice superficie di Riemann una varietà complessa connessa di dimensione $1$, cioè uno spazio topologico di Hausdorff (T2)
+connesso tale che ogni suo punto abbia un intorno $U_\alpha$ omeomorfo a un aperto $V_\alpha$ di $\mathbb{C}$
+tramite l'omeomorfismo $\varphi_\alpha$, e che per ogni $\alpha$ e $\beta$ valga che $\varphi_\beta \circ {\varphi_\alpha}^{-1}$
+sia una funzione olomorfa in $\varphi_\alpha \left( U_\alpha \cap U_\beta \right)$.
+\end{definizione}
+
+\begin{osservazione}
+La richiesta di essere T2 non si deduce dalle altre condizioni. Infatti se consideriamo il "disco con due origini",
+cioè il quoziente $S/\!\!\sim$ dove $S=D\times\{0\} \cup D\times\{1\}$ e $x\sim y \Longleftrightarrow x=y$ oppure $x=(u,i),\ y=(u,j)$ con $\{i,j\}=\{0,1\}$,
+si osserva che ogni punto ha un intorno omeomorfo a un aperto di $\mathbb{C}$ ma $(0,0)$ e $(0,1)$ non hanno intorni disgiunti.
+\end{osservazione}
+\begin{esercizio}
+$S/\!\!\sim$ è semplicemente connessa.
+\end{esercizio}
+
 In questa lezione discuteremo di alcuni esempi di superfici di Riemann, e cominceremo ad introdurre alcuni risultati che ci aiuteranno a classificare specifiche classi di superfici di Riemann a meno di isomorfismo.
 
 \textbf{Primi esempi di superfici di Riemann:}
 \begin{enumerate}
   \item $\bbC$ (o un qualsiasi aperto connesso di $\bbC$). In questo caso l'unica carta è tutto l'insieme, con la mappa di immersione (non compatta).
-  \item La sfera di Riemann $\bbP^1(\bbC)$. $\bbP^1(\bbC)=U_0\cup U_1$ dove $U_0=\{(x_0:x_1)\in \bbP^1(\bbC) | \ x_0\neq 0\}$ e $U_1=\{(x_0:x_1)\in \bbP^1(\bbC) | \ x_1\neq 0\}$, con le mappe $\varphi_0(x_0:x_1)=\frac{x_1}{x_0}$ e $\varphi_1(x_0:x_1)=\frac{x_0}{x_1}$ (compatta).
-  \item Curve algebriche non singolari in $\bbP^2(\bbC)$ ($\{(x:y:z)\in \bbP^2(\bbC) | \ f(x,y,z)=0\}$, dove $f\in \bbC[x,y,z]$ è un polinomio irriducibile (compatta). %TODO Dimstrazione.
+  \item La sfera di Riemann $\bbP^1(\bbC)$, anche detta $\hat\bbC$. $\bbP^1(\bbC)=U_0\cup U_1$ dove $U_0=\{(x_0:x_1)\in \bbP^1(\bbC) | \ x_0\neq 0\}$ e $U_1=\{(x_0:x_1)\in \bbP^1(\bbC) | \ x_1\neq 0\}$, con le mappe $\varphi_0(x_0:x_1)=\frac{x_1}{x_0}$ e $\varphi_1(x_0:x_1)=\frac{x_0}{x_1}$. La funzione di transizione è $z\mapsto 1/z$ che è olomorfa nell'intersezione, ovvero $\bbC^\ast$. Questa superficie di Riemann è compatta.
+  \item Curve algebriche non singolari in $\bbP^2(\bbC)$ ($\{(x:y:z)\in \bbP^2(\bbC) | \ f(x,y,z)=0\}$, dove $f\in \bbC[x,y,z]$ è un polinomio irriducibile (è compatta).\\
+  Infatti data la non singolarità, in ogni punto vale $\nabla f(p)\neq0$, quindi per il teorema della funzione implicita (versione complessa) posso esprimere una coordinata come funzione olomorfa delle altre e uso questa come carta.
 \end{enumerate}
 \notamargine{ACHTUNG! Manca la dimostrazione che le curve algebriche non singolari sono superfici di Riemann.}
 \begin{osservazione}
@@ -39,31 +57,22 @@ Come curiosità diciamo anche che:
 \begin{definizione}
 Siano $X$ e $Y$ due superfici di Riemann, $x_0\in X$, $y_0=f(x_0)$. $f:X\rightarrow Y$ si dice olomorfa in $x_0$ se esiste un intorno $A$ di $x_0$ tale che $A\subseteq U_\alpha$ e detto $V_\beta$ un aperto del ricoprimento di $Y$ che contiene $y_0$, vale che $\psi_\beta \circ f \circ \varphi_\alpha^{-1}: \varphi_\alpha(A)\rightarrow \bbC$ è una funzione olomorfa.
 \end{definizione}
+\begin{osservazione}
+    Quella sopra è una buona definizione, ovvero non dipende da $u_\alpha$ e $V_\beta$, grazie alla proprietà di compatibilità sulle intersezioni delle $\varphi_\alpha$ e $\psi_\beta$.
+\end{osservazione}
 
-\notamargine{Più precisamente si dovrebbe richiedere che per OGNI $U_\alpha$ e $V_\beta$ che contengono $x_0$ o $y_0$ valga quella proprietà, ma questo è equivalente alla definizione data per la proprietà di compatibilità sulle intersezioni delle $\varphi_\alpha$ e $\psi_\beta$.}
 
 \begin{definizione}
-Due superfici di Riemann $X$ e $Y$ si dicono isomorfe (o conformemente equivalenti) se esiste $f:X\rightarrow Y$ invertibile, olomorfa con inversa olomorfa.
+Due superfici di Riemann $X$ e $Y$ si dicono isomorfe (o conformemente equivalenti) se esiste $f:X\rightarrow Y$ invertibile, olomorfa con inversa olomorfa. Una tale $f$ viene definita biolomorfismo.
 \end{definizione}
-
-\notamargine{Una tale $f$ viene definita biolomorfismo.}
 
 \begin{osservazione}
 Sia $X$ una superficie di Riemann, $Y$ uno spazio topologico, $f:X\rightarrow Y$ un omeomorfismo. Allora posso trasportare su $Y$ la struttura complessa di $X$, ricoprendolo con aperti $V_\alpha=f(U_\alpha)$ e mappe $\psi_\alpha=\varphi_\alpha \circ f^{-1}_{|f(U_\alpha)}:f(U_\alpha)\rightarrow\bbC$
-\end{osservazione}
-
 \notamargine{Con questa struttura di varietà, chiaramente $Y$ è isomorfo ad $X$}
-
-\section{Classificazione delle superfici di Riemann}
-Cerchiamo di muoverci verso un risultato riguardo la classificazione delle superfici di Riemann. Lo schema con cui affronteremo il problema consiste nel considerare un rivestimento universale della superficie di Riemann e cercare esprimere la superficie di partenza come quoziente dello spazio rivestente per un gruppo di automorfismi. In questo modo sposteremo il problema sullo studio dei sottogruppi del gruppo di automorfismi di (speriamo poche) superfici fissate.
-\begin{osservazione}
-Sia $X$ una superficie di Riemann, se $\pi:Y\rightarrow X$ è un rivestimento, allora $Y$ è in modo naturale una superficie di Riemann.
 \end{osservazione}
-\begin{proof}[Idea della dimostrazione]
-È possibile fare un raffinamento degli $U_\alpha\subseteq X$ in modo da renderli "compatibili" con gli aperti banalizzanti del rivestimento (per esempio, posso considerare le intersezioni con essi). In questo modo, avendo gli $U_\alpha$ inclusi in un aperto banalizzante, è possibile "tirarli su" sullo spazio ricoprente, e definire le $\psi_\alpha=\phi_\alpha \circ \pi$. La verifica che sono rispettate le proprietà della definizione è banale.
-\end{proof}
-Enunciamo adesso il risultato chiave che ci permetterà di procedere con la classificazione:
-\begin{teorema}[di Riemann]
+
+Finiamo la sezione con un importante teorema di classificazione, grazie al quale riusciremo ad avere una parziale classificazione di tutte le superfici di Riemann usando la teoria dei rivestimenti.
+\begin{teorema}[di Riemann]\label{teo_riemann}
 Ogni superficie di Riemann semplicemente connessa è biolomorfa ad uno dei seguenti tre modelli:
 \begin{enumerate}
   \item La sfera di Riemann $\bbP^1(\bbC)=:\widehat{\bbC}$.
@@ -75,39 +84,64 @@ Ogni superficie di Riemann semplicemente connessa è biolomorfa ad uno dei segue
 La dimostrazione non verrà trattata in questo corso a causa dell'eccessiva difficoltà.
 Nella prossima lezione vedremo che queste tre superfici non sono biolomorfe (è una conseguenza del teorema di Liouville).
 \end{proof}
+
+
+
+\chapter{Classificazione delle superfici di Riemann, parte I}
+Cerchiamo di muoverci verso un risultato riguardo la classificazione delle superfici di Riemann. Lo schema con cui affronteremo il problema consiste nel considerare un rivestimento universale della superficie di Riemann e cercare di esprimere la superficie di partenza come quoziente dello spazio rivestente per un gruppo di automorfismi. In questo modo sposteremo il problema sullo studio dei sottogruppi del gruppo di automorfismi delle tre superfici semplicemente connesse date dal teorema di Riemann.
+
+\section{Rivestimenti olomorfi}
+
+
+Cominciamo con l'osservare che dato un rivestimento in cui lo spazio base è una \sdR, questo induce una struttura complessa anche sullo spazio ambiente.
+\begin{proposizione}\label{sdr_strut_riv}
+Sia $X$ una superficie di Riemann, se $\pi:Y\rightarrow X$ è un rivestimento, allora $Y$ è in modo naturale una superficie di Riemann, con una definizione che rende $\pi$ olomorfa.
+\end{proposizione}
+\begin{proof}[Idea della dimostrazione]
+È possibile fare un raffinamento degli $U_\alpha\subseteq X$ in modo da renderli "compatibili" con gli aperti banalizzanti del rivestimento (per esempio, posso considerare le intersezioni con essi). In questo modo, avendo gli $U_\alpha$ inclusi in un aperto banalizzante $A$, è possibile "tirarli su" sullo spazio ricoprente: se $\pi^{-1}(A)=\bigcup A_i$ con $\pi\restriction_{A_i}:A_i\to A$ omeomorfismi, metto nell'atlante per $Y$ tutte le carte $(A_i,\phi_\alpha\circ\pi)$. La verifica che sono rispettate le proprietà della definizione è banale. Per vedere che $\pi$ è olomorfa basta osservare che prendendo le carte giuste si ottiene l'identità su $\bbC$.
+\end{proof}
+
+Tutto il nostro interesse per i rivestimenti (quelli universali in particolari) è dovuto alla seguente
 \begin{osservazione}
 Sia $\pi:\widetilde{X}\rightarrow X$ un rivestimento universale, $x_0\in X$. Allora la fibra $\pi^{-1}(x_0)$ è discreta in $\widetilde{X}$, ed esiste un gruppo di omeomorfismi di $\widetilde{X}$ che preserva le fibre ed agisce in modo transitivo su di esse. Chiamato $G$ tale gruppo, si ha che $X \simeq \widetilde{X}/G$.
 \end{osservazione}
+
+Quindi il nostro studio si sposta ora sui sottogruppi di $G=\Aut(\widetilde X,\pi)$.\\
+Ricordiamo che $g\in G$ vuol dire $g:\widetilde X\to\widetilde X$ tale che $\pi\circ g=\pi$, ovvero $g$ preserva le fibre.
+\begin{proposizione}
+ 	Sia $g\in G$. Allora $g$ è olomorfa come applicazione tra \sdR.
+\end{proposizione}
+\begin{proof}
+ 	Sia $x\in \ot X$. Sia $V_\alpha^r$ uno degli aperti della condizione di \sdR\ tale che $x\in V_\alpha^r$, e sia $\phi_\alpha^r$ la sua carta locale. Si ha $g(x)\in V_\alpha^s$ per un qualche $s$, e dunque bisogna dimostrare $\phi_\alpha^s\circ g\circ (\phi_\alpha^r)^{-1}$ olomorfa in $\phi_\alpha^r(x)$. Ma questa funzione si può scrivere anche come $\phi_\alpha\circ\pi\circ g\circ \pi^{-1}\circ \phi_\alpha^{-1}$, che poiché $g$ è automorfismo di rivestimento è uguale a $\phi_\alpha\circ\pi\circ\pi^{-1}\circ\phi_\alpha^{-1}=id$. Poiché l'identità è olomorfa, abbiamo dimostrato che $g$ è olomorfa.
+\end{proof}
+\notamargine{$\pi^{-1}$ dovrebbe presentare un pedice che si riferisce al fatto che ha codominio $V_\alpha^r$, ma non l'ho ritenuto fondamentale}
+
+
+\section{Azioni di gruppi propriamente discontinui}
+
+Vogliamo capire come sono fatti i sottogruppi di $\Aut(\widetilde X,\pi)$ che inducono un rivestimento sulla nostra superdicie di Riemann di partenza $X$.
+
 \begin{definizione}
 Sia $G$ un gruppo che agisce su uno spazio topologico $X$. L'azione di $G$ si dice \textit{propriamente discontinua} se per ogni compatto $K\subseteq X$ esiste solo un numero finito di elementi di $G$ tali che $g(K)\cap K =\varnothing$.
 \end{definizione}
-\begin{fatto}
-Sia $X$ una superficie di Riemann con un gruppo di automorfismi olomorfi $G<Aut(X)$. Allora $X/G$ è in modo naturale una superficie di Riemann se valgono le seguenti due proprietà:
+
+Allora vale il seguente
+\begin{teorema}
+Sia $X$ una varietà con un gruppo di automorfismi $G<Aut(X)$. Allora $\pi:X\to X/G$ è un rivestimento se e solo se valgono le seguenti due proprietà:
 \begin{enumerate}
   \item L'azione di $G$ su $X$ è propriamente discontinua.
   \item Gli elementi di $G\setminus\{\Id\}$ agiscono senza punti fissi.
 \end{enumerate}
-\end{fatto}
-\notamargine{Se non sono soddisfatte le due condizioni, allora $X\rightarrow X/G$ non è nemmeno un rivestimento, a prescindere dalla struttura complessa.}
-
-
-\thislesson{28 Settembre 2016}{Rivestimenti Olomorfi e Azioni di Gruppi}
-%Balbo sappi che ti sto odiando per tutti quei comandi definiti un po' in modo libertino.
-
-\newthought{Eravamo rimasti} a questo enunciato:
-\begin{teorema}
-	Sia $M$ una varietà, e sia $G$ un gruppo di omeomorfismi di $M$.
- 	Allora la proiezione al quoziente $p:M\rar \quotient{M}{G}$ è un rivestimento se e solo se $G$ agisce in modo propriamente discontinuo.
 \end{teorema}
-\notamargine{$\Rar$ è ovvia e $\Lar$ sta sul Manetti}
+\begin{proof}$ $\\
+\begin{itemize}
+    \item[$\Longleftarrow$]Consideriamo $g\in G$ che ha un punto fisso $g(x)=x$; prendo un aperto banalizzante $A\ni \pi(x)$, ovvero $\pi^{-1}(A)=\bigcup B_i$ con $\pi\restriction_{B_i}$ omeomorfismo. Considero ora il $B$ tale che $x\in B$; dato che $g$ è olomorfa, esiste un intorno $U\ni x$ tale che $g(U)\subset B$; inoltre vale $\pi\circ g=\pi$, per cui $\forall u\in U$ si ha $\pi(g(u))=\pi(u)$; ma dato che $g(u)\in B$ e che $\pi\restriction_B$ è bigettivo, abbiamo infine $g(u)=u$. Dunque i punti fissi di $g$ sono un aperto; ma sono anche un chiuso in quanto $(g-\Id)^{-1}(0)$, quindi abbiamo $g=\Id$ in quanto $X$ è connesso.\\
+    Supponiamo ora per assurdo che esista un $K$ compatto per cui $H=\{ g\in G : g(K)\cap K\neq\emptyset \}$ è infinito; anche $H'=H\setminus\{\Id\}$ è infinito. Allora $\forall x$ possiamo trovare una successione $g^x_n\in H'$ per cui $g^x_n(x)$ converga a qualche punto $\tilde x$; se considero ora un aperto banalizzante $A\ni\pi(\tilde x)$ e il $B$ per cui $\pi\restriction_B$ sia un omeomorfismo, per $n\ge N$ ho anche $g^x_n(x)\in B$; ma $\pi(g^x_n(x))=\pi(x)$ e dato che $\pi$ è bigettiva su $B$, deve essere $g^x_n(x)=x\forall n\ge N$. Ma dato che $G$ agisce senza punti fissi, ho $g^x_n=\Id$, che è assurdo poichè $\Id\not\in H'$.\\
+    \item[$\implies$] Sia $x\in X$, e $K$ un suo intorno compatto; l'insieme $H=\{ g : g(K)\cap K\neq\emptyset\}$ è finito e ha elementi $h_0=\Id,h_1,\dots,h_n$. Vediamo che per ogni $i\neq j$ vale $h_i(x)\neq h_j(x)$ perché altrimenti $h_ih_j^{-1}$ avrebbe un punto fisso; ma allora possiamo trovare intorni $U_i\ni h_i(x)$ disgiunti. Come aperto banalizzante intorno a $\pi(x)$ prendo allora $V=\bigcap \pi(U_i)$; infatti $\pi^{-1}(V)=\bigcup{g(U'_0) : g\in G}$ dove $U'_0$ è una restrizione di $U_0$, e tutti questi aperti sono disgiunti per costruzione.
+\end{itemize}
+\end{proof}
 
-Qui, seguendo il Manetti, intendo che $G$ agisce in modo propriamente discontinuo se $\forall\ x\in X\ \exists\ U\subset X$ aperto tale che $\forall\ g\in G, g(U)\cap U=\emptyset$.
-
-Se ho qualche piccola ipotesi su X (essere varietà basta e avanza), questo è equivalente a chiedere che $G$ sia libero, cioè che $\forall\ x \in X, \forall\ g\in G, g(x)\neq X$, e che $\forall\ K \subset X$ compatto, $g(K)\cap K \neq \emptyset$ solo per un numero finito di $g$.
-\notamargine{$\Lar$ sta sul Manetti, $\Rar$ ha una parte ovvia e una che usa compattezza per successioni}
-%Nota: Capire perché le note a margine sono impaginate schifo
-
-A questo aggiungo un altro teorema:
+Come avevamo accennato in precedenza, vale poi anche:
 
 \begin{teorema} \label{rivuniv}
  	Sia $p:E\rar X$ un rivestimento universale. Allora esiste $G$ gruppo di omeomorfismi di $E$ propriamente discontinuo tale che $X\isom\quotient{E}{G}$.
@@ -115,38 +149,27 @@ A questo aggiungo un altro teorema:
 \notamargine{Ricordo che $p:E\rar X$ rivestimento si dice universale se $E$ è semplicemente connesso}
 \notamargine{Anche qui la dimostrazione sta sul Manetti, in posti a caso}
 
-Adesso, sia $X$ una \sdR, e sia $\pi:X\rar\ot X$ il suo rivestimento universale (che ricordo essere unico a meno di omeomorfismi). Attraverso $\pi$, $\ot X$ eredita una struttura di \sdR\ da quella di $X$.
 
-Infatti, prendendo un raffinamento $U_\alpha$ del ricoprimento su $X$ dato dalla definizione di \sdR, posso pensare che gli $U_\alpha$ sono aperti banalizzanti per $\pi$, ottenendo dunque un ricoprimento su $\ot X$ dato dagli insiemi $V_\alpha^r$, dove $\pi^{-1}(U_\alpha)=\sqcup_r V_\alpha^r$, in cui le carte locali sono le funzioni $\phi_\alpha^r=\phi_\alpha\circ\pi$. Il fatto che i cambi di carta siano olomorfi su $\ot X$ discende dal fatto che lo siano su $X$.
-
+Adesso, sia $X$ una \sdR, e sia $\pi:\ot X\rar X$ il suo rivestimento universale (che ricordo essere unico a meno di omeomorfismi). Attraverso $\pi$, $\ot X$ eredita una struttura di \sdR\ da quella di $X$, come visto in \ref{sdr_strut_riv}.\\
 Ora, per il teorema \ref{rivuniv}, esiste $G$ fatto nel modo giusto tale che $\quotient{\ot X}{G}\isom X$.
-\begin{lemma}
- 	%Balbo ti odio, perché non potevi mettere tra i similteoremi anche proposizione?
- 	Sia $g\in G$. Allora $g$ è olomorfa come applicazione tra \sdR.
-\end{lemma}
-\begin{proof}
- 	Osservo che ovviamente $g \in \mbox{Aut}\left(\quotient{\ot X}{X}\right)$, cioè $g$ è un automorfismo di rivestimento (in inglese \emph{deck transformation}), cioè $g$ preserva le fibre. Questa condizione si può scrivere anche come $\pi\circ g=\pi$.
 
- 	Sia ora $x\in \ot X$. Sia $V_\alpha^r$ uno degli aperti della condizione di \sdR\ tale che $x\in V_\alpha^r$, e sia $\phi_\alpha^r$ la sua carta locale. Si ha $g(x)\in V_\alpha^s$ per un qualche $s$, e dunque bisogna dimostrare $\phi_\alpha^s\circ g\circ (\phi_\alpha^r)^{-1}$ olomorfa in $\phi_\alpha^r(x)$. Ma questa funzione si può scrivere anche come $\phi_\alpha\circ\pi\circ g\circ \pi^{-1}\circ \phi_\alpha^{-1}$, che poiché $g$ è automorfismo di rivestimento è uguale a $\phi_\alpha\circ\pi\circ\pi^{-1}\circ\phi_\alpha^{-1}=id$. Poiché l'identità è olomorfa, abbiamo dimostrato che $g$ è olomorfa.
-\end{proof}
-\notamargine{$\pi^{-1}$ dovrebbe presentare un pedice che si riferisce al fatto che ha codominio $V_\alpha^r$, ma non l'ho ritenuto fondamentale}
 
 Ora, per classificare le \sdR\ posso dunque studiare tutti i quozienti opportuni di \sdR\ semplicemente connesse. Per il Teorema di Riemann, queste sono solo $\bbP_1(\bbC)=\oc \bbC, \bbC, \cD\isom\cH$, dove su quest'ultimo ho la struttura complessa data dall'inclusione.
 
 Dunque il prossimo passo è classificare i gruppi di isomorfismi propriamente discontinui e olomorfi delle tre \sdR\ semplicemente connesse.
+
+\section{Cusumano}
+
 
 \newthought{Ora iniziano} cose di cui non ho esattamente capito il senso, per ora.
 
 \begin{definizione}
 	Sia $A\subset\bbC$. Una funzione $f:A\rar\bbC$ si dice \emph{algebrica} se $\exists\ p\in\bbC[x,y], p\neq0 \tc p(x,f(x))=0\ \forall\ x\in A$.
 \end{definizione}
-%qui vorrei un ambiente esercizio
-\begin{lemma}
+
+\begin{esercizio}
  	$f(x)=e^x$ non è una funzione algebrica.
-\end{lemma}
-\begin{proof}
- 	Lasciata come esercizio
-\end{proof}
+\end{esercizio}
 
 Ora si sta parlando di rivestimenti indotti da funzioni algebriche.
 
@@ -173,13 +196,3 @@ Sembra che questa cosa sia collegata in qualche modo al fatto che, se considero 
 Ora supponiamo per assurdo che il rivestimento di $\phi$ abbia un automorfismo olomorfo non banale $f$. Allora posso estenderlo per continuità a tutto $\bbC$, perché è limitato jin quanto $f$ soddisfa $f(z)^3-3f(z)=z^3-3z$, e questo porta a $f(z)$ limitato se $z$ limitato.
 
 Inoltre, per $\abs{z}$ abbastanza grande, si può scrivere $\dst 1=\frac{f(z)^3-3f(z)}{z^3-3z}$, e per $\abs{z}\rar+\infty$ devo avere $\abs{f(z)/z}\rar1$, per cui, essendo $f$ olomorfa, si ha $f(z)=az+b$. Chiedendo che $f(z)$ sia automorfismo di rivestimenti, si scopre che l'unica possibilità è $f(z)\equiv z$.
-
-Ora che ha finito di parlare di rivestimenti senza automorfismi, possiamo parlare di automorfismi di $\oc \bbC$.
-
-Identifico $\oc\bbC\isom\bbP_1(\bbC)$ con $\bbC\cup\{\infty\}$, attraverso la seguente mappa: $[z:1]\mapsto a, [1:0]\mapsto\infty$.
-
-Considero $\phi\in\GL_2(\bbC)=\matrice abcd, ad\cdot bc \neq 0$. $\phi$ è un isomorfismo lineare, dunque manda rette in rette, e si ha $\phi(z_0,z_1)=(az_0+bz_1,cz_0+dz_1)$. Questo isomorfismo, poichè manda rette in rette, induce un isomorfismo $\ot \phi$ a livello di $\oc\bbC$ tale che $\ot\phi[z_0,z_1]=[az_0+bz_1,cz_0+dz_1]$.
-
-Sotto l'identificazione con $\bbC\cup\{\infty\}$, possiamo scrivere $\ot\phi(z)=\frac{az+b}{cz+d}$, dove si intende che $\ot\phi(\infty)=\frac{a}{c}$ e che $\frac{1}{0}=\infty$. Il gruppo degli isomorfismi di questa forma in $\oc \bbC$, con $ad\neq bc$, si chiama $\bbP\GL_2(\bbC)$, e si ha che $\bbP\GL_2(\bbC)\isom\quotient{\GL_2(\bbC)}{\{\lambda\Id\}}$.
-
-Questo è un sottogruppo di $\Aut(\bbC)$, e la prossima lezione vedremo che in effetti coincide con esso.

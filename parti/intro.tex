@@ -1,4 +1,4 @@
-\thislesson{19 Settembre 2016}{Introduzione, Parte prima}
+\chapter{Introduzione}
 
 In questo corso studieremo le funzioni meromorfe periodiche, ovvero $f:\bbC\to\bbC$ per le quali $f(z+T)=f(z)$ per ogni $T\in L$, con $L$ insieme dei periodi.\\
 Partiamo dalle funzioni con un solo periodo, ovvero a meno di rinormalizzazioni consideriamo $L=\bbZ$.  Osserviamo che $f$ può passare al quoziente, ovvero posso definire $\tilde f:\bbC / \bbZ\to\bbC$ in modo che $\tilde f(x+\bbZ)=f(x)$. Lo spazio topologico quoziente $\bbC / \bbZ$ (ovvero $\bbC$ quozientato per la relazione di equivalenza $a \cR b \sse a-b \in \bbZ$) è un cilindro (in particolare notiamo che non è compatto).\\
@@ -96,18 +96,19 @@ Il norme curve ellittiche è dovuto al fatto che sono saltate fuori storicamente
   % TODO: Mettere riferimento al libro Siegel: Topics in Complex Function Theory, vol I, verso l'inizio del libro
 
 Alcune curve algebriche si possono parametrizzare in maniera razionale, ovvero si può dare una funzione razionale di un parametro che mette ``in bigezione'' il parametro con dei punti della curva.
+\notamargine{Ricordiamo infatti che se $R(t)$ è funzione razionale allora $\int R(t) \de t$ si può scrivere come funzione razionale più una combinazione di logaritmi traslati}
 
 Ad esempio, se sotto la radice avessimo avuto un polinomio di secondo grado, come $ \int \frac{\de x}{\sqrt{1 - x^2}} $, la curva algebrica
-associata sarebbe stata il cerchio $w^2 = 1 - x^2$. Possiamo razionalizzare il cerchio nel seguente modo:
-
+associata sarebbe stata il cerchio $w^2 = 1 - x^2$. Possiamo razionalizzare il cerchio nel seguente modo:\\
+\includegraphics[width=16em]{rational_circle.png}\\
 % TODO: Inserire immagine del cerchio razionalizzato
 Scegliendo il punto $(-1, 0)$ si può considerare la funzione di ``proiezione'' dei punti della circonferenza sull'asse $x=0$, ovvero il
 punto $(x_0, w_0)$ viene mandato in $(0, \frac{w_0}{x_0 + 1})$ (Infatti la retta tratteggiata ha equazione $w = \frac{w_0}{x_0 + 1} (x + 1)$
 mentre la retta su cui proiettare è $x=0$). Possiamo chiamare $t_0 = \frac{w_0}{x_0 + 1}$ il nostro parametro.
 
-Possiamo anche invertire questa uguaglianza ottenendo $w = \frac{2 t}{1 + t^2}$. Ciò ci permette di esprimere l'integrale originario in termini delle funzioni ``semplici''
+Possiamo anche invertire questa uguaglianza ottenendo $w = \frac{2 t}{1 + t^2}$. Ciò ci permette di esprimere l'integrale originario in termini delle funzioni ``semplici''.
 
-\notamargine{Ricordiamo infatti che se $R(t)$ è funzione razionale allora $\int R(t) \de t$ si può scrivere come funzione razionale più una combinazione di logaritmi traslati}
+
 
 \subsection{Il tentativo di Fagnano}
 Il primo a cercare di fare questi conti con l'integrale della Lemniscata fu Fagnano. Egli non riusci a razionalizzare, ma ottenne comunque dei risultati. In particolare, chiamata $S(r) = \int_0^r \frac{\de x}{\sqrt{1 - x^4}}$, trovò che quando $S(r') = 2 S(r)$ si aveva una relazione algebrica $A(r, r') = 0$ (ovvero ottenne delle formule di duplicazione)
@@ -191,13 +192,14 @@ Viceversa, data una curva cubica non singolare, può essere descritta da un poli
 Sia $\bbK$ algebricamente chiuso. Osserviamo che presi due punti $P,Q$ su una cubica $\gamma$ e tracciata la retta $r$ per $P,Q$, essa interseca $\gamma$ esattamente in un altro punto $R:=P * Q = Q*P$. \notamargine{Vedi il \href{https://en.wikipedia.org/wiki/B\%C3\%A9zout's_theorem}{Teorema di Bezòut}.}
 
 Fissata un'origine $O \in \gamma$, si può dimostrare che l'operazione $(P,Q) \mapsto P \cdot Q = O*(P*Q)$ rende $\gamma$ un gruppo (banalmente) abeliano. Il cambio dell'origine dà luogo a un gruppo isomorfo. Infatti se $O,O'$ sono due origini diverse, detto $O'' = O*O'$, la mappa $P \mapsto O'' * P$ è l'isomorfismo cercato:
-\notamargine{Solitamente, nella forma di weierstrass, si prende $O=(0:1:0)$, il punto all'infinito.}
 $$ O'' * (P \cdot' Q) = O'' * O'*P*Q = O*P*Q $$
 $$ (O''*P) \cdot (O''*Q) = (O*O'')*(P*O'')*Q = O'*O''*P*Q=O*P*Q$$
 
-%\includegraphics[width=16em]{gruppo-cubica.jpeg}
+\includegraphics[width=16em]{eccgroupaddition.png}\\
+L'associatività è la proprietà più impegnativa da dimostrare. Vale la pena di notare che l'operazione è una funzione razionale delle coordinate dei punti.\\
 
-L'associatività è la proprietà più impegnativa da dimostrare. Vale la pena di notare che l'operazione è una funzione razionale delle coordinate dei punti.
+Solitamente come $O$ di una curva ellittica si prende il punto all'infinito, che è anche un flesso.\\
+Osserviamo infatti che proiettivizando la cubica in forma di Weierstrass otteniamo l'equazione $Y^2Z=X^3+aXZ^2+bZ^3$, che per $Z=0$ ha come unica soluzione $O=(0:1:0)$, detto punto all'infinito della curva.\\
 
 
 \section{Gruppi algebrici}
@@ -232,6 +234,10 @@ D'altronde, questa speciale funzione ellittica $\wp_L$ rispetta $\wp_L'(z)^2= f_
  \dTo &  \ruTo    & \\
  \bbC/L & &  \\
 \end{diagram}
+
+È interessante notare come ci sia un analogo molto noto per le coniche: dato un reticolo di rango 1, ad esempio $\bbZ$, possiamo trovare la mappa $z\mapsto(\sin z,\sin'z)=(\sin z,\cos z)$ per cui vale la relazione $\cos^2z=1-\sin^2z$.\\
+Osserviamo che $\sin z$, come $\wp_L(z)$ sono funzioni trascendenti, ovvero non esisono polinomi $p\in\bbC[x,y]$ per cui vale $p(z,f(z))=0$.\\
+Tuttavia con reticoli di rango $1$ ho fondamentalmente una sola struttura, poiché l'unica operazione che posso fare è riscalare il periodo fondamentale, ovvero passo da $\exp(2\pi i z)$ a $\exp(2\pi i\frac{z}{z_0})$. Invece sui retidoli di rango $2$ la questione è molto più complicata e dà origine allo studio delle funzioni modulari.
 
 \section{Moduli}
 Vogliamo cercare ora uno 'spazio dei parametri' per i tori complessi. Conosciamo già una parametrizzazione ridondante: dato un reticolo discreto $L=\omega_1 \bbZ + \omega_2 \bbZ$ possiamo costruire il toro $\bbC / L$ ( e tutti i tori sono definiti così), con $\omega_1, \omega_2$ non paralleli (ossia $\omega_1/\omega_2$ non reale). Cerchiamo ora di eliminare la ridondanza della parametrizzazione, partendo da $\mathcal{A} = \{ (\omega_1, \omega_2) \in \bbC^2: \Im(\omega_1/\omega_2) \neq 0 \} $.

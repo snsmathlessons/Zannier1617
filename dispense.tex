@@ -75,7 +75,7 @@
 % For graphics / images
 \usepackage{graphicx}
 \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
-\graphicspath{{lezioni/immagini/}}
+\graphicspath{{parti/immagini/}}
 
 % For tikz images
 \usepackage{pgf,tikz}
@@ -240,6 +240,7 @@
 }
 \renewcommand\chapter{%
   \if@tempswa\clearpage\else\@tempswatrue\fi
+  \stepcounter{chapter}
   \global\@topnum\z@%
   \@afterindentfalse%
   \secdef\@chapter\@schapter%
@@ -549,22 +550,26 @@ copy of the License at \url{https://creativecommons.org/licenses/by-sa/4.0/legal
 \part{Introduzione}
 \input{parti/intro.tex}
 
-\part{Contenuto del Corso}
+\part{Superfici di Riemann}
 \input{parti/sdr-def.tex}
 \input{parti/sdr-aut.tex}
 \input{parti/sdr-tori.tex}
+
+\part{Curve ellittiche}
 \input{parti/fell-weierstrass.tex}
 \input{parti/fell-curve.tex}
 \input{parti/fell-gruppo.tex}
 \input{parti/fell-raz.tex}
+
+\part{Forme modulari}
 \input{parti/fmod.tex}
 
 
 \appendix
 \part{Extra}
-\input{lezioni/appendice-geomalg}
-\input{lezioni/appendice-domande}
-\input{lezioni/appendice-esercizi-svolti}
+\input{parti/appendice-geomalg}
+\input{parti/appendice-domande}
+\input{parti/appendice-esercizi-svolti}
 
 \newgeometry{
   left=12mm, % left margin
