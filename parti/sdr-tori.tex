@@ -1,8 +1,61 @@
 \chapter{Biolomorfismi}
+Abbiamo distinto le superfici di Riemann in tre tipi:
+\begin{itemize}
+\item La superficie sferica $\hat\bbC$;
+\item Le superfici euclidee, ottenute quozientando $\bbC$;
+\item Le superfici iperboliche, ottenute da quozienti del disco $D$.
+\end{itemize}
+
+Esistono delle condizioni molto stringenti sulle mappe tra superfici di Riemann di tipo diverso, date dal sollevamento delle mappe ai rivestimenti universali.
+
+\begin{proposizione}
+Ogni mappa olomorfa da una superficie sferica a una euclidea è costante. Allo stesso modo, ogni mappa biolomorfa da una superficie euclidea a una iperbolica è costante.
+\end{proposizione}
+
+\begin{proof}
+Siano $S_1$, $S_2$ e $S_3$ tre superfici, rispettivamente sferica, euclidea e iperbolica, e siano $f: S_1 \rar S_2$, $g: S_2 \rar S_3$ mappe biolomorfe, come nel diagramma.
+
+\[
+    \begin{diagram}
+        \hat \bbC 		& \rTo^{\tilde f} 	& \bbC 			& \rTo^{\tilde g} 	& D 	\\
+        \dTo>{\pi_1}	&					& \dTo>{\pi_2}	&					& \dTo>{\pi_3}	\\
+        S_1				& \rTo^f 			& S_2 			& \rTo^g 			& S_3
+    \end{diagram}
+\]
+
+Poichè sia $\hat\bbC$ sia $\bbC$ sono semplicemente connessi, per il solito lemma $f \circ \pi_1$ e $g \circ \pi_2$ si sollevano a $\tilde f, \tilde g$.
+
+Ma $\tilde f$, ristretta a $\bbC$, è una mappa intera (olomorfa su $\bbC$) limitata (perchè all'infinito deve tendere ad $f(\infty)$). Quindi per Liouville è costante.
+Stesso discorso vale per $\tilde g$, che è olomorfa su $\bbC$ ed è limitata (ha immagine contenuta nel disco). Quindi anche $f$ e $g$ devono essere costanti.
+\end{proof}
+
+\notamargine{Inoltre, potete mostrare che non vi sono mappe olomorfe da superfici sferiche a superfici iperboliche, utilizzando le carte su $\hat\bbC$ ed il teorema di Liouville su queste. Nell'altro verso invece ve ne sono di non costanti, in particolare potete prendere l'immersione da $D$ in $\bbC$ e quella da $\bbC$ in $\hat\bbC$}
+
+
+Consideriamo ora una mappa olomorfa $f:X\to Y$ tra superfici di Riemann, e siano $\tilde X,\tilde Y$ i due rivestimenti universali; diciamo che $X=\tilde X / G_X,Y=\tilde Y / G_Y$ con le rispettive proiezioni $\pi_X,\pi_Y$.\\
+Costruiamo il seguente diagramma
+\[
+    \begin{diagram}
+        \tilde X  		& \rTo^{\tilde f} 	& \tilde Y 		 	\\
+        \dTo>{\pi_X}	&					& \dTo>{\pi_Y}		\\
+        X   			& \rTo^f 			& Y
+    \end{diagram}
+\]
+dove $\tilde f$ è il sollevamento della mappa olomorfa $f\circ\pi_X:\tilde X\to Y$.\\
+Vediamo che anche $\tilde f$ deve essere olomorfa.\\
+Sia $g\in G_X$, allora deve essere $\tilde f(gz)=\gamma(z)\tilde f(z)$ con $\gamma(z)\in G_Y$ in modo da far commutare il diagramma. Vediamo che in realtà $\gamma$ è indipendente da $z$, poiché $G_Y$ è discreto.\\
+\begin{osservazione}
+    Se viceversa vale la condizione $\forall g\in G_X\exists\gamma\in G_Y: \tilde f(gz)=\gamma\tilde f(z)$, allora la mappa $f$ è olomorfa.
+\end{osservazione}
+
+Infine, se $f$ era un biolomorfismo, ovvero possiede un'inversa $g$ olomorfa, possiamo sollevarla a $\tilde g$ che soddisfa la stessa condizione.\\
+\newthought{Attenzione!} La $\tilde g$ non è l'inversa di $\tilde f$, ma in generale varrà solamente $\tilde f\circ\tilde g\in\Aut(\tilde Y)$ e $\tilde g\circ\tilde f\in\Aut(\tilde X)$
+
+
 
 
 \section{Biolomorfismi di tori}
-D'ora in poi non ci si interessa più di superfici di Riemann iperboliche ma si iniziano a studiare i Tori, ovvero quozienti $\quotient{\bbC}{L}$ con $L$ reticolo di rango $2$.
+Restringiamoci ora ai tori, ovvero quozienti $\quotient{\bbC}{L}$ con $L$ reticolo di rango $2$. Dimostreremo che una mappa tra due tori $T_1 = \bbC/L_1$ e $T_2 = \bbC/L_2$ deve essere della forma $f(z)=\alpha z + \beta$.\notamargine{D'ora in poi faremo spesso confusione tra un numero complesso e la sua classe di equivalenza.}
 
 \notamargine{Attenzione, molti matematici usano nella definizione di reticolo il fatto che il reticolo abbia la stessa dimensione dello spazio vettoriale in cui è contenuto, nel nostro caso è contenuto in $\bbC$ che ha dimensione reale $2$.}
 
@@ -10,10 +63,16 @@ D'ora in poi non ci si interessa più di superfici di Riemann iperboliche ma si 
 Se prendiamo reticoli omotetici, ovvero due reticoli $L$ e $\lambda L$, con $\lambda \in \bbC\minus\{ 0\}$, si ha che i tori ottenuti sono biolomorfi. (La mappa moltiplicazione per $\lambda \quad \bbC \rightarrow \quotient{\bbC}{\lambda L} \hquad z\ \mapsto [\lambda z]_{\lambda L} $ è ben definita e passa al quoziente $\quotient{\bbC}{L}\rightarrow \quotient{\bbC}{\lambda L}$, che è olomorfa e ha come inversa olomorfa la moltiplicazione per $\lambda^{(-1)}$).
 \end{osservazione}
 
-\begin{fatto}Sia $f:T_1\rightarrow T_2$ olomorfa tra tori, con $T_i=\quotient{\bbC}{L_i},\hquad i\in \{ 1,2\}$, allora $\exists\alpha \hquad \alpha L_1\subseteq L_2$.\\
-(CON ALPHA UGUALE A $0$ FUNZIONA SEMPRE, PROBABILMENTE INTENDE CHE SE $f$ NON NULLA ALLORA $\exists \alpha \ne 0 \hquad \alpha L_1\subseteq L_2$)
-\end{fatto}
-\begin{proof} Siano $\pi_i,\hquad i\in \{ 1,2\}$ le mappe di proiezione. DIAGRAMMA.
+\begin{proposizione}Sia $f:T_1\rightarrow T_2$ olomorfa non nulla tra tori, con $T_i=\quotient{\bbC}{L_i},\hquad i\in \{ 1,2\}$, allora $\exists\alpha\neq0 \hquad \alpha L_1\subseteq L_2$.
+\end{proposizione}
+\begin{proof} Siano $\pi_i,\hquad i\in \{ 1,2\}$ le mappe di proiezione.
+    \[
+        \begin{diagram}
+            \bbC            & \rTo^{\tilde f} 	& \bbC 		 	\\
+            \dTo>{\pi_1}	&					& \dTo>{\pi_2}		\\
+            T_1   			& \rTo^f 			& T_2
+        \end{diagram}
+    \]
 Si ha che la mappa $f\circ\pi_1: \bbC\rightarrow T_2$, siccome $\bbC$ è semplicemente connesso, si solleva a $\tilde{f}$ olomorfa (non necessariamente unica).
 Prendendo $x_1\in T_1$, $z$ t.c. $\pi_1(z)=x$, allora $\pi_2\circ\tilde{f} (z) = f\circ \pi_1 (z)= f(x)$, quindi $\pi_2\circ \tilde{f}$ non dipende dal rappresentante $z$, ovvero $\pi_2\circ \tilde{f} (z+\lambda_1)=\pi_2\circ \tilde{f} (z)\hquad \forall \lambda_1\in L_1$.
 Ma allora $\tilde{f} (z+\lambda_1) - \tilde{f} (z) \in L_2 \hquad \forall \lambda_1 \in L_1$.
@@ -96,74 +155,137 @@ Si noti che torna che la cardinalità sia quella del continuo, anche senza aver 
 
 Anticipazione: la prossima volta si vedranno gli automorfismo di un reticolo e i gruppi olomorfi, per questi ultimi si darà un cenno al concetto di funzione olomorfa in più variabili.
 
+\chapter{Leggi di gruppo olomorfe}
+
+\begin{definizione}
+Una legge di gruppo olomorfa su una superficie di Riemann $S$ è una legge di gruppo in cui la moltiplicazione e l'inverso sono mappe olomorfe rispettivamente da $S \times S$ a $S$ e da $S$ a $S$ (per un'opportuna definizione di mappa olomorfa da una varietà bidimensionale).
+\end{definizione}
+
+Su un toro abbiamo un'ovvia legge di gruppo ereditata dalla somma su $\bbC$. Inoltre possiamo mettere una legge di gruppo isomorfa, in cui cambio l'origine. Questo si può fare in generale: data la moltiplicazione $\cdot$ su un gruppo $G$, posso definire l'operazione $g * h = g\cdot a^{-1}\cdot h$, con $a\in G$. Allora $(G,*)$ ha $a$ come origine, e ho l'ovvio isomorfismo tra $(G,\cdot)$ e $(G,*)$ dato da $g\mapsto g\cdot a$.
+
+\section{Leggi di gruppo sul toro}
+
+\begin{proposizione}
+A meno di cambi di origine, ho una sola legge di gruppo olomorfa sul toro $T$.
+\end{proposizione}
+
+\begin{proof}
+Sia $x \in T$, sia $*$ una legge di gruppo e sia senza perdita di generalità $0$ l'elemento neutro. Consideriamo la funzione $\phi_x: z \mapsto x * z - x$.
+
+Questa è una mappa olomorfa tra tori, e sappiamo che deve essere della forma $z \mapsto \alpha z + \beta$. Ma $\phi_x(0)=0$, quindi $\beta=0$. Sia quindi $c_x \in \bbC$ tale che $\phi_x(z)=c_xz$.
+
+Quindi abbiamo, riarrangiando i termini della definizione
+\[
+ x*z = \phi_x(z) + x = c_xz + x
+\]
+(ricordiamo che si tratta di numeri complessi modulo il reticolo $L$).
+
+Fissiamo ora $z_0\ne 0$. $c_x$ è una funzione olomorfa in $x$, infatti, detta $f(\zeta) = \zeta * z_0$, vale
+\[
+    f(\zeta) = \zeta + c_\zeta z_0 + \lambda, \lambda \in L
+\]
+stavolta pensata su $\bbC$. Quindi posso ricavare $c_\zeta$, e dato che $f$ è olomorfa per ipotesi, ottengo quello che volevo.
+
+D'altra parte, fissato un qualsiasi $\lambda \in L$, allora $c_x\lambda \in L \; \forall x$, quindi poichè $x \mapsto c_x \lambda$ è olomorfa a valori in un discreto, deve essere localmente costante e quindi costante. Sia quindi $c=c_x$.
+
+Ponendo $x=0$ ottengo che $\phi_0(z) = cz = z$, da cui $(c-1)z$ sta nel reticolo per ogni $z$, e quindi $c=1$.
+
+\end{proof}
+
+\section{Leggi di gruppo su $D$}
+
+\begin{teorema}
+Il disco unitario $D$ in $\bbC$ non ammette una struttura di gruppo olomorfa
+\end{teorema}
+
+\begin{proof}
+Per assurdo; ci sono due possibili vie.\\
+Conoscendo i gruppi di Lie, basta considerare la mappa esponenziale dal tangente nel disco: dovrebbe essere una mappa non costante da $\bbC$ nel disco. \hfill \Lightning \\
+Altrimenti, sia $\star : D\times D \rar D$ una legge di gruppo olomorfa. Sia inoltre $x^{*}$ l'inverso di $x$ per $\star$. Senza perdita di generalità, si può supporre che $0 \in D$ sia l'elemento neutro.
+Allora $\forall x\in D$ la mappa $L_{x}: z\mapsto x\star z$ è un automorfismo olomorfo. \\
+Dunque,  $$x\star z = c(x)\frac{z -a(x)}{1- \overline{a}(x) z}$$
+con $|c(x)|\equiv 1$ e $a:D \rar D$.\\
+Per $z=0$ si ha $x=-c(x)a(x)$.\\
+Per $z=a(x)$ si ha $x*a(x)=0$ $\Rar$ $a(x)=x^{*}$ $\Rar$ $a(x)$ è olomorfa $\Rar$ (per $x\neq 0$) $c(x)=-\frac{x}{x^{*}}$ $\Rar$ $c(x)$ è olomorfa per $x\neq 0$, ma $|c(x)| \equiv 1$ $\Rar$ per il teorema della mappa aperta deve essere $ \ c(x) \equiv k \neq 0$. Da cui $a(x)= -\frac{x}{k}$.\\
+Allora, $$x\star 1/2 = k\frac{1-2a(x)}{2-\overline{a}(x)}$$
+ma questa non è olomorfa ( $\overline{a}(x)$ non lo è, il resto sì).
+
+\end{proof}
+
+\section{Classificazione delle leggi di gruppo olomorfe}
+Vogliamo ora classificare tutte le leggi di gruppo sulle superfici di Riemann. Per farlo useremo ancora una volta i rivestimenti, nel modo seguente:
+
+\begin{lemma}
+Sia $X$ un gruppo topologico con $\mu : X\times X \rar X$ legge di gruppo. Sia inoltre $p :\widetilde{X} \rar X$ il rivestimento universale.
+Allora $\mu$ si solleva ad una $\tilde{\mu} : \widetilde{X} \times \widetilde{X} \rar \widetilde{X}$ che rende $\widetilde{X}$ un gruppo topologico.
+\end{lemma}
+
+\begin{proof}
+
+            \begin{diagram}
+                \widetilde{X}\times\widetilde{X}	& \rTo^{\widetilde{\mu}} 	& \widetilde{X}	\\
+                \dTo<{p \times p}	&					& \dTo>{p}\\
+                X\times X				& \rTo^\mu 		& X
+            \end{diagram}
+
+\noindent Sia $e \in X$ l'identità di $X$ e sia $\tilde{e} \in \widetilde{X}$ un punto t.c. $p(\tilde{e})=e$. Prodotto di semplicemente connessi è semplicemente connesso, dunque la mappa $\mu \circ (p \times p)$ solleva ad una mappa $\widetilde{\mu}$ che chiude il diagramma. Basta ora mostrare che $\widetilde{\mu}$ è una legge di moltiplicazione {\it (un po' di verifiche emozionantissime)}.\\
+
+{\bf Elemento neutro:}
+    \begin{diagram}
+        \{\tilde{e}\}\times\widetilde{X}	& \rTo^{\widetilde{\mu}}_{\pi_{2}} 	& \widetilde{X}	\\
+        \dTo<{p \times p}			&					& \dTo>{p}\\
+        \{e\}\times X				& \rTo^\mu 				& X
+    \end{diagram}
+
+\noindent Per restrizione, $\tilde{\mu}$ chiude il diagramma. Ma anche la proiezione sul secondo fattore fa commutare il quadrato; per unicità del sollevamento a punto base fissato si ha che $\tilde{\mu}(\tilde{e}, \bullet) \equiv \pi_{2}(\bullet)$. Analogamente si ha che $\tilde{\mu}(\bullet, \tilde{e}) \equiv \pi_{1}(\bullet)$ e dunque $\tilde{e}$ è elemento neutro per $\tilde{\mu}$.
+
+{\bf Associatività} e {\bf inverso} si ottengono in maniera del tutto analoga (cioè sfruttando l'unicità del sollevamento).
+\notamargine{Per l'associatività utilizzare la diagonale sulla faccia del cubo}
+\end{proof}
+
+Abbiamo inoltre mostrato che i tori ammettono come unica struttura di gruppo olomorfo quella di gruppo quoziente di $\bbC$ sul reticolo $L$.
+
+\begin{osservazione}
+Sia $G$ un gruppo olomorfo. $\forall g \in G$ le traslazioni $L_{g}:z\mapsto g\star z$ e $R_{g}:z\mapsto z\star g$ sono mappe biolomorfe; se $g\neq e$, allora non hanno punti fissi.\\
+Infatti per la struttura di gruppo, l'inversa di $L_g$ è semplicemente $L_{g^-1}$, che è ancora olomorfa.\\
+Inoltre se fosse $g\star z = z$ per qualche $g,z$ dato che siamo in un gruppo possiamo invertire $z$ e ottenere $g=e$.
+\end{osservazione}
+
+\begin{proposizione}
+La sfera di Riemann $\bbP_{1}\bbC $ non ammette strutture di gruppo olomorfo.
+\end{proposizione}
+\begin{proof}
+    Supponiamo per assurdo che $\exists \star: \bbP^1\bbC \times \bbP^1\bbC \rar \bbP^1\bbC$ legge di gruppo (ed olomorfa).\\
+    Allora le traslazioni $L_x$ definite da $z \mapsto x \star z \in \Aut(\bbP^1\bbC)$ sono automorfismi di $\hat\bbC$ per la struttura complessa, ovvero della forma $z\mapsto\dfrac{az+b}{cz+d}$ con $ad-bc\neq0$, e quindi come abbiamo visto hanno sempre almeno un punto fisso.
+    Questo è assurdo per l'osservazione precedente, in quanto $\hat\bbC$ ha almeno due punti.
+\end{proof}
+
+\begin{proposizione}
+L'unica struttura di gruppo olomorfo su $\bbC$ è quella data dall'addizione.
+\end{proposizione}
+\begin{proof}
+    Supponiamo per assurdo che $\exists \star: \bbC \times \bbC \rar \bbC$ legge di gruppo olomorfa. Diciamo che l'elemento neutro sia lo $0$.\\
+    Fissiamo $z_0\in\bbC$; allora la traslazione $L_{z_0}$ definita da $z \mapsto z_0 \star z \in \Aut(\bbC)$ è un automorfismo di $\bbC$ per la struttura complessa, ovvero della forma $z\mapsto az+b$ con $a\neq0$.
+    Inoltre grazie all'osservazione sappiamo che $L_{z_0}$ non deve avere punti fissi, quindi l'unica possibilità è $a=1$.\\
+    Perciò sappiamo che $z_0\ast z=z+b(z_0)$; facendo variare anche $z_0$, e dato che $\ast$ è olomorfa, anche $b$ è olomorfa. Abbiamo quindi la relazione a due variabili $x\ast y=y+b(x)$; ponendo $y=0$, si ha $b(x)=x$, cioè $\ast$ è la somma standard.
+\end{proof}
+
+Possiamo riassumere tutto quello detto finora nel seguente
+
+\begin{teorema}
+    Le strutture di gruppo olomorfo sulle superfici di Riemann sono tutte e sole $\bbC$, $\bbC / \bbZ$, $\bbC / \bbZ^2$
+\end{teorema}
+
+
+\begin{corollario}
+  Curve algebriche non ellittiche \underline{non} ammettono struttura di gruppo olomorfo.
+  Questo fatto sarebbe facilmente vero se sapessimo che le curve algebriche di grado $d \ge 4$ sono necessariamente rivestite dal disco (Il problema è escludere che siano rivestite da $\bbC$)
+\end{corollario}
+
+
+
 
 \chapter{Mappe di Tori ed Isogenie}
-
-        Abbiamo distinto le superfici di Riemann in tre tipi:
-	\begin{itemize}
-	 \item La superficie sferica $\hat\bbC$;
-	 \item Le superfici euclidee, ottenute quozientando $\bbC$;
-	 \item Le superfici iperboliche, ottenute da quozienti del disco $D$.
-	\end{itemize}
-
-	\begin{proposizione}
-		Ogni mappa olomorfa da una superficie sferica a una euclidea è costante. Allo stesso modo, ogni mappa biolomorfa da una superficie euclidea a una iperbolica è costante.
-	\end{proposizione}
-
-	\begin{proof}
-		Siano $S_1$, $S_2$ e $S_3$ tre superfici, rispettivamente sferica, euclidea e iperbolica, e siano $f: S_1 \rar S_2$, $g: S_2 \rar S_3$ mappe biolomorfe, come nel diagramma.
-
-		\[
-			\begin{diagram}
-				\hat \bbC 		& \rTo^{\tilde f} 	& \bbC 			& \rTo^{\tilde g} 	& D 	\\
-				\dTo>{\pi_1}	&					& \dTo>{\pi_2}	&					& \dTo>{\pi_3}	\\
-				S_1				& \rTo^f 			& S_2 			& \rTo^g 			& S_3
-			\end{diagram}
-		\]
-
-		Poichè sia $\hat\bbC$ sia $\bbC$ sono semplicemente connessi, per il solito lemma $f \circ \pi_1$ e $g \circ \pi_2$ si sollevano a $\tilde f, \tilde g$.
-
-		Ma $\tilde f$, ristretta a $\bbC$, è una mappa intera (olomorfa su $\bbC$) limitata (perchè all'infinito deve tendere ad $f(\infty)$). Quindi per Liouville è costante.
-		Stesso discorso vale per $\tilde g$, che è olomorfa su $\bbC$ ed è limitata (ha immagine contenuta nel disco). Quindi anche $f$ e $g$ devono essere costanti.
-        \end{proof}
-
-\notamargine{Inoltre, potete mostrare che non vi sono mappe olomorfe da superfici sferiche a superfici iperboliche, utilizzando le carte su $\hat\bbC$ ed il teorema di Liouville su queste. Nell'altro verso invece ve ne sono di non costanti, in particolare potete prendere l'immersione da $D$ in $\bbC$ e quella da $\bbC$ in $\hat\bbC$}
-
-	Restringiamoci ora ai tori. Una mappa tra due tori $T_1 = \bbC/L_1$ e $T_2 = \bbC/L_2$ abbiamo visto che deve essere della forma $f(z)=\alpha z + \beta$.\notamargine{D'ora in poi faremo spesso confusione tra un numero complesso e la sua classe di equivalenza.}
-
-	\begin{definizione}
-		Una legge di gruppo olomorfa su una superficie di Riemann $S$ è una legge di gruppo in cui la moltiplicazione e l'inverso sono mappe olomorfe rispettivamente da $S \times S$ a $S$ e da $S$ a $S$ (per un'opportuna definizione di mappa olomorfa da una varietà bidimensionale).
-	\end{definizione}
-
-	Su un toro abbiamo un'ovvia legge di gruppo ereditata dalla somma su $\bbC$. Inoltre possiamo mettere una legge di gruppo isomorfa, in cui cambio l'origine. Questo si può fare in generale: data la moltiplicazione $\cdot$ su un gruppo $G$, posso definire l'operazione $g * h = g\cdot a^{-1}\cdot h$, con $a\in G$. Allora $(G,*)$ ha $a$ come origine, e ho l'ovvio isomorfismo tra $(G,\cdot)$ e $(G,*)$ dato da $g\mapsto g\cdot a$.
-
-	\begin{proposizione}
-		A meno di cambi di origine, ho una sola legge di gruppo olomorfa sul toro $T$.
-	\end{proposizione}
-
-	\begin{proof}
-		Sia $x \in T$, sia $*$ una legge di gruppo e sia senza perdita di generalità $0$ l'elemento neutro. Consideriamo la funzione $\phi_x: z \mapsto x * z - x$.
-
-		Questa è una mappa olomorfa tra tori, e sappiamo che deve essere della forma $z \mapsto \alpha z + \beta$. Ma $\phi_x(0)=0$, quindi $\beta=0$. Sia quindi $c_x \in \bbC$ tale che $\phi_x(z)=c_xz$.
-
-		Quindi abbiamo, riarrangiando i termini della definizione
-		\[
-		 x*z = \phi_x(z) + x = c_xz + x
-		\]
-		(ricordiamo che si tratta di numeri complessi modulo il reticolo $L$).
-
-		Fissiamo ora $z_0\ne 0$. $c_x$ è una funzione olomorfa in $x$, infatti, detta $f(\zeta) = \zeta * z_0$, vale
-		\[
-			f(\zeta) = \zeta + c_\zeta z_0 + \lambda, \lambda \in L
-		\]
-		stavolta pensata su $\bbC$. Quindi posso ricavare $c_\zeta$, e dato che $f$ è olomorfa per ipotesi, ottengo quello che volevo.
-
-		D'altra parte, fissato un qualsiasi $\lambda \in L$, allora $c_x\lambda \in L \; \forall x$, quindi poichè $x \mapsto c_x \lambda$ è olomorfa a valori in un discreto, deve essere localmente costante e quindi costante. Sia quindi $c=c_x$.
-
-		Ponendo $x=0$ ottengo che $\phi_0(z) = cz = z$, da cui $(c-1)z$ sta nel reticolo per ogni $z$, e quindi $c=1$.
-
-
-	\end{proof}
 
 	% Aggiungere delirio su Aut(D)
 
@@ -240,68 +362,11 @@ Anticipazione: la prossima volta si vedranno gli automorfismo di un reticolo e i
 	Semplificando ora un $\deg c$ ottengo che $\deg \hat c = \deg c$.
 
 
-    \thislesson{02 Novembre 2016}{Isogenie dei Tori e Anello degli Endomorfismi}
+    \chapter{Isogenie dei Tori e Anello degli Endomorfismi}
 
-    \newthought{Mostriamo}, in breve, che il $\bbP_{1}\bbC $ non ammette strutture di gruppo olomorfo: supponiamo infatti per assurdo che $\exists \star: \bbP^1\bbC \times \bbP^1\bbC \rar \bbP^1\bbC$ legge di gruppo (ed olomorfa). Allora le parziali $L_x$ definita da $z \mapsto x \star z \in \Aut(\bbP^1\bbC)$ hanno tutte un punto fisso (visto nelle lezioni precedenti); ma se $L_x(y) = y$ deve essere (per cancellazione) che $x = e$, l'identità, per ogni $x$. Si ottiene quindi l'assurdo, avendo la sfera due punti.
 
-    Abbiamo inoltre mostrato che i tori ammettono come unica struttura di gruppo olomorfo quella di gruppo quoziente di $\bbC$ sul reticolo $L$.
 
-    \section{Leggi di gruppo su superfici di Riemann}
-    \begin{osservazione}
-    Sia G un gruppo olomorfo. $\forall g \in G$ le traslazioni $L_{g}$ e $R_{g}$ sono mappe biolomorfe senza punti fissi.
-    \end{osservazione}
 
-    \noindent Il nostro obiettivo, in questa sezione, è quello di mostrare come nessuna superficie di Riemann iperbolica ammetta una struttura di gruppo olomorfo. In realtà ci basterà mostrarlo solo per il disco unitario grazie al seguente lemma:
-    \begin{lemma}
-    Sia $X$ un gruppo topologico con $\mu : X\times X \rar X$ legge di gruppo. Sia inoltre $p :\widetilde{X} \rar X$ il rivestimento universale.
-    Allora $\mu$ si solleva ad una $\tilde{\mu} : \widetilde{X} \times \widetilde{X} \rar \widetilde{X}$ che rende $\widetilde{X}$ un gruppo topologico.
-    \end{lemma}
-
-    \begin{proof}
-
-    			\begin{diagram}
-    				\widetilde{X}\times\widetilde{X}	& \rTo^{\widetilde{\mu}} 	& \widetilde{X}	\\
-    				\dTo<{p \times p}	&					& \dTo>{p}\\
-    				X\times X				& \rTo^\mu 		& X
-    			\end{diagram}
-
-    \noindent Sia $e \in X$ l'identità di $X$ e sia $\tilde{e} \in \widetilde{X}$ un punto t.c. $p(\tilde{e})=e$. Prodotto di semplicemente connessi è semplicemente connesso, dunque la mappa $\mu \circ (p \times p)$ solleva ad una mappa $\widetilde{\mu}$ che chiude il diagramma. Basta ora mostrare che $\widetilde{\mu}$ è una legge di moltiplicazione {\it (un po' di verifiche emozionantissime)}.\\
-
-    {\bf Elemento neutro:}
-    	\begin{diagram}
-    		\{\tilde{e}\}\times\widetilde{X}	& \rTo^{\widetilde{\mu}}_{\pi_{2}} 	& \widetilde{X}	\\
-    		\dTo<{p \times p}			&					& \dTo>{p}\\
-    		\{e\}\times X				& \rTo^\mu 				& X
-    	\end{diagram}
-
-    \noindent Per restrizione, $\tilde{\mu}$ chiude il diagramma. Ma anche la proiezione sul secondo fattore fa commutare il quadrato; per unicità del sollevamento a punto base fissato si ha che $\tilde{\mu}(\tilde{e}, \bullet) \equiv \pi_{2}(\bullet)$. Analogamente si ha che $\tilde{\mu}(\bullet, \tilde{e}) \equiv \pi_{1}(\bullet)$ e dunque $\tilde{e}$ è elemento neutro per $\tilde{\mu}$.
-
-    {\bf Associatività} e {\bf inverso} si ottengono in maniera del tutto analoga (cioè sfruttando l'unicità del sollevamento).
-    \notamargine{Per l'associatività utilizzare la diagonale sulla faccia del cubo}
-    \end{proof}
-
-    \begin{teorema}
-    Il disco unitario in $\bbC$ non ammette una struttura di gruppo olomorfa
-    \end{teorema}
-
-    \begin{proof}
-    Per assurdo; ci sono due possibili vie.\\
-    Conoscendo i gruppi di Lie, basta considerare la mappa esponenziale dal tangente nel disco: dovrebbe essere una mappa non costante da $\bbC$ nel disco. \hfill \Lightning \\
-    Altrimenti, sia $\star : D\times D \rar D$ una legge di gruppo olomorfa. Sia inoltre $x^{*}$ l'inverso di $x$ per $\star$. Senza perdita di generalità, si può supporre che $0 \in D$ sia l'elemento neutro.
-    Allora $\forall x\in D$ la mappa $L_{x}: z\mapsto x\star z$ è un automorfismo olomorfo. \\
-    Dunque,  $$x\star z = c(x)\frac{z -a(x)}{1- \overline{a}(x) z}$$
-    con $|c(x)|\equiv 1$ e $a:D \rar D$.\\
-    Per $z=0$ si ha $x=-c(x)a(x)$.\\
-    Per $z=a(x)$ si ha $x*a(x)=0$ $\Rar$ $a(x)=x^{*}$ $\Rar$ $a(x)$ è olomorfa $\Rar$ (per $x\neq 0$) $c(x)=-\frac{x}{x^{*}}$ $\Rar$ $c(x)$ è olomorfa per $x\neq 0$, ma $|c(x)| \equiv 1$ $\Rar$ per il teorema della mappa aperta deve essere $ \ c(x) \equiv k \neq 0$. Da cui $a(x)= -\frac{x}{k}$.\\
-    Allora, $$x\star 1/2 = k\frac{1-2a(x)}{2-\overline{a}(x)}$$
-    ma questa non è olomorfa ( $\overline{a}(x)$ non lo è, il resto sì).
-
-    \end{proof}
-
-    \begin{corollario}
-      Curve algebriche non ellittiche \underline{non} ammettono struttura di gruppo olomorfo.
-      Questo fatto sarebbe facilmente vero se sapessimo che le curve algebriche di grado $d \ge 4$ sono necessariamente rivestite dal disco (Il problema è escludere che siano rivestite da $\bbC$)
-    \end{corollario}
 
     \section{Endomorfismi di un Toro}
     \newthought{In questa sezione} vogliamo studiare l'anello delle isogenie di un toro in sè. Ma prima classifichiamo un po' meglio le isogenie tra tori.

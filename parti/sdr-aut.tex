@@ -156,7 +156,7 @@ Ma per il lemma di Schwarz $|\psi'(0)| \leq 1$ e $|\varphi'(0)| \leq 1$. Quindi 
 $\varphi$ è una rotazione e quindi appartiene a $G$.
 \end{proof}
 
-\subsection {$D \simeq \mathcal{H}$}
+\subsection {$\mathcal{H}$, ovvero un altro modello per $D$}
 
 Vediamo ora che il disco $D$ è biolomorfo al semipiano $\mathcal{H} = \left \{ z \in \mathbb{C} | \ Im (z)>0 \right \}$
 Presi $w \in \mathcal{H}$ e $z \in D$, consideriamo le mappe:
@@ -166,13 +166,10 @@ Quindi $D \simeq \mathcal{H}$ come superfici di Riemann.
 
 Questo ci permette anche di determinare che $Aut( \mathcal{H}) = \left \{ z \mapsto \displaystyle{\frac{az+b}{cz+d}} \mid ad > bc \right \} = \GL^+ (2, \bbR)$
 
-Ora quindi dovremo capire quali sottogruppi di $Aut (\hat{\mathbb{C}})$, $Aut(\mathbb{C})$ e $Aut(D)$ agiscono in modo propriamente discontinuo
-e non hanno punti fissi, per classificare le superfici di Riemann.
-
 
 \chapter{Classificazione delle superfici di Riemann, parte II}
 
-La scorsa lezione abbiamo determinato i gruppi di automorfismi complessi delle tre superfici di Riemann:
+Nello scorso capitolo abbiamo determinato i gruppi di automorfismi complessi delle tre superfici di Riemann:
 $$
 \hat{\bbC},\qquad \bbC, \qquad \mathbb{D}.
 $$
@@ -186,36 +183,32 @@ L' idea ora è che sappiamo chi è $\tilde{X}$ e chi sono i suoi automorfismi, q
 Richiamiamo quindi delle definizioni classiche.
 
 \begin{definizione}[Successione esatta corta.] In generale una catena di morfismi tra oggetti algebrici di questo tipo:
-$$
-A\xrightarrow{\alpha}B\xrightarrow{\beta}C\rightarrow 0
-$$
-si dice {\it esatta} se $\Im{\alpha}=\Ker{\beta}$.\\
+$$ A\xrightarrow{\alpha}B\xrightarrow{\beta}C $$
+si dice {\it esatta in $B$} se $\Imm{\alpha}=\ker{\beta}$.\\
 In particolare se abbiamo una sequenza del tipo
-$$
-0\rightarrow A\xrightarrow{\alpha}B\xrightarrow{\beta}C \rightarrow 0
-$$
+$$ 0\rightarrow A\xrightarrow{\alpha}B\xrightarrow{\beta}C \rightarrow 0 $$
 che è esatta in ogni punto allora siamo in presenza di una {\it successione esatta corta}.
 \end{definizione}
 E' opportuno osservare che le successioni esatte corte sono caratterizzate dalle proprietà:
-$$
-\Ker \alpha =0;\ \ \Im \alpha =\Ker \beta,\ \ \Im \beta =C.
-$$
+$$ \ker \alpha =0;\ \ \Imm\alpha =\ker\beta,\ \ \Imm\beta =C. $$
 La definizione è generale ma a noi interesseranno essenzialmente morfismi di gruppi.
 Nella pratica le successioni esatte corte danno informazioni sul gruppo centrale se si conoscono quelli laterali: un esempio ci è dato dai prodotti semidiretti:
 \begin{fatto}
 Sia data una successione esatta corta di gruppi:
-$$
-0\rightarrow A\xrightarrow{j}B\xrightarrow{\pi}C \rightarrow 0
-$$
+$$ 0\rightarrow A\xrightarrow{j}B\xrightarrow{\pi}C \rightarrow 0 $$
 E supponiamo esista $\sigma:C\rightarrow B$ morfismo tale che:
 $$
 \pi\circ \sigma=\Id_{\, C}
 $$
-cioè esista  una {\it sezione} di $\pi$. Allora $B=A\rtimes_\psi C$ dove $\psi:C
+cioè esista  una {\it sezione} di $\pi$. Allora $B\cong A\rtimes_\psi C$ dove $\psi:C
 \rightarrow \Aut A$ è il coniugio.
 \end{fatto}
-\notamargine{Basta scrivere a mano un generico elemento di $B$ come prodotto di uno di $C$ tramite $\sigma$ e uno di $A$ tramite $j$ e evrificare l' unicità. L' operazione poi viene da sè.}
-La dimostrazione è lasciata come esercizio.
+\begin{proof}
+    Definiamo $\psi: C\to \Aut A$ come $\psi_c(a)=j^{-1}\left( \sigma(c)j(a)\sigma(c^{-1}) \right)$; è ben definita per l'esattezza della sequenza.\\
+    Sia $\varphi:A\rtimes_\psi C\to B$ tale che $\varphi(a,c)=j(a)\sigma(c)$; allora è un omomorfismo.\\
+    Infatti siano $(a_1,c_1),(a_2,c_2)\in A\rtimes_\psi C$, in modo che $(a_1,c_1)\cdot(a_2,c_2)=(a_1\psi_{c_1}(a_2),c_1c_2)$ e allora $\varphi((a_1\psi_{c_1}(a_2),c_1c_2))=j(a_1\psi_{c_1}(a_2))\sigma(c_1c_2)=j(a_1)\sigma(c_1)j(a_2)\sigma(c_1^{-1})\sigma(c_1)\sigma(c_2)=\varphi(a_1,c_1)\cdot\varphi(a_2,c_2)$\\
+    Verifichiamo ora che $\ker\varphi$ è banale: se $j(a)\sigma(c)=e_B$, allora $\sigma(c)=j(a^{-1})\in\Imm j=\ker \pi$ ovvero $c=\pi\sigma(c)=e_C$, quindi $j(a)=e_B$ ma essendo $j$ iniettiva si ha anche $a=e_A$.
+\end{proof}
 
 Nel nostro contesto abbiamo questa interessante successione esatta corta:
 $$
@@ -237,7 +230,7 @@ Cerchiamo i sottogruppi $G$ di $\Aut{\tilde{X}}$ tali che:
 \item[(i)] l' azione di $G$ su $\tilde{X}$ sia propriamente discontinua;
 \item[(ii)] gli elementi di $G\setminus\{\Id\}$ agiscono senza punti fissi.
 \end{itemize}
-E' opportuno premettere dei lemmi generali, dopo aver osservato che in ognuno dei tre casi $\Aut{\tilde{X}}$ è un gruppo topologico metrico.
+È opportuno premettere dei lemmi generali, dopo aver osservato che in ognuno dei tre casi $\Aut{\tilde{X}}$ è un gruppo topologico metrico.
 \begin{lemma}Sia $\tilde G$ un gruppo topologico metrico e $G$ un suo sottogruppo; allora si equivalgono:
 \begin{itemize}
 \item[(a)] $G$ è discreto in $\tilde G$;
@@ -255,46 +248,55 @@ $$
 dove la somma, in effetti, è diretta.
 \end{teorema}
 \begin{proof}
-Procediamo per induzione sulla dimensione di $V_G$, osservando che i passi base $d=0,1$ sono stati fatti nella proposizione precedente. Supponiamo quindi $\Dim{V_G}>1$ e prendiamo $g_0$ il suo elemento nonidentico di minima norma; decomponiamo ora:
-$$
-V_G=\bbR g_0\ \oplus\  W\ \mbox{ e la rispettiva projezione}\ \pi:V_G\rightarrow W.
-$$
-\notamargine{Esiste perchè... rielaborare la dimostrazione precedente.}
-Osserviamo che su $\Gamma:=\pi(G)\subseteq W$ abbiamo canonicamente una struttura di gruppo.\\
-Dimostriamo che $\Gamma$ è discreto, mostrando che la sua identità (che è la stessa di prima) è isolata. Sia $\{\gamma_k=\pi(g_k)\}\subseteq W\setminus\{0\}$ successione tale che $\gamma_k\rightarrow 0$, allora possiamo decomporre ogni $g_k$ così:
-$$
-g_k=\gamma_k+\lambda_k\, g_0=\gamma_k+q(k)\cdot\, g_0+\delta_k\, g_0,
-$$
-$$
-q(k)\in\bbZ,\ \ 0\leq \delta_k<1
-$$
-dove nell'ultimo passaggio abbiamo diviso con resto $\lambda_k$ per $|g_0|$. Dunque abbiamo una successione di elementi di $G$ limitata dentro $\bbR^n$:
-$$
-|g_k-q(k)\cdot g_0| \leq |\gamma_k|+|g_0|
-$$
-che per discretezza può essere composta solo da un numero finito di elementi, assurdo.
-\notamargine{Altrimenti ne estraggo di infiniti distinti, riestraggo per far convergere, considero le differenze che stanno in G e tendono a $0$. Assurdo ché 0 è isolato.}
+    Consideriamo $V_G$ lo span su $\bbR$ di $G$ e procediamo per induzione su $d=\Dim V_G$.\\
+    Se $d=0$ si tratta del gruppo banale, se ha $d=1$ invece possiamo identificarlo, passando in coordinate, con un sottogruppo additivo discreto di $\bbR$. Con un principio variazionale vediamo che la struttura di tali gruppi è triviale. Consideriamo infatti $g_0$ il
+    $$\inf\{g>0\ :\ g\in G\}$$
+    di sicuro $g_0>0$ perchè l'identità è isolata. Vorremmo mostrare che $g_0\in G$, per farlo basta ragionare per assurdo e produrre una successione di elementi $\{g_n\}\subseteq G $ che tendono a $g_0$; allora si avrebbe che $g_m-g_n$ (che sta in $G$) si accumula su $0$, assurdo.\\
+    Dividendo ora con resto un qualsiasi altro elemento di $g'\in G$ per $g_0$ otteniamo che:
+    $$
+    g'=k\cdot g+q,\ \ k\in \bbZ,\ \ 0\leq q <g
+    $$
+    ma allora per minimalità $q=0$ il che implica $G\subseteq \bbZ g_0$ e l' altra inclusione era ovvia.
+    Supponiamo ora $d=\Dim{V_G}>1$ e prendiamo $g_0$ il suo elemento nonidentico di minima norma; decomponiamo ora:
+    $$
+    V_G=\bbR g_0\ \oplus\  W\ \mbox{ e la rispettiva projezione}\ \pi:V_G\rightarrow W.
+    $$
+    \notamargine{Esiste perchè... rielaborare la dimostrazione precedente.}
+    Osserviamo che su $\Gamma:=\pi(G)\subseteq W$ abbiamo canonicamente una struttura di gruppo.\\
+    Dimostriamo che $\Gamma$ è discreto, mostrando che la sua identità (che è la stessa di prima) è isolata. Sia $\{\gamma_k=\pi(g_k)\}\subseteq W\setminus\{0\}$ successione tale che $\gamma_k\rightarrow 0$, allora possiamo decomporre ogni $g_k$ così:
+    $$
+    g_k=\gamma_k+\lambda_k\, g_0=\gamma_k+q(k)\cdot\, g_0+\delta_k\, g_0,
+    $$
+    $$
+    q(k)\in\bbZ,\ \ 0\leq \delta_k<1
+    $$
+    dove nell'ultimo passaggio abbiamo diviso con resto $\lambda_k$ per $|g_0|$. Dunque abbiamo una successione di elementi di $G$ limitata dentro $\bbR^n$:
+    $$
+    |g_k-q(k)\cdot g_0| \leq |\gamma_k|+|g_0|
+    $$
+    che per discretezza può essere composta solo da un numero finito di elementi, assurdo.
+    \notamargine{Altrimenti ne estraggo di infiniti distinti, riestraggo per far convergere, considero le differenze che stanno in G e tendono a $0$. Assurdo ché 0 è isolato.}
 
-(Da questo punto dimenticate chi sono i $g_i$ ed i $\gamma_i$ e ne definiamo di nuovi)
-A questo punto uso l'ipotesi induttiva su $\Gamma$ e ne produco una $\bbZ$-base come reticolo $\{\gamma_1, \ldots, \gamma_{d-1}\}$.
-Inoltre prendiamo $\gamma_0$ come generatore della proiezione su $\bbR g_0$.
-A questo punto è ovvio che la famiglia (pensata immersa in $V_G$)
-$$
-\{\gamma_0,\gamma_1,\ldots,\gamma_{d-1}\}
-$$
-contiene il reticolo $G$, ovvero $G \sqsubseteq \bbZ \gamma_0 + \bbZ \gamma_1 + \ldots + \bbZ \gamma_{d-1}$.
+    (Da questo punto dimenticate chi sono i $g_i$ ed i $\gamma_i$ e ne definiamo di nuovi)
+    A questo punto uso l'ipotesi induttiva su $\Gamma$ e ne produco una $\bbZ$-base come reticolo $\{\gamma_1, \ldots, \gamma_{d-1}\}$.
+    Inoltre prendiamo $\gamma_0$ come generatore della proiezione su $\bbR g_0$.
+    A questo punto è ovvio che la famiglia (pensata immersa in $V_G$)
+    $$
+    \{\gamma_0,\gamma_1,\ldots,\gamma_{d-1}\}
+    $$
+    contiene il reticolo $G$, ovvero $G \sqsubseteq \bbZ \gamma_0 + \bbZ \gamma_1 + \ldots + \bbZ \gamma_{d-1}$.
 
-A questo punto usando Nakayama (o il teorema dei gruppi abeliani finitamente generati) si ottiene che $G$ ha dimensione finita (e $\le d$).
+    A questo punto usando Nakayama (o il teorema dei gruppi abeliani finitamente generati) si ottiene che $G$ ha dimensione finita (e $\le d$).
 
-Mostriamo che è fatta di vettori linearmente indipendenti addirittura su $\bbR$:
-$$
-0=\mu_0\, g_0+\mu_1\, g_1+\ldots+\mu_{d-1}\, g_{d-1}
-$$
-projettando con $\pi$ su $W$ e usando l' ipotesi di lineare indipendenza sui $\{\gamma_i\}$ ottengo:
-$$
-\mu_1=\ldots=\mu_{d-1}=0\ \ \Rightarrow\  \mu_0=0.
-$$
-e questo conclude la dimostrazione.
+    Mostriamo che è fatta di vettori linearmente indipendenti addirittura su $\bbR$:
+    $$
+    0=\mu_0\, g_0+\mu_1\, g_1+\ldots+\mu_{d-1}\, g_{d-1}
+    $$
+    projettando con $\pi$ su $W$ e usando l' ipotesi di lineare indipendenza sui $\{\gamma_i\}$ ottengo:
+    $$
+    \mu_1=\ldots=\mu_{d-1}=0\ \ \Rightarrow\  \mu_0=0.
+    $$
+    e questo conclude la dimostrazione.
 \end{proof}
 
 Passiamo ora alla classificazione.
@@ -319,16 +321,6 @@ $$
 ma allora per ogni aperto non vuoto $U\subseteq \bbC$ si avrebbe definitivamente in $k$ che $g_k(U)\cap U\neq \emptyset$ per la definizione di limite.\\
 Per il Lemma 4 dunque si ha che $G$ è discreto.
 
-Consideriamo ora $V_G$ lo span su $\bbR$ di $G$ e separiamo i casi a secondo della sua dimensione reale. Se ha dimensione zero si tratta del gruppo banale, se ha dimensione 1 invece possiamo identificarlo, passando in coordinate, con un sottogruppo additivo discreto di $\bbR$. Con un principio variazionale vediamo che la struttura di tali gruppi è triviale. Consideriamo infatti $g_0$ il
-$$
-\inf\{g>0\ :\ g\in G\}
-$$
-di sicuro $g_0>0$ perchè l' identità è isolata. Vorremmo mostrare che $g_0\in G$, per farlo basta ragionare per assurdo e produrre una successione di elementi $\{g_n\}\subseteq G $ che tendono a $g_0$; allora si avrebbe che $g_m-g_n$ (che sta in $G$) si accumula su $0$, assurdo.\\
-Dividendo ora con resto un qualsiasi altro elemento di $g'\in G$ per $g_0$ otteniamo che:
-$$
-g'=k\cdot g+q,\ \ k\in \bbZ,\ \ 0\leq q <g
-$$
-ma allora per minimalità $q=0$ il che implica $G\subseteq \bbZ g_0$ e l' altra inclusione era ovvia.
 
 Rimane il caso in cui la dimensione reale di $V_G$ sia 2. In questo caso esistono $\omega_1,\omega_2$ numeri complessi linearmente indipendenti su $\bbR$ tali che:
 $$
