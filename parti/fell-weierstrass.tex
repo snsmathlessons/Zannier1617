@@ -1,19 +1,23 @@
-\thislesson{07 Novembre 2016}{Formule di Annullamento}
+\chapter{Funzioni ellittiche}
 
 Prendiamo $T_1=\bbC/L_1$ e $T_2=\bbC/L_2$ tori complessi.
 Ogni morfismo (omomorfismo di gruppi che sia anche olomorfo) $T_1\rar T_2$ si solleva ad un unico morfismo $\bbC\rar\bbC$, che è dato da una funzione affine $z \mapsto az + b$.
 Se rappresentiamo $T_1$ e $T_2$ come quozienti di $\bbC$ in un modo diverso, il sollevamento può cambiare (quindi non è canonico).
 Tuttavia, se $T_1=T_2$ allora la sollevata si può prendere della forma $z \mapsto az$ ed $a$ è determinato in modo canonico (quello ottenuto rappresentando $T_1$ e $T_2$ nello stesso modo come quozienti di $\bbC)$.
 
+\section{Formule di annullamento}
+
 \begin{teorema}
   \label{residui-funzioni-toriche}
 $T$ un toro e $f:T\rar\bbC$ meromorfa (non costante). Allora
+\begin{enumerate}
+    \item $\sum_{x\in T}\res_xf=0$ $\qquad$ (uguaglianza di numeri complessi)
 
-(i) $\sum_{x\in T}\res_xf=0$ $\qquad$ (uguaglianza di numeri complessi)
+    \item $\sum_{x\in T}\ord_xf=0$ $\qquad$ (uguaglianza di numeri interi)
 
-(ii) $\sum_{x\in T}\ord_xf=0$ $\qquad$ (uguaglianza di numeri interi)
+    \item $\sum_{x\in T}x\cdot\ord_xf=0$ $\qquad$ (uguaglianza di elementi del gruppo $T$)
+\end{enumerate}
 
-(iii) $\sum_{x\in T}x\cdot\ord_xf=0$ $\qquad$ (uguaglianza di elementi del gruppo $T$)
 \end{teorema}
 
 \notamargine{$\res_xf$ indica il residuo di $f$ in $x$ (e $0$ se $f(x)\in\bbC$)}
@@ -54,6 +58,9 @@ $(\int_0^{\omega_1}-\int_{\omega_2}^{\omega_1+\omega_2})=\omega_2\int_0^{\omega_
 
 Quindi $\sum_{x\in T}x\cdot\ord_xf$ è un elemento del reticolo $L$, da cui la tesi.
 \end{proof}
+
+
+\section{Funzione $\wp$ di Weierstrass}
 
 
 Fissiamo un toro $T$ e rappresentiamolo come $\bbC/L$ ($L$ reticolo).
@@ -124,6 +131,8 @@ Non esiste un polinomio $A\in\bbC[x]$ tale che $A(\wp):T\rar\bbC$ sia la funzion
 Sia $A(x)=(x-a_1)...(x-a_n)$. Se $A(\wp)\equiv0$, allora almeno una tra le $(\wp-a_i)$ dovrebbe essere $\equiv0$, ma $\wp-a_i$ ha un polo doppio in $0$...
 \end{proof}
 
+\section{Struttura del campo delle funzioni ellittiche}
+
 
 \begin{teorema}
 Il campo delle funzioni meromorfe pari $T\rar\bbC$ è $\bbC(\wp)$.
@@ -166,7 +175,7 @@ $(\wp')^2=\frac{A(\wp)}{B(\wp)}$ e ci chiediamo chi siano $A$ e $B$.
 
 In conclusione otteniamo che $(\wp')^2=A(\wp)$, con $A$ di grado 3.
 
-\thislesson{09 Novembre 2016}{Differenziale dell'ellittica di Weierstrass}
+\section{Relazione algebrica tra $\wp$ e $\wp'$}
 
 Abbiamo dimostrato che sussite la seguente relazione differenziale tra la funzione di Weierstrass e la sua derivata:
 
