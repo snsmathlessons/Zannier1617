@@ -143,17 +143,16 @@ Cioè abbiamo visto che le matrici di cambio di base, se conserviamo l'orientazi
 \item $SL_2(\bbZ)$ ha dei punti fissi, quindi il quoziente non è una superficie di Riemann con la mappa indotta da $\mathcal{H}$.
 \item per avere superfici di Riemann devo prendere gruppi che soddisfano le famose proprietà, per esempio $\Gamma (2)$.
 \item Le matrici di quel tipo sono numerabili, $\mathcal H$ ha la cardinalità del continuo, quindi il quoziente ha la cardinalità del continuo.
-\item Un dominio fondamentale (contiene un punto per ogni classe di biolomorfismo di tori) è dato da $\{ x+iy | -\frac{1}{2}<x<\frac{1}{2}, y>\sqrt{1-x^2}\}$. (Figura 1)
-Si noti che torna che la cardinalità sia quella del continuo, anche senza aver visto che è un quoziente. (Dimostrazione di queste cose???)
+\item Un dominio fondamentale (contiene un punto per ogni classe di biolomorfismo di tori) è dato da $\{ x+iy | -\frac{1}{2}<x<\frac{1}{2}, y>\sqrt{1-x^2}\}$. Vedi \ref{fig:2}
 \end{itemize}
 \end{osservazione}
+Una trattazione più approfondita di queste cose avverrà nell'ultima parte sulle funzioni modulari.
+
 
 \begin{figure}[h]
 \includegraphics[width=8cm]{lezione-161024-fig3}
 \caption{Dominio fondamentale}\label{fig:2}
 \end{figure}
-
-Anticipazione: la prossima volta si vedranno gli automorfismo di un reticolo e i gruppi olomorfi, per questi ultimi si darà un cenno al concetto di funzione olomorfa in più variabili.
 
 \chapter{Leggi di gruppo olomorfe}
 
@@ -275,7 +274,18 @@ Possiamo riassumere tutto quello detto finora nel seguente
 \begin{teorema}
     Le strutture di gruppo olomorfo sulle superfici di Riemann sono tutte e sole $\bbC$, $\bbC / \bbZ$, $\bbC / \bbZ^2$
 \end{teorema}
+\begin{proof}
+    Sia $X$ una \sdR con struttura di gruppo olomorfo. Sappiamo che $\tilde X$ è uno tra $\hat\bbC,\bbC,D$ e che una struttura di gruppo su $X$ si solleva a $\tilde X$.\\
+    Ma abbiamo visto che su $\hat\bbC$ e $D$ non esistono leggi di gruppo, quindi $X$ è per forza di tipo euclideo, ovvero $\tilde X=\bbC$.\\
+    Le superfici di Riemann sferiche sono esattamente $\bbC, \bbC / \bbZ, \bbC / \bbZ^2$, e per ognuna di queste una eventuale struttura di gruppo si solleva all'unica legge di gruppo su $\bbC$, ovvero quella additiva. Quindi per ognuna di queste tre c'è esattamente una legge di gruppo, che è quella che deriva da $\bbC$.
+\end{proof}
 
+Possiamo quindi riscrivere le tre leggi di gruppo su superfici di Riemann come:
+\begin{itemize}
+    \item Gruppo additivo $(\bbC,+)$ che è l'unica struttura su $\bbC$
+    \item Gruppo moltiplicativo $(\bbC^\ast,\cdot)$ che è la struttura sul cilindro data dalla mappa esponenziale $\exp: \bbC / \bbZ \to \bbC^\ast$ cioè $\exp(z+\bbZ)=e^{2\pi i z}$.
+    \item Curve ellittiche, ovvero la struttura di addizione sul toro.
+\end{itemize}
 
 \begin{corollario}
   Curve algebriche non ellittiche \underline{non} ammettono struttura di gruppo olomorfo.
@@ -285,7 +295,7 @@ Possiamo riassumere tutto quello detto finora nel seguente
 
 
 
-\chapter{Mappe di Tori ed Isogenie}
+\chapter{Mappe tra tori}
 
 	% Aggiungere delirio su Aut(D)
 
@@ -300,21 +310,34 @@ Possiamo riassumere tutto quello detto finora nel seguente
 	Fissando una base del reticolo, ogni automorfismo si scrive come una matrice $2 \times 2$ a coefficienti interi. Per qualche strano motivo da capire che c'entra con le radici dell'unità, %TODO%
 	posso avere solo rotazioni di $180, 90, 60$.
 
-	\subsection{Isogenie}
+	\section{Isogenie}
 	\begin{definizione}
 		Una mappa $c: T_1 \rar T_2$ si dice un'isogenia se è un'omomorfismo suriettivo (di gruppi olomorfi).
 	\end{definizione}
+    \begin{proposizione}
+        Sia $c:T_1\to T_2$ mappa olomorfa non costante. Se $c(0)=0$, allora $c$ è un'isogenia.
+    \end{proposizione}
+    \begin{proof}
+        Abbiamo visto che ogni mappa tra tori è indotta da un'affinità di $\bbC$; sia $f(z)=az+b$ l'affinità che si quozienta a $c$, ovvero che detti $L_1,L_2$ i due reticoli (sappiamo che vale $aL_1\subset L_2$), si abbia $c([z]_{L_1})=[az+b]_{L_2}$.\\
+        Dato che $c(0)=0$, abbiamo $b\in L_2$, quindi possiamo supporre $b=0$. Allora $c([z]_1)=[az]_2$ e dunque è omomorfismo in quanto $c([x+y]_1)=[a(x+y)]_2=[ax]_2+[ay]_2$.\\
+        Inoltre il fatto che $c$ sia non costante vuol dire che $a\neq0$, quindi abbiamo banalmente la surgettività in quanto $c([a^{-1}z]_1)=[z]_2$.
+    \end{proof}
+    Viceversa, se abbiamo un $\mu\in\bbC^\ast$ tale che $\mu L_1\subset L_2$, possiamo definire l'isogenia $c([z])=[\mu z]$.\\
+    Quindi le isogenie sono identificate dal solo parametro $\mu$.
+
+    Studiamo ora il contenimento $\mu L_1\subset L_2$.
 
 	\begin{proposizione}
-		$\Ker c$ è finito.
+		$\Ker c \cong L_2 / \mu L_1$ (dove si intende il quoziente come gruppi additivi)
 	\end{proposizione}
 	\begin{proof}
-		Se non fosse finito, essendo il toro compatto, avrei un punto di accumulazione del kernel, ma dato che l'isogenia è olomorfa l'insieme di livello deve essere discreto, a meno che f non sia costantemente nulla.
+		Vediamo che $\ker c=\{[z]_1 : c([z]_1)=[0]_2\} = \{[z]_1 : \mu z\in L_2\}$. Considero allora la mappa $\varphi:L_2\to\ker c$ definita da $\varphi([z]_2)=[\mu^{-1}z]_1$ che è un omomorfismo surgettivo poiché $\mu L_1\subset L_2$.\\
+        Ma $\ker\varphi = \{[z]_2 : \mu^{-1} z\in L_1\}=\mu L_1$, quindi per il primo teorema di isomorfismo abbiamo la tesi.
 	\end{proof}
 
 	\begin{definizione}
-		Si dice grado dell'isogenia $[L_2 : \mu L_1]$.
-        \end{definizione}
+		Si dice grado dell'isogenia $[L_2 : \mu L_1] = |\ker c|$.
+    \end{definizione}
 
 	\begin{osservazione}
 		La composizione di due isogenie è un'isogenia che ha come grado il prodotto dei gradi.
@@ -335,6 +358,10 @@ Possiamo riassumere tutto quello detto finora nel seguente
 
 	D'altra parte, se vale l'ultima condizione, $\mu=1$ induce un'isogenia.
 
+    \begin{osservazione}
+        Date le relazioni precedenti, vale anche $\deg c = \left| \det \matrice abcd \right|$
+    \end{osservazione}
+
 	\subsection{Isogenia duale}
 
 	Sia $c: T_1 \rar T_2$ un'isogenia. Si definisce l'isogenia duale $\hat c: T_2 \rar T_1$ come
@@ -349,26 +376,32 @@ Possiamo riassumere tutto quello detto finora nel seguente
 
 	A questo punto, fissiamo i due reticoli $L_1$ e $L_2$. Siano ora $c$ e $\hat c$ rappresentate da $\mu$ e $\frac{\deg c}\mu$.
 
-	Notiamo innanzitutto la funtorialità controvariante del duale, o più prosaicamente che $\hat{c_2 \circ c_1} = \hat c_1 \circ \hat c_2$ (ci sarebbe da verificarlo).
+    \begin{proposizione}
+        Data un'isogenia $c:T_1\to T_2$ e la duale $\hat c:T_2\to T_1$, vale $\deg\hat c=\deg c$.
+    \end{proposizione}
+    \begin{proof}
+        Per l'osservazione sulla moltiplicatività della composizione, vale
+    	\[
+    		\deg \hat c \cdot \deg c = \deg(\hat c \circ c) = \deg(\deg c) = \deg^2 c
+    	\]
 
-	Cerchiamo ora di calcolare $\deg \hat c$.
+    	dove con $\deg(\deg c)$ indico il grado dell'applicazione ``moltiplicazione per il grado'', che essendo un omotetia del piano, ha grado $\deg^2 c$ (moralmente sto infittendo il reticolo dividendo ``righe'' e ``colonne'' in $\deg c$ parti).
 
-	\[
-		\deg \hat c \cdot \deg c = \deg(\hat c \circ c) = \deg(\deg c) = \deg^2 c
-	\]
-
-	dove con $\deg(\deg c)$ indico il grado dell'applicazione ``moltiplicazione per il grado'', che essendo un omotetia del piano, ha grado $\deg^2 c$ (moralmente sto infittendo il reticolo dividendo ``righe'' e ``colonne'' in $\deg c$ parti).
-
-	Semplificando ora un $\deg c$ ottengo che $\deg \hat c = \deg c$.
-
-
-    \chapter{Isogenie dei Tori e Anello degli Endomorfismi}
-
+    	Semplificando ora un $\deg c$ ottengo che $\deg \hat c = \deg c$.
+    \end{proof}
 
 
+    \begin{proposizione}
+        Il duale è un funtore controvariante, più prosaicamente $\hat{c_2 \circ c_1} = \hat c_1 \circ \hat c_2$
+    \end{proposizione}
+    \begin{proof}
+        È una rapida verifica: scriviamo $T_1\xrightarrow{c_1}T_2\xrightarrow{c_2}T_3$ e sia $z\in T_3$. Prendiamo $y\in T_2$ tale che $c_2(y)=z$ e $x\in T_1$ tale che $c_1(x)=y$.\\
+         Per definizione di duale, $\hat c_1(y)=\deg c_1\cdot x$ e $\hat c_2(z)=\deg c_2\cdot y$.\\
+        Ma allora $(\hat c_1\circ\hat c_2)(z)=\hat c_1(\deg c_2 y)=\deg c_1\cdot\deg c_2 \cdot x$ che è esattamente $\hat{c_2\circ c_1}(z)$ poiché $c_2\circ c_1(x)=z$ e $\deg(c_2\circ c_1)=\deg c_1\cdot\deg c_2$.
+    \end{proof}
 
 
-    \section{Endomorfismi di un Toro}
+\section{Endomorfismi di un Toro}
     \newthought{In questa sezione} vogliamo studiare l'anello delle isogenie di un toro in sè. Ma prima classifichiamo un po' meglio le isogenie tra tori.
 
     \begin{proposizione}
@@ -385,7 +418,7 @@ Possiamo riassumere tutto quello detto finora nel seguente
 
     Più avanti definiremo le funzioni di Weierstrass, che ci permetteranno di trasformare i tori in curve algebriche (ellittiche). Le isogenie verranno trasformate in funzioni razionali tra le curve.
 
-    \subsection{Anello degli Endomorfismi di un Toro}
+\subsection{Anello degli Endomorfismi di un Toro}
 
     Fissiamo un toro $T=\sfrac{\bbC}{L}$ e consideriamo l'insieme $End(T)$ delle isogenie del toro in sè, con in più la mappa nulla.
 

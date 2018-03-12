@@ -304,43 +304,7 @@ Passiamo ora alla classificazione.
 
 
 \section{Superfici euclidee}
-
-Consideriamo $X$ euclidea i.e. $\tilde{X}=\bbC$. Questo caso è più interessante. Ricordiamo prima di tutto che gli automorfismi di $\bbC$ sono tutte e sole le affinità:
-$$
-z\mapsto az+b,\ \ a\in\bbC^*,\ b\in \bbC.
-$$
-Questa rappresentazione ci permette di mettere una metrica su $\Aut{\bbC}$ identificando i suoi elementi con coppie di numeri complessi, con la seconda coordinata non nulla:
-$$
-z\mapsto az+b\ \ \leftrightarrow\  (a,b).
-$$
-Osserviamo che se vogliamo che valga la proprietà (ii) dobbiamo richiedere $a=1$. Questo forza $G$ ad essere un sottogruppo di traslazioni.\\
-Vediamo ora che necessariamente l' identità di $G$ è isolata: ragionando per assurdo troveremmo infiniti elementi distinti $\{ g_k=(1,b_k) \}\in G$ tali che:
-$$
-g_k=(1,b_k)\rightarrow (1,0)=\Id\ \ \ \mbox{ se } k \rightarrow \infty,
-$$
-ma allora per ogni aperto non vuoto $U\subseteq \bbC$ si avrebbe definitivamente in $k$ che $g_k(U)\cap U\neq \emptyset$ per la definizione di limite.\\
-Per il Lemma 4 dunque si ha che $G$ è discreto.
-
-
-Rimane il caso in cui la dimensione reale di $V_G$ sia 2. In questo caso esistono $\omega_1,\omega_2$ numeri complessi linearmente indipendenti su $\bbR$ tali che:
-$$
-G=\bbZ\, \omega_1+\bbZ\, \omega_2.
-$$
-la dimostrazione è una immediata conseguenza del teorema \ref{sgr_discreti}.
-
-
-Si è visto nella scorsa lezione che i sottogruppi $G\le\Aut(\tilde{X})=Aff(\bbC)$ del tipo che si cerca sono dei reticoli $L$ di rango che può essere solo $0$,$1$ o $2$. Distinguiamo quindi tre casi:
-\begin{itemize}
-\item $\Rk L=0$, l'unica superficie di Riemann è $\bbC$.
-\item $\Rk L=1$, l'unica superficie di Riemann è $\quotient{\bbC}{L}$, in cui siccome $L$ ha rango uno si ha $L=\omega \bbZ$, con $\omega\in\bbC$ non nullo. Quindi eseguendo un'omotetia di parametro $\omega$ (è un biolomorfismo) si ha che $X\cong \quotient{\bbC}{\bbZ}$.
-Osserviamo che in questo caso si ha che $\quotient{\bbC}{\bbZ}\cong \bbC^{*}=\mathbb{P}^1(\mathbb{C})\minus\{0,\infty\}$ tramite la mappa esponenziale, e che $\bbC^{*}=\mathbb{G}_m(\bbC)$, il gruppo algebrico moltiplicativo di $\bbC$. Quindi si possono trasferire le operazioni di gruppo di $\bbC^{*}$ su $\quotient{\bbC}{\bbZ}$ tramite la mappa esponenziale, cosa che si farà più avanti in modo analogo con le curve algebriche.
-\item $\Rk L=2$, in questo caso si hanno i Tori, $\quotient{\bbC}{L}$ con $L$ reticolo di rango $2$, che si studieranno più avanti in questa lezione.
-\end{itemize}
-
-\section{Superfici sferiche e iperboliche}
-
-
-Nelle scorsa lezioni si è visto che è possibile classificare le Superfici di Riemann come quozienti di:
+Abbiamo visto che è possibile classificare le Superfici di Riemann come quozienti di:
 \begin{enumerate}
 \item $\mathbb{P}^1(\mathbb{C})=\hat{\bbC}$
 \item $\bbC$
@@ -350,18 +314,41 @@ per un gruppo $G\le\Aut(\tilde{X})$ di automorfismi che agisce in maniera propri
 
 Ne segue che per classificare le superfici di Riemann è sufficiente classificare i sottogruppi dei gruppi di automorfismi della superfici $1)$, $2)$ e $3)$.
 
-Se $X$ sferica i.e. $\tilde {X}=\hat{\bbC}$, la classificazione è banale, infatti se $g\in\Aut{\hat{\bbC}}=PGL_2(\bbC)$ la condizione $(ii)$ è soddisfatta solo da $g=\Id$:
+Iniziamo considerando $X$ euclidea i.e. $\tilde{X}=\bbC$, che è quello di cui ci occuperemo per il resto del corso. Ricordiamo prima di tutto che gli automorfismi di $\bbC$ sono tutte e sole le affinità:
 $$
-g(z)=\frac{az+b}{cz+d}=z\ \Leftrightarrow\ cz^2+(d-a)z-b=0
+z\mapsto az+b,\ \ a\in\bbC^*,\ b\in \bbC.
 $$
-basta fare i casi e ricordarsi di considerare anche $z=\infty$ per accorgersi che questa equazione ha sempre soluzioni in $\hat{\bbC}$.
+Questa rappresentazione ci permette di mettere una metrica su $\Aut{\bbC}$ identificando i suoi elementi con coppie di numeri complessi, con la prima coordinata non nulla:
+$$
+z\mapsto az+b\ \ \leftrightarrow\  (a,b).
+$$
+Osserviamo che se vogliamo che non ci siano punti fissi dobbiamo richiedere $a=1$. Questo forza $G$ ad essere un sottogruppo di traslazioni.\\
+Vediamo ora che necessariamente l' identità di $G$ è isolata: ragionando per assurdo troveremmo infiniti elementi distinti $\{ g_k=(1,b_k) \}\in G$ tali che:
+$$
+g_k=(1,b_k)\rightarrow (1,0)=\Id\ \ \ \mbox{ se } k \rightarrow \infty,
+$$
+ma allora per ogni aperto non vuoto $U\subseteq \bbC$ si avrebbe definitivamente in $k$ che $g_k(U)\cap U\neq \emptyset$ per la definizione di limite.\\
+Per il Lemma 4 dunque si ha che $G$ è discreto.
+
+Per il teorema \ref{sgr_discreti}, allora $G$ può essere solo un reticolo di rango $0,1,2$. Distinguiamo quindi tre casi:
+\begin{itemize}
+\item $\Rk L=0$, l'unica superficie di Riemann è $\bbC$.
+\item $\Rk L=1$, l'unica superficie di Riemann è $\quotient{\bbC}{L}$, in cui siccome $L$ ha rango uno si ha $L=\omega \bbZ$, con $\omega\in\bbC$ non nullo. Quindi eseguendo un'omotetia di parametro $\omega$ (è un biolomorfismo) si ha che $X\cong \quotient{\bbC}{\bbZ}$.
+Osserviamo che in questo caso si ha che $\quotient{\bbC}{\bbZ}\cong \bbC^{*}=\mathbb{P}^1(\mathbb{C})\minus\{0,\infty\}$ tramite la mappa esponenziale, e che $\bbC^{*}=\mathbb{G}_m(\bbC)$, il gruppo algebrico moltiplicativo di $\bbC$. Quindi si possono trasferire le operazioni di gruppo di $\bbC^{*}$ su $\quotient{\bbC}{\bbZ}$ tramite la mappa esponenziale, cosa che si farà più avanti in modo analogo con le curve algebriche.
+\item $\Rk L=2$, in questo caso si hanno i Tori, $\quotient{\bbC}{L}$ con $L$ reticolo di rango $2$, che si studieranno più avanti in queste dispense.
+\end{itemize}
 
 
-\newthought{Caso 1, Sferica.} Si è visto nella scorsa lezione che c'è una sola superficie di Riemann di questo tipo ed è $\hat{\bbC}$.
+\section{Superfici sferiche e iperboliche}
 
-\newthought{Caso 3, Iperbolica.} Ci sono molti problemi aperti...
+Sia ora $X$ sferica i.e. $\tilde {X}=\hat{\bbC}$, allora la classificazione è banale. Infatti se $g\in\Aut{\hat{\bbC}}=PGL_2(\bbC)$ la condizione di agire senza punti fissi è soddisfatta solo da $g=\Id$:
+$$g(z)=\frac{az+b}{cz+d}=z\ \Leftrightarrow\ cz^2+(d-a)z-b=0$$
+Se $c\neq0$, è una banale quadratica che ha delle soluzioni. Se $c=0$, allora $z=\frac{b}{a-d}$ è soluzione, dove si intende che se $a=d$, allora $z=\infty$. Quindi in $\hat{\bbC}$ c'è sempre un punto fisso.
 
-\notamargine{Se una superficie di Riemann non è né Sferica né Euclidea allora è Iperbolica.}
+Questo ci dice che l'unico sottogruppo di $\Aut(\hat\bbC)$ con le proprietà richieste è quello banale, e dunque l'unica superficie di Riemann sferica è $\hat\bbC$ stesso.
+
+
+\newthought{Passando ora} al caso iperbolico, ovvero in cui $\tilde X=\mathcal{H}$, le cose si fanno più complicate e ci sono ancora molti problemi aperti.
 
 \begin{osservazione}
 Nel caso di Superficie di Riemann Sferica e nei tre casi di Superficie di Riemann Euclidea si sa calcolare il gruppo fondamentale ($\pi_1$). (è il gruppo per cui si quozienta)
@@ -406,6 +393,8 @@ Infatti si ha che si escludono le superfici compatte prendendo come $K'$ loro st
 
 \notamargine{La proprietà $\mathcal{P}$ in un qualche senso "conta i punti tolti, in funzione di quello che è rimasto". Inoltre permette di dire per esempio che un "toro meno $n$ punti distinti" non è omeomorfo a un "toro meno $m$ punti distinti", se $m\ne n$}
 
+Possiamo ora usare che $S$ è iperbolica per mostrare l'importante
+
 \begin{teorema}[Teorema di Picard]
 Ogni funzione intera ($\bbC\rightarrow\bbC$ olomorfa su tutto $\bbC$) non costante assume tutti i valori tranne al più uno.
 \end{teorema}
@@ -434,3 +423,33 @@ Ma allora la mappa olomorfa $\tilde{f}$ è costante per Liouville, quindi poich�
 \item Ci sono molte altre dimostrazioni con tecniche più analitiche, quella che si è fatta è più geometrica, senza stime.
 \end{itemize}
 \end{osservazione}
+
+\section{I tori vengono da $\bbC$}
+Dato che a noi interesseranno soprattutto i tori, mostriamo questo fatto importante.
+\begin{teorema}
+    Tutte le strutture complesse di un toro derivano da $\bbC$.
+\end{teorema}
+\begin{proof}
+    Abbiamo visto che l'unica \sdR sferica è $\hat\bbC$; se un toro $T$ fosse sferico, dovrebbe essere biolomorfo a $\hat\bbC$, il che è impossibile ad esempio per questioni di $\pi_1$.
+
+    Quindi dobbiamo cercare un sottogruppo $G<\Aut(\mathcal H)=PSL_2(\bbR)$ senza punti fissi e che agisca in modo propriamente discontinuo, tale che $\mathcal H / G \cong T$.\\
+    Osserviamo intanto che vale $\pi_1(T)=\pi_1(\mathcal H / G) = G$ poiché $\mathcal H$ è semplicemente connesso, e quindi $G\cong \bbZ^2$ e in particolare è abeliano.
+
+    Considero $g\in G \setminus \{\Id\}$ e voglio vedere se il centralizzatore di $g$ può contenere uno $\bbZ^2$; posso coniugare tramite un elemento di $PSL_2(\bbR)$ in modo che succeda una delle due cose:
+    \begin{enumerate}
+        \item $g$ sia una traslazione
+        \item $g$ sia un'omotetia
+    \end{enumerate}
+    Nel caso $1$, $g=g_t=\{z\mapsto z+t\}$ e prendo un $\gamma\in PSL_2(\bbR)$ tale che $\gamma\circ g_t = g_t\circ \gamma$. Valuto l'uguaglianza precedente in $\infty$ e ottengo $\gamma(\infty)=g_t(\gamma(\infty))$, ovvero $\gamma(\infty)=\infty$ dato che $g_t$ è una traslazione. Ma allora vale $\gamma = az+b$, e sostituendo ottengo $a(z+t)+b=az+b+t$, da cui $at=t$ perciò $a=1$.\\
+    Dunque il centralizzatore di una traslazione sono le traslazioni, di cui l'unico sottogruppo discreto ha rango $1$.
+
+    Nel caso $2$, prendiamo $g=g_\mu=\{z\mapsto \mu z\}$ e un $\gamma$ che commuta. Valutando in $0$ e $\infty$ otteniamo $\gamma(0)=g_\mu(\gamma(0))$ e $\gamma(\infty)=g_\mu(\gamma(\infty))$.\\
+    Dato che gli unici punti fissi di $g_\mu$ sono $0$ e $\infty$, abbiamo due casi possibili:
+    \begin{itemize}
+        \item $\gamma$ fissa $0$ e $\infty$, quindi è un'omotetia
+        \item $\gamma(0)=\infty,\gamma(\infty)=0$ e dunque $\gamma(z)=\frac b \gamma$
+    \end{itemize}
+    Nel secondo caso $\gamma\not\in\bbZ^2$ perché ha ordine finito. Nel primo caso abbiamo delle omotetie reali, che tramite $\log$ possiamo mandare in un sottogruppo additivo di $\bbR$, che ha rango $1$ se è discreto.
+
+    In conclusione per ogni $g$ il centralizzatore non contiene $\bbZ^2$, quindi non esiste alcun $G$ per cui $\mathcal H / G = T$
+\end{proof}
