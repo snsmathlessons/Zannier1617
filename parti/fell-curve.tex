@@ -1,39 +1,69 @@
-\thislesson{28 Novembre 2016}{Connessione e Parametrizzabilità delle Cubiche}
+\chapter{Curve ellittiche}
 
-\newthought{La volta scorsa}, dato un reticolo $L \subseteq \bbC$, avevamo
-costruito la funzione di Weierstrass associata $\wp_L (z)$, che soddisfa
-un'equazione del tipo $\wp'^2(z) = 4 \wp^3(z) - g_2 \wp(z) - g_3$ dove
-$g_2 = 60 s_4$ e $g_3 = 140 s_6$ con $S_n = \sum_{\omega \in L^*}
-\omega^{-n}$.
+Abbiamo visto come, dato un reticolo $L \subseteq \bbC$, si possa costruire la funzione di Weierstrass associata $\wp_L (z)$, che insieme alla sua derivata $\wp'_L$ sono generatori del campo delle funzioni ellittiche, e inoltre soddisfano un'equazione del tipo $\wp'^2(z) = 4 \wp^3(z) - g_2 \wp(z) - g_3$ dove $g_2 = 60 G_2(L)$ e $g_3 = 140 G_3(L)$.
 
-Sia $E: y^2 = 4x^3 - g_2 x - g_3$ (il luogo di zeri in $\bbC^2$) e
-consideriamone la chiusura proiettiva $\ol{E} = E \cup \{ (0 : 1 : 0)
-\}$.
+In generale, un'equazione cubica su $\bbP_2\bbC$ si dirà curva ellittica. Noi per ora ci occupiamo delle curve ellittiche che arrivano dai tori.
+
+Prendiamo un toro $T=\quotient{\bbC}{L}$ con $L$ reticolo fissato, e sia $E: y^2 = A(x)=4x^3 - g_2 x - g_3$ la curva ellittica a lui associata; consideriamone poi la chiusura proiettiva $\ol{E} = E \cup \{ (0 : 1 : 0)\}$.
 
 \begin{notazione}
-  Con $\ol{E}(\bbK)$ si intendono i punti $\bbK$-razionali di $\ol{E}$,
-  ovvero i punti di $\bbP^2 \bbC$ (facenti parte di $\ol{E}$) per le
-  quali il rapporto tra le coordinate è un numero di $\bbK$, ovvero
-  $\ol{E}(\bbK) = \{ (x : y : z) \in \ol{E} \mid \frac{x}{y},
-  \frac{y}{z} \in \bbK \}$
+  Con $\ol{E}(\bbK)$ si intendono i punti $\bbK$-razionali di $\ol{E}$, ovvero i punti di $\bbP^2 \bbC$ (facenti parte di $\ol{E}$) per le quali il rapporto tra le coordinate è un numero di $\bbK$, ovvero $\ol{E}(\bbK) = \{ (x : y : z) \in \ol{E} \mid \frac{x}{y}, \frac{y}{z} \in \bbK \}$
 \end{notazione}
 
-\newthought{Consideriamo la mappa} $F: T = \sfrac{\bbC}{L} \rar \ol{E}$
-dal toro relativo al reticolo $L$ alla chiusura proiettiva della
-cubica. $F$ è definita da $z \mapsto (\wp(z) : \wp'(z) : 1)$ dove questa
-espressione ha senso. Quando invece $z$ è un polo di $\wp$, si può usare
-un'altra espressione per la mappa, definita sul polo, ma che coincida
-con quella fornita sui punti in cui si intersecano gli aperti di
-definizione.
+\section{Struttura di \sdR di una curva ellittica}
 
-\notamargine{Ad esempio si può considerare l'espressione
-  $$\lbr{\frac{\wp(z)}{\wp'(z)} : 1 : \frac{1}{\wp'(z)}}$$
+Per quanto visto nella prima parte, possiamo cercare un rivestimento $p: E(\bbC)\to\bbC$. In realtà quello che si riesce a fare è rivestire $D=\bbC\setminus\{z : A(z)=0\}$.
 
-	dove se $\wp$ è un polo doppio, $\wp'$ ha un polo triplo e quindi il
-	rapporto ha ordine $1$ e possiamo definirlo uguale a $0$.
-  Notiamo che stiamo trattando $T$ come una varietà olomorfa e ciò che
-  stiamo facendo è definire una mappa tra varietà su alcune carte
-}
+Prendiamo $(x_0,y_0)\in E(\bbC)$ con $y_0\neq0$; allora come mappa di rivestimento possiamo considerare la proiezione $\varphi(x,y)=x-x_0$ in un intorno. Infatti si ha $$ y=\sqrt{A(x)}=\sqrt{A(x_0)}\left(1+\frac{A(x)-A(x_0)}{A(x_0)} \right)^{\frac12} = y_0\left(1+\frac{A(x)-y_0^2}{y_0^2} \right)^{\frac12} = y_0s(y_0^2,x-x_0)$$
+dove $s(y_0^2,x-x_0)$ è la serie di potenze in $x$ data dall'espansione della radice quadrata, che è localmente olomorfa.\\
+Inoltre $\varphi^{-1}(u)=\{(u+x_0,y_0s(y_0^2,u)),(u+x_0,-y_0s(y_0^2,u))\}$ dove $y_0$ è una delle due radici quadrate di $A(x_0)$; è chiaro che fissando il segno ho un biolomorfismo locale.
+
+Abbiamo dunque trovato un rivestimento $\pi: E(\bbC)\setminus\{y=0\}\to D$.
+
+Per i punti in cui $y_0=0$, ovvero $x_0$ è radice del polinomio $A(x)$, possiamo fare un ragionamento analogo e invertire localmente: basta considerare la proiezione sull'altra componente, ovvero $\varphi(x,y)=y$. Infatti dato che $A(x_0)=0$ possiamo scrivere $A(x)=(x-x_0)A_1(x)$ con $A_1(x)$ non nullo in un intorno (dato che $A$ non ha radici multiple) e dunque ricavare $x-x_0=\frac{y^2}{A_1(x)}$ che è olomorfa.
+
+\begin{proposizione}
+    L'insieme dei punti della curva ellittica $\ol{E}(\bbC)$ è connesso
+\end{proposizione}
+\begin{proof}
+    Consideriamo intanto $E(\bbC)$ (lo spazio dei punti affini).
+
+    % $x \mapsto 4x^3 - g_2 x - g_3$
+
+    Abbiamo appena visto che la funzione di proiezione $E(\bbC) \rar \bbC$ definita da $(x, y) \mapsto x$ diventa un rivestimento tolte le tre radici $\alpha, \beta, \gamma$ del polinomio $4x^3 - g_2 x - g_3$.
+
+    \begin{center}
+      \includegraphics[width=8cm]{lezione-161128-fig1bis}
+    \end{center}
+
+
+    Ovviamente si ha che, avendo il rivestimento grado due, o è connesso, oppure ha due componenti connesse. Ora, se facciamo un cammino tra due punti $x_0$ ed $x_1$ del $\bbC$ ``che viene ricoperto'' posso sollevare il cammino, perché ho un rivestimento. Per mostrare la connessione del rivestimento basta quindi dimostrare che la fibra di $x_0 \neq \alpha,
+    \beta, \gamma$ ``è connessa'', ovvero ho un cammino che connette i due elementi della fibra.
+
+    \begin{center}
+      \includegraphics[width=8cm]{lezione-161128-fig2}
+    \end{center}
+
+    Ciò è molto semplice da fare con la radice quadrata: prendiamo infatti un punto $x_0$ vicino ad $\alpha$. Allora si ha che
+    $\sqrt{f(x)} = (x - \alpha)^{\frac{1}{2}} \cdot g(x)$ con $g(x)$ olomorfa vicino ad $\alpha$ (poiché siamo lontani da $\beta$ e da $\gamma$)
+
+    Scegliamo una determinazione della radice e facciamo un giro attorno ad $\alpha$ tornando sulla fibra di $x_0$ ma con valore del segno cambiato.
+
+    \notamargine{In particolare si può scegliere un cerchio di raggio
+      piccolo (cammino $t \mapsto x_0 + \rho e^{2\pi i t}$) e fare
+      esplicitamente il conto ricordando che $z^\frac{1}{2}$ è definito con
+      una determinazione di $e^{\log(\frac{1}{2} z)}$}
+\end{proof}
+
+
+
+
+
+\section{Un toro è biolomorfo alla sua curva ellittica}
+
+Consideriamo la mappa $F: T = \quotient{\bbC}{L} \rar \ol{E}$ dal toro relativo al reticolo $L$ alla chiusura proiettiva della cubica. $F$ è definita da $z \mapsto (\wp(z) : \wp'(z) : 1)$ dove questa espressione ha senso. Quando invece $z$ è un polo di $\wp$, si può usare un'altra espressione per la mappa, ad esempio si può considerare l'espressione $\lbr{\frac{\wp(z)}{\wp'(z)} : 1 : \frac{1}{\wp'(z)}}$ dove se $\wp$ ha un polo doppio in $z$, $\wp'$ ha un polo triplo e quindi il rapporto ha ordine $1$ e possiamo definirlo uguale a $0$.\\
+Notiamo che stiamo trattando $T$ come una varietà olomorfa e ciò che stiamo facendo è definire una mappa tra varietà su alcune carte.
+
 
 \begin{proposizione}
   $F$ è una bigezione tra $T$ ed $\ol{E}(\bbC)$ (ed è olomorfa)
@@ -97,55 +127,45 @@ definizione.
   Nel caso delle cubiche ciò segue dalla proposizione appena dimostrata.
 \end{osservazione}
 
-\paragraph{Altra dimostrazione della connessione} Dimostriamo ancora una
-volta che $\ol{E}(\bbC)$ è connesso, iniziando dalla connessione di
-$E(\bbC)$ (spazio dei punti affini)
 
-% $x \mapsto 4x^3 - g_2 x - g_3$
+  Se ho una mappa $\phi: X \rar Y$, bigettiva e olomorfa tra superfici di Riemann, allora non è necessariamente biolomorfa.
 
-La funzione di proiezione $E(\bbC) \rar \bbC$ definita da $(x, y) \mapsto x$
-diventa un rivestimento tolte le tre radici $\alpha, \beta, \gamma$ del
-polinomio $4x^3 - g_2 x - g_3$.
+  Infatti sia $C = \{ (x,y) \in \bbC^2 : y^2=x^3 \}$, e sia $\tilde C$ il suo completamento proiettivo. Allora detta $\phi: \bbP^1 \rar \tilde C$ la mappa $ (t : 1) \mapsto (t^2 : t^3 : 1)$ e $(1 : 0) \mapsto (0:1:0)$ questa è chiaramente bigettiva e olomorfa.
 
-\notamargine{L'idea è che, tolte le radici, abbiamo un rivestimento di
-  grado due. I punti del rivestimento si riescono a connettere ``facendo
-  dei giri attorno alle radici''}
+  Tuttavia l'inversa è data da $(x:y:1) \mapsto (\frac yx:1)$, che non è olomorfa in quanto il differenziale in $(0:0:1)$ è nullo (ma non è localmente costante).
 
-\begin{center}
-  \includegraphics[width=8cm]{lezione-161128-fig1bis}
-\end{center}
+  Il problema scaturisce dal fatto che il polinomio ha una radice doppia.
 
-\notamargine{Per dimostrare che è un rivestimento, possiamo utilizzare
-  il fatto che le proiezioni sono mappe aperte e che il numero di punti
-  $(x, y) \in E(\bbC)$ che si proiettano su $x$ sono, per
-  $x \neq \alpha, \beta, \gamma$, esattamente due, ovvero quelli che
-  risolvono $y^2 = 4x^3 - g_2 x - g_3$ con $x$ fissato}
+  Tuttavia se aggiungiamo che il differenziale sia full rank allora necessariamente deve essere biolomorfa.
+  \begin{proof}
+      Consideriamo il seguente diagramma:
+      \[
+      \begin{diagram}
+          X & \rTo^\phi & Y \\
+          \dTo>a & & \dTo>b \\
+          \Omega_1 & \rTo^\psi & \Omega_2
+      \end{diagram}
+      \]
 
-Ovviamente si ha che, avendo il rivestimento grado due, o è connesso,
-oppure ha due componenti connesse. Ora, se facciamo un cammino tra due
-punti $x_0$ ed $x_1$ del $\bbC$ ``che viene ricoperto'' posso sollevare
-il cammino, perché ho un rivestimento. Per mostrare la connessione del
-rivestimento basta quindi dimostrare che la fibra di $x_0 \neq \alpha,
-\beta, \gamma$ ``è connessa'', ovvero ho un cammino che connette i due
-elementi della fibra.
+      $a, b$ sono le rispettive proiezioni in carta, quindi hanno differenziale full-rank. Segue che la composizione $\psi = b\circ \phi \circ a^{-1}$ ha anch'essa differenziale full-rank.
+      Ora non capisco cosa stia cercando di scrivere formlmente, ma l'idea è che se ho il differenziale full-rank allora per il teorema di invertibilità locale posso trovare un'inversa differenziabile, e che soddisferà le condizioni per essere olomorfa. %TODO fare meglio%
+  \end{proof}
 
-\begin{center}
-  \includegraphics[width=8cm]{lezione-161128-fig2}
-\end{center}
+  \begin{proposizione}
+      La mappa di Weierstrass $F(z)=(\wp(z) : \wp'(z) : 1)$ è biolomorfa.
+  \end{proposizione}
+  \begin{proof}
+      Abbiamo già visto che la $F$ è olomorfa e biiettiva, manca da dimostrare che l'inversa è olomorfa.
+      Per questo mi basta guardare che il differenziale sia mai nullo. D'altra parte il differenziale della mappa di Weierstrass è $ (\wp'(z), \wp''(z))$ che non è mai nullo (Se abbiamo $\wp'(z_0) = \wp''(z_0) = 0$ vuol dire che $\wp'$ ha uno zero doppio in $z_0$, ma noi conosciamo già tutti gli zeri di $\wp'(z_0)$, che sono sui punti di $L/2$ diversi dall'origine).
+  \end{proof}
 
-Ciò è molto semplice da fare con la radice quadrata: prendiamo infatti
-un punto $x_0$ vicino ad $\alpha$. Allora si ha che
-$\sqrt{f(x)} = (x - \alpha)^{\frac{1}{2}} \cdot g(x)$ con $g(x)$
-olomorfa vicino ad $\alpha$ (poiché siamo lontani da $\beta$ e da
-$\gamma$)
+  Grazie a questo possiamo dire che la curva ellittica ha la stessa struttura complessa del toro da cui proviene (se proviene effettivamente da un toro, cosa che si rivelerà vera).
 
-Scegliamo una determinazione della radice e facciamo un giro attorno ad
-$\alpha$ tornando sulla fibra di $x_0$ ma con valore del segno cambiato.
+  \begin{osservazione}
+      Sul toro esiste una forma differenziale globale data da $dz$. Grazie alla mappa di Weierstrass, posso trasportarla sulla cubica e diventa $\frac{dx}y$, e segue che questa non ha poli, neanche all'infinito.\\
+      Infatti nella parametrizzazione di Weierstrass, si ha che $x = \wp(z)$ e $y = \wp'(z)$. Allora, chiamata $g: E \rar \bbC$ l'inversa della parametrizzazione si ha che $g_*(\frac{dx}{y}) = \frac{d(\wp(z))}{\wp'(z)} = \frac{\wp'(z) dz}{\wp'(z)} = dz$
 
-\notamargine{In particolare si può scegliere un cerchio di raggio
-  piccolo (cammino $t \mapsto x_0 + \rho e^{2\pi i t}$) e fare
-  esplicitamente il conto ricordando che $z^\frac{1}{2}$ è definito con
-  una determinazione di $e^{\log(\frac{1}{2} z)}$}
+  \end{osservazione}
 
 \section{Cubiche di $\bbP^2\bbC$}
 Consideriamo tutte le cubiche in $\bbP^2\bbC$: esse sono definite da
@@ -273,66 +293,28 @@ $\tau = \zeta_3$:
   \zeta_3^4 g_2(L_2) = \zeta_3 g_2(L_2)$ e quindi $g_2(L_2) = 0$
 \end{itemize}
 
-\thislesson{30 Novembre 2016}{Collegamenti tra tori e curve ellittiche}
 
-	Se ho una mappa $\phi: X \rar Y$, bigettiva e olomorfa tra superfici di Riemann, allora non è necessariamente biolomorfa.
 
-	Infatti sia $C = \{ (x,y) \in \bbC^2 : y^2=x^3 \}$, e sia $\tilde C$ il suo completamento proiettivo. Allora detta $\phi: \bbP^1 \rar \tilde C$ la mappa $ (t : 1) \mapsto (t^2 : t^3 : 1)$ e $(1 : 0) \mapsto (0:1:0)$ questa è chiaramente bigettiva e olomorfa.
 
-	Tuttavia l'inversa è data da $(x:y:1) \mapsto (\frac yx:1)$, che non è olomorfa in quanto il differenziale in $(0:0:1)$ è nullo (ma non è localmente costante).
 
-	Il problema scaturisce dal fatto che il polinomio ha una radice doppia.
-
-	Tuttavia se aggiungiamo che il differenziale sia full rank allora necessariamente deve essere biolomorfa.
-	\begin{proof}
-		Consideriamo il seguente diagramma:
-		\[
-		\begin{diagram}
-			X & \rTo^\phi & Y \\
-			\dTo>a & & \dTo>b \\
-			\Omega_1 & \rTo^\psi & \Omega_2
-		\end{diagram}
-		\]
-
-		$a, b$ sono le rispettive proiezioni in carta, quindi hanno differenziale full-rank. Segue che la composizione $\psi = b\circ \phi \circ a^{-1}$ ha anch'essa differenziale full-rank.
-		Ora non capisco cosa stia cercando di scrivere formlmente, ma l'idea è che se ho il differenziale full-rank allora per il teorema di invertibilità locale posso trovare un'inversa differenziabile, e che soddisferà le condizioni per essere olomorfa. %TODO fare meglio%
-	\end{proof}
-
-	\begin{proposizione}
-		La mappa di Weierstrass $\wp$ è biolomorfa.
-	\end{proposizione}
-	\begin{proof}
-		Abbiamo già visto che la $\wp$ è olomorfa e biiettiva, manca da dimostrare che l'inversa è olomorfa.
-		Per questo mi basta guardare che il differenziale sia mai nullo. D'altra parte il differenziale della mappa di Weierstrass è $ (\wp'(z), \wp''(z))$ che non è mai nullo (Se abbiamo $\wp'(z_0) = \wp''(z_0) = 0$ vuol dire che $\wp'$ ha uno zero doppio in $z_0$, ma noi conosciamo già tutti gli zeri di $\wp'(z_0)$, che sono sui punti di $L/2$ diversi dall'origine).
-	\end{proof}
-
-	Grazie a questo possiamo dire che la curva ellittica ha la stessa struttura complessa del toro da cui proviene (se proviene effettivamente da un toro, cosa che si rivelerà vera).
-
-	\begin{osservazione}
-		Nonostante non abbia capito cosa c'entra, sul toro esiste una forma differenziale globale data da $dz$. Grazie alla mappa di Weierstrass, posso trasportarla sulla cubica e diventa $\frac{dx}y$, e segue che questa non ha poli, neanche all'infinito.
-
-	\end{osservazione}
-
-        \notamargine{Mostriamo questa affermazione sui differenziali: nella parametrizzazione di Weierstrass, si ha che $x = \wp(z)$ e $y = \wp'(z)$. Allora, chiamata $g: E \rar \bbC$ l'inversa della parametrizzazione si ha che $g_*(\frac{dx}{y}) = \frac{d(\wp(z))}{\wp'(z)} = \frac{\wp'(z) dz}{\wp'(z)} = dz$}
-
-	\section{Discriminante}
+	\section{Discriminante e invariante $j$}
 
 	Ricordiamo che per una cubica del tipo $y^2=p(x)$ la non singolarità equivale all'assenza di radici multiple. Un modo rapido per vedere se un polinomio ha radici multiple è definire il discriminante.
 
-	Sia quindi $f(t)$ un polinomio con radici $\alpha_i$ (eventualmente ripetute), definiamo $D_t=\prod_{i<j} (\alpha_i - \alpha_j)^2$. Questo è simmetrico nelle radici pertanto lo posso scrivere come un polinomio a coefficienti interi nei coefficienti di $f$.
+	Sia quindi $f(t)$ un polinomio con radici $\alpha_i$ (eventualmente ripetute), definiamo $\Delta(f)=\prod_{i<j} (\alpha_i - \alpha_j)^2$. Questo è simmetrico nelle radici pertanto lo posso scrivere come un polinomio a coefficienti interi nei coefficienti di $f$.
+    \notamargine{Possiamo anche definire $\Delta(f)=\Ris(f,f')$ il risultante tra $f$ e la sua derivata.}
 
-	Se $\deg f=2$: $D_t= b^2-4ac$. Calcoliamolo ora per $\deg f=3$.
+	Se $f=ax^2+bx+c$, allora $\Delta(a,b,c)= b^2-4ac$.
 
-	Prendo $f(t)=t^3+At+b$. Essendo $D_t$ di grado 6 nei coefficienti, deve essere combinazione linerare di $A^3$ e $B^2$. Ora mettendomi nel caso particolare $A=0,B=-1$ e nel caso $B=0$ posso agilmente scoprire che
+    Calcoliamolo ora per $\deg f=3$. Prendo $f(t)=t^3+At+B$. Essendo $\Delta$ di grado 6 nei coefficienti, deve essere combinazione linerare di $A^3$ e $B^2$. Ora mettendomi nel caso particolare $A=0,B=-1$ e nel caso $B=0$ posso agilmente scoprire che
 	\[
-		D_t=-4a^3-27B^2
+		\Delta(A,B)=-4A^3-27B^2
 	\]
 
-	\section{Studio delle cubiche al variare di $\frac{a^3}{b^2}$}
 
 	Sappiamo che ogni cubica non singolare è isomorfa a $y^2=x^3-ax-b$ mediante trasformazioni affini.
 
-	Considero il parametro $\frac{a_3}{b^2}$. Sappiamo che è invariante per le omotetie del tipo $x\mapsto \lambda^2x, y\mapsto\lambda^3y$. Ho però il problema che esso non è definito per $b=0$.
+	Considero il parametro $\frac{a^3}{b^2}$. Sappiamo che è invariante per le omotetie del tipo $x\mapsto \lambda^2x, y\mapsto\lambda^3y$. Ho però il problema che esso non è definito per $b=0$.
 
 	Utilizzo quindi il discriminante. So che dato che il polinomio non ha radici multiple, il discriminante sarà non nullo: sfrutto questa informazione per considerare come parametro una funzione che dipenda solo da $\frac{a^3}{b^2}$ che abbia il discriminante come denominatore. Uso quindi
 

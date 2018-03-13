@@ -124,30 +124,28 @@ Attenzione: tale definizione dipende dal reticolo $L$ scelto per rappresentare $
 
 In particolare, non vengono modificati né gli zeri né i poli (che saranno le cose che ci interesseranno maggiormente).
 
-
+Osserviamo ora che vale la seguente
 \begin{proposizione}
 La funzione meromorfa $\wp:T\rar\bbC$ ha le seguenti proprietà:
 
-(i) $\wp(-z)=\wp(z)$.
+\begin{enumerate}[label=\roman*]
+    \item Fissato $u\in T$ con $u\not=-u$, si ha $\ord_u(\wp-\wp(u))=\ord_{-u}(\wp-\wp(u))=1$ e $\ord_0(\wp-\wp(u))=-2$ e $\ord_x(\wp-\wp(u))=0$ per $x\not=0,u,-u$.
 
-(ii) $\wp$ ha un polo doppio in $0$ e nessun altro polo.
+    In altre parole, $\wp-\wp(u)$ ha uno zero semplice in $u$, uno zero semplice in $-u$, un polo doppio in $0$ e nessun altro zero o polo.
 
-(iii) Fissato $u\in T$ con $u\not=-u$, si ha $\ord_u(\wp-\wp(u))=\ord_{-u}(\wp-\wp(u))=1$ e $\ord_0(\wp-\wp(u))=-2$ e $\ord_x(\wp-\wp(u))=0$ per $x\not=0,u,-u$.
+    \item Fissato $u\in T$ con $u=-u\not=0$, si ha $\ord_u(\wp-\wp(u))=2$ e $\ord_0(\wp-\wp(u))=-2$ e $\ord_x(\wp-\wp(u))=0$ per $x\not=0,u$.
 
-In altre parole, $\wp-\wp(u)$ ha uno zero semplice in $u$, uno zero semplice in $-u$, un polo doppio in $0$ e nessun altro zero o polo.
-
-(iii') Fissato $u\in T$ con $u=-u\not=0$, si ha $\ord_u(\wp-\wp(u))=2$ e $\ord_0(\wp-\wp(u))=-2$ e $\ord_x(\wp-\wp(u))=0$ per $x\not=0,u$.
-
-In altre parole, $\wp-\wp(u)$ ha uno zero doppio in $u$, un polo doppio in $0$ e nessun altro zero o polo.
+    In altre parole, $\wp-\wp(u)$ ha uno zero doppio in $u$, un polo doppio in $0$ e nessun altro zero o polo.
+\end{enumerate}
 \end{proposizione}
-\begin{proof}
-(i) Ovvio direttamente dalla definizione (riordinando gli addendi).
 
-(ii) Ovvio (perchè sappiamo dove stanno i poli di $P$).
+\begin{proof}$ $
+\begin{enumerate}[label=\roman*]
+    \item Prendiamo la funzione meromorfa $\wp-\wp(u):T\rar\bbC$ e usiamo il teorema \ref{residui-funzioni-toriche}: ho un polo di ordine $2$ in $0$, quindi ho esattamente due zeri che sono quelli in $u$ e in $-u$ (che sono punti distinti).
 
-(iii) Prendiamo la funzione meromorfa $\wp-\wp(u):T\rar\bbC$ e usiamo il teorema \ref{residui-funzioni-toriche}: ho un polo di ordine $2$ in $0$, quindi ho esattamente due zeri che sono quelli in $u$ e in $-u$ (che sono punti distinti).
+    \item Come sopra, usando la \ref{fell-pari} per dire che non posso avere $\ord_u(\wp-\wp(u))=1$, perché l'ordine deve essere pari.
+\end{enumerate}
 
-(iii') Come sopra, usando la \ref{fell-pari} per dire che non posso avere $\ord_u(\wp-\wp(u))=1$, perché l'ordine deve essere pari.
 \end{proof}
 
 
@@ -285,7 +283,7 @@ che $\wp(x)$ è uno zero di $A$, as desired.
     Sostituendo nell'espressione per $\wp$, scambiando l'ordine delle sommatorie (posso farlo perché c'è convergenza assoluta) e ricordando che $s_{2k+1}=0$ ottengo
 
     \begin{eqnarray*}
-    \wp(z) & = & \frac{1}{z^2} + \frac1{(z-\omega)^2}-\frac1{\omega^2} = \\
+    \wp(z) & = & \frac{1}{z^2} + \sum_{\omega \in L^*} \frac1{(z-\omega)^2}-\frac1{\omega^2} = \\
            & = & \frac{1}{z^2} + \sum_{\omega \in L^*} \frac{1}{\omega^2} \sum_{n \ge 1} (n+1) \left ( \frac{z}{\omega} \right ) ^n =  \\
            & = & \frac{1}{z^2} + \sum_{n \ge 1} (n+1) z^n s_{n+2} = \\
            & = & \frac{1}{z^2} + \sum_{\substack{n \text{ pari} \\ n \ge 2}} (n+1)s_{n+2} z^n \\

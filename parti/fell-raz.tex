@@ -1,4 +1,4 @@
-\thislesson{05 Dicembre 2016}{Campi di funzioni ed Estensioni di mappe razionali}
+\chapter{Questioni di razionalità}
 
 \section{Campi di funzioni}
 
@@ -101,7 +101,7 @@ Esiste un teorema(profondo): Se ne esiste una non costante allora ne esiste una 
 Nota che le condizioni sui reticoli sono condizioni con quantità trascendenti, difficili da verificare (equivale a chiedersi se delle espressioni che riportano serie infinite (la $\wp$) sono numeri razionali (???))
 \end{osservazione}
 
-\thislesson{14 Dicembre 2016}{Le curve ellittiche non sono unirazionali}
+\section{Le curve ellittiche non sono unirazionali}
 
 \begin{definizione}
 Siano $F$ e $L$ due estensioni di un campo $K$. Si dice omomorfismo su $K$ tra $F$ e $L$ una funzione $f:F\rightarrow L$ che sia un omomorfismo e tale che $\forall z\in K\subseteq F$ valga $f(z)=z$.
@@ -235,70 +235,3 @@ Abbiamo quindi ricavato che da ogni parametrizzazione di una cubica si ricava un
 Procedendo così, poiché il grado iniziale è finito, il procedimento termina ed ho una curva parametrizzata con $max(deg(p),deg(q))=0$.
 Tuttavia, questo vuol dire che la curva ha una parametrizzazione non dipendente da $t$, ovvero che l'omomorfismo della definizione $\bbC(x,y)\hookrightarrow\bbC(t)$ manda $x$ in un elemento di $\bbC$, dunque non è iniettivo, e questo ci fornisce un assurdo.
 \end{proof}
-
-\chapter{Biliardi ellittici}
-\newthought{Introduciamo un altro modo} in cui si ottengono le curve
-ellittiche dalle ellissi \notamargine{Abbiamo infatti già visto che si
-  possono ottenere come integrali della lunghezza d'arco di un'ellisse}.
-
-Prendiamo un'ellisse di equazione $ax^2 + by^2 = 1$ e supponiamo di
-giocare a biliardo sull'ellisse: facendo partire la pallina da un punto
-la lanciamo contro il bordo dell'ellisse su cui rimbalza secondo la nota
-legge della riflessione \notamargine{Ovvero rispetto alla tangente
-  all'ellisse nel punto rimbalza via con lo stesso angolo, come indicato
-  in figura}
-
-\begin{center}
-  \includegraphics[width=8cm]{lezione-170123-fig1}
-\end{center}
-
-Una cosa che è nota da tempo è che le rette che compongono la
-traiettoria sono tutte tangenti ad un'altra ellisse ``caustica'' che ha
-gli stessi fuochi della prima: abbiamo quindi una famiglia ad un
-parametro di ellissi che descrive tutte le possibili traiettorie.
-
-\newthought{Vediamo allora che succede} quando prendiamo un punto $P$
-sul bordo dell'ellisse ed una retta $l$ con $P \in l$ e tangente alla
-caustica:
-
-Possiamo definire un'applicazione $\phi$ dalle coppie punto-retta in sè
-che è la funzione di ``evoluzione'' della traiettoria sul biliardo,
-ovvero manda la coppia $(P, l)$ in $(P', l')$ con $P'$ l'altro punto di
-intersezione della retta $l$ con l'ellisse e $l'$ la retta passante per
-$P'$ che segue la legge della riflessione con $l$.
-
-\notamargine{
-  \includegraphics[width=4cm]{lezione-170123-fig2}
-}
-
-\newthought{È noto} che le tangenti in $\bbP^2$ ad una conica sono
-parametrizzate da un'altra conica: la conica duale.
-\notamargine{Tutto ciò non è difficile da verificare: se la conica $\cC$
-  ha equazione $f = ax^2 + by^2 + cz^2$ e $(x_0, y_0, z_0) = P \in \cC$
-  allora $(\nabla f)_P = (2ax_0, 2by_0, 2cz_0)$ e, ricordando che tutti
-  i punti/vettori considerati sono in $\bbP^2$ si ha che dare la retta
-  tangente in $P$ è uguale a fornire il vettore $(\nabla f)_P$. D'altra
-  parte si riesce ovviamente a recuperare il punto $P$ dato $(\nabla
-  f)_P$ a cui è tangente (basta vedere la formula scritta sopra in
-  coordinate, visto che i coefficienti della conica sono noti)}
-Allora il luogo di punti su cui la $\phi$ agisce è una sottovarietà
-(algebrica) di $C_1 \times \hat{C_2}$, con $C_1 = \text{punti della
-  conica}$ e $\hat{C_2} = \text{conica duale delle rette tangenti}$.
-
-Il luogo di punti è dato dalle coppie $(P, l) \in C_1 \times \hat{C_2}$
-tali che $P \in l$ (che è una condizione chiusa, ovvero dà luogo ad una
-sottovarietà algebrica). Questa è anche una superficie di Riemann.
-
-Scrivendo l'equazione si ottiene una curva ellittica e l'operazione
-$\phi$ si rivela essere una traslazione sulla cubica detta ``gioco di
-Poncelèt''.
-
-Il gioco ``finisce'' se e solo se la traslazione $\phi(x) = x + \tau$ ha
-un punto di ordine finito, ovvero $\exists n$
-$\phi^n (x) = x + n\tau = x$ se e solo se $n\tau \in L$, il
-reticolo. Ovvero si avrebbe $\phi^n(x) = x$ per ogni punto. Allora se il
-gioco finisce per una traiettoria finisce per tutte le altre, cosa che
-non è per nulla banale.
-
-\notamargine{Come curiosità, se il gioco non finisce, le traiettorie del
-  biliardo sono dense nello spazio tra le due ellissi}
