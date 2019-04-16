@@ -4,7 +4,7 @@
 # repository
 language: ruby
 rvm:
-- 2.2
+- 2.6
 
 # Utilizziamo il servizio docker per questo repository
 sudo: required
