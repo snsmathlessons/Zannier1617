@@ -1,15 +1,13 @@
-[![Build Status](https://travis-ci.org/snsmathlessons/Zannier1617.svg?branch=master)](https://travis-ci.org/snsmathlessons/Zannier1617/)
+<!-- [![Build Status](https://travis-ci.org/snsmathlessons/Zannier1617.svg?branch=master)](https://travis-ci.org/snsmathlessons/Zannier1617/) -->
 
 # Corso di Zannier 2016/2017
 
 Questo repository cerca di raccogliere le lezioni del Corso tenuto dal
 professor Umberto Zannier nell'anno 2016/2017.
 
-# Come ottenere i pdf
+# Come ottenere il pdf
 
-Potete trovare i pdf compilati qui: [pdf compilati](http://zannier1617.surge.sh).
-Essi sono aggiornati all'ultima versione che compilava del branch master, oltre
-all'ultima versione che compilava di ciascun singolo branch lezione.
+Potete trovare il pdf compilato qui: [pdf compilato](https://github.com/lorenzo-ferrari/Zannier1617/releases/latest/download/lezioni.pdf)
 
 # Come Contribuire
 
