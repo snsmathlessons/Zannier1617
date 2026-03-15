@@ -40,7 +40,7 @@ L'obiettivo di questa lezione è di mostrare che le curve ellittiche non sono ra
 \begin{fatto}
 Considero $\bbP^1$ come curva in $\bbP^2$. Sia $\varphi$ l'immersione $\bbC(\widetilde{E})\hookrightarrow\bbC(\bbP^1)$ (ovvero l'immersione $\bbC(x,y)\hookrightarrow\bbC(t)$) descritta all'inizio).
 Allora esiste una $\varphi^*:\bbP^1\rightarrow\widetilde{E}$ data da $t\mapsto (a(t),b(t))$.
-Tale $\varphi^*$ (che sappiamo essere una funzione razionale per definizione) è una funzione olomorfa (solo se si usa $\widetilde{E}$: se uno la considera a valori in $E$ questa proprietà non vale)
+Tale $\varphi^*$ (che sappiamo essere una funzione razionale per definizione) è una funzione olomorfa (solo se si usa $\widetilde{E}$: se uno la considera a valori in $E$ questa proprietà non vale).
 \end{fatto}
 
 \begin{teorema}
@@ -50,25 +50,25 @@ $\bbC(\widetilde{E})$ non è un campo razionale.
 \begin{proof}
 Supponiamo per assurdo di avere $\psi:\bbC(x,y)\rightarrow\bbC(t)$ isomorfismo (su $\bbC$). Poiché $\psi$ è invertibile si nota che anche $\psi^*$ è invertibile. Si conclude dunque che $\psi^*$ è un biolomorfismo tra $\bbP^1$ e $\widetilde{E}$.
 
-Per ottenere un assurdo è quindi sufficiente mostrare che $\widetilde{E}$ e $\bbP^1$ non sono biolomorfe. Per vedere che non lo sono, consideriamo l'automorfismo di $E$ dato da $(x_0,y_0)\mapsto(x_0,-y_0)$. Questo si estende all'infinito lasciandolo fisso, ed ha tre punti fissi su $E$ (sono solo tre i punti con $y_0=0$). Sappiamo quindi che $\widetilde{E}$ ha un automorfismo con $4$ punti fissi, ma invece $Aut(\bbP^1)=\bbP GL_2(\bbC)$ non contiene nessun elemento con 4 punti fissi (lo abbiamo visto nelle prime lezioni). Segue banalmente che, avendo gruppi di automorfismi diversi, $\widetilde{E}$ e $\bbP^1$ non possono essere biolomorfe e dunque la tesi.
+Per ottenere un assurdo è quindi sufficiente mostrare che $\widetilde{E}$ e $\bbP^1$ non sono biolomorfe. Per vedere che non lo sono, consideriamo l'automorfismo di $E$ dato da $(x_0,y_0)\mapsto(x_0,-y_0)$. Questo si estende all'infinito lasciandolo fisso, ed ha tre punti fissi su $E$ (sono solo tre i punti con $y_0=0$). Sappiamo quindi che $\widetilde{E}$ ha un automorfismo con $4$ punti fissi, ma invece $\Aut(\bbP^1)=\bbP GL_2(\bbC)$ non contiene nessun elemento con 4 punti fissi (lo abbiamo visto nelle prime lezioni). Segue banalmente che, avendo gruppi di automorfismi diversi, $\widetilde{E}$ e $\bbP^1$ non possono essere biolomorfe e dunque la tesi.
 \end{proof}
 
 \begin{osservazione}
-Questa dimostrazione si può fare in modo puramente algebrico considerando gli automorfismi dei campi in questione. In particolare l'automorfismo da cui si ricava l'assurdo è $\varphi\in Aut(\bbC(x,y))$ dato da $\varphi(x)=x$, $\varphi(y)=-y$.
+Questa dimostrazione si può fare in modo puramente algebrico considerando gli automorfismi dei campi in questione. In particolare l'automorfismo da cui si ricava l'assurdo è $\varphi\in \Aut(\bbC(x,y))$ dato da $\varphi(x)=x$, $\varphi(y)=-y$.
 \end{osservazione}
 %\notamargine{$\psi^*$ si potrebbe definire tra due curve qualsiasi (senza che necessariamente la seconda sia $\bbP^1$), in tal caso la definizione coincide con quella data in questa dimostrazione.} #NONSO...
 \begin{lemma}[modello quartico di una cubica]
-Una cubica (non singolare) di equazione $y^2=r(z)$ con $deg(r)=3$ è birazionalmente equivalente ad una curva del tipo $y^2=p(x)$ con $deg(p)=4$ e $p$ senza radici doppie.
+Una cubica (non singolare) di equazione $y^2=r(z)$ con $\deg(r)=3$ è birazionalmente equivalente ad una curva del tipo $y^2=p(x)$ con $\deg(p)=4$ e $p$ senza radici doppie.
 \end{lemma}
 \begin{proof}
 Partiamo dal modello quartico $y^2=p(x)$ e arriviamo ad un modello cubico usando solo operazioni birazionali.
 
 Per prima cosa operiamo una traslazione $s=x+\alpha$ per annullare il termine noto di $p(x)$: l'equazione diventa $y^2=sq(s)$.
-Operando ora la sostituzione $s=\frac{1}{z}$, ottengo l'equazione $y^2=\frac{q(\frac{1}{z})}{z}$. Moltiplicando l'equazione per $z^4$, e sostituendo $w=z^2y$ si ottiene $w^2=z^3q(\frac{1}{z})=r(z)$, (dove $r(z)$ è un polinomio, perché $deg(q)=3$).
+Operando ora la sostituzione $s=\frac{1}{z}$, ottengo l'equazione $y^2=\frac{q(\frac{1}{z})}{z}$. Moltiplicando l'equazione per $z^4$, e sostituendo $w=z^2y$ si ottiene $w^2=z^3q(\frac{1}{z})=r(z)$, (dove $r(z)$ è un polinomio, perché $\deg(q)=3$).
 
 Le operazioni che abbiamo fatto sono birazionali, infatti:
 $$z=\frac{1}{x+\alpha}  \;\;\;\;\;\;\;   w=\frac{y}{(x+\alpha)^2}  \;\;\;\leftrightsquigarrow\;\;\;  x=\frac{1}{z}-\alpha   \;\;\;\;\;\;\;  y=\frac{w}{z^2}$$
-Resta da verificare solo che $deg(r)=3$ e che $r$ non abbia radici doppie, ma questo segue banalmente dal fatto che $p$ non ha radici doppie (e dunque in particolare $q$ deve avere termine noto $\neq 0$).
+Resta da verificare solo che $\deg(r)=3$ e che $r$ non abbia radici doppie, ma questo segue banalmente dal fatto che $p$ non ha radici doppie (e dunque in particolare $q$ deve avere termine noto $\neq 0$).
 \end{proof}
 
 Notiamo che {\it essere unirazionali} per una varietà algebrica è invariante per equivalenza birazionale. Possiamo quindi mostrare che le cubiche non sono unirazionali utilizzando il modello quartico.
@@ -98,7 +98,7 @@ Allora $x=\frac{p(t)}{q(t)}$ con $MCD(p,q)=1$.
 Sostituendo questa uguaglianza ho che $RHS$ ha denominatore $q(t)^4$ e numeratore coprimo con $q(t)$.
 Da questo si ottiene che $y$ deve essere necessariamente $\frac{r(t)}{q(t)^2}$ con $MCD(r,q)=1$.
 
-    \notamargine{L'idea "geometrica" di questa dimostrazione viene dal fatto che le trasformazioni qui descritte corrispondono ad un'isogenia di grado due tra la curva di partenza $\widetilde{E'}$ e quella di arrivo $\widetilde{E}$, e la mappa $\psi^*:\bbP^1\rightarrow\widetilde{E}$ si solleva a una mappa $\bbP^1\rightarrow\widetilde{E'}$ perchè $\bbP^1$ è semplicemente connesso.
+    \notamargine{L'idea ``geometrica'' di questa dimostrazione viene dal fatto che le trasformazioni qui descritte corrispondono ad un'isogenia di grado due tra la curva di partenza $\widetilde{E'}$ e quella di arrivo $\widetilde{E}$, e la mappa $\psi^*:\bbP^1\rightarrow\widetilde{E}$ si solleva a una mappa $\bbP^1\rightarrow\widetilde{E'}$ perchè $\bbP^1$ è semplicemente connesso.
 
     In un certo senso l'analogo algebrico del rivestimento è il passaggio $r^2=abcd\Rightarrow a,b,c,d$ sono tutti quadrati.}
 
@@ -126,9 +126,9 @@ Dividendo entrambi i membri per $r_2^4$, e applicando infine le sostituzioni $w=
 $$w^2=((\alpha_2-\alpha_3)z^2-(\alpha_1-\alpha_3))((\alpha_2-\alpha_4)z^2-(\alpha_1-\alpha_4))$$
 Il polinomio in $z$ al $RHS$ si verifica facilmente non avere radici multiple, quindi rappresenta un'altra cubica.
 
-Inoltre $z=\frac{r_1(t)}{r_2(t)}$, $MCD(r_1,r_2)=1$ e $max(deg(r_1), deg(r_2))\leq\frac{1}{2}\cdot max(deg(p),deg(q))$.
+Inoltre $z=\frac{r_1(t)}{r_2(t)}$, $MCD(r_1,r_2)=1$ e $\max(\deg(r_1), \deg(r_2))\leq\frac{1}{2}\cdot \max(\deg(p),\deg(q))$.
 
-Abbiamo quindi ricavato che da ogni parametrizzazione di una cubica si ricava un'altra parametrizzazione dove $max(deg(p),deg(q))$ è almeno dimezzato.
-Procedendo così, poiché il grado iniziale è finito, il procedimento termina ed ho una curva parametrizzata con $max(deg(p),deg(q))=0$. 
+Abbiamo quindi ricavato che da ogni parametrizzazione di una cubica si ricava un'altra parametrizzazione dove $\max(\deg(p),\deg(q))$ è almeno dimezzato.
+Procedendo così, poiché il grado iniziale è finito, il procedimento termina ed ho una curva parametrizzata con $\max(\deg(p),\deg(q))=0$. 
 Tuttavia, questo vuol dire che la curva ha una parametrizzazione non dipendente da $t$, ovvero che l'omomorfismo della definizione $\bbC(x,y)\hookrightarrow\bbC(t)$ manda $x$ in un elemento di $\bbC$, dunque non è iniettivo, e questo ci fornisce un assurdo.
 \end{proof}

@@ -25,7 +25,7 @@ Osserviamo che in questo caso si ha che $\quotient{\bbC}{\bbZ}\cong \bbC^{*}=\ma
 \notamargine{Se una superficie di Riemann non è né Sferica né Euclidea allora è Iperbolica.}
 
 \begin{osservazione}
-Nel caso di Superficie di Riemann Sferica e nei tre casi di Superficie di Riemann Euclidea si sa calcolare il gruppo fondamentale ($\pi_1$). (è il gruppo per cui si quozienta)
+Nel caso di Superficie di Riemann Sferica e nei tre casi di Superficie di Riemann Euclidea si sa calcolare il gruppo fondamentale ($\pi_1$). (È il gruppo per cui si quozienta.)
 \end{osservazione}
 
 \begin{esercizio}
@@ -43,7 +43,7 @@ Sia $A$ un dominio (aperto connesso) limitato di $\bbC$. Si dimostri che se si c
 \begin{proof}Lo si dimostrerà in tre modi.
 \begin{itemize}
 \item Il gruppo fondamentale di $S$ è isomorfo al prodotto libero di due copie di $\bbZ$ quindi non è abeliano. Si escludono perciò i casi di Superficie di Riemann Sferica e Euclidea, perché in quei casi il gruppo fondamentale è abeliano.
-\item Si escluderanno i casi di Superficie di Riemann Sferica e Euclidea. $S$ non è compatta, quindi non puù essere biolomorfa alla Sfera di Riemann e nemmeno ad un toro $\quotient{\bbC}{L}$ con $L$ reticolo di rango $2$. Rimangono da escludere i casi $\quotient{\bbC}{\bbZ}$ e $\bbC$.\\
+\item Si escluderanno i casi di Superficie di Riemann Sferica e Euclidea. $S$ non è compatta, quindi non può essere biolomorfa alla Sfera di Riemann e nemmeno ad un toro $\quotient{\bbC}{L}$ con $L$ reticolo di rango $2$. Rimangono da escludere i casi $\quotient{\bbC}{\bbZ}$ e $\bbC$.\\
 Si esclude il caso $\quotient{\bbC}{\bbZ}={\bbC}^*$:\\
 Si osserva che $S=\bbC^*\minus\{ 1\}\subset\bbC$, quindi se esistesse $f:\bbC^*\rightarrow\bbC^*\minus\{ 1\}\subset\bbC$ olomorfa e iniettiva allora $f$ non potrebbe avere una singolarità essenziale né in $0$ né in $\infty$.\\
 Infatti $f$ è aperta perciò se si prende un disco aperto $D$ in $\bbC^*$ si ha che la sua immagine è un aperto di $\bbC$. Se per assurdo $f$ avesse una singolarità essenziale in $0$ allora per il Teorema di Weierstrass ogni intorno bucato di $0$ avrebbe immagine densa in $\bbC$ quindi in particolare considerando un intorno bucato di $0$ disgiunto da $D$ si ha che un punto dell'intorno bucato andrebbe in $f(D)$, contraddicendo l'iniettività della mappa $f$. Con lo stesso ragionamento si trova che $f$ non può avere una singolarità essenziale all'infinito.\\
@@ -65,26 +65,23 @@ Infatti si ha che si escludono le superfici compatte prendendo come $K'$ loro st
 \end{itemize}
 \end{proof}
 
-\notamargine{La proprietà $\mathcal{P}$ in un qualche senso "conta i punti tolti, in funzione di quello che è rimasto". Inoltre permette di dire per esempio che un "toro meno $n$ punti distinti" non è omeomorfo a un "toro meno $m$ punti distinti", se $m\ne n$}
+\notamargine{La proprietà $\mathcal{P}$ in un qualche senso ``conta i punti tolti, in funzione di quello che è rimasto''. Inoltre permette di dire per esempio che un ``toro meno $n$ punti distinti'' non è omeomorfo a un ``toro meno $m$ punti distinti'', se $m\ne n$}
 
-\begin{teorema}[Teorema di Picard]
-Ogni funzione intera ($\bbC\rightarrow\bbC$ olomorfa su tutto $\bbC$) non costante assume tutti i valori tranne al più uno.
+\begin{teorema}[Piccolo teorema di Picard]
+Ogni funzione olomorfa intera non costante assume tutti i valori tranne al più uno.
 \end{teorema}
 
 \begin{osservazione}
-\begin{itemize}
-\item La mappa esponenziale assume tutti i valori tranne lo $0$
-\item Se la mappa $f$ come da ipotesi ha in più la proprietà di NON avere una discontinuità essenziale all'infinito allora si ha che per Liouville deve essere un polinomio, quindi il risultato è banale ($p(x)-a$ ha sempre almeno una radice, se $p$ non costante)
-\end{itemize}
+	Non può essere meglio di così: la mappa esponenziale assume tutti i valori tranne lo $0$. Notiamo inoltre che se la mappa $f$ come da ipotesi ha in più la proprietà di \emph{non} avere una discontinuità essenziale all'infinito, allora per Liouville si ha che è un polinomio, per cui il risultato segue dal Teorema Fondamentale dell'Algebra.
 \end{osservazione}
 
-\notamargine{C'è anche una versione più forte di questo teorema (detto da lui)}
+\notamargine{C'è anche una versione più forte di questo teorema, cioè il Grande teorema di Picard: la tesi vale in ogni intorno di una singolarità essenziale.}
 
 \begin{proof}
 Si usa che $\mathbb{P}^1(\mathbb{C})\minus\{ A, B, C\}$ con $A, B, C$ tre punti distinti è una superficie di Riemann iperbolica (Esercizio 7).\\
 Si suppone per assurdo che $f$ soddisfacente le ipotesi non assuma due valori, che a meno di comporre $f$ con un'affinità (automorfismo di $\bbC$) suppongo essere $0,1$.
-Allora $f$ induce una mappa olomorfa $f:\bbC->S$ (con $S$ come in Esercizio 7).
-Si ha che quindi $f$ si solleva a $\tilde{f}:\bbC\rightarrow D$, con $D$ il disco aperto. DIAGRAMMA \\
+Allora $f$ induce una mappa olomorfa $f:\bbC \rightarrow S$ (con $S$ come in Esercizio 7).
+	Si ha che quindi $f$ si solleva a $\tilde{f}:\bbC\rightarrow \mathbb{D}$, con $\mathbb{D}$ il disco aperto. DIAGRAMMA \\
 Ma allora la mappa olomorfa $\tilde{f}$ è costante per Liouville, quindi poiché il diagramma commuta anche $f$ è costante, assurdo.
 \end{proof}
 
@@ -122,7 +119,7 @@ Sostituendo questo in $\tilde{f} (z+\lambda_1) - \tilde{f} (z) \in L_2 \hquad \f
 \notamargine{Vedi anche Elliptic Function, Lang, pagina 14}
 
 \begin{osservazione}
-Non è detto che la mappa $f$ sia biunivoca come mappa $T_1\rightarrow T_2$, anche se la mappa "sopra" $\tilde{f}$ lo è.
+Non è detto che la mappa $f$ sia biunivoca come mappa $T_1\rightarrow T_2$, anche se la mappa ``sopra'' $\tilde{f}$ lo è.
 \end{osservazione}
 
 Viceversa se si ha $\alpha$ che soddisfa $\alpha L_1 \subseteq L_2$  allora la mappa moltiplicazione per $\alpha: \quad \bbC \rightarrow \quotient{\bbC}{L_2} \hquad z\ \mapsto [\alpha z]_{L_2} $ è ben definita e passa al quoziente $\quotient{\bbC}{L_1}\rightarrow \quotient{\bbC}{L_2}$.

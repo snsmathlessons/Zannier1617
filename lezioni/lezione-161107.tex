@@ -37,7 +37,7 @@ ed entrambe le parentesi si annullano per biperiodicità di $F$.
 
 \notamargine{Un po' di libertà di notazione}
 
-(ii) Identico ad (i), usando la funzione $\frac{F'}{F}$ al posto di $F$ (osservo che $\frac{F'}{F}$ è ancora biperiodica) (osservo che $\res_x\frac{F'}{F}=\ord_xF$).
+(ii) Identico ad (i), usando la funzione $\frac{F'}{F}$ al posto di $F$. Infatti $\frac{F'}{F}$ è ancora biperiodica e $\res_x\frac{F'}{F}=\ord_xF$).
 
 (iii) Uso il teorema dei residui sulla funzione $z\frac{F'(z)}{F(z)}$ con il cammino $\gamma$.
 
@@ -66,7 +66,7 @@ La serie sopra converge totalmente (e quindi uniformemente) sui compatti contenu
 
 Fissiamo $K\subseteq\bbC\setminus L$ compatto.
 
-Si ha $\sup_{z\in K}\abs{\frac{1}{(z-\omega)^2}-\frac{1}{\omega^2}}=\sup_{z\in K}\abs{\frac{z(2\omega-z)}{\omega^2(z-\omega)^2}}$ che per $\omega$ 'lontano' da $K$ è circa $\abs{\frac{1}{\omega^3}}$.
+Si ha $\sup_{z\in K}\abs{\frac{1}{(z-\omega)^2}-\frac{1}{\omega^2}}=\sup_{z\in K}\abs{\frac{z(2\omega-z)}{\omega^2(z-\omega)^2}}$ che per $\omega$ ``lontano'' da $K$ è circa $\abs{\frac{1}{\omega^3}}$.
 
 Ma $\sum_{\omega\in L\setminus\{0\}}\abs{\frac{1}{\omega^3}}$ converge, perchè
 gli $\omega$ di modulo $R$ sono circa $R$, e quindi quella è circa $\sum R\cdot\frac{1}{R^3}=\sum\frac{1}{R^2}<+\infty$.
@@ -74,7 +74,7 @@ gli $\omega$ di modulo $R$ sono circa $R$, e quindi quella è circa $\sum R\cdot
 
 Quindi il limite della serie sopra è una funzione olomorfa $P:\bbC\setminus L\rar\bbC$.
 
-\'E inoltre facile verificare che $P$ è una funzione $L$-biperiodica.
+È inoltre facile verificare che $P$ è una funzione $L$-biperiodica.
 Ad esempio, basta considerare $P(z+\tau)-P(z)$ con $\tau \in L$: per le proprietà di convergenza, posso raccogliere la sommatoria e ottenere
 \[ P(z+\tau) - P(z) = \frac1{(z+\tau)^2} - \frac1{z^2} + \sum_{\omega \in L\ \omega\ne 0} \frac1{(z+\tau-\omega)^2}-\frac1{(z-\omega)^2}\]
 e ora mettendo il caso $\omega=0$ nella sommatoria e riarrangiando si conclude.
@@ -83,9 +83,9 @@ e ora mettendo il caso $\omega=0$ nella sommatoria e riarrangiando si conclude.
 Se prendiamo la serie che definisce $P$ e togliamo il termine $\frac{1}{z^2}$, converge uniformemente in un intorno di $0$ (e analogo per ogni $\omega\in L$).
 Quindi $P$ è meromorfa su tutto $\bbC$.
 
-Fattorizzando $P$, otteniamo una funzione meromorfa $\wp:T\rar\bbC$, chiamata \textbf{funzione di Weierstrass}. Attenzione: tale definizione dipende dal reticolo $L$ scelto per rappresentare $T$! Però non cambia in modo sostanziale: infatti la $\wp$ dovrebbe trasformare, per un cambio di reticolo $L \mapsto \alpha L$:
+Fattorizzando $P$, otteniamo una funzione meromorfa $\wp:T\rar\bbC$, chiamata \textbf{funzione di Weierstrass}. Attenzione: tale definizione dipende dal reticolo $L$ scelto per rappresentare $T$! Però non cambia in modo sostanziale: infatti la $\wp$ trasforma, per un cambio di reticolo $L \mapsto \alpha L$:
 \[
- \wp_L(z) = \alpha^2 \wp_{\alpha L}(\alpha z) 
+	\wp_L(z) = \alpha^2 \wp_{\alpha L}(\alpha z).
 \]
 
 In particolare, non vengono modificati né gli zeri né i poli (che saranno le cose che ci interesseranno maggiormente).
@@ -149,33 +149,12 @@ Quindi $f\in\bbC(\wp)$, come voluto.
 \end{proof}
 
 
-Fissiamo una funzione meromorfa dispari $h:T\rar\bbC$ (non costante) (ad esempio $\wp'$).
+Fissiamo una funzione meromorfa dispari $h:T\rar\bbC$ non costante, ad esempio $\wp'$.
 Essendo $h^2$ pari, si ha $h^2\in\bbC(\wp)$.
 Ogni funzione meromorfa $g:T\rar\bbC$ si scrive (in modo unico) come $g_1+g_2$ con $g_1$ meromorfa pari e $g_2$ meromorfa dispari.
-Ma allora $g=g_1+h(\frac{g_2}{h})$ e $\frac{g_2}{h}$ è pari e quindi sta in $\bbC(\wp)$.
+Ma allora $g = g_1 + h \frac{g_2}{h}$ e $\frac{g_2}{h}$ è pari e quindi sta in $\bbC(\wp)$.
 
 Quindi abbiamo ottenuto che il campo delle funzioni meromorfe su $T$ è $\bbC(\wp,h)$ per una qualsiasi $h$ dispari non costante.
 
 
-$(\wp')^2=\frac{A(\wp)}{B(\wp)}$ e ci chiediamo chi siano $A$ e $B$.
-
-\begin{itemize}
- \item Contiamo i poli in 0. A sinistra ho un polo sestuplo, mentre a destra l'ordine del polo è dato da $2\cdot (\deg A - \deg B)$. Quindi $\deg A = \deg B + 3$.
- \item Contiamo ora gli zeri. A sinistra ho 6 zeri, a destra il numero di zeri è dato da $2*\deg A$: infatti il numeratore contribuisci con zeri in posti diversi da 0 e con poli in zero; il denominatore contribuisce con zeri in 0 (che però vengono mangiati dai poli del denominatore) e con poli altrove. Quindi $\deg A = 3$
-\end{itemize}
-
-In conclusione otteniamo che $(\wp')^2=A(\wp)$, con $A$ di grado 3.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Consideriamo ora la funzione $(\wp')^2$: è pari e ha un polo solo nell'origine, per cui $(\wp')^2 = A(\wp)$ per un opportuno $A \in \bbC[z]$. Grazie all'ordine di polo in zero, concludiamo $\deg A = 3$.

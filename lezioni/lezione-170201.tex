@@ -41,11 +41,12 @@
 	\end{equation*}
 	dove $\Omega$ è un disco intorno all'origine, di raggio $e^{2\pi \Im(A)}$, e $\partial\Omega$ è percorso in senso orario.
 	
+	Per simmetria, vale
 	\begin{equation*}
-		\frac{1}{2\pi i}\left( \int_A^B\frac{\de f}{f} + \int_{D'}^E\frac{\de f}{f} \right) =0
+		\frac{1}{2\pi i}\left( \int_A^B\frac{\de f}{f} + \int_{D'}^E\frac{\de f}{f} \right) = 0.
 	\end{equation*}
 	
-	Si ha che, poiché $f$ è una forma modulare, $f(Sz)=f(-\frac{1}{z})=z^{2k}f(z)$, da cui, prendendo la derivata logaritmica,
+	Poiché $f$ è una forma modulare, vale $f(Sz)=f(-\frac{1}{z})=z^{2k}f(z)$, da cui, prendendo la derivata logaritmica,
 	$\dst\frac{\de f}{f}(Sz)=2k\cdot\frac{\de z}{z}+\frac{\de f}{f}(z)$. Dunque
 	\begin{multline}
 		\frac{1}{2\pi i}\left\{ \int_{B'}^C\frac{\de f}{f} + \int_{C'}^D\frac{\de f}{f} \right\} \overset{*}{=} %
@@ -64,7 +65,7 @@
 	
 	Analogamente si ottiene 
 	\begin{equation*}
-		\frac{1}{2\pi i}\int_B^{B'}\frac{\de f}{f}=\frac{1}{2\pi i}\int_D^{D'}\frac{\de f}{f}=-\frac{v_\rho(f)}{6}
+		\frac{1}{2\pi i}\int_B^{B'}\frac{\de f}{f}=\frac{1}{2\pi i}\int_D^{D'}\frac{\de f}{f}=-\frac{v_\rho(f)}{6}.
 	\end{equation*}
 	
 	Uguagliando gli integrali si ottiene la tesi.
@@ -79,26 +80,25 @@
 \begin{proof}
 	Per induzione: il passo base è per $k\leq6$.
 	\begin{itemize}
-		\item Per $k<0$ si ha che $M_k=\{0\}$;
+		\item Per $k < 0$ vale $M_k = \{ 0 \}$, infatti per una forma modulare gli ordini sono tutti non negativi;
 		
-		\item Per $k=0$ si ha $M_0=\bbC$: infatti, per il teorema precedente, ogni $f\in M_0$ o è $0$ o la somma pesata degli ordini di annullamento è $0$. Poiché gli ordini sono positivi, la funzione non si deve mai annullare, ed è quindi una costante diversa da $0$;
+		\item Per $k = 0$ si ha $M_0 = \bbC$: infatti, per il teorema precedente, una forma modulare di peso $0$ è o nulla oppure non si annulla mai, quindi è olomorfa da una superficie di Riemann compatta e semplicemente connessa verso $\bbC$, quindi costante diversa da $0$;
 		
-		\item Per $k=1$ si ha $M_1=\{0\}$. Infatti non è possibile scrivere $\frac{1}{6}$ come combinazione lineare intera positiva di $1, \frac{1}{3}, \frac{1}{2}$;
+		\item Per $k = 1$ si ha $M_1=\{0\}$. Infatti non è possibile scrivere $\frac{1}{6}$ come combinazione lineare intera positiva di $1, \frac{1}{3}, \frac{1}{2}$;
 		
-		\item Per $k=2$ si ha $M_2=\bbC G_2$. Infatti le forme $\neq0$ in $M_2$ si annullano solo in $\rho$ con ordine 1,
+		\item Per $k = 2$ si ha $M_2=\bbC G_2$. Infatti le forme non nulle in $M_2$ si annullano solo in $\rho$ con ordine 1,
 		e $G_2$ soddisfa questa proprietà. Se $f\in M_2$, sia $x\neq\rho$. Allora considero $f-\frac{f(x)}{G_2(x)}G_2$. Questa funzione si annulla in $x$ e in $\rho$, ed è quindi $0$, dunque $f=\frac{f(x)}{G_2(x)}G_2$
 		
-		\item Per $k=3, 4, 5$, allo stesso modo, si ha $M_3=\bbC G_3, M_4=\bbC G_2^2, M_5= \bbC G_2G_3$
+		\item Per $k = 3, 4, 5$, allo stesso modo, si ha $M_3=\bbC G_3, M_4=\bbC G_2^2, M_5= \bbC G_2G_3$
 		
-		\item Per $k=6$, si ha $M_6=\bbC G_2^3 + \bbC G_3^2$. Infatti, con lo stesso ragionamento di prima, otteniamo che $G_2^3, G_3^2 \in M_6$, e, con combinazioni lineari di queste, possiamo trasformare una funzione $f \in M_6$ in un'altra $f'$ con $v_\rho(f')=3, v_i(f')=2$.
-		Dunque, per la formula del teorema precedente, $f'$ non può essere in $M_6$ a meno che non sia $0$.
-		Inoltre $G_2^3$ e $G_3^2$ sono linearmente indipendenti, perché si annullano in punti diversi, e dunque sono una base di $M_6$.
+		\item Per $k = 6$, si ha $M_6 = \bbC G_2^3 + \bbC G_3^2$. Vale infatti $G_2^3, G_3^2 \in M_6$, inoltre con combinazioni lineari di queste, possiamo trasformare una funzione $f \in M_6$ in un'altra $g$ con uno zero in $\rho$ o in $i$, dopodiché si applica lo stesso ragionamento dei punti precedenti.
+		Le forme $G_2^3$ e $G_3^2$ sono linearmente indipendenti, per esempio perché si annullano in punti diversi, dunque sono una base di $M_6$.
 		
-		Notiamo inoltre che $\Delta\in M_6$, poiché combinazione di $G_2^3$ e $G_3^2$.
-		Poiché $\Delta(z)\neq0$ in $\cH$, si deve avere che $\Delta(\infty)=0$ con ordine $1$.
+		Notiamo inoltre che $\Delta \in M_6$, poiché combinazione lineare di $G_2^3$ e $G_3^2$.
+		Poiché $\Delta(z) \neq 0$ in $\cH$, si ha $\Delta(\infty) = 0$ con ordine $1$.
 	\end{itemize}
 	
-	Per $k>6$ abbiamo che $G_k \in M_k$, e inoltre $G_k(\infty)\neq0$.
+	Per $k > 6$ abbiamo che $G_k \in M_k$ e $G_k(\infty) \neq 0$.
 	Sia allora $f \in M_k$, e $c=\frac{f(\infty)}{G_k(\infty)}$. $f-cG_k$ si annulla in $\infty$, dunque $\frac{f-cG_k}{\Delta}$ è ancora una forma modulare, di peso $2(k-6)$, e dunque appartiene a $M_{k-6}$.
 	\notamargine{$\frac{f-cG_k}{\Delta}$ è olomorfa in $\infty$ perché $\ord_\infty(\Delta)=1$, e $\ord_\infty(f-cG_k)\geq1$, e altrove perché $\Delta$ non assume il valore $0$ su $\cH$}
 	Dunque $f$ si scrive come $cG_k+\Delta f_{k-6}$, per un qualche $f_{k-6} \in M_{k-6}$, e di conseguenza si ha $M_k=\bbC G_k + \Delta M_{k-6}$.
@@ -126,11 +126,13 @@ Ripercorrendo la dimostrazione, usando $G_2^a G_3^b$ al posto di $G_k$, si ottie
 \section{L'invariante $j$ e la corrispondenza curve-tori}
 
 \notamargine{Ricordiamo che $j$ è definito come $1728\frac{g_2^3}{\Delta}$.}
-$j$ è una funzione modulare di peso $0$, dunque è invariante per trasformazioni in $\SL_2(\bbZ)$; ha un polo semplice in $\infty$ e nessun altro polo.
+L'invariante $j$ è una funzione modulare di peso $0$, dunque è invariante per trasformazioni in $\SL_2(\bbZ)$; ha un polo semplice in $\infty$ e nessun altro polo.
 
-Ora, sia $c \in \bbC$. Applicando il teorema \ref{170201-forme-ordini} alla funzione $j-c$, otteniamo che questa, avendo un solo polo, deve avere anche un solo zero (di ordine opportuno se in $\rho$ o in $i$), e dunque facendo variare $c$ si ottiene che la funzione $j$ assume ogni possibile valore complesso. Dunque, per l'osservazione \ref{170123-j_suriettiva}, abbiamo effettivamente dimostrato che \emph{ogni cubica viene da un toro}.
-\notamargine{In particolare $\quotient{\cH}{G} \overset{j}{\rar} \bbC$ è una bigezione}
+Sia ora $c \in \bbC$. Applicando il teorema \ref{170201-forme-ordini} alla funzione $j-c$, otteniamo che questa, avendo un solo polo, deve avere anche un solo zero (di ordine opportuno se in $\rho$ o in $i$). Dunque facendo variare $c$ si ottiene che la funzione $j$ assume ogni possibile valore complesso. Gioite! Per l'osservazione \ref{170123-j_suriettiva} abbiamo finalmente dimostrato che \emph{ogni cubica viene da un toro}.
+\notamargine{In particolare $\quotient{\cH}{G} \overset{j}{\rar} \bbC$ è una bigezione.}
 
-Infine come nota finale, aggiungiamo che ogni funzione modulare di peso $0$ appartiene a $\bbC(j)$, cioè è una funzione razionale della funzione $j$ (non dimostrato). Per la dimostrazione vedere il Serre (A course in Arithmetic) pagina 90 (Sotto il 3. The space of modular function - Proposizione 6)
+Aggiungiamo come nota finale che il campo delle funzioni modulari di peso $0$ è $\bbC(j)$. Ciò corrisponde al fatto che le funzioni meromorfe sulla sfera di Riemann sono $\bbC(x)$, letto attraverso il biolomorfismo $j : F \cup \{ \infty \} \rightarrow \hat \bbC$.
+
+Per approfondire, Zannier consiglia la parte sulle funzioni modulari di ``A course in Arithmetic'', di Serre, o il libro di Zagier, ``The 1-2-3 of Modular Forms''.
 
 % Qui finiscono le avventure del terzo anno 2016/17 nella landa di Zannier. 

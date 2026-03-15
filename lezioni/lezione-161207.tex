@@ -98,13 +98,16 @@ Il vero osso duro è l'associatività, che in questo corso non dimostriamo.
 \end{proof}
 
 \begin{osservazione}
-Se sappiamo che la cubica proviene da un toro, possiamo dire che la legge di gruppo $*$ proviene dal $+$ del toro (sotto quali ipotesi valgono sti sollevamenti mi sfugge). In questo modo anche l'associatività diventa ovvia.
+Sapendo che la cubica viene da un toro, il prodotto $*$ corrisponde alla somma sul toro. L'associatività a questo punto è chiara.
 \end{osservazione}
 
 \section{Equivalenza lineare tra divisori (sulle cubiche)}
 
 \begin{definizione}
-Definiamo il gruppo dei divisori sulla cubica $\Div(\widetilde{E})$ come il gruppo abeliano libero generato dai punti della cubica. Per gli analisti, me compresa, significa che è l'insieme delle combinazioni formali finite del tipo $$\sum_{P \in \widetilde{E}} \alpha_P(P)$$,
+Definiamo il gruppo dei divisori sulla cubica $\Div(\widetilde{E})$ come il gruppo abeliano libero generato dai punti della cubica. Per gli analisti, me compresa, significa che è l'insieme delle combinazioni formali finite del tipo
+	\[
+		\sum_{P \in \widetilde{E}} \alpha_P(P),
+	\]
 con $\alpha_P \in \mathbb{Z}$.
 Sempre per gli analisti: coraggio ragazzi, mancano poche lezioni!
 RIP per questi commenti che verranno cancellati da Balbo, stima per lui se invece li lascia.
@@ -134,7 +137,7 @@ L'insieme di tutti i possibili $\div(f)$ si chiama insieme dei divisori principa
 
   A questo punto, visto che $f(p) = 0$ sappiamo che $f \in \cM_p^k$ per qualche $k \in \bbN$. Si definisce $\ord_p(f) = k$ (nel caso in cui $f$ abbia un polo in $p$ si definisce $\ord_p(f) = - \ord_p(\frac{1}{f})$).}
 
-Un teorema che abbiamo visto (T2 sulle superfici di riemann compatte) garantisce che $\div(f) \in \Div^0(\widetilde{E})$
+Un teorema che abbiamo visto (T2 sulle superfici di Riemann compatte) garantisce che $\div(f) \in \Div^0(\widetilde{E})$
 Inoltre $\{\div(f) | f: \widetilde{E} \rar \bbC \mbox{ razionale} \}$ è un sottogruppo di $\Div^0(\widetilde{E})$ (le verifiche sono banali).
 
 C'è dunque un omomorfismo (non surgettivo) tra il gruppo moltiplicativo delle funzioni razionali non nulle su $\widetilde{E}$ e i divisori di grado zero.
@@ -159,12 +162,12 @@ $\bbC(\bbP_1) = \bbC(t)$ con $t$ che è la funzione coordinata $t(x_1, x_0)=\fra
 Ha un polo nel punto all'infinito, cioè in $(1:0)$.
 
 \begin{proposizione}
-Ogni divisore di grado $0$ è il divisore di una funzione (nel caso di $\bbP_1$! Per $\widetilde E$ è falso.)
+Ogni divisore di grado $0$ è il divisore di una funzione (nel caso di $\bbP_1$! Per $\widetilde E$ è falso).
 \end{proposizione}
 \begin{proof}
-  Possiamo supporre che $\infty$ non compaia nel divisore di grado $0$.
-  Infatti, se per caso ci compare con coefficiente $n$, sarà sufficiente moltiplicare $f$ per la funzione $z^{-n}$ (in coordinate standard), che notiamo avere $\div z^{-n} = -n (0) + n (\infty)$, ovvero $z^{-n} \in \Ker \varrho$. E quindi $f \in \Ker \varrho \sse z^{-n} f \in \Ker \varrho$.
-Allora (col piccolo abuso di identificare $\bbP_1 \backslash \infty$ con $\bbC$)
+	Possiamo supporre che $(\infty)$ non compaia nel divisore di grado $0$.
+  Infatti, se per caso ci compare con coefficiente $n$, sarà sufficiente moltiplicare $f$ per la funzione $z^{-n}$ (in coordinate standard), che notiamo avere $\div z^{-n} = -n (\infty) + n (\infty)$, ovvero $z^{-n} \in \Ker \varrho$. E quindi $f \in \Ker \varrho \sse z^{-n} f \in \Ker \varrho$.
+	Allora (col piccolo abuso di identificare $\bbP_1 \backslash \{\infty\}$ con $\bbC$)
 questo divisore sarà $\sum m_i (\alpha_i)$ con $m_i \in \mathbb{Z}$ e $\alpha_i \in \bbC$, e so che $\sum m_i=0$.
 Calo dal cielo $\prod(t-\alpha_i)^m_i$, e si vede facilmente che risolve.
 \end{proof}
@@ -179,18 +182,18 @@ $\Pic^0(\widetilde{E}) := \frac{\Div^0(\widetilde{E})}{\text{divisori principali
 
 \begin{osservazione}
 Ho quindi la successione esatta:
-$$0 \rightarrow \bbC^* \rightarrow \bbC^*(\widetilde{E}^*) \rightarrow \Div^0(\widetilde{E})\rightarrow \Pic^0(\widetilde{E})\rightarrow 0$$
+$$0 \rightarrow \bbC^* \rightarrow \bbC^*(\widetilde{E}) \rightarrow \Div^0(\widetilde{E})\rightarrow \Pic^0(\widetilde{E})\rightarrow 0$$
 \end{osservazione}
 
 Nel caso visto prima di $\bbP_1$, già $\Pic^0(\bbP_1)=0$
 
 \notamargine{
-Avere il $\Pic=0$ è imparentato in qualche modo con l'essere UFD. Ad esempio $\mathbb{Z}(i)$ ha $\Pic=0$. Nel caso del $\bbP_1$, il fatto che il suo $\Pic$ sia nullo è dunque legato alla fattorizzazione unica dei polinomi.
+Avere il $\Pic=0$ è imparentato in qualche modo con l'essere UFD. Ad esempio $\mathbb{Z}(i)$ ha $\Pic=0$. Nel caso del $\bbP_1$, il fatto che il suo $\Pic$ sia nullo è legato alla fattorizzazione unica dei polinomi.
 }
 
 \section{Vogliamo ora studiare il Pic di una curva ellittica (proveniente da un toro)}
 
-Considero $\sigma : \widetilde E \rightarrow \Div^0(\widetilde E)$ tale che $\sigma(P)=(P)-(0)$
+Considero $\sigma : \widetilde E \rightarrow \Div^0(\widetilde E)$ tale che $\sigma(P)=(P)-(\infty)$
 Considero un divisore di grado $0$ su $E$. Sarà della forma $d = \sum\alpha_P\cdot(P)$.
 Poiché $\sum \alpha_P=0$, lo posso scrivere come $\sum\alpha_p \sigma(P)$.
 
@@ -206,12 +209,12 @@ Ogni divisore di grado zero è linearmente equivalente ad un $\sigma(P)$.
 Alla dimostrazione premettiamo alcuni lemmi. 
 \begin{lemma}
   \label{lemma_equiv_lin}
-$(R) + (-R) \sim 2(0)$
+$(R) + (-R) \sim 2(\infty)$
 \end{lemma}
 \begin{proof}
 Sia $R$ è il punto di $\widetilde E$ associato al punto $z_0 \in T$.
-Dimostro ora che $(R)+(-R)-2(0)$ è un divisore principale, da cui $(R)+(-R)-2(0) \sim \varnothing$ da cui la tesi.
-Ma considerando la funzione $\wp(z)-\wp(z_0)$ si vede che ha divisore $(R)+(-R)-2(0)$ (polo doppio in $0$, zeri semplici in $R,-R$), da cui la tesi.
+Dimostro ora che $(R)+(-R)-2(\infty)$ è un divisore principale, da cui $(R)+(-R)-2(\infty) \sim \varnothing$ da cui la tesi.
+Ma considerando la funzione $\wp(z)-\wp(z_0)$ si vede che ha divisore $(R)+(-R)-2(\infty)$ (polo doppio in $0$, zeri semplici in $R,-R$), da cui la tesi.
 \end{proof}
 
 \begin{lemma}
@@ -220,20 +223,20 @@ $\sigma(P)+\sigma(Q) \sim \sigma (P+Q)$
 \end{lemma}
 \begin{proof}
 La tesi equivale a:
-$$(P)-(0)+(Q)-(0) \sim (P+Q)-(0)$$
-$$(P)+(Q)\sim (P+Q)+(0)$$
+$$(P)-(\infty)+(Q)-(\infty) \sim (P+Q)-(\infty)$$
+$$(P)+(Q)\sim (P+Q)+(\infty)$$
 Attenzione: si intende che il $+$ dentro alle parentesi è la legge di gruppo sulla cubica indotta dall'addizione del toro, mentre il $+$ fuori dalla parentesi è il $+$ formale dei divisori.
-Considero la funzione $h(z) = \wp'(z) - a \wp(z) - b$ con a e b definiti come nel Teorema \ref{leggedigruppo}. Abbiamo già visto che ha un polo di ordine $3$ nell'origine e tre zeri semplici in $P$, $Q$, $-P-Q$. Quindi $$\div(h)=(P)+(Q)+(-P-Q)-3(0) \sim \varnothing$$
+Considero la funzione $h(z) = \wp'(z) - a \wp(z) - b$ con a e b definiti come nel Teorema \ref{leggedigruppo}. Abbiamo già visto che ha un polo di ordine $3$ nell'origine e tre zeri semplici in $P$, $Q$, $-P-Q$. Quindi $$\div(h)=(P)+(Q)+(-P-Q)-3(\infty) \sim \varnothing$$
 Utilizzo ora il lemma \ref{lemma_equiv_lin}, e ottengo che:
-$$(P)+(Q)+2(0)-(P+Q)-3(0) \sim \varnothing$$
-$$(P)+(Q) \sim (P+Q)-(0)$$
+$$(P)+(Q)+2(\infty)-(P+Q)-3(\infty) \sim \varnothing$$
+$$(P)+(Q) \sim (P+Q)-(\infty)$$
 \end{proof}
 
 \begin{proof}[Dimostrazione del Teorema]
 Considero un qualsiasi divisore $d$ di grado $0$.
 $$d=\sum a_i (P_i)$$
 per $i=1,...,n$. So che $\sum a_i=0$. Allora:
-$$d = \sum a_i (P_i)-\sum a_i (0) \sim \sum a_i ((P_i)-(0))=\sum a_i (\sigma(P_i))$$
+$$d = \sum a_i (P_i)-\sum a_i (\infty) \sim \sum a_i ((P_i)-(\infty))=\sum a_i (\sigma(P_i))$$
 Ma adesso estendendo banalmente il lemma \ref{lemma_equiv_lin2} dalle somme alle combinazioni lineari, ottengo che:
 $$d \sim \sum a_i (\sigma(P_i)) \sim \sigma(\sum a_i P_i)$$
 da cui la tesi.

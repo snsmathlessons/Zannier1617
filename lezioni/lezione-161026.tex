@@ -43,27 +43,18 @@
 	\end{proposizione}
 	
 	\begin{proof}
-		Sia $x \in T$, sia $*$ una legge di gruppo e sia senza perdita di generalità $0$ l'elemento neutro. Consideriamo la funzione $\phi_x: z \mapsto x * z - x$.
+		In due parole, la legge di gruppo su $T$ si solleva a $\bbC$, gli automorfismi di $\bbC$ sono solo le affinità e da questo concludo che l'unica legge di gruppo su $\bbC$, quindi su $T$, è quella additiva.
 
-		Questa è una mappa olomorfa tra tori, e sappiamo che deve essere della forma $z \mapsto \alpha z + \beta$. Ma $\phi_x(0)=0$, quindi $\beta=0$. Sia quindi $c_x \in \bbC$ tale che $\phi_x(z)=c_xz$.
-		
-		Quindi abbiamo, riarrangiando i termini della definizione 
-		\[
-		 x*z = \phi_x(z) + x = c_xz + x
-		\]
-		(ricordiamo che si tratta di numeri complessi modulo il reticolo $L$).
-		
-		Fissiamo ora $z_0\ne 0$. $c_x$ è una funzione olomorfa in $x$, infatti, detta $f(\zeta) = \zeta * z_0$, vale
-		\[
-			f(\zeta) = \zeta + c_\zeta z_0 + \lambda, \lambda \in L
-		\]
-		stavolta pensata su $\bbC$. Quindi posso ricavare $c_\zeta$, e dato che $f$ è olomorfa per ipotesi, ottengo quello che volevo.
-		
-		D'altra parte, fissato un qualsiasi $\lambda \in L$, allora $c_x\lambda \in L \; \forall x$, quindi poichè $x \mapsto c_x \lambda$ è olomorfa a valori in un discreto, deve essere localmente costante e quindi costante. Sia quindi $c=c_x$.
-		
-		Ponendo $x=0$ ottengo che $\phi_0(z) = cz = z$, da cui $(c-1)z$ sta nel reticolo per ogni $z$, e quindi $c=1$.
+		In più di due parole, siano $x \in T$, $*$ una legge di gruppo e sia senza perdita di generalità $0$ l'elemento neutro. Consideriamo la funzione $\Phi: (x, z) \mapsto x * z - x$.
 
+		Per $x$ fissato, questa è una mappa olomorfa tra tori, che sappiamo essere necessariamente della forma $z \mapsto c_x z + b_x$, con $c_x L \subseteq L$. Inoltre $\Phi(x, 0) = 0$, da cui $b_x = 0$. Sia allora $c_x \in \bbC$ tale che $\Phi(x, z) = c_x z$.
+		Vogliamo dire che $c_x$ è olomorfa (in particolare continua) rispetto a $x$, localmente costante e quindi costante per connessione.
+		Fissato un $\lambda \in L$ non nullo, la funzione $x \mapsto \lambda c_x$ assume valori nell'insieme discreto $L$, quindi per dire che $c_x$ è localmente costante basta la continuità.
+		
+		Chi conosce un po' di analisi complessa in più dimensioni direbbe semplicemente che $c_x = \partial_z \Phi$ è olomorfa, noi possiamo sollevare mappe.
 
+		Solleviamo innanzitutto la moltiplicazione $\mu$ della struttura di gruppo su $T$ per ottenere una struttura di gruppo su $\bbC$. Dopodiché, fissato $0 \ne z_0 \in T$, sia $\tilde{z_0}$ una sua preimmagine. Le mappe su $\bbC$ definite da $\tilde{\mu}(\tilde{x}, \tilde{z_0}) - \tilde{x}$ e $c_x \tilde{z_0}$ sono entrambe sollevamenti di $x \mapsto x * z_0$, quindi $\tilde{\mu}(\tilde{x}, \tilde{z_0}) - \tilde{x} = c_x \tilde{z_0} + \lambda$ per un qualche $\lambda \in L$ costante.
+		Segue che $c_x$ è una funzione olomorfa di $\tilde{x}$, quindi di $x$.
 	\end{proof}
 
 	% Aggiungere delirio su Aut(D)
