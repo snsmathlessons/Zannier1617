@@ -17,7 +17,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: lezioni.tex
+          root_file: FunzioniEllitticheEModulari.tex
 
       # Optional: Keep artifact for debugging history
       - name: Upload PDF as artifact
@@ -32,7 +32,7 @@ jobs:
         with:
           tag_name: latest
           name: Latest Build
-          files: lezioni.pdf
+          files: FunzioniEllitticheEModulari.pdf
           draft: false
           prerelease: false
         env:

@@ -1,6 +1,6 @@
 \thislesson{19 Settembre 2016}{Introduzione, Parte prima}
 
-In questo corso studieremo le funzioni meromorfe periodiche.  Partiamo dalle funzioni con un solo periodo, che a meno di rinormalizzazioni posso considerare essere $1$.  Lo spazio topologico quoziente $\bbC / \bbZ$ (ovvero $\bbC$ quozientato per la relazione di equivalenza $a \cR b \sse a-b \in \bbZ$) è un cilindro (In particolare notiamo che non è compatto).
+In questo corso studieremo le funzioni meromorfe periodiche.  Partiamo dalle funzioni con un solo periodo, che a meno di rinormalizzazioni posso considerare essere $1$.  Lo spazio topologico quoziente $\bbC / \bbZ$ (ovvero $\bbC$ quozientato per la relazione di equivalenza $a \cR b \sse a - b \in \bbZ$) è un cilindro (In particolare notiamo che non è compatto).
 
 \begin{definizione}[Superficie di Riemann]
   Si dice una superficie di Riemann una varietà complessa connessa di dimensione $1$.  Si intende che ogni punto deve avere un intorno $U_\alpha$ omeomorfo al disco unitario aperto di $\bbC$ tramite l'omeomorfismo $\phi_\alpha$, e che per ogni $\alpha$ e $\beta$ valga che $g := \phi_\beta \circ \phi_\alpha^{-1}$ sia una funzione olomorfa.
@@ -69,7 +69,7 @@ Preso un parallelogramma fondamentale del reticolo, possiamo considerare come ap
   Si dice curva ellittica un sottoinsieme di $\bbC^2$ del seguente tipo: $E = \{ (x,y) \in \bbC^2 \mid y^2 = p(x) \}$, dove $p$ è un polinomio a coefficienti complessi di terzo grado con radici distinte.
 \end{definizione}
 
-\notamargine{Il norme curve ellittiche è dovuto al fatto che sono saltate fuori storicamente nel calcolo della lunghezza di archi di ellisse: data un'ellisse $y^2 = 1 - \alpha x^2$, per calcolare la lunghezza di un arco si giunge a:
+\notamargine{Il nome curve ellittiche è dovuto al fatto che sono saltate fuori storicamente nel calcolo della lunghezza di archi di ellisse: data un'ellisse $y^2 = 1 - \alpha x^2$, per calcolare la lunghezza di un arco si giunge a:
   $$ \int \frac{1-b^2 x}{\sqrt{(1-b^2 x) (1-a^2 x)}} \de x$$, che con un'opportuna sostituzione... }
 
 % TODO: togliere i puntini e mettere almeno la sostituzione ed una descrizione di cosa lo si può ricondurre
@@ -120,13 +120,14 @@ La cosa notevole è che, a partire da questa costruzione, si può ottenere sulla
 Facciamo ora alcuni esempi di gruppi algebrici (li pensiamo tutti su $\bbC$):
 \begin{itemize}
 \item $\bbG_a$ come gruppo additivo (Si intende la retta affine $\bbA^1$ come varietà e come legge di gruppo $x \star y := x + y$). Possiamo osservare che è un gruppo algebrico non compatto di dimensione $1$
-\item $\bbG_m$ come gruppo moltiplicativo (Si intende la retta affine tolto un punto $\bbA^1 \setminus \{ 0 \}$ come varietà [anche se in $\bbA^1$ non è un chiuso, lo è attraverso il morfismo con l'iperbole in $\bbA^2$], mentre la legge di gruppo è $x \star y := x y$). \\
-  Esso si può anche interpretare come l'iperbole $xy=1$ (in $\bbA^2$) con legge di gruppo $(u_1, u_2) \star (t_1, t_2) = (u_1 t_1, u_2 t_2)$
+\item $\bbG_m$ come gruppo moltiplicativo (Si intende la retta affine tolto un punto $\bbA^1 \setminus \{ 0 \}$ come varietà [anche se in $\bbA^1$ non è un chiuso, lo è attraverso il morfismo con l'iperbole in $\bbA^2$], mentre la legge di gruppo è $x \star y := x y$).
+
+  Esso si può anche interpretare come l'iperbole $xy=1$ (in $\bbA^2$) con legge di gruppo $(u_1, u_2) \star (t_1, t_2) = (u_1 t_1, u_2 t_2)$.
 \end{itemize}
 
 Si può dimostrare che questi sono tutti i gruppi algebrici non compatti di dimensione $1$, mentre quelli compatti (sempre di dimensione $1$) sono tutte e sole le curve ellittiche (Infatti ``vengono'' dai tori).
 
-\notamargine{Con dimensione intendiamo qui la dimensione come varietà olomorfa}
+\notamargine{Con dimensione intendiamo qui la dimensione come varietà olomorfa.}
 
-\notamargine{In dimensione superiore invece ce ne sono tanti, anche non commutativi, come $\GL_2 \bbC$}
+\notamargine{In dimensione superiore invece ce ne sono tanti, anche non commutativi, come $\GL_2 \bbC$.}
 

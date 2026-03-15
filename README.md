@@ -7,7 +7,7 @@ professor Umberto Zannier nell'anno 2016/2017.
 
 # Come ottenere il pdf
 
-Potete trovare il pdf compilato qui: [pdf compilato](https://github.com/lorenzo-ferrari/Zannier1617/releases/latest/download/lezioni.pdf)
+Potete trovare il pdf compilato qui: [pdf compilato](https://github.com/lorenzo-ferrari/Zannier1617/releases/latest/download/FunzioniEllitticheEModulari.pdf).
 
 # Come Contribuire
 
@@ -15,7 +15,9 @@ Accettiamo contributi da chiunque. Contate che potete contribuire sia
 trascrivendo le lezioni, sia segnalando gli errori che vi trovate. Oltre che
 ovviamente utilizzando i nostri pdf, per farci sentire importanti.
 
-Per informazioni più precise [guardate qui](docs/COMECONTRIBUIRE.md)
+Per informazioni più precise [guardate qui](docs/COMECONTRIBUIRE.md).
+
+Attenzione: il branch `riscrittura` è ora da considerarsi morto. In data 15 Marzo 2026 è avvenuto un merge manuale in `master`.
 
 # Cose ancora da sistemare
 
@@ -28,7 +30,7 @@ renderlo molto più utile (lo dico per quelli dei prossimi anni):
 - [ ] Allineare le note a margine all'inizio del paragrafo / environment
   al quale si riferiscono. Attualmente vengono messe un po' a caso.
   
-- [ ] Risistemare il lavoro come libro: la divisione in lezioni era
+- [x] Risistemare il lavoro come libro: la divisione in lezioni era
   sensata per potersi dividere il lavoro in maniera equa. Adesso che non
   c'è più molto da scrivere, sarebbe opportuno dividere il tutto in
   capitoli a seconda dell'argomento e dare una struttura unitaria al
@@ -37,4 +39,3 @@ renderlo molto più utile (lo dico per quelli dei prossimi anni):
 - [ ] Raccogliere in una sezione a parte tutte le soluzioni degli
   esercizi dati durante il corso, visto che alcuni vengono chiesti agli
   esami.
-
