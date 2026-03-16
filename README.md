@@ -2,7 +2,7 @@
 
 # Corso di Zannier 2016/2017
 
-Questo repository cerca di raccogliere le lezioni del Corso tenuto dal
+Questo repository raccoglie le lezioni del Corso tenuto dal
 professor Umberto Zannier nell'anno 2016/2017.
 
 # Come ottenere il pdf
